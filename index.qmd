@@ -1,11 +1,11 @@
 ---
-title: "website"
+pagetitle: "openwashdata"
+toc: false
 ---
 
-This is a Quarto website.
+## Welcome to openwashdata 👋
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+We will launch in March 2023 and are currently developing content for different channels. 
 
-```{r}
-1 + 1
-```
+Until then, stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
+
