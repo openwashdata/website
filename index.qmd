@@ -7,5 +7,5 @@ toc: false
 
 We will launch in March 2023 and are currently developing content for different channels. 
 
-Until then, stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
+Stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
 
