@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "openwashdata"
@@ -21,7 +22,9 @@ format:
   html:
     theme: [cosmo, theme.scss]
     css: styles.css
+    code-copy: true
+    code-overflow: wrap
     toc: true
 
-
-
+execute: 
+  freeze: auto
