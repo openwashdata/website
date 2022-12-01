@@ -9,3 +9,4 @@ We will launch in March 2023 and are currently developing content for different 
 
 Stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
 
+Or check out [the proposal](pages/proposal/index.html) that was funded for this project.
