@@ -17,6 +17,8 @@ website:
     left: 
       - text: "Overview"
         href: index.qmd
+      - text: "Proposal"
+        href: pages/proposal/index.qmd
         
 format:
   html:

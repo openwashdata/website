@@ -3,7 +3,7 @@ pagetitle: "openwashdata"
 toc: false
 ---
 
-## Welcome to openwashdata 👋
+## Welcome to openwashdata
 
 We will launch in March 2023 and are currently developing content for different channels. 
 
