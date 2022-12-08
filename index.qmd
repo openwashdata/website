@@ -3,6 +3,8 @@ pagetitle: "openwashdata"
 toc: false
 ---
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
 ## Welcome to openwashdata
 
 We will launch in March 2023 and are currently developing content for different channels.  

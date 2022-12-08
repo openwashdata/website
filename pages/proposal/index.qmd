@@ -21,7 +21,9 @@ bibliography: prop-eth-open-science.bib
 csl: vancouver-brackets-no-et-al.csl
 ---
 
-This is a copy of the proposal as it was submitted and funded. The original version is stored in [this GitHub repository](https://github.com/openwashdata/proposal-eth-ord-scheme).
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+This is a copy of the proposal as it was submitted to, and supported by the [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/). The original version is stored in [this GitHub repository](https://github.com/openwashdata/proposal-eth-ord-scheme).
 
 # Proposal full title
 
