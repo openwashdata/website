@@ -7,8 +7,9 @@ toc: false
 
 ## Welcome to openwashdata
 
-We will launch in March 2023 and are currently developing content for different channels.  
+We will launch in March 2023 and are currently hiring a [Scientific Assistant in Data Science](https://jobs.ethz.ch/job/view/JOPG_ethz_6PFAFZNUVkFUIsDVAw ).
 
 Stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
 
 Or check out [the proposal](pages/proposal/index.html) that was funded for this project.
+
