@@ -1,7 +1,6 @@
-- title: "nbdev + Quarto: A new secret weapon for productivity"
-  path: https://www.fast.ai/2022/07/28/nbdev-v2/
-  date: 2022-07-28
-  categories: [Jupyter, Quarto, nbdev]
+- title: "Colorado WASH Symposium 2023"
+  path: https://www.colorado.edu/washsymposium/
+  date: 2023-03-09
+  categories: [conference]
   description: |
-    Our favorite tool for software engineering productivity–nbdev, now re-written with Quarto.
-  calendar: Add to calendar button
+    openwashdata - 15-minute conference presentation that introduces the community

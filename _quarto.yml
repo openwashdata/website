@@ -20,8 +20,6 @@ website:
         href: pages/events/index.qmd
       - text: "Proposal"
         href: pages/proposal/index.qmd
-
-        
         
 format:
   html:

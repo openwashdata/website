@@ -16,12 +16,12 @@
 
 
 .hero-banner h1 {
-  color: #39729E;
-  font-size: 2.5rem;
+  color: #5b195b;
+  font-size: 3.5rem;
 }
 
 .hero-banner .content-block {
-  max-width: 600px;
+  max-width: 800px;
   z-index: 2;
 }
 
@@ -38,7 +38,7 @@
 
 .btn-action-primary {
   color: white;
-  background-color: #447099 !important;
+  background-color: #5b195b !important;
 }
 
 .btn-action-primary:hover {
