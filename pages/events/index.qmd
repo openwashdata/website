@@ -1,0 +1,26 @@
+---
+sidebar: false
+description: "A collection of technical blogs and talks on machine learning and data science."
+toc: true
+listing:
+  date-format: long
+  feed: true
+  filter-ui: false
+  type: table
+  table-hover: false
+  sort-ui: false
+  sort: "date desc"
+  categories: false
+  fields: [date, title, description, categories]
+  id: events-listings
+  contents: events_data/events.yml
+  field-display-names: 
+    categories: Type
+aliases: ["events/"]
+format:
+  html:
+    anchor-sections: true
+---
+
+::: {#events-listings}
+:::
