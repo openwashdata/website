@@ -11,14 +11,16 @@ listing:
   sort-ui: false
   sort: "date desc"
   categories: false
-  fields: [date, title, description, categories]
+  fields: [date, title, description, calendar]
   id: events-listings
   contents: events_data/events.yml
   field-display-names: 
     categories: Type
+    calendar: " "
 aliases: ["events/"]
 format:
   html:
+    page-layout: full
     anchor-sections: true
 ---
 
