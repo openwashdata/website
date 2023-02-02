@@ -20,6 +20,21 @@ website:
         href: pages/events/index.qmd
       - text: "Proposal"
         href: pages/proposal/index.qmd
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/openwashdata/book/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/openwashdata/book/discussions"
+    right:
+      - icon: twitter
+        href: https://twitter.com/openwashdata
+        aria-label: Twitter
+      - icon: github
+        href: https://github.com/openwashdata
+        aria-label: GitHub
         
 format:
   html:
