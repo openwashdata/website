@@ -22,5 +22,7 @@ format:
     anchor-sections: true
 ---
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
 ::: {#events-listings}
 :::
