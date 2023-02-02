@@ -1,15 +1,39 @@
 ---
 pagetitle: "openwashdata"
+page-layout: custom
+section-divs: false
 toc: false
 ---
 
 <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
+::: {.hero-banner}
+
+::: {.content-block}
+
 ## Welcome to openwashdata
 
-We will launch in March 2023 and are currently hiring a [Scientific Assistant in Data Science](https://jobs.ethz.ch/job/view/JOPG_ethz_6PFAFZNUVkFUIsDVAw ).
+### openwashdata is an international community that applies open practices to data in the greater water, sanitation, and hygiene (WASH) sector
 
-Stay up to date by subscribing to [openwashdata news](https://buttondown.email/openwashdata), a newsletter delivered as an email to your inbox.
+- Receive credit for work that is not a scientific paper
+- Give recognition to those that support your work
+- Tell stories with data that haven't yet been told 
+- Meet people that care about data and code being open and reusable
 
-Or check out [the proposal](pages/proposal/index.html) that was funded for this project.
+::: {.hero-buttons}
+[News](pages/news/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[Proposal](pages/proposal/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
+::: 
+
+:::
+
+:::
+
+<iframe
+scrolling="no"
+style="width:100%!important;height:300px;border:0px !important"
+src="https://buttondown.email/openwashdata?as_embed=true"
+></iframe><br /><br />
+
+
 

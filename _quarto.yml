@@ -13,11 +13,15 @@ website:
     background: "#5b195b"
     title: false
     collapse-below: lg
-    left: 
+    left:
       - text: "Overview"
         href: index.qmd
+      - text: "Events"
+        href: pages/events/index.qmd
       - text: "Proposal"
         href: pages/proposal/index.qmd
+
+        
         
 format:
   html:
