@@ -1,13 +1,13 @@
 ---
 title: "openwashdata"
-subtitle: ""
+subtitle: "Colorado WASH Symposium 2023"
 author: 
   - name: Lars Schöbitz
     email: lschoebitz@ethz.ch
     affiliations:
         - name: Global Health Engineering - ETH Zurich
           url: https://ghe.ethz.ch/
-date: 2023-02-03
+date: 2023-03-09
 date-format: long
 format: 
   revealjs: 
@@ -21,7 +21,7 @@ format:
       ticks: 400
       colors: ["#5b195b", "#5b195b", "#5b195b"]
       scalar: 0.7 
-    theme: [default, "../slides.scss"]
+    theme: [default, "slides.scss"]
     transition: fade
 revealjs-plugins:
   - confetti
@@ -31,17 +31,19 @@ editor_options:
 bibliography: references.bib
 ---
 
-# Welcome `r emo::ji("wave")` {background-color="#0F4C81"}
-
-# Review 2022-q4 {background-color="#0F4C81"}
-
-# Meeting rules `r emo::ji("handshake")` {background-color="#0F4C81"}
 
 # openwashdata {background-color="#5b195b"}
 
-## Logo and Confetti
+## Logo: WIP
 
-## Problem statement
+```{r}
+knitr::include_graphics("img/openwashdata-logo-sketch.png")
+```
+
+
+# The Opportunity {background-color="#5b195b"}
+
+## Journal Articles
 
 ```{r}
 knitr::include_graphics("img/screenshot-supplementary-data-ms-word-01.png")
@@ -51,7 +53,7 @@ knitr::include_graphics("img/screenshot-supplementary-data-ms-word-01.png")
 Screenshot from @greene2021
 :::
 
-## Problem statement
+## Journal Articles
 
 ```{r}
 knitr::include_graphics("img/screenshot-supplementary-data-ms-word-02.png")
@@ -61,38 +63,172 @@ knitr::include_graphics("img/screenshot-supplementary-data-ms-word-02.png")
 Screenshot from @greene2021
 :::
 
-## The journey
+## PDF reports
 
-- steps for engagement
+```{r}
+knitr::include_graphics("img/screenshot-pdf-report-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("img/screenshot-pdf-table-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("img/screenshot-pdf-table-example-02.png")
+```
+
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("img/screenshot-dropbox-example-01.png")
+```
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+# openwashdata journey {background-color="#5b195b"}
+
+## 
+
+![](img/openwashdata-journey.drawio-01.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-02.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-03.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-04.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-05.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-06.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-07.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-08.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-09.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-10.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-11.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-12.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-13.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-14.svg)
 
 ## What final looks like
 
-## Our channels
 
+![](img/screenshot-final-pkgdown-site.png)   
 
+::: footer
+durbanplasticwaste22 documenation website built with [pkgdown](https://pkgdown.r-lib.org/)
+:::
 
-# Next Quarterly {background-color="#0F4C81"}
+## Our channels {.incremental}
 
-## Bring your ideas
+:::: {.columns}
 
-[Asana Task Link](https://app.asana.com/0/1200669635797781/1202951366954951)
+::: {.column width="47.5%"}
+**One-way communication**
 
-::: columns
-::: {.column width="35%"}
-**Date & Time**
-
--   Date: ???
--   Time: ???
--   Location: TBD
+- Website: [openwashdata.org](https://openwashdata.org/)
+- Newsletter: [buttondown.email/openwashdata](https://buttondown.email/openwashdata)
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="60%"}
-**Items**
+::: {.column width="47.5%"}
+**Two-way engagement**
 
--   Feedback on MSc/BSc grading rubric, thesis template, workflows, etc. (Lars)
--   ???
+- Instant messaging program: TBD, one of Slack, Discord, Matrix 
+- GitHub issue tracker: [github.com/openwashdata/book/issues](https://github.com/openwashdata/book/issues)
+- Social media: TBD, one of Twitter, Mastodon
 :::
+
+::::
+
+## Events
+
+- Live coding stream: Twitch (regular)
+- Hackathon: Virutal platform (one to two)
+- Workshop: In-person conference (one)
+- Online course: 10-weeks (one or two)
+
+## Learner personas {.smaller .scrollable}
+
+```{r}
+googlesheets4::read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |>
+  gt::gt()
+```
+
+
+::: footer
+[openwashdata learner personas](https://github.com/openwashdata/learner-personas)
 :::
+
+## How you can help
+
+Add ideas on GitHub: https://github.com/openwashdata/book/issues
+
+## Goals (by August 2024)
+
+- Newsletter: 500 subscribers
+- Website: 30 daily visits
+- Data: 50 R data packages
+- to be defined
+
+# Thanks
+
+- Add repo source code
+- Add PDF slides
+- Add funder
+
+
