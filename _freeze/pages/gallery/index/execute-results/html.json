@@ -1,10 +1,8 @@
 {
-  "hash": "9bf705276198d989f0493da2688b7472",
+  "hash": "439361278bccd92dfdfc4af319fa937a",
   "result": {
-    "markdown": "---\npagetitle: \"Gallery\"\nformat:\n  html:\n    toc: false\nexecute:\n  echo: false\ndescription: |\n  A gallery of presentations, data, lessons, and other media created within openwashdata. \n---\n\n\n# Slides\n\n- 🖥 [Colorado WASH Symposium 2023 - openwashdata launch](pages/gallery/slides/cu-wash-symposium-2023/index.html) \n",
-    "supporting": [
-      "index_files"
-    ],
+    "markdown": "---\npagetitle: \"Gallery\"\nformat:\n  html:\n    toc: false\nexecute:\n  echo: false\ndescription: |\n  A gallery of presentations, data, lessons, and other media created within openwashdata. \n---\n\n\n# Slides\n\n- 🖥 [Colorado WASH Symposium 2023 - openwashdata launch](slides/cu-wash-symposium-2023/index.html) \n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
