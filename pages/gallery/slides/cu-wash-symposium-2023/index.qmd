@@ -1,16 +1,18 @@
 ---
 title: "openwashdata"
-subtitle: "Colorado WASH Symposium 2023"
+subtitle: "a community effort to bring open data practices to the WASH sector"
 author: 
   - name: Lars Schöbitz
     email: lschoebitz@ethz.ch
     affiliations:
-        - name: Global Health Engineering - ETH Zurich
-          url: https://ghe.ethz.ch/
+        - name: Colorado WASH Symposium 2023
 date: 2023-03-09
 date-format: long
 format: 
-  revealjs: 
+  revealjs:
+    pointer:
+      pointerSize: 22
+      color: '#5b195b' 
     confetti:
       particleCount: 300
       angle: 90
@@ -20,11 +22,13 @@ format:
       drift: 0
       ticks: 400
       colors: ["#5b195b", "#5b195b", "#5b195b"]
-      scalar: 0.7 
+      scalar: 0.7
     theme: [default, "slides.scss"]
     transition: fade
+    slide-number: true
 revealjs-plugins:
   - confetti
+  - pointer
 editor: source
 editor_options: 
   chunk_output_type: console
@@ -34,12 +38,18 @@ bibliography: references.bib
 
 # openwashdata {background-color="#5b195b"}
 
-## Logo: WIP
+## openwashdata
 
-```{r}
-knitr::include_graphics("img/openwashdata-logo-sketch.png")
-```
+- Receive **credit** for work that is not a scientific paper
+- Give **recognition** to those that support your work
+- Tell **stories** with data that haven’t yet been told
+- Meet **people** that care about data and code being open and reusable
 
+::: footer
+
+[https://openwashdata.org/](https://openwashdata.org/)
+
+:::
 
 # The Opportunity {background-color="#5b195b"}
 
@@ -104,7 +114,7 @@ knitr::include_graphics("img/screenshot-dropbox-example-01.png")
 Screenshot from @mupinga2021addendum
 :::
 
-# openwashdata journey {background-color="#5b195b"}
+# The Journey {background-color="#5b195b"}
 
 ## 
 
