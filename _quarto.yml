@@ -18,16 +18,19 @@ website:
         href: index.qmd
       - text: "Events"
         href: pages/events/index.qmd
+      - text: "Gallery"
+        href: pages/gallery/index.qmd
       - text: "Proposal"
         href: pages/proposal/index.qmd
       - text: "Help"
         menu:
+          - text: "Donate data"
+            icon: "clipboard-data"
+            href: "https://github.com/openwashdata/data/issues"
           - text: "Report a Bug"
             icon: "bug"
             href: "https://github.com/openwashdata/book/issues"
-          - text: "Ask a Question"
-            icon: "chat-right-text"
-            href: "https://github.com/openwashdata/book/discussions"
+
     right:
       - icon: twitter
         href: https://twitter.com/openwashdata
