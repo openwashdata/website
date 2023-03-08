@@ -1,0 +1,98 @@
+---
+title: "openwashdata"
+subtitle: ""
+author: 
+  - name: Lars Schöbitz
+    email: lschoebitz@ethz.ch
+    affiliations:
+        - name: Global Health Engineering - ETH Zurich
+          url: https://ghe.ethz.ch/
+date: 2023-02-03
+date-format: long
+format: 
+  revealjs: 
+    confetti:
+      particleCount: 300
+      angle: 90
+      spread: 360
+      startVelocity: 25
+      gravity: 0.85
+      drift: 0
+      ticks: 400
+      colors: ["#5b195b", "#5b195b", "#5b195b"]
+      scalar: 0.7 
+    theme: [default, "../slides.scss"]
+    transition: fade
+revealjs-plugins:
+  - confetti
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+# Welcome `r emo::ji("wave")` {background-color="#0F4C81"}
+
+# Review 2022-q4 {background-color="#0F4C81"}
+
+# Meeting rules `r emo::ji("handshake")` {background-color="#0F4C81"}
+
+# openwashdata {background-color="#5b195b"}
+
+## Logo and Confetti
+
+## Problem statement
+
+```{r}
+knitr::include_graphics("img/screenshot-supplementary-data-ms-word-01.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## Problem statement
+
+```{r}
+knitr::include_graphics("img/screenshot-supplementary-data-ms-word-02.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## The journey
+
+- steps for engagement
+
+## What final looks like
+
+## Our channels
+
+
+
+# Next Quarterly {background-color="#0F4C81"}
+
+## Bring your ideas
+
+[Asana Task Link](https://app.asana.com/0/1200669635797781/1202951366954951)
+
+::: columns
+::: {.column width="35%"}
+**Date & Time**
+
+-   Date: ???
+-   Time: ???
+-   Location: TBD
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+**Items**
+
+-   Feedback on MSc/BSc grading rubric, thesis template, workflows, etc. (Lars)
+-   ???
+:::
+:::
