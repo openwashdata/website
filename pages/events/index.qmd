@@ -1,0 +1,30 @@
+---
+sidebar: false
+description: "A collection of technical blogs and talks on machine learning and data science."
+toc: true
+listing:
+  date-format: long
+  feed: true
+  filter-ui: false
+  type: table
+  table-hover: false
+  sort-ui: false
+  sort: "date desc"
+  categories: false
+  fields: [date, title, description, calendar]
+  id: events-listings
+  contents: events_data/events.yml
+  field-display-names: 
+    categories: Type
+    calendar: " "
+aliases: ["events/"]
+format:
+  html:
+    page-layout: full
+    anchor-sections: true
+---
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+::: {#events-listings}
+:::
