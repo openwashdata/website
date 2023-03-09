@@ -258,7 +258,7 @@ The slides were created via revealjs and Quarto: [https://quarto.org/docs/presen
 
 You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/cu-wash-symposium-2023/index.qmd)
 
-Or you can [download slides in PDF format]()
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/cu-wash-symposium-2023/cu-wash-symposium-2023-openwashdata-lschoebitz.pdf)
   
 This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
 
