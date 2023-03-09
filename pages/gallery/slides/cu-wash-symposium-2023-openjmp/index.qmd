@@ -1,28 +1,20 @@
 ---
-title: "openwashdata"
-subtitle: "a community effort to bring open data practices to the WASH sector"
+title: "openjmp"
+subtitle: "the data and code the behind the JMP WASH estimates"
 author: 
+  - name: Linda Karani
+    email: karanilinda@gmail.com
   - name: Lars Schöbitz
     email: lschoebitz@ethz.ch
-    affiliations:
-        - name: Colorado WASH Symposium 2023
-date: 2023-03-09
+date: 2023-03-10
 date-format: long
+execute: 
+  cache: true
 format: 
   revealjs:
     pointer:
       pointerSize: 22
       color: '#5b195b' 
-    confetti:
-      particleCount: 300
-      angle: 90
-      spread: 360
-      startVelocity: 25
-      gravity: 0.85
-      drift: 0
-      ticks: 400
-      colors: ["#5b195b", "#5b195b", "#5b195b"]
-      scalar: 0.7
     theme: [default, "slides.scss"]
     transition: fade
     slide-number: true
@@ -30,238 +22,463 @@ format:
       buttons: false
     preview-links: auto  
 revealjs-plugins:
-  - confetti
   - pointer
 editor: source
 editor_options: 
   chunk_output_type: console
-bibliography: references.bib
+bibliography: openjmp.bib
 ---
 
-# openwashdata {background-color="#5b195b"}
+```{r}
+library(tidyverse)
+library(maps)
+library(tmap) 
+library(sf)
+library(gt)
+```
 
+```{r}
+# Download rds file
+temp_rds <- file.path(tempdir(), "2022-10-19_jmp_sanitation_raw_data.rds")
+
+download.file(
+    "https://github.com/openwashdata/jmpinput/raw/master/data/derived_data/2022-10-19_jmp_sanitation_raw_data.rds",
+    temp_rds
+)
+
+# import data
+jmpraw <- read_rds(temp_rds) |>  
+    filter(year >= 2000, value >= 0) 
+```
+
+```{r}
+
+# top10 function
+top10 <- function(data) {
+    data  |> 
+        arrange(desc(n)) |> 
+        head(10)  |> 
+        mutate(country = countrycode::countrycode(iso3, origin = "iso3c", destination = "country.name")) |> 
+        select(country, n)
+}
+
+# count iso3 and sanitation service chain function
+
+count_iso3_ssc <- function(data, min_year, ssc) {
+    data |> 
+        filter(year >= min_year) |> 
+        filter(san_service_chain == ssc) |> 
+        count(iso3, san_service_chain)
+}
+
+
+```
+
+```{r}
+
+jmp_iso3_frequency <- jmpraw |> 
+    count(iso3)
+
+jmp_iso3_user_interface_2015 <- count_iso3_ssc(jmpraw, min_year = 2015, ssc = "user interface")
+
+jmp_iso3_emptying_2015 <- count_iso3_ssc(jmpraw, min_year = 2015, ssc = "emptying")
+
+jmp_iso3_ww_treatment_2015 <- count_iso3_ssc(jmpraw, min_year = 2015, ssc = "WW treatment")
+
+jmp_iso3_fs_treatment_2015 <- count_iso3_ssc(jmpraw, min_year = 2015, ssc = "FS treatment")
+```
+
+```{r}
+data("World")
+
+world_moll = st_transform(World, crs = "+proj=moll")
+
+tmap_mode("view")
+
+tmap_options(basemaps = "OpenStreetMap")
+
+tmap_mode("plot")
+
+```
+
+# openjmp - why? {background-color="#5b195b"}
+
+```{=html}
 <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+```
+## WHO/UNICEF Joint Monitoring Programme (JMP) 
 
-## openwashdata
+::: incremental
 
-- Receive **credit** for work that is not a scientific paper
-- Give **recognition** to those that support your work
-- Tell **stories** with data that haven’t yet been told
-- Meet **people** that care about data and code being open and reusable
-
-::: footer
-
-[https://openwashdata.org/](https://openwashdata.org/)
+-   **JMP mandate:** internationally-comparable information on WASH since 1990
+-   **JMP data input:** raw database is updated every 2 years
+-   **JMP methods:** linear regression model with Stata 14.0
+-   **JMP data output:** 26 indicators for 232 countries, areas, and globally
+-   **JMP country files:** compile raw data input and data output for 26 indicators in spreadhsheet-based proprietary software
 
 :::
 
-# The Opportunity {background-color="#5b195b"}
+## Current JMP workflow
 
-## Journal Articles
+![](img/screenshot-jmp-methods-diagram.png)
+
+::: footer
+@who/unicefjointprogrammeforwatersupplysanitsationandhygienejmp2018jmp
+:::
+
+## Goals of openjmp project
+
+-   Document and publish R data package: `jmpinput`
+-   Document and publish R software package: `jmpmodel`
+-   Host half day online workshops to teach usage of developed packages in R
+-   Publish lessons as Open Educational Resources
+
+::: footer
+Proposal: [openjmp - unlocking the potential of global indicator data](https://github.com/openwashdata/proposal-eth-ord-scheme-contribute/blob/main/proposal-eth-ord-scheme-contribute.md)
+:::
+
+# `jmpinput` {background-color="#5b195b"}
+
+## `jmpinput` R data package - benefits
+
+-   Data accessible as a single table for any data analysis tool
+-   Data can be imported to R using one command
+-   Public website with detailed documentation \_ e.g. `washdata` R Package <https://katilingban.io/washdata/index.html>
+
+![](img/screenshot-washdata-rpackage.png)
+
+::: footer
+@urban
+:::
+
+## `jmpinput` - sanitation {.smaller}
+
+-   Data in long format (19,528 rows)
+-   9 variables
 
 ```{r}
-knitr::include_graphics("img/screenshot-supplementary-data-ms-word-01.png")
+
+jmpraw %>% 
+    relocate(iso3) %>%
+    relocate(value, .after = san_service_chain) %>% 
+    head(4) %>% 
+    knitr::kable(digits = 1)
+
 ```
 
-::: footer
-Screenshot from @greene2021
-:::
+## `jmpinput` - new variables {.smaller}
 
-## Journal Articles
+-   `residence`: urban/rural/national
+-   `san_service_chain`: sanitation service chain
 
 ```{r}
-knitr::include_graphics("img/screenshot-supplementary-data-ms-word-02.png")
+
+jmpraw %>% 
+    count(san_service_chain) %>% 
+    knitr::kable()
+
 ```
 
-::: footer
-Screenshot from @greene2021
-:::
+## `jmpinput` - use cases {.smaller auto-animate="true"}
 
-## PDF reports
+::: incremental
+1.  Using JMP methods to reproduce estimates and apply different models - [Linda Karani - MSc Data Science](https://github.com/KaraniLinda/SDG-6-2-Reproducibility)
+2.  Writing the `jmpmodel` R software package with a function to produce estimates (and a function to produce service ladder plots)
 
 ```{r}
-knitr::include_graphics("img/screenshot-pdf-report-example-01.png")
-```
+#| eval: false
+#| echo: true
+#| fenced: true
 
-::: footer
-Screenshot from @soeters2021treatment
+```
 :::
 
-## PDF reports
+## `jmpinput` - use cases {.smaller auto-animate="true"}
+
+1.  Using JMP methods to reproduce estimates and apply different models - [Linda Karani - MSc Data Science](https://github.com/KaraniLinda/SDG-6-2-Reproducibility)
+2.  Writing the `jmpmodel` R software package with a function to produce estimates (and a function to produce service ladder plots)
 
 ```{r}
-knitr::include_graphics("img/screenshot-pdf-table-example-01.png")
+#| eval: false
+#| echo: true
+#| fenced: true
+
+estimate(iso3 = "AFG",           # default: all iso3 codes
+         year = 2010:2030,       # Single year or range of years
+         var_short = NULL,       # default: all variables (NULL)
+         residence = "national") # default: national
+
 ```
 
-::: footer
-Screenshot from @soeters2021treatment
-:::
+## `jmpinput` - use cases {.smaller auto-animate="true"}
 
-## PDF reports + Dropbox
+1.  Using JMP methods to reproduce estimates and apply different models - [Linda Karani - MSc Data Science](https://github.com/KaraniLinda/SDG-6-2-Reproducibility)
+2.  Writing the `jmpmodel` R software package with a function to produce estimates (and a function to produce service ladder plots)
 
 ```{r}
-knitr::include_graphics("img/screenshot-pdf-table-example-02.png")
+#| eval: false
+#| echo: true
+#| fenced: true
+
+estimate(iso3 = "AFG",           # default: all iso3 codes
+         year = 2010:2030,       # Single year or range of years
+         var_short = NULL,       # default: all variables (NULL)
+         residence = "national") # default: national
+
 ```
 
+3.  Great potential for unforeseen use cases enabled by making the data readily accessible (research, teaching, joining with other data, etc.)
 
-::: footer
-Screenshot from @mupinga2021addendum
-:::
-
-## PDF reports + Dropbox
+## 
 
 ```{r}
-knitr::include_graphics("img/screenshot-dropbox-example-01.png")
+jmpraw %>%
+    count(type, sort = TRUE) %>% 
+    knitr::kable(caption = "Number of data points for type of survey")
+    
 ```
 
-::: footer
-Screenshot from @mupinga2021addendum
-:::
-
-# The Journey {background-color="#5b195b"}
-
 ## 
-
-![](img/openwashdata-journey.drawio-01.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-02.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-03.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-04.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-05.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-06.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-07.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-08.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-09.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-10.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-11.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-12.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-13.svg)
-
-## 
-
-![](img/openwashdata-journey.drawio-14.svg)
-
-# The Product {background-color="#5b195b"}
-
-## What does final look like?
-
-[
-![](img/screenshot-durbanplasticwaste-site.png){fig-alt="Screenshot of the durbanplasticwaste R package documentation homepage at https://global-health-engineering.github.io/durbanplasticwaste/." fig-align="center"}
-](https://global-health-engineering.github.io/durbanplasticwaste/)
-
-::: footer
-[durbanplasticwaste documenation website](https://global-health-engineering.github.io/durbanplasticwaste/) by @bergen_raul_2023_7708756 built with [pkgdown](https://pkgdown.r-lib.org/)
-:::
-
-# Engage {background-color="#5b195b"}
-
-## Our channels 
-
-::: {.incremental}
-
-:::: {.columns}
-
-::: {.column width="47.5%"}
-**One-way communication**
-
-- Website: [openwashdata.org](https://openwashdata.org/)
-- Newsletter: [buttondown.email/openwashdata](https://buttondown.email/openwashdata)
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="47.5%"}
-**Two-way engagement**
-
-- Instant messaging **TBD**: Slack, Discord, Matrix 
-- Submit ideas: [github.com/openwashdata/data/issues](https://github.com/openwashdata/data/issues)
-- Social media **TBD**: Twitter or Mastodon
-:::
-
-::::
-
-:::
-
-## Events
-
-- **Live coding stream:** Twitch (regular)
-- **Hackathon:** Online platform (one or two)
-- **Workshop:** (Online) conferences (one or two)
-- **Online course:** 10-weeks (one or two)
-
-# For whom? {background-color="#5b195b"}
-
-## Learner personas {.smaller .scrollable}
 
 ```{r}
-googlesheets4::read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |>
-  gt::gt()
+jmpraw %>% 
+    filter(!is.na(san_service_chain)) %>% 
+    count(year, san_service_chain) %>% 
+    group_by(year) %>% 
+    mutate(
+        prop = n / sum(n) * 100
+    ) %>%  
+    
+    ggplot(aes(x = year, y = prop, fill = san_service_chain)) +
+    geom_col() +
+    labs(
+        x = NULL,
+        y = NULL, 
+        title = "Proportion of data points along sanitation service chain",
+        subtitle = "For all countries since 2000",
+        fill = "Variable"
+    ) +
+    scale_fill_brewer(palette = "BrBG") +
+    theme_minimal(base_size = 18) +
+    theme(panel.grid.minor = element_blank())
 ```
 
+## 
 
-::: footer
-[openwashdata learner personas](https://github.com/openwashdata/learner-personas)
-:::
+```{r}
+world_moll %>% 
+    left_join(jmp_iso3_frequency, by = c("iso_a3" = "iso3")) %>% 
+    filter(continent != "Antarctica") %>% 
+    tm_shape() +
+    tm_polygons(
+        col = "n", 
+        title = "No. of data points",
+        #legend.hist = TRUE,
+        #palette = "Oranges", 
+        style = "fixed",
+        contrast = c(0.1, 0.9),
+        breaks = c(1, 100, 250, 500),
+        #n = 4, 
+        textNA = "No Data",
+        colorNA = "grey80", 
+        lwd = 0.5
+    ) +
+    tm_layout(
+        main.title = "JMP raw data collection - Total number of data points since 2000",
+        main.title.position = "center",
+        title.position = c("left", "top"),
+        #legend.outside = TRUE,
+        scale = 1.5,
+        #inner.margins = c(0, .02, .02, .02),
+        #outer.margins = c(0, 0, 0, 0), frame = TRUE, 
+    )
 
-# Goals {background-color="#5b195b"}
+```
 
-## Goals (by August 2024)
+## 
 
-- **Newsletter:** 500 subscribers
-- **Website:** 30 daily visits
-- **Data:** 50 R data packages
-- to be defined
+```{r}
+top10(jmp_iso3_frequency) %>% 
+    knitr::kable()
+```
+
+## 
+
+```{r}
+world_moll %>% 
+    left_join(jmp_iso3_user_interface_2015, by = c("iso_a3" = "iso3")) %>% 
+    filter(continent != "Antarctica") %>% 
+    tm_shape() +
+    tm_polygons(
+        col = "n", 
+        title = "No. of data points",
+        #legend.hist = TRUE,
+        #palette = "Oranges", 
+        style = "fixed",
+        contrast = c(0.1, 0.9),
+        breaks = c(1, 11, 21, 31),
+        #n = 4, 
+        textNA = "No Data",
+        colorNA = "grey80", 
+        lwd = 0.5
+    ) +
+    tm_layout(
+        main.title = "JMP raw data collection - Number of data points for 'user interface' since 2015",
+        main.title.position = "center",
+        title.position = c("left", "top"),
+        #legend.outside = TRUE,
+        scale = 1.5,
+        #inner.margins = c(0, .02, .02, .02),
+        #outer.margins = c(0, 0, 0, 0), frame = TRUE, 
+    ) 
+
+```
+
+## 
+
+```{r}
+top10(jmp_iso3_user_interface_2015) %>% 
+    knitr::kable()
+
+```
+
+## 
+
+```{r}
+
+world_moll %>% 
+    left_join(jmp_iso3_emptying_2015, by = c("iso_a3" = "iso3")) %>% 
+    filter(continent != "Antarctica") %>% 
+    tm_shape() +
+    tm_polygons(
+        col = "n", 
+        title = "No. of data points",
+        #legend.hist = TRUE,
+        #palette = "Oranges", 
+        style = "fixed",
+        contrast = c(0.1, 1),
+        breaks = c(1, 11, 21, 31),
+        #n = 4, 
+        textNA = "No Data",
+        colorNA = "grey90", 
+        lwd = 0.5
+    ) +
+    tm_layout(
+        main.title = "JMP raw data collection - Number of data points for 'emptying' since 2015",
+        main.title.position = "center",
+        title.position = c("left", "top"),
+        #legend.outside = TRUE,
+        scale = 1.5,
+        #inner.margins = c(0, .02, .02, .02),
+        #outer.margins = c(0, 0, 0, 0), frame = TRUE, 
+    ) 
+
+```
+
+## 
+
+```{r}
+top10(jmp_iso3_emptying_2015) %>% 
+    knitr::kable()
+```
+
+## 
+
+```{r}
+
+world_moll %>% 
+    left_join(jmp_iso3_ww_treatment_2015, by = c("iso_a3" = "iso3")) %>% 
+    filter(continent != "Antarctica") %>% 
+    tm_shape() +
+    tm_polygons(
+        col = "n", 
+        title = "No. of data points",
+        #legend.hist = TRUE,
+        #palette = "Oranges", 
+        style = "fixed",
+        contrast = c(0.1, 1),
+        breaks = c(1, 3, 6, 20),
+        #n = 4, 
+        textNA = "No Data",
+        colorNA = "grey90", 
+        lwd = 0.5
+    ) +
+    tm_layout(
+        main.title = "JMP raw data collection - Number of data points for 'wastewater treatment' since 2015",
+        main.title.position = "center",
+        title.position = c("left", "top"),
+        #legend.outside = TRUE,
+        scale = 1.5,
+        #inner.margins = c(0, .02, .02, .02),
+        #outer.margins = c(0, 0, 0, 0), frame = TRUE, 
+    )
+```
+
+## 
+
+```{r}
+top10(jmp_iso3_ww_treatment_2015) %>% 
+    knitr::kable()
+```
+
+## 
+
+```{r}
+world_moll %>% 
+    left_join(jmp_iso3_fs_treatment_2015, by = c("iso_a3" = "iso3")) %>% 
+    filter(continent != "Antarctica") %>% 
+    tm_shape() +
+    tm_polygons(
+        col = "n", 
+        title = "No. of data points",
+        #legend.hist = TRUE,
+        #palette = "Oranges", 
+        style = "fixed",
+        contrast = c(0.1, 1),
+        breaks = c(1, 3, 6, 20),
+        #n = 4, 
+        textNA = "No Data",
+        colorNA = "grey90", 
+        lwd = 0.5
+    ) +
+    tm_layout(
+        main.title = "JMP raw data collection - Number of data points for 'faecal sludge treatment' since 2015",
+        main.title.position = "center",
+        title.position = c("left", "top"),
+        #legend.outside = TRUE,
+        scale = 1.5,
+        #inner.margins = c(0, .02, .02, .02),
+        #outer.margins = c(0, 0, 0, 0), frame = TRUE, 
+    )
+```
+
+## 
+
+```{r}
+top10(jmp_iso3_fs_treatment_2015) %>% 
+    knitr::kable()
+```
+
+# openjmp - what's next? {background-color="#5b195b"}
+
+## openjmp - what's next
+
+-   start of project: \~ July/August 2023
+-   timeline and activities for `jmpinput` & `jmpmodel`: [Work Packages & Activities Google Sheet](https://docs.google.com/spreadsheets/d/1pvt08daECVK_M-IY3dx1lNUSjcTVy-8miE0GptWAIlc/edit#gid=0)
+-   stay up to date on progress and add requests: [openwashdata/jmpinput/issues](https://github.com/openwashdata/jmpinput/issues)
 
 # Thanks! `r emo::ji("sunflower")` {background-color="#5b195b"}
 
-## Thanks `r emo::ji("sunflower")` {.disable-layout}
+## Thanks `r emo::ji("sunflower")`
 
-This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+This project was supported by the [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
 
-The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+The slides were created via revealjs and Quarto: <https://quarto.org/docs/presentations/revealjs/>
 
-You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/cu-wash-symposium-2023/index.qmd)
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/cu-wash-symposium-2023-openjmp/index.qmd)
 
-Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/cu-wash-symposium-2023/cu-wash-symposium-2023-openwashdata-lschoebitz.pdf)
-  
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/cu-wash-symposium-2023-openjmp/cu-wash-symposium-2023-openjmp-lschoebitz.pdf)
+
 This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
 
 # References
-
-
