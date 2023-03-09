@@ -38,6 +38,7 @@ editor_options:
 bibliography: references.bib
 ---
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
 # openwashdata {background-color="#5b195b"}
 
@@ -177,13 +178,14 @@ Screenshot from @mupinga2021addendum
 
 # The Product {background-color="#5b195b"}
 
-## 
+## What does final look like?
 
-
-![](img/screenshot-final-pkgdown-site.png)   
+[
+![](img/screenshot-durbanplasticwaste-site.png){fig-alt="Screenshot of the durbanplasticwaste R package documentation homepage at https://global-health-engineering.github.io/durbanplasticwaste/." fig-align="center"}
+](https://global-health-engineering.github.io/durbanplasticwaste/)
 
 ::: footer
-durbanplasticwaste22 documenation website built with [pkgdown](https://pkgdown.r-lib.org/)
+[durbanplasticwaste documenation website](https://global-health-engineering.github.io/durbanplasticwaste/) built with [pkgdown](https://pkgdown.r-lib.org/)
 :::
 
 # Engage {background-color="#5b195b"}
