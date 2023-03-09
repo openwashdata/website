@@ -38,9 +38,9 @@ editor_options:
 bibliography: references.bib
 ---
 
-<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
-
 # openwashdata {background-color="#5b195b"}
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
 ## openwashdata
 
@@ -185,7 +185,7 @@ Screenshot from @mupinga2021addendum
 ](https://global-health-engineering.github.io/durbanplasticwaste/)
 
 ::: footer
-[durbanplasticwaste documenation website](https://global-health-engineering.github.io/durbanplasticwaste/) built with [pkgdown](https://pkgdown.r-lib.org/)
+[durbanplasticwaste documenation website](https://global-health-engineering.github.io/durbanplasticwaste/) by @bergen_raul_2023_7708756 built with [pkgdown](https://pkgdown.r-lib.org/)
 :::
 
 # Engage {background-color="#5b195b"}
