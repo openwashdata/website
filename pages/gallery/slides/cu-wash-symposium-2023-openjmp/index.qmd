@@ -103,6 +103,8 @@ tmap_mode("plot")
 
 # openjmp - why? {background-color="#5b195b"}
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
 ```{=html}
 <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 ```
@@ -138,6 +140,16 @@ Proposal: [openjmp - unlocking the potential of global indicator data](https://g
 :::
 
 # `jmpinput` {background-color="#5b195b"}
+
+## `jmpinput` R data package - benefits
+
+::: incremental
+
+-   Data accessible as a single table for any data analysis tool
+-   Data can be imported to R using one command
+-   Public website with detailed documentation \_ e.g. `washdata` R Package <https://katilingban.io/washdata/index.html>
+:::
+
 
 ## `jmpinput` R data package - benefits
 
