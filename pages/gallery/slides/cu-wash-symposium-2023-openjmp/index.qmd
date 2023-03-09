@@ -478,6 +478,7 @@ top10(jmp_iso3_fs_treatment_2015) %>%
 -   start of project: \~ July/August 2023
 -   timeline and activities for `jmpinput` & `jmpmodel`: [Work Packages & Activities Google Sheet](https://docs.google.com/spreadsheets/d/1pvt08daECVK_M-IY3dx1lNUSjcTVy-8miE0GptWAIlc/edit#gid=0)
 -   stay up to date on progress and add requests: [openwashdata/jmpinput/issues](https://github.com/openwashdata/jmpinput/issues)
+- join openwasdata community: [openwashdata.org](https://openwashdata.org/)
 
 # Thanks! `r emo::ji("sunflower")` {background-color="#5b195b"}
 

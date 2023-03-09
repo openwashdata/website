@@ -27,7 +27,7 @@ format:
     transition: fade
     slide-number: true
     chalkboard: 
-      buttons: false
+      buttons: true
     preview-links: auto  
 revealjs-plugins:
   - confetti
@@ -247,6 +247,16 @@ googlesheets4::read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |
 - **Website:** 30 daily visits
 - **Data:** 50 R data packages
 - to be defined
+
+# openjmp {background-color="#5b195b"}
+
+## openjmp - the data and code the behind the JMP WASH estimates
+
+Group Presentation 7 - Friday, 10th March 01:20 to 02:20 MST
+
+Slides on [openwashdata.org](https://openwashdata.org/pages/gallery/)
+
+![](img/screenshot-openwashdata-gallery.png){fig-alt="Screenshot of the openwashdata website gallery at https://openwashdata.org/pages/gallery/." fig-align="center"}
 
 # Thanks! `r emo::ji("sunflower")` {background-color="#5b195b"}
 
