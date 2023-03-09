@@ -1,0 +1,267 @@
+---
+title: "openwashdata"
+subtitle: "a community effort to bring open data practices to the WASH sector"
+author: 
+  - name: Lars Schöbitz
+    email: lschoebitz@ethz.ch
+    affiliations:
+        - name: Colorado WASH Symposium 2023
+date: 2023-03-09
+date-format: long
+format: 
+  revealjs:
+    pointer:
+      pointerSize: 22
+      color: '#5b195b' 
+    confetti:
+      particleCount: 300
+      angle: 90
+      spread: 360
+      startVelocity: 25
+      gravity: 0.85
+      drift: 0
+      ticks: 400
+      colors: ["#5b195b", "#5b195b", "#5b195b"]
+      scalar: 0.7
+    theme: [default, "slides.scss"]
+    transition: fade
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto  
+revealjs-plugins:
+  - confetti
+  - pointer
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+# openwashdata {background-color="#5b195b"}
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+## openwashdata
+
+- Receive **credit** for work that is not a scientific paper
+- Give **recognition** to those that support your work
+- Tell **stories** with data that haven’t yet been told
+- Meet **people** that care about data and code being open and reusable
+
+::: footer
+
+[https://openwashdata.org/](https://openwashdata.org/)
+
+:::
+
+# The Opportunity {background-color="#5b195b"}
+
+## Journal Articles
+
+```{r}
+knitr::include_graphics("img/screenshot-supplementary-data-ms-word-01.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## Journal Articles
+
+```{r}
+knitr::include_graphics("img/screenshot-supplementary-data-ms-word-02.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("img/screenshot-pdf-report-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("img/screenshot-pdf-table-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("img/screenshot-pdf-table-example-02.png")
+```
+
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("img/screenshot-dropbox-example-01.png")
+```
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+# The Journey {background-color="#5b195b"}
+
+## 
+
+![](img/openwashdata-journey.drawio-01.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-02.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-03.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-04.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-05.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-06.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-07.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-08.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-09.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-10.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-11.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-12.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-13.svg)
+
+## 
+
+![](img/openwashdata-journey.drawio-14.svg)
+
+# The Product {background-color="#5b195b"}
+
+## What does final look like?
+
+[
+![](img/screenshot-durbanplasticwaste-site.png){fig-alt="Screenshot of the durbanplasticwaste R package documentation homepage at https://global-health-engineering.github.io/durbanplasticwaste/." fig-align="center"}
+](https://global-health-engineering.github.io/durbanplasticwaste/)
+
+::: footer
+[durbanplasticwaste documenation website](https://global-health-engineering.github.io/durbanplasticwaste/) by @bergen_raul_2023_7708756 built with [pkgdown](https://pkgdown.r-lib.org/)
+:::
+
+# Engage {background-color="#5b195b"}
+
+## Our channels 
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**One-way communication**
+
+- Website: [openwashdata.org](https://openwashdata.org/)
+- Newsletter: [buttondown.email/openwashdata](https://buttondown.email/openwashdata)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Two-way engagement**
+
+- Instant messaging **TBD**: Slack, Discord, Matrix 
+- Submit ideas: [github.com/openwashdata/data/issues](https://github.com/openwashdata/data/issues)
+- Social media **TBD**: Twitter or Mastodon
+:::
+
+::::
+
+:::
+
+## Events
+
+- **Live coding stream:** Twitch (regular)
+- **Hackathon:** Online platform (one or two)
+- **Workshop:** (Online) conferences (one or two)
+- **Online course:** 10-weeks (one or two)
+
+# For whom? {background-color="#5b195b"}
+
+## Learner personas {.smaller .scrollable}
+
+```{r}
+googlesheets4::read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |>
+  gt::gt()
+```
+
+
+::: footer
+[openwashdata learner personas](https://github.com/openwashdata/learner-personas)
+:::
+
+# Goals {background-color="#5b195b"}
+
+## Goals (by August 2024)
+
+- **Newsletter:** 500 subscribers
+- **Website:** 30 daily visits
+- **Data:** 50 R data packages
+- to be defined
+
+# Thanks! `r emo::ji("sunflower")` {background-color="#5b195b"}
+
+## Thanks `r emo::ji("sunflower")` {.disable-layout}
+
+This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+
+The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/cu-wash-symposium-2023/index.qmd)
+
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/cu-wash-symposium-2023/cu-wash-symposium-2023-openwashdata-lschoebitz.pdf)
+  
+This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+
+# References
+
+
