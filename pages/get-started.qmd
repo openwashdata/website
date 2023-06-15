@@ -1,0 +1,53 @@
+---
+title: "openwashdata 101"
+author: 
+  - name: "Mian Zhong"
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid_id: 
+  
+citation: true
+---
+
+Welcome! We are very glad that you take this initiative to join the community of #openwashdata!
+
+We hope this tutorial not only help you with a smooth set-up to collaborate with us on the #openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html). While we are connected with common values to have data from WASH domain more sharable and accessible, we do have different backgrounds and skill-sets. So feel free to skip some parts that are very familiar to you. On the other hand, if you find some terms or jargons confusing, like "R programming" or "", don't worry and [stay tuned with us](). We will provide more detailed posts on open data practice in the future!
+
+# Access and Share #openwashdata
+
+## Let's do R, why not 🥳
+
+We are currently developing data packages solely in R programming language.
+
+## Nah, just give me the files 😈
+
+We are opinionated to discourage this direction because ... Nevertheless, we still think it's good way to make data as accessible as possible. For each dataset, we offer the csv files (`.csv`) and the spreadsheets (.`xlsx`) and you can directly download from ...
+
+# Publish with #openwashdata
+
+You got some amazing data and love to share? Great!
+
+## 0. Get Some New Accounts and Why
+
+### ORCID
+
+1.  [Register an ORCID](https://orcid.org/signin)
+
+    a.  If your institute has an affiliation, you could choose "Access through your institution" to register and sign in.
+
+    b.  Otherwise, you may opt in th "Google" or "Facebook" sign-in options.
+
+    c.  If the above-mentioned options are not for you, click ["Register Now"](https://orcid.org/register) and follow the instructions.
+
+### Github
+
+1.  Go to [Sign up for Github](https://github.com/signup) and follow the instructions to get an account
+2.  Open [openwashdata](https://github.com/openwashdata) github organization and click "Follow" on the upper right corner to connect with us on Github.
+
+### MATRIX
+
+## 1. Submit data on Github
+
+## 2. Collaborate to refine data
+
+Conclusion words here.
