@@ -9,9 +9,9 @@ author:
 citation: true
 ---
 
-Welcome! We are very glad that you take this initiative to join the community of #openwashdata! We hope this tutorial not only help you with a smooth set-up to collaborate with us on the #openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html).
+Welcome! We are very glad that you take this initiative to join the community of openwashdata! We hope this tutorial not only help you with a smooth set-up to collaborate with us on the openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html).
 
-While we are common in the belief of more accessible and sharable data from WASH community, we do have different backgrounds and skill-sets. So feel free to skip some parts that are very familiar to you. On the other hand, if you find some terms or jargons confusing, like "R programming" or "Github", don't worry and [stay tuned with us](). We will provide more detailed posts on open data practice in the future!
+While we are common in the belief of more accessible and shareable data from WASH community, we do have different backgrounds and skill-sets. So feel free to skip some parts that are familiar to you. On the other hand, if you find some terms confusing, like "R programming" or "Github", don't worry and [stay tuned with us](https://buttondown.email/openwashdata). We will provide more detailed posts on open data practice in the future!
 
 # Access, Use and Share #openwashdata
 
@@ -21,21 +21,45 @@ You could directly involving with openwashdata project simply by using our data!
 -   If you are a lecturer, consider integrate our data with your training and course materials!
 -   If you work professionally in WASH sector, you may refer to some of the updated data information for your business cases.
 
-The development team is constantly working on organizing, cleaning, and releasing [new datasets]().
+The development team is constantly working on organizing, cleaning, and releasing [new datasets](https://openwashdata.org/pages/gallery/). <!-- TODO: link to the correct list of datasets-->
 
 ## Let's do R, why not 🥳
 
-We are currently developing data packages solely in R programming language.
+If you have worked with [R programming](https://www.r-project.org)[^1], we are actively developing new R data packages. You could access the data simply by installing the package in R and start from there. For example,
+
+[^1]: "A free software environment for statistical computing and graphics"
+
+```{{r}}
+# Install data package
+install.packages()
+# Import data package
+library()
+
+```
 
 ## Nah, just give me the files 😈
 
-We are opinionated to discourage this direction because ... Nevertheless, we still think it's good way to make data as accessible as possible. For each dataset, we offer the csv files (`.csv`) and the spreadsheets (.`xlsx`) and you can directly download from ...
+We are opinionated to discourage this direction because the analysis work with the data might be less reproducible. Nevertheless, for the moment, we still think it's good way to make data as accessible as possible.
+
+For each published dataset, we offer the csv files (`.csv`) and the spreadsheets (.`xlsx`) and you can directly download from the associated website. For example, with ... dataset, you may find the files as shown in the following figure.
+
+<!-- TODO: Insert an example figure here. -->
+
+## Cite openwashdata
 
 # Publish with #openwashdata
 
 You got some amazing data and love to share? Great!
 
 ## 0. Get Some New Accounts and Why
+
+Like connecting with friends, you get some social media accounts here and there to share life updates. For an open science project, we also reply on convenient tools to help us share, track, and communicate progress. Hence, we have picked some platforms that are widely used to build openwashdata project.
+
+<!-- \\TODO: Connect the following dots  -->
+
+-   ORCID First, we would like to get an identifier
+-   Github: digital headquarter\
+-   MATRIX: like Slack or Messenger an instant message chatroom for openwashdata,
 
 ### ORCID
 
@@ -46,7 +70,8 @@ You got some amazing data and love to share? Great!
     b.  Otherwise, you may opt in th "Google" or "Facebook" sign-in options.
 
     c.  If the above-mentioned options are not for you, click ["Register Now"](https://orcid.org/register) and follow the instructions.
-2. Save your ORCID number 
+
+2.  Save your ORCID number
 
 ### Github
 
@@ -54,12 +79,23 @@ You got some amazing data and love to share? Great!
 2.  Open [openwashdata](https://github.com/openwashdata) github organization and click "Follow" on the upper right corner to connect with us on Github.
 
 ### MATRIX
-1. Join our chatroom [openwash-lobby](https://matrix.to/#/%23openwash-lobby:staffchat.ethz.ch)
-2. If you do not have an MATRIX account yet, follow [this instruction]() to set up!
-3. Say "hi" in openwash-lobby!
+
+1.  Join our chatroom [openwash-lobby](https://matrix.to/#/%23openwash-lobby:staffchat.ethz.ch)
+2.  If you do not have an MATRIX account yet, follow [this instruction]() to set up!
+3.  Say "hi" in openwash-lobby!
 
 ## 1. Submit data on Github
 
+Now you have a Github account - 1. Log in Github, and go to our [data donation]() - -
+
 ## 2. Collaborate to refine data
+
+The data files are online. However, it is usually not the final stage. We need more collaboration to let the data shine according to FAIR
+
+-   
+
+-   
+
+-   
 
 Conclusion words here.
