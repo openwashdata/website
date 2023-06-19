@@ -1,0 +1,107 @@
+---
+title: "Tutorial: Chat"
+---
+
+Are you interested in contributing to openwashdata? Are you looking for help with your WASH dataset? Are you interested in one of our events? Or do you just want to get in touch?
+
+Join our Matrix chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. See [here](https://link-to-description.com) for more information about Matrix.
+
+You can sign in and chat either from your web browser or install a chat client on your device(s). **We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client though**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack.
+
+This tutorial explains how to join the openwashdata chat space using **Element**.
+
+## Join Matrix outside ETH {#sec-join-outside-eth}
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 1.  Download and install Element: <https://element.io/download>                                                                                       | It's available on Windows, Linux and Mac OS, as well as Android and iPhone.                                                                                                                                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2.  Open the Element App on your device                                                                                                               |                                                                                                                                                                                                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3.  Click on **Create account**                                                                                                                       | ![](images/element-signin.png)                                                                                                                                                                                                                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4.  Either register for an account at matrix.org following the context menu or use your GitHub, Gitlab, Google, Facebook or Apple account to sign in. | ![](images/element-homeserver-matrix.png)If your institution does not operate a matrix home server, you can use a free, publicly available server. We recommend to use the official matrix.org home server that is already selected by default. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 5.  **Verify** your **account** by opening the link that was send to you in an email from *matrix.org*.                                               | In the browser the link was opened you automatically log in to an element session. **Keep it open.**                                                                                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 6.  Go back to your **Element (Desktop) App**                                                                                                         |                                                                                                                                                                                                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 7.  **Sign in** to your new account                                                                                                                   | ![matrix.org homeserver](images/element-homeserver.png)                                                                                                                                                                                         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 8.  Click on **verify with another device.**                                                                                                          | ![](images/element-verify-desktop-1.png)                                                                                                                                                                                                        |
+|                                                                                                                                                       |                                                                                                                                                                                                                                                 |
+|                                                                                                                                                       | ![](images/verify-device-1.png)                                                                                                                                                                                                                 |
+|                                                                                                                                                       |                                                                                                                                                                                                                                                 |
+|                                                                                                                                                       | SET WORK COMPUTER THEME TO LIGHT AND LOG IN AND TAKE A SNAPSHOT!!!                                                                                                                                                                              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 9.  Go back to the browser with the open element session from *step 5*. Verify the session on your app.                                               | ![](images/element-verify-browser-1.png)![](images/element-verify-browser-2.png)                                                                                                                                                                |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 10. Go back to your **Element (Desktop)** **App**                                                                                                     |                                                                                                                                                                                                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 11. Open **Security & Privacy** settings.                                                                                                             | ![](images/element-dropdown-cut.png)                                                                                                                                                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 12. Click on **Set up** a Secure Backup.                                                                                                              | ![](images/element-keys-1.png)                                                                                                                                                                                                                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 13. Generate a **Security Key** and **store** it somewhere **safe**, like a password manager or a safe.                                               | ![](images/element-keys-2.png)![](images/element-keys-3.png)Now you're able to verify future sessions by using the Security keys.                                                                                                               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+See how to find our chat rooms in @sec-find-us.
+
+## Join Matrix as a member of ETH {#sec-join-eth}
+
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 1\. Download and install Element: <https://element.io/download>                                                       | It's available on Windows, Linux and Mac OS, as well as Android and iPhone. |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 2\. Open the Element App on your device                                                                               |                                                                             |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 3\. Click on **Sign in**                                                                                              |                                                                             |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 4\. Click on **Edit** in the Homeserver section                                                                       | ![](images/element-eth-homeserver.png)                                      |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 5\. Select **Other homeserver** and write **staffchat.ethz.ch** (for staff) or **studentchat.ethz.ch** (for students) | ![](images/element-eth-homeserver-2.png)                                    |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 6\. For username write your **ETH username**                                                                          | ![](images/element-eth-sign-in.png)                                         |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 7\. For password write your **ETH password**                                                                          |                                                                             |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| 8\. Verify your device                                                                                                | ![](images/element-eth-verify.png)                                          |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+See how to find our chat rooms in the next section.
+
+## Find us on Matrix {#sec-find-us}
+
+Our openwashdata chat space contains multiple rooms from team rooms to course rooms or dataset support. All these rooms are not public and require an invite.
+
+So, in order to get started join our public lobby, have a little chat, explore your interest and find other, more interest specific rooms from there.
+
+The `#openwashdata-lobby` room is listed in public room catalogs and can be found even when logged in on another homeserver.
+
+In order to find us:
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 1.  Click on the **Search** field and then search for **Public rooms**.                                                                           | ![](images/element-search.png)                                           |
++---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 2.  Add *staffchat.ethz.ch* to list of catalogs to be scanned for your search term. Note that you won't have to login to the ETH server for this. | ![](images/element-add-catalog-1.png){alt="Add a server to the catalog"} |
+|                                                                                                                                                   |                                                                          |
+|                                                                                                                                                   | ![Add a server to the catalog](images/element-add-catalog-2.png)         |
++---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 3.  Use the search to find our `#openwashdata-lobby:staffchat.ethz.ch` room and **join**.                                                         | ![openwashdata-lobby is publicly visible](images/element-lobby.png)      |
++---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+Welcome!
+
+## Matrix (TBD)
+
+Matrix uses a network of so-called homeservers operated by different institutions and client software installed on the users' device. We use **staffchat.ethz.ch** as a homeserver which is hosted by ETH. So for ETH members, the best way to join the openwashdata chat space is to use your ETH credentials to sign in. Either you use a web browser to sign in here and chat from your browser:
+
+https://chat.ethz.ch/staffchat/#/login
+
+**We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client though**. It works on all major operating systems including mobile devices. If you want to use the client please follow the steps below.
+
+## Element (TBD)
+
+Element is a chat client that allows you to use Matrix, which is an open standard for real-time communication. ETH has a Matrix homeserver, and there it enables all ETH students and employees to login with their ETH login details. The additional benefit is that the account can also be used beyond the time of being affiliated with ETH.
+
+This way of real-time communication and it's capabilities are a lot like the experience of using Slack and Element is an open-source Slack alternative which offers useful features for effective and secure communication.
+
+<https://unlimited.ethz.ch/display/itkb/Chat>
