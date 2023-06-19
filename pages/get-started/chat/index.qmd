@@ -1,0 +1,66 @@
+---
+title: "Tutorial: Chat"
+---
+
+Are you interested in contributing to open data? Are you looking for help with your WASH dataset? Are you interested in one of our events? Or do you just want to get in touch?
+
+Join our Matrix chat space. Matrix is a 'open network for secure, decentralized communication' and completely independent from popular chat platforms.
+
+
+## Join outside ETH
+
+In order to use matrix you will need a home on some server. If your institutions does not operate a matrix homeserver, you can use a free, publicly available server such as the official matrix.org homeserver. 
+
+Either register for an account at matrix.org following the context menu or use your GitHub, Gitlab, Google, Facebook or Apple account to sign in. Once you're signed in at matrix.org homeserver finding our chat space is the same as for members of ETH. 
+
+![matrix.org homeserver](element-homeserver.png)
+
+## Join as a member of ETH
+
+Matrix uses a network of so-called homeservers operated by different institutions and client software installed on the users' device. We use **staffchat.ethz.ch** as a homeserver which is hosted by ETH. So for ETH members, the best way to join the openwash chat space is to use your ETH credentials to sign in. Either you use a web browser to sign in here and chat from your browser: 
+
+https://chat.ethz.ch/staffchat/#/login
+
+**We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client though**. It works on all major operating systems including mobile devices. Download element and sign in by choosing **staffchat.ethz.ch** (press edit) as a homeserver and use your ETH credentials. 
+
+![Element sign in context menu](element-signin.png)
+
+## Find us on Matrix
+
+Our openwash chat space contains multiple rooms from team rooms to course rooms or dataset support. All these rooms are not public and require an invite. 
+
+So, in order to get started join our public lobby, have a little chat, explore your interest and find other, more interest specific rooms from there. 
+
+Our #openwash-lobby room is listed in public room catalogs and can be found even when logged in on another homeserver. 
+
+To find us, select *explore public rooms* from the welcome page of your element client or use the *join public room* button. 
+
+![Explore the matrix room catalogs](element-explore.png)
+
+Continue by adding *staffchat.ethz.ch* to list of catalogs to be scanned for your search term. Note that you won't have to login to the ETH server for this. 
+
+![Add a server to the catalog](element-add-catalog.png)
+
+Use the search to find our `#openwash-lobby:staffchat.ethz.ch` room and join. 
+
+![openwash-lobby is publicly visible](element-lobby.png)
+
+Welcome! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

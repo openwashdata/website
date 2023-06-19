@@ -21,7 +21,7 @@ toc: false
 - Meet people that care about data and code being open and reusable
 
 ::: {.hero-buttons}
-[Events](pages/events/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+[Get Started](pages/get-started/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Proposal](pages/proposal/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
 [News](https://buttondown.email/openwashdata){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
 ::: 
