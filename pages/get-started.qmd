@@ -4,16 +4,24 @@ author:
   - name: "Mian Zhong"
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
-    orcid_id: 
+    orcid_id: 0009-0009-4546-7214
   
 citation: true
 ---
 
-Welcome! We are very glad that you take this initiative to join the community of #openwashdata!
+Welcome! We are very glad that you take this initiative to join the community of #openwashdata! We hope this tutorial not only help you with a smooth set-up to collaborate with us on the #openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html).
 
-We hope this tutorial not only help you with a smooth set-up to collaborate with us on the #openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html). While we are connected with common values to have data from WASH domain more sharable and accessible, we do have different backgrounds and skill-sets. So feel free to skip some parts that are very familiar to you. On the other hand, if you find some terms or jargons confusing, like "R programming" or "", don't worry and [stay tuned with us](). We will provide more detailed posts on open data practice in the future!
+While we are common in the belief of more accessible and sharable data from WASH community, we do have different backgrounds and skill-sets. So feel free to skip some parts that are very familiar to you. On the other hand, if you find some terms or jargons confusing, like "R programming" or "Github", don't worry and [stay tuned with us](). We will provide more detailed posts on open data practice in the future!
 
-# Access and Share #openwashdata
+# Access, Use and Share #openwashdata
+
+You could directly involving with openwashdata project simply by using our data!
+
+-   If you are a researcher, you may analyze and cite our data in your scientific work.
+-   If you are a lecturer, consider integrate our data with your training and course materials!
+-   If you work professionally in WASH sector, you may refer to some of the updated data information for your business cases.
+
+The development team is constantly working on organizing, cleaning, and releasing [new datasets]().
 
 ## Let's do R, why not 🥳
 
@@ -38,6 +46,7 @@ You got some amazing data and love to share? Great!
     b.  Otherwise, you may opt in th "Google" or "Facebook" sign-in options.
 
     c.  If the above-mentioned options are not for you, click ["Register Now"](https://orcid.org/register) and follow the instructions.
+2. Save your ORCID number 
 
 ### Github
 
@@ -45,6 +54,9 @@ You got some amazing data and love to share? Great!
 2.  Open [openwashdata](https://github.com/openwashdata) github organization and click "Follow" on the upper right corner to connect with us on Github.
 
 ### MATRIX
+1. Join our chatroom [openwash-lobby](https://matrix.to/#/%23openwash-lobby:staffchat.ethz.ch)
+2. If you do not have an MATRIX account yet, follow [this instruction]() to set up!
+3. Say "hi" in openwash-lobby!
 
 ## 1. Submit data on Github
 
