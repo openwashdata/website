@@ -13,7 +13,7 @@ Welcome! We are very glad that you take this initiative to join the community of
 
 While we are common in the belief of more accessible and shareable data from WASH community, we do have different backgrounds and skill-sets. So feel free to skip some parts that are familiar to you. On the other hand, if you find some terms confusing, like "R programming" or "Github", don't worry and [stay tuned with us](https://buttondown.email/openwashdata). We will provide more detailed posts on open data practice in the future!
 
-# Access, Use and Share #openwashdata
+# Access and use openwashdata
 
 You could directly involving with openwashdata project simply by using our data!
 
@@ -47,17 +47,17 @@ For each published dataset, we offer the csv files (`.csv`) and the spreadsheets
 
 ## Cite openwashdata
 
-# Publish with #openwashdata
+# Share your data with openwashdata
 
-You got some amazing data and love to share? Great!
+You got some amazing data and love to share? Great! Become a contributor simply by getting started with some tools and submit your data with provided template!
 
-## 0. Get Some New Accounts and Why
+## 0. Get open science tools and why
 
-Like connecting with friends, you get some social media accounts here and there to share life updates. For an open science project, we also reply on convenient tools to help us share, track, and communicate progress. Hence, we have picked some platforms that are widely used to build openwashdata project.
+We all probably have some social media to share life updates. For an open science project, likewise, we need tools to help us share, track, and communicate progress. Hence, we have picked widely used tools as part of the starter-kit to build openwashdata project.
 
 <!-- \\TODO: Connect the following dots  -->
 
--   ORCID First, we would like to get an identifier
+-   ORCID: First, we would like to get an identifier
 -   Github: digital headquarter\
 -   MATRIX: like Slack or Messenger an instant message chatroom for openwashdata,
 
@@ -86,7 +86,11 @@ Like connecting with friends, you get some social media accounts here and there 
 
 ## 1. Submit data on Github
 
-Now you have a Github account - 1. Log in Github, and go to our [data donation]() - -
+Now you have a Github account
+
+-    Log in Github, and go to our [data donation]()
+-   
+-   
 
 ## 2. Collaborate to refine data
 
