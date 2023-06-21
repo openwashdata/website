@@ -20,6 +20,8 @@ website:
         href: pages/events/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
+      - text: "Blog"
+        href: pages/blog/index.qmd
       - text: "Proposal"
         href: pages/proposal/index.qmd
       - text: "Help"
