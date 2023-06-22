@@ -20,8 +20,6 @@ website:
         href: pages/events/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
-      - text: "Proposal"
-        href: pages/proposal/index.qmd
       - text: "Help"
         menu:
           - text: "Donate data"
@@ -38,6 +36,18 @@ website:
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
+        
+  sidebar:
+    - id: gallery
+      title: "Gallery"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - text: "Slides"
+          href: pages/gallery/slides/index.qmd
+        - text: "Proposal"
+          href: pages/gallery/proposal/index.qmd
         
 format:
   html:
