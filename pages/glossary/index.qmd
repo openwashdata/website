@@ -1,0 +1,43 @@
+---
+title: "Glossary"
+---
+
+[analysis-ready data]{#term-id-1}
+
+:   Definition ...
+
+[raw data]{#term-id-2}
+
+:   Definition ...
+
+[data underlying publication]{#term-id-3}
+
+:   Definition ...
+
+[final data]{#term-id-4}
+
+:   Definition ...
+
+[intermediate data]{#term-id-5}
+
+:   Definition ...
+
+[processed data]{#term-id-6}
+
+:   Definition ...
+
+[unprocessed data]{#term-id-7}
+
+:   Definition ...
+
+[data frame]{#term-id-8}
+
+:   Definition ...
+
+[research data]
+
+:   Definition ...
+
+[open science]
+
+:   Definition ...
