@@ -9,8 +9,6 @@ description: |
   A gallery of presentations, data, lessons, and other media created within openwashdata. 
 ---
 
-<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
-
 # Slides
 
 - `r emo::ji("desktop_computer")` [Colorado WASH Symposium 2023 - openwashdata presentation](slides/cu-wash-symposium-2023-openwashdata/index.html) 
