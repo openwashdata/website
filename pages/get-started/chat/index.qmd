@@ -1,14 +1,15 @@
 ---
 title: "Tutorial: Chat"
+bibliography: references.bib
 ---
 
 Are you interested in contributing to openwashdata? Are you looking for help with your WASH dataset? Are you interested in one of our events? Or do you just want to get in touch?
 
-Join our Matrix chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. See [here](https://link-to-description.com) for more information about Matrix.
+Join our [Matrix](https://matrix.org/) chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. If you are interessted why we use Matrix, find more information in @sec-matrix.
 
-You can sign in and chat either from your web browser or install a chat client on your device(s). **We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client though**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack.
+You will need a chat client which can either be web-based in your browser or installed on your device(s). **We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack. Find more information in @sec-element.
 
-This tutorial explains how to join the openwashdata chat space using **Element**.
+This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below.
 
 ## Join Matrix outside ETH {#sec-join-outside-eth}
 
@@ -29,9 +30,7 @@ This tutorial explains how to join the openwashdata chat space using **Element**
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 8.  Click on **verify with another device.**                                                                                                          | ![](images/element-verify-desktop-1.png)                                                                                                                                                                                                        |
 |                                                                                                                                                       |                                                                                                                                                                                                                                                 |
-|                                                                                                                                                       | ![](images/verify-device-1.png)                                                                                                                                                                                                                 |
-|                                                                                                                                                       |                                                                                                                                                                                                                                                 |
-|                                                                                                                                                       | SET WORK COMPUTER THEME TO LIGHT AND LOG IN AND TAKE A SNAPSHOT!!!                                                                                                                                                                              |
+|                                                                                                                                                       | ![](images/element-verify-desktop-2.png)                                                                                                                                                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 9.  Go back to the browser with the open element session from *step 5*. Verify the session on your app.                                               | ![](images/element-verify-browser-1.png)![](images/element-verify-browser-2.png)                                                                                                                                                                |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,7 +65,17 @@ See how to find our chat rooms in @sec-find-us.
 | 8\. Verify your device                                                                                                | ![](images/element-eth-verify.png)                                          |
 +-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-See how to find our chat rooms in the next section.
+See how to find our chat rooms in @sec-find-us.
+
+## Join from your browser
+
+If you are not able to download and install the Element (Desktop) App you can sign in to your account in your web browser using the following links.
+
+For people outside of ETH Zürich: <https://app.element.io/#/login>
+
+For people from ETH Zürich: <https://chat.ethz.ch/staffchat/#/login>
+
+And then find our chat rooms as follows.
 
 ## Find us on Matrix {#sec-find-us}
 
@@ -90,20 +99,37 @@ In order to find us:
 | 4.  Reach out to us in the lobby!                                                                                                                 |                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Welcome!
+## Matrix {#sec-matrix}
 
-## Matrix (TBD)
+Matrix is an open standard for decentralized, secure real-time communication. In their Manifesto [@matrix] the developers state that they believe:
 
-Matrix uses a network of so-called homeservers operated by different institutions and client software installed on the users' device. We use **staffchat.ethz.ch** as a homeserver which is hosted by ETH. So for ETH members, the best way to join the openwashdata chat space is to use your ETH credentials to sign in. Either you use a web browser to sign in here and chat from your browser:
+> -   People should have full control over their own communication.
+> -   People should not be locked into centralised communication silos, but instead be free to pick who they choose to host their communication without limiting who they can reach.
+> -   The ability to converse securely and privately is a basic human right.
+> -   Communication should be available to everyone as a free and open, unencumbered, standard and global network.
 
-https://chat.ethz.ch/staffchat/#/login
+Therefore, Matrix uses a network of so-called homeservers operated by different institutions and client software installed on the users' device. Your homeserver stores a copy of the message history of every room you participate in. Homeservers connect to other homeservers on the internet and synchronize the message history of federated rooms. ETH has a Matrix homeserver, and enables all ETH students and employees to use. We specifically use the **staffchat.ethz.ch** as a homeserver.
 
-**We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client though**. It works on all major operating systems including mobile devices. If you want to use the client please follow the steps below.
+Find more information about Matrix and its mission [here](https://matrix.org/about/).
 
-## Element (TBD)
+## Element (TBD) {#sec-element}
 
-Element is a chat client that allows you to use Matrix, which is an open standard for real-time communication. ETH has a Matrix homeserver, and there it enables all ETH students and employees to login with their ETH login details. The additional benefit is that the account can also be used beyond the time of being affiliated with ETH.
+Element is an open-source chat client that allows you to use Matrix and to connect to a homeserver to send/receive messages. This way of real-time communication and it's capabilities are a lot like the experience of using Slack and Element is an open-source Slack alternative which offers useful features for effective and secure communication.
 
-This way of real-time communication and it's capabilities are a lot like the experience of using Slack and Element is an open-source Slack alternative which offers useful features for effective and secure communication.
+If you would like to know more about Element, please visit their [official website](https://element.io/) or the [ETH IT confluence page](https://unlimited.ethz.ch/display/itkb/Chat) about this topic.
 
-<https://unlimited.ethz.ch/display/itkb/Chat>
+Other Matrix clients that are availalbe as of today can be found [here](https://matrix.org/docs/projects/try-matrix-now/).
+
+## Why we use Matrix and Element
+
+We support the ideas incorporated in the Matrix Manifesto and want to assure that everybody can have access to our community. Since the experience of the Element is a lot like the one of using Slack, it offers a transparent open-source alternative to it which offers useful features for effective and secure communication for free.
+
+Therefore it enables:
+
+-   Initial interaction with the community of interested people (in the `#openwashadata-lobby`)
+-   Communication with specified openwashdata groups as for example
+    -   students for classes
+    -   alumni channels for students and staff
+    -   etc..
+-   Support regarding datasets
+-   openwashdata team communication
