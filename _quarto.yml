@@ -16,6 +16,8 @@ website:
     left:
       - text: "Overview"
         href: index.qmd
+      - text: "Get Started"
+        href: pages/get-started/index.qmd
       - text: "Events"
         href: pages/events/index.qmd
       - text: "Gallery"
@@ -38,6 +40,17 @@ website:
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
+
+  sidebar:
+    - id: get-started
+      title: "Get Started"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - pages/get-started/index.qmd
+        - text: "Tutorial: Chat"
+          href: pages/get-started/chat/index.qmd
         
 format:
   html:
