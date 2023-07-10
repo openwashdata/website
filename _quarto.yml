@@ -59,6 +59,9 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
+    include-in-header: 
+        - text: |
+            <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
 execute: 
   freeze: auto
