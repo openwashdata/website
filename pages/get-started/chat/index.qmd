@@ -6,11 +6,11 @@ bibliography: references.bib
 
 Are you interested in contributing to openwashdata? Are you looking for help with your WASH dataset? Are you interested in one of our events? Or do you just want to get in touch?
 
-Join our [Matrix](https://matrix.org/) chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. If you are interessted why we use Matrix, find more information in @sec-matrix and @sec-reason.
+Join our Matrix chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. If you are interessted why we use Matrix, find more information in [Matrix](#sec-matrix) and [Why we use Matrix and Element](#sec-reason).
 
-You will need a chat client which can either be web-based in your browser or installed on your device(s). **We recommend to use [Element](https://matrix.org/ecosystem/clients/element/) as a chat client**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack. Find more information in @sec-element.
+You will need a chat client which can either be web-based in your browser or installed on your device(s). **We recommend to use Element as a chat client**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack. Find more information in [Element](#sec-element).
 
-This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below for non ETH Zürich members and @sec-join-eth for ETH members.
+This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below for non ETH Zürich members and [Join Matrix as a member of ETH](#sec-join-eth) for ETH members.
 
 ## Join Matrix outside ETH {#sec-join-outside-eth}
 
@@ -54,29 +54,22 @@ This tutorial explains how to join the openwashdata chat space using the **Eleme
 |                                                                                                                                                       | Now you're able to verify future sessions by using the Security keys.                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-See how to find our chat rooms in @sec-find-us.
+See how to find our chat rooms in [Find us on Matrix](#sec-find-us).
 
 ## Join Matrix as a member of ETH {#sec-join-eth}
 
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+|                                                                                                                       |                                                                             |
+|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | 1\. Download and install Element: <https://element.io/download>                                                       | It's available on Windows, Linux and Mac OS, as well as Android and iPhone. |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 2\. Open the Element App on your device                                                                               |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 3\. Click on **Sign in**                                                                                              |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 4\. Click on **Edit** in the Homeserver section                                                                       | ![](images/element-eth-homeserver.png)                                      |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 5\. Select **Other homeserver** and write **staffchat.ethz.ch** (for staff) or **studentchat.ethz.ch** (for students) | ![](images/element-eth-homeserver-2.png)                                    |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 6\. For username write your **ETH username**                                                                          | ![](images/element-eth-sign-in.png)                                         |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 7\. For password write your **ETH password**                                                                          |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 8\. Verify your device                                                                                                | ![](images/element-eth-verify.png)                                          |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-See how to find our chat rooms in @sec-find-us.
+See how to find our chat rooms in [Find us on Matrix](#sec-find-us).
 
 ## Join from your browser
 
@@ -98,17 +91,17 @@ The `#openwashdata-lobby` room is listed in public room catalogs and can be foun
 
 In order to find us:
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| 1.  Click on the **Search** field and then search for **Public rooms**.                                                                           | ![](images/element-search.png)                                           |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| 2.  Add `staffchat.ethz.ch` to list of catalogs to be scanned for your search term. Note that you won't have to login to the ETH server for this. | ![](images/element-add-catalog-1.png){alt="Add a server to the catalog"} |
-|                                                                                                                                                   |                                                                          |
-|                                                                                                                                                   | ![Add a server to the catalog](images/element-add-catalog-2.png)         |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| 3.  Use the search to find our `#openwashdata-lobby:staffchat.ethz.ch` room and **join**.                                                         | ![openwashdata-lobby is publicly visible](images/element-lobby.png)      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| 4.  Reach out to us in the lobby!                                                                                                                 |                                                                          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 1.  Click on the **Search** field and then search for **Public rooms**.                                                                            | ![](images/element-search.png)                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 2.  Add `staffchat.ethz.ch` to list of catalogs to be scanned for your search term. Note that you won't have to log in to the ETH server for this. | ![](images/element-add-catalog-1.png){alt="Add a server to the catalog"} |
+|                                                                                                                                                    |                                                                          |
+|                                                                                                                                                    | ![Add a server to the catalog](images/element-add-catalog-2.png)         |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 3.  Use the search to find our `#openwashdata-lobby:staffchat.ethz.ch` room and **join**.                                                          | ![openwashdata-lobby is publicly visible](images/element-lobby.png)      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| 4.  Reach out to us in the lobby!                                                                                                                  |                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ## Matrix {#sec-matrix}
 
@@ -127,7 +120,7 @@ Find more information about Matrix and its mission [here](https://matrix.org/abo
 
 Element is an open-source chat client that allows you to use Matrix and to connect to a homeserver to send/receive messages. This way of real-time communication and it's capabilities are a lot like the experience of using Slack and Element is an open-source Slack alternative which offers useful features for effective and secure communication.
 
-If you would like to know more about Element, please visit their [official website](https://element.io/) or the [ETH IT confluence page](https://unlimited.ethz.ch/display/itkb/Chat) about this topic. Other Matrix clients that are availalbe as of today can be found [here](https://matrix.org/docs/projects/try-matrix-now/).
+If you would like to know more about Element, please visit their [official website](https://element.io/) or the [ETH IT confluence page](https://unlimited.ethz.ch/display/itkb/Chat) about this topic. Other Matrix clients that are available as of today can be found [here](https://matrix.org/docs/projects/try-matrix-now/).
 
 ## Why we use Matrix and Element {#sec-reason}
 
@@ -142,3 +135,11 @@ Therefore it enables:
     -   etc..
 -   Support regarding datasets
 -   openwashdata team communication
+
+## Links
+
+-   [Matrix Homepage](https://matrix.org); [Matrix Documentation](https://matrix.org/docs/chat_basics/matrix-for-im/)
+
+-   [Element Homepage](https://element.io/); [Element Sign In](https://app.element.io/#/welcome); [Element Help](https://.element.io/help)
+
+-   [ETH Element Confluence Page](https://unlimited.ethz.ch/pages/viewpage.action?pageId=36242027); [ETH Members Web Login](https://app.element.io/#/login){.uri}
