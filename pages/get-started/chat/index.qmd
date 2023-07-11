@@ -6,11 +6,11 @@ bibliography: references.bib
 
 Are you interested in contributing to openwashdata? Are you looking for help with your WASH dataset? Are you interested in one of our events? Or do you just want to get in touch?
 
-Join our Matrix chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. If you are interessted why we use Matrix, find more information in [Matrix] and [Why we use Matrix and Element].
+Join our Matrix chat space. Matrix is an 'open network for secure, decentralized communication' and completely independent from popular chat platforms. If you are interessted why we use Matrix, find more information in [Matrix](#sec-matrix) and [Why we use Matrix and Element](#sec-reason).
 
-You will need a chat client which can either be web-based in your browser or installed on your device(s). **We recommend to use Element as a chat client**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack. Find more information in [Element].
+You will need a chat client which can either be web-based in your browser or installed on your device(s). **We recommend to use Element as a chat client**. It works on all major operating systems including mobile devices and provides a secure communication and collaboration platform similar to Slack. Find more information in [Element](#sec-element).
 
-This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below for non ETH Zürich members and [Join Matrix as a member of ETH] for ETH members.
+This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below for non ETH Zürich members and [Join Matrix as a member of ETH](#sec-join-eth) for ETH members.
 
 ## Join Matrix outside ETH {#sec-join-outside-eth}
 
@@ -54,29 +54,22 @@ This tutorial explains how to join the openwashdata chat space using the **Eleme
 |                                                                                                                                                       | Now you're able to verify future sessions by using the Security keys.                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-See how to find our chat rooms in [Find us on Matrix].
+See how to find our chat rooms in [Find us on Matrix](#sec-find-us).
 
 ## Join Matrix as a member of ETH {#sec-join-eth}
 
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+|                                                                                                                       |                                                                             |
+|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | 1\. Download and install Element: <https://element.io/download>                                                       | It's available on Windows, Linux and Mac OS, as well as Android and iPhone. |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 2\. Open the Element App on your device                                                                               |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 3\. Click on **Sign in**                                                                                              |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 4\. Click on **Edit** in the Homeserver section                                                                       | ![](images/element-eth-homeserver.png)                                      |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 5\. Select **Other homeserver** and write **staffchat.ethz.ch** (for staff) or **studentchat.ethz.ch** (for students) | ![](images/element-eth-homeserver-2.png)                                    |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 6\. For username write your **ETH username**                                                                          | ![](images/element-eth-sign-in.png)                                         |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 7\. For password write your **ETH password**                                                                          |                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | 8\. Verify your device                                                                                                | ![](images/element-eth-verify.png)                                          |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-See how to find our chat rooms in [Find us on Matrix].
+See how to find our chat rooms in [Find us on Matrix](#sec-find-us).
 
 ## Join from your browser
 
