@@ -1,0 +1,102 @@
+---
+title: Openwashdata 101
+subtitle: A starter kit for joining the openwashdata project
+description: In this blog post, you will find ways to access, download, and share our data. Are you feeling more ready to publish your data with us? We also talk about the initial steps to launch your open science practice with us, get your unique ORCID, sign up for Github, and join the chatroom on MATRIX!
+categories:
+author: 
+  - name: "Mian Zhong"
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid_id: 0009-0009-4546-7214
+date: 2023-07-03
+
+draft: false
+---
+
+Welcome! We are glad that you take this initiative to join the community of openwashdata! 
+
+In this community, we do have different backgrounds and skill-sets. So feel free to skip some parts that are familiar to you. On the other hand, if you find some terms confusing, like "R programming" or "Github", don't worry and [stay tuned with us](https://buttondown.email/openwashdata). We will provide more detailed posts about open data practice in the future!
+
+# 1. Access and use openwashdata
+
+You could directly involving with openwashdata project simply by using our data!
+
+-   If you are a researcher, you may analyze and cite our data in your scientific work.
+-   If you are a lecturer, consider integrate our data into your training and course materials!
+-   If you do business in WASH sector, you may refer to some of the updated data for your business cases.
+
+The development team is constantly working on organizing, cleaning, and releasing [new datasets](https://openwashdata.org/pages/gallery/). <!-- TODO: link to the correct list of datasets--> Now we introduce you two common ways to use openwashdata.
+
+## Let's do R, why not 🥳
+
+If you have worked with [R programming](https://www.r-project.org)[^1], we are actively developing new R data packages. You could access the data simply by installing the package in R and start from there. For example, you may be curious about the newly released [`fsmglobal` dataset](https://openwashdata.github.io/fsmglobal/), a dataset about populations of 175 countries requiring different faecal sludge emptying services.
+
+[^1]: "A free software environment for statistical computing and graphics"
+
+```{{r}}
+# install.packages("devtools")
+devtools::install_github("openwashdata/fsmglobal")
+# Import data package
+library(fsmglobal)
+
+```
+
+## Nah, just give me the files 😈
+
+We are opinionated to discourage this direction because the analysis work with the data might be less reproducible. Nevertheless, for the moment, we still think it's good way to make data as accessible as possible.
+
+For each published dataset, we offer the csv files (`.csv`) and the spreadsheets (.`xlsx`) and you can directly download from the associated website. For example, with `fsmglobal` dataset, you may find the files on [its website](https://openwashdata.github.io/fsmglobal/) as shown in the following figure.
+
+<!-- TODO: Insert an example figure here. -->
+
+## Cite openwashdata
+
+All datasets by default are released under CC-BY license. When using openwashdata, consider cite the data package to acknowledge the efforts of data collectors and maintainers. Each dataset has its citation information on the documentation website. For example, you may find how to cite package `fsmglobal` here.
+
+# 2. Share your data with openwashdata
+
+You got some amazing data and love to share? Great! Become a contributor simply by getting started with some tools and submitting your data idea!
+
+## Get open science tools
+
+We all probably have some social media to share life updates. For an open science project, likewise, we need tools to help us **share, track, and communicate progress**. Hence, we have picked widely used tools as part of the starter-kit to build openwashdata project together.
+
+-   ORCID number: A personal identifier that can let people track your amazing works
+-   Github organization: The digital headquarter of openwashdata project and many other awesome open-source projects
+-   MATRIX chatroom: An instant message room (like Slack or Messenger) to meet like-minded people
+
+We believe that getting these tools will help you to better connect with us and enhance data competency for you or your institutions. The following sections specify how to register for each of the tool.
+
+### Get your ORCID number
+
+1.  [Register an ORCID](https://orcid.org/signin)
+
+    a.  If your institute has an affiliation, you could choose "Access through your institution" to register and sign in.
+
+    b.  Otherwise, you may opt in th "Google" or "Facebook" sign-in options.
+
+    c.  If the above-mentioned options are not for you, click ["Register Now"](https://orcid.org/register) and follow the instructions.
+
+2.  Save your ORCID number
+
+### Join openwashdata on Github
+
+1.  Go to [Sign up for Github](https://github.com/signup) and follow the instructions to get an account.
+2.  Open [openwashdata](https://github.com/openwashdata) github organization and click "Follow" on the upper right corner to connect with us on Github.
+
+### Meet openwashdata friends in MATRIX chatroom
+
+1.  If you do not have an MATRIX account yet, follow [this instruction](https://openwashdata.org/pages/get-started/chat/) to set up!
+2.  Join our chatroom [openwashdata-lobby](https://matrix.to/#/%23openwash-lobby:staffchat.ethz.ch)
+3.  Say "hi" in openwashdata-lobby!
+
+## Submit a data idea
+
+Now you have a Github account
+
+-   Log in Github, and go to our [data idea repository](https://github.com/openwashdata/data)
+-   Read the instructions and open an issue with "[data] Title of your data idea" to submit your idea
+-   If you are stuck, join our chatroom on MATRIX to receive more personal help!
+
+
+We hope this post not only helps you with a smooth start to collaborate with us on the openwashdata project, but also benefit you with long-term [open science practice](https://ethz.ch/en/research/open-science.html).
