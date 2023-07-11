@@ -229,7 +229,7 @@ Screenshot from @mupinga2021addendum
 
 ## Learner personas {.smaller .scrollable}
 
-```{r eval = FALSE}
+```{r}
 googlesheets4::read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |>
   gt::gt()
 ```
