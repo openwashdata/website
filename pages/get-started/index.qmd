@@ -3,6 +3,6 @@ title: "Get Started"
 editor: source
 ---
 
-Get started with one of our tutorials to join the openwashdata community.
+Join the community:
 
-- [Tutorial: Chat](/pages/get-started/chat/index.qmd)
+- [Chat](/pages/get-started/chat/index.qmd)
