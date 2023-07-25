@@ -18,19 +18,19 @@ The table on this pages shows data that is published following our R data packag
 
 # data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
 # data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
-
 data <- readr::read_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
 
 ```
 
 ```{r}
 data |> 
+    dplyr::mutate(pkg_name = paste0("[", pkg_name, "]", "(", link_github, ")")) |> 
     dplyr::select(id, 
                   name = pkg_name, 
                   status, 
                   description, 
                   published = date_published, 
-                  link = link_pkg_website) |> 
+                  website = link_pkg_website) |>
     knitr::kable()
 ```
 

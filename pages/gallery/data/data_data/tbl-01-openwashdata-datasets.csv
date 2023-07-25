@@ -1,4 +1,4 @@
-X.1,X,id,pkg_name,maintainer,status,description,source,date_published,link_github,link_pkg_website
-1,1,1,fsmglobal,larnsce,published,Populations of 175 countries requiring different faecal sludge emptying services.,[@greene2021],NA,<https://github.com/openwashdata/fsmglobal>,<https://openwashdata.github.io/fsmglobal/>
-2,2,2,NA,NA,development,NA,NA,NA,NA,NA
-3,3,3,NA,NA,NA,NA,NA,NA,NA,NA
+id,pkg_name,maintainer,source,difficulty,status,description,date_published,link_github,link_pkg_website
+1,fsmglobal,larnsce,academic,low,published,Populations of 175 countries requiring different faecal sludge emptying services.,NA,<https://github.com/openwashdata/fsmglobal>,<https://openwashdata.github.io/fsmglobal/>
+2,NA,NA,NA,NA,in-progress,NA,NA,NA,NA
+3,NA,NA,NA,NA,backlog,NA,NA,NA,NA
