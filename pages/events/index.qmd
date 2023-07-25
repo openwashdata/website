@@ -1,6 +1,6 @@
 ---
 sidebar: false
-description: "A collection of technical blogs and talks on machine learning and data science."
+description: "A list of events we participate in or offer ourselves."
 toc: true
 listing:
   date-format: long

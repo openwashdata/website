@@ -8,6 +8,9 @@ description: |
 
 Our gallery highlights media created within the openwashdata. We share the proposal that was funded, slides from presentations, lessons, and soon a data catalogue of all published datasets.
 
+
+{{< fa database >}} [Data](/pages/gallery/data/index.qmd)
+
 {{< fa display >}} [Slides](/pages/gallery/slides/index.qmd)
 
 {{< fa book >}} [Proposal](/pages/gallery/proposal/index.qmd)
