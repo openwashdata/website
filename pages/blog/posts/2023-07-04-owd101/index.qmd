@@ -27,7 +27,7 @@ You could get involved with the openwashdata community by using our published da
 -   If you are a lecturer, consider to integrate our data into your training and course materials.
 -   If you do business in the WASH sector, you may refer to some of the updated data for your business cases.
 
-The development team is constantly working on organizing, cleaning, and releasing new datasets. The following sections introduce you two common ways to use openwashdata.
+The development team is constantly working on organizing, cleaning, and releasing [new datasets](https://openwashdata.org/pages/gallery/). The following sections introduce you two common ways to use openwashdata.
 
 ## 1.1 Let's do R, why not 🥳
 
