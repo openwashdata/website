@@ -63,9 +63,7 @@ We are opinionated to discourage this direction because the analysis work with t
 
 ## 1.3 Cite openwashdata
 
-<!-- TODO: INSERT LINK TO LICESE -->
-
-All datasets by default are released under CC-BY license. When using openwashdata, consider to cite the data package to acknowledge data collectors and maintainers. Each dataset has its citation information on the documentation website. For example, you may find how to cite package `wasteskipsblantyre` [here](https://openwashdata.github.io/wasteskipsblantyre/authors.html#citation).
+All datasets by default are released under [CC-BY license](https://creativecommons.org/licenses/by/4.0/). When using openwashdata, consider to cite the data package to acknowledge data collectors and maintainers. Each dataset has its citation information on the documentation website. For example, you may find how to cite package `wasteskipsblantyre` [here](https://openwashdata.github.io/wasteskipsblantyre/authors.html#citation).
 
 # 2. Share your data with openwashdata
 
