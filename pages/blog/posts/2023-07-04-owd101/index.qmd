@@ -11,6 +11,8 @@ author:
 date: 2023-07-03
 
 draft: false
+image: "thumbnail.jpg"
+image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
 ---
 
 Welcome! We are so happy that you join the openwashdata community!
@@ -47,7 +49,7 @@ library(wasteskipsblantyre)
 ?wasteskipsblantyre
 ```
 
-Now you have sucessfully loaded the data and can start to explore this dataset with your creativity!
+Now you have successfully loaded the data and can start to explore this dataset with your creativity!
 
 ## 1.2 Nah, just give me the files 😈
 
