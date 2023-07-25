@@ -1,0 +1,14 @@
+{
+  "hash": "d10fd155b3cb40c8d997e06a4d664b3d",
+  "result": {
+    "markdown": "---\npagetitle: \"Data\"\ndescription: |\n  A table of datasets that have been published through the openwashdata \n  community or are currently in development. \neditor_options: \n  chunk_output_type: console\nexecute: \n  echo: false\n  warning: false\n---\n\n\n## Data\n\nThe table on this pages shows data that is published following our R data package workflow. Each data set comes with its own website and rich documentation to increase reusability. \n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n| id|name      |status      |description                                                                       |published |link                                        |\n|--:|:---------|:-----------|:---------------------------------------------------------------------------------|:---------|:-------------------------------------------|\n|  1|fsmglobal |published   |Populations of 175 countries requiring different faecal sludge emptying services. |NA        |<https://openwashdata.github.io/fsmglobal/> |\n|  2|NA        |development |NA                                                                                |NA        |NA                                          |\n|  3|NA        |NA          |NA                                                                                |NA        |NA                                          |\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

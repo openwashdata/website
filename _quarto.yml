@@ -44,6 +44,8 @@ website:
       collapse-level: 2
       align: left
       contents:
+        - text: "Data"
+          href: pages/gallery/data/index.qmd
         - text: "Slides"
           href: pages/gallery/slides/index.qmd
         - text: "Proposal"
