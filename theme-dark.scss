@@ -9,4 +9,15 @@ $body-color: #1e1e1e;
 $body-bg: #f4f4f4;
 $link-color: #272bd1;
 
+$primary: #2c2c2c;
+
 /*-- scss:rules --*/
+
+kbd, .kbd{
+  background-color: #222222 !important;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
