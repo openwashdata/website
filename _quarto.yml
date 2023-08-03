@@ -79,11 +79,14 @@ website:
         
 format:
   html:
-    theme: [cosmo, theme.scss]
+    theme:
+      light: [litera, theme.scss]
+    highlight-style: a11y-dark
     css: styles.css
     code-copy: true
     code-overflow: wrap
     toc: true
+    mainfont: "Atkinson Hyperlegible"
     grid:
       sidebar-width: 250px
       body-width: 900px
