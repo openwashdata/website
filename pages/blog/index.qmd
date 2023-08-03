@@ -5,6 +5,8 @@ subtitle:
 listing:
   sort: "date desc"
   contents: "posts/*/index.qmd"
+  type: default
+  fields: [image, date, title, author, description, reading-time]
   sort-ui: false
   filter-ui: false
   categories: true
