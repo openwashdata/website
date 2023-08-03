@@ -1,15 +1,13 @@
 ---
 pagetitle: "Gallery"
-format:
-  html:
-    toc: false
-execute:
-  echo: false
 description: |
   A gallery of presentations, data, lessons, and other media created within openwashdata. 
 ---
 
-# Slides
+Our gallery highlights media created within the openwashdata. We share the proposal that was funded, slides from presentations, lessons, and soon a data catalogue of all published datasets.
 
-- `r emo::ji("desktop_computer")` [Colorado WASH Symposium 2023 - openwashdata presentation](slides/cu-wash-symposium-2023-openwashdata/index.html) 
-- `r emo::ji("desktop_computer")` [Colorado WASH Symposium 2023 - openjmp presentation](slides/cu-wash-symposium-2023-openjmp/index.html) 
+{{< fa database >}} [Data](/pages/gallery/data/index.qmd)
+
+{{< fa display >}} [Slides](/pages/gallery/slides/index.qmd)
+
+{{< fa book >}} [Proposal](/pages/gallery/proposal/index.qmd)

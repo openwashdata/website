@@ -22,8 +22,6 @@ website:
         href: pages/events/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
-      - text: "Proposal"
-        href: pages/proposal/index.qmd
       - text: "Help"
         menu:
           - text: "Donate data"
@@ -51,6 +49,20 @@ website:
         - pages/get-started/index.qmd
         - text: "Tutorial: Chat"
           href: pages/get-started/chat/index.qmd
+        
+  sidebar:
+    - id: gallery
+      title: "Gallery"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - text: "Data"
+          href: pages/gallery/data/index.qmd
+        - text: "Slides"
+          href: pages/gallery/slides/index.qmd
+        - text: "Proposal"
+          href: pages/gallery/proposal/index.qmd
         
 format:
   html:
