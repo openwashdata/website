@@ -1,0 +1,17 @@
+---
+title: "Mian Zhong"
+subtitle: "Data Scientist"
+image: profile.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/mianzg
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0009-4546-7214
+---
+
