@@ -54,7 +54,7 @@ Now you have successfully loaded the data and can start to explore this dataset 
 
 For the published datasets, we also provide the csv files (`.csv`) and the spreadsheets (.`xlsx`) that you can directly download from the associated website. For example, with the `wasteskipsblantyre` dataset, you may find the files as shown in the following figure[^2].
 
-[^2]: The figure is a screenshot from `wasteskipsblantyre` [package website](https://openwashdata.github.io/wasteskipsblantyre/) and you may also wanta to check out [this awesome example data analysis article](file:///Users/mzhong/Desktop/openwashdata/wasteskipsblantyre/docs/articles/examples.html).
+[^2]: The figure is a screenshot from `wasteskipsblantyre` [package website](https://openwashdata.github.io/wasteskipsblantyre/) and you may also want to check out [this awesome example data analysis article](https://openwashdata.github.io/wasteskipsblantyre/articles/examples.html).
 
 [![](download-dataset.png){fig-alt="screenshot of downloading spreadsheet data"}](https://openwashdata.github.io/wasteskipsblantyre/)
 
@@ -67,6 +67,8 @@ All datasets by default are released under [CC-BY license](https://creativecommo
 # 2. Share your data with openwashdata
 
 You got some amazing data and love to share? Great! Become a contributor by getting started with some tools and submit your data ideas.
+
+{{< fa envelope-circle-check >}} You can also always get in touch with us via [Email](mailto:ghe@mavt.ethz.ch) .
 
 ## 2.1 Join platforms for open data practices
 
@@ -95,8 +97,8 @@ We probably all have some social media to share life updates. For an open data c
 
 ### Matrix
 
-1.  If you do not have an Matrix account yet, follow [this instruction](https://openwashdata.org/pages/get-started/chat/) to set up!
-2.  Join our chatroom [openwashdata-lobby](https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch)
+1.  If you do not have a Matrix account yet, follow [these instructions](/pages/get-started/chat/) to set up!
+2.  Join our chatroom with a direct link to: [openwashdata-lobby](https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch)
 3.  Say "hi" in openwashdata-lobby!
 
 ## 2.2 Submit a data idea
