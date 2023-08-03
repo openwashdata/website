@@ -49,8 +49,7 @@ website:
         - pages/get-started/index.qmd
         - text: "Tutorial: Chat"
           href: pages/get-started/chat/index.qmd
-        
-  sidebar:
+          
     - id: gallery
       title: "Gallery"
       style: "floating"
@@ -71,6 +70,10 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
     include-in-header: 
         - text: |
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
