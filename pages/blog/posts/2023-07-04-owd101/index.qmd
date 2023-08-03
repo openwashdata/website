@@ -68,7 +68,7 @@ All datasets by default are released under [CC-BY license](https://creativecommo
 
 You got some amazing data and love to share? Great! Become a contributor by getting started with some tools and submit your data ideas.
 
-{{< fa envelope-circle-check >}} You can also always get in touch with us via [Email](mailto:ghe@mavt.ethz.ch) .
+{{< fa envelope-circle-check >}} You can also always get in touch with us via <a href="mailto:ghe@mavt.ethz.ch?subject=openwashdata data donation" target="_blank">Email</a>.
 
 ## 2.1 Join platforms for open data practices
 
