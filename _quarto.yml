@@ -18,10 +18,12 @@ website:
         href: index.qmd
       - text: "Get Started"
         href: pages/get-started/index.qmd
-      - text: "Events"
-        href: pages/events/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
+      - text: "Events"
+        href: pages/events/index.qmd
+      - text: "Blog"
+        href: pages/blog/index.qmd
       - text: "Help"
         menu:
           - text: "Donate data"
