@@ -1,7 +1,7 @@
 ---
 title: "Mian Zhong"
 subtitle: "Data Scientist"
-image: profile.jpg
+image: profile-mian.png
 about:
   template: trestles
   image-width: 10em

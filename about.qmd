@@ -1,5 +1,5 @@
 ---
-title: "About us"
+title: "About"
 listing:
   contents: "about/*/index.qmd"
   fields: [image, title, subtitle]
