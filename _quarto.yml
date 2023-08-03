@@ -34,9 +34,6 @@ website:
             href: "https://github.com/openwashdata/book/issues"
 
     right:
-      - icon: twitter
-        href: https://twitter.com/openwashdata
-        aria-label: Twitter
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
