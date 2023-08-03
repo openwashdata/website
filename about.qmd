@@ -1,0 +1,15 @@
+---
+title: "About us"
+listing:
+  contents: "about/*/index.qmd"
+  type: grid
+  sort-ui: false
+  filter-ui: false
+  categories: false
+---
+
+The openwashdata community is an ongoing effort that has started in about 2021. While WASH (Water, Sanitation, and Hygiene) is in our acronym, we do not limit ourselves to data strictly from these three domains. Rather, we see consider all domains effecting global health to be a part of this community. Beyond WASH, that is solid waste management, faecal sludge management, air quality, development economics, etc.
+
+We received funding for the first time in 2023 and are comprised of a small team actively working on building the community. 
+
+Find out here who is behind all this:
