@@ -1,7 +1,6 @@
 ---
 title: "Lars Schöbitz"
 subtitle: "Community Management"
-description: "" 
 image: profile.jpg
 about:
   template: trestles
