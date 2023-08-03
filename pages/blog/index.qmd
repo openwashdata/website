@@ -11,6 +11,6 @@ listing:
   feed: true
 page-layout: full
 title-block-banner: "#5b195b"
-title-block-banner-color: body
+title-block-banner-color: rgb(247,249,251)
 search: false
 ---

@@ -24,16 +24,22 @@ website:
         href: pages/events/index.qmd
       - text: "Blog"
         href: pages/blog/index.qmd
-      - text: "Help"
+      - text: "Support"
         menu:
-          - text: "Donate data"
-            icon: "clipboard-data"
-            href: "https://github.com/openwashdata/data/issues"
+          - text: "Email us"
+            icon: "envelope-at"
+            href: "mailto:ghe@mavt.ethz.ch"
           - text: "Report a Bug"
             icon: "bug"
             href: "https://github.com/openwashdata/book/issues"
+          - text: "Donate data"
+            icon: "clipboard-data"
+            href: "https://github.com/openwashdata/data/issues"
 
     right:
+      - icon: envelope-at-fill
+        href: "mailto:ghe@mavt.ethz.ch"
+        aria-label: Email
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub

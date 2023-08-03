@@ -6,7 +6,7 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: "#5b195b"
-title-block-banner-color: body
+title-block-banner-color: rgb(247,249,251)
 toc-location: left
 format: html
 search: false
