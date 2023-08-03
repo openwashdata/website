@@ -1,7 +1,7 @@
 ---
 title: openwashdata 101
 subtitle: A starter kit to become a part of the openwashdata community
-description: In this blog post, you will first find ways to access, download, and share our data and we also showcase how to do this with our R data packages. Are you feeling more ready to publish your data with us? We also talk about the starting steps to launch your open data practices with us, get your unique ORCID iD, sign up for GitHub, and join the chatroom on Matrix.
+description: In this blog post, you will first find ways to access, download, and share our published data. Are you interested to publish your data with us? We talk about the starting steps to launch your open data practices, get your unique ORCID iD, sign up for GitHub, and join the chat on Matrix.
 categories:
 author: 
   - name: "Mian Zhong"
@@ -9,7 +9,6 @@ author:
     affiliation_url: https://ghe.ethz.ch/
     orcid_id: 0009-0009-4546-7214
 date: 2023-07-03
-
 draft: false
 image: "thumbnail.jpg"
 image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
@@ -17,9 +16,9 @@ image-alt: "Open data in water sanitation in minimal style created by stable dif
 
 Welcome! We are so happy that you join the openwashdata community!
 
-While our common goal is more accessible data in the WASH sector, we do have different backgrounds and skill-sets. So feel free to skip some parts that are familiar to you. On the other hand, if you find some terms confusing, like "R programming" or "GitHub", [stay tuned with us](https://buttondown.email/openwashdata). We will provide more detailed posts about open data practices in the future.
+While our common goal is more accessible data in the WASH sector, we do have different backgrounds and skill-sets. So feel free to skip some parts that are familiar to you. On the other hand, if you find some terms confusing, like "R programming" or "GitHub", [stay tuned by subcribing to our newsletter](https://buttondown.email/openwashdata) or get in touch. We will provide more detailed posts about open data practices and opportunities for training in the future.
 
-# 1. Access and use openwashdata
+# 1. Access and use data
 
 You could get involved with the openwashdata community by using our published data:
 
@@ -27,11 +26,11 @@ You could get involved with the openwashdata community by using our published da
 -   If you are a lecturer, consider to integrate our data into your training and course materials.
 -   If you do business in the WASH sector, you may refer to some of the updated data for your business cases.
 
-The development team is constantly working on organizing, cleaning, and releasing [new datasets](https://openwashdata.org/pages/gallery/). The following sections introduce you two common ways to use openwashdata.
+The development team is constantly working on organizing, cleaning, and releasing [new datasets](/pages/gallery/data/index.qmd). The following sections introduce two ways to use the published data.
 
 ## 1.1 Let's do R, why not 🥳
 
-If you have worked with [R programming](https://www.r-project.org)[^1], we are actively developing new R data packages. You could access the data by installing the package in R and start from there. For example, we have released the [dataset package `wasteskipsblantyre`](https://openwashdata.github.io/wasteskipsblantyre/) that contains locations of the waste skips in Blantyre, Malawi from year 2021.
+If you have worked with [R programming](https://www.r-project.org)[^1], we are actively developing new R data packages. You could access the data by installing the package in R and start from there. For example, we have released the [dataset package `wasteskipsblantyre`](https://openwashdata.github.io/wasteskipsblantyre/) that contains locations of the waste skips in Blantyre, Malawi from the year 2021.
 
 [^1]: "A free software environment for statistical computing and graphics."
 
