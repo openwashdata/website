@@ -16,10 +16,14 @@ website:
         href: about.qmd
       - icon: "envelope-at"
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
+        aria-label: Email
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
-        
+      - icon: chat-left-dots
+        href: https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch
+        aria-label: Matrix
+
   navbar:
     background: "#5b195b"
     title: false
