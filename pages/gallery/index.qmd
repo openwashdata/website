@@ -11,3 +11,5 @@ Our gallery highlights media created within the openwashdata. We share the propo
 {{< fa display >}} [Slides](/pages/gallery/slides/index.qmd)
 
 {{< fa book >}} [Funded Proposal](/pages/gallery/proposal/index.qmd)
+
+{{< fa chart-simple >}} [Stats](/pages/gallery/stats/index.qmd)
