@@ -8,7 +8,7 @@ execute:
   echo: false
 description: |
   A summary of the openwashdata community using the VMOST analysis tool. 
-bibliography: references.bib
+bibliography: ../../../references.bib
 ---
 
 # What is VMOST?

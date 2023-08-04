@@ -4,12 +4,15 @@ description: |
   A gallery of presentations, data, lessons, and other media created within openwashdata. 
 ---
 
-Our gallery highlights media created within the openwashdata. We share the proposal that was funded, slides from presentations, lessons, and soon a data catalogue of all published datasets.
+Our gallery highlights media created within the openwashdata. We share our strategy, the proposal that was funded, stats about our products, slides from presentations, lessons, and a data catalogue of all published datasets.
 
 {{< fa database >}} [Data](/pages/gallery/data/index.qmd)
+
+{{< fa bullseye >}} [VMOST](/pages/gallery/vmost/index.qmd)
+
+{{< fa chart-simple >}} [Stats](/pages/gallery/stats/index.qmd)
 
 {{< fa display >}} [Slides](/pages/gallery/slides/index.qmd)
 
 {{< fa book >}} [Funded Proposal](/pages/gallery/proposal/index.qmd)
 
-{{< fa chart-simple >}} [Stats](/pages/gallery/stats/index.qmd)
