@@ -1,0 +1,75 @@
+---
+pagetitle: "VMOST"
+format:
+  html:
+    toc: false
+  pdf: default
+execute:
+  echo: false
+description: |
+  A summary of the openwashdata community using the VMOST analysis tool. 
+bibliography: references.bib
+---
+
+# What is VMOST?
+
+VMOST analysis is a tool used to evaluate if an overall strategy and supporting activities are in alignment. It can be used for current or future plans, and it breaks down a strategy and its core components into an easy-to-consume format [^1] 3. The five core elements of VMOST analysis are vision, mission, objectives, strategies, and tactics [^2].
+
+[^1]: https://getlucidity.com/strategy-resources/guide-to-vmost-analysis/
+
+[^2]: https://fourweekmba.com/vmost-analysis/
+
+# openwashdata community
+
+## Vision
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the great water, sanitation, and hygiene sector.
+
+## Mission
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+## Objectives
+
+<!--# Objectives are SMART; specific, measurable, achievable, relevant, and time-bound, which is essential for effective goal-setting. -->
+
+By the end of March 2024...
+
+1.  Increase the number of datasets published on the website to 20 R data packages.
+2.  Increase the number of datasets that are donated for publication to 50 datasets.
+3.  Increase the number of people that have donated, cleaned, and published data independently with support of the openwashdata team to 5.
+4.  Increase the number of unique visitors to the website to 10 visitors/day.
+5.  Increase global coverage of visitors to the website to 50% of countries globally.
+6.  Increase the number of data users who report having used data published through openwashdata community to 2 uses per dataset on average.
+7.  Increase the number of subscribers to the openwashdata newsletter to 250 subscribers from 50 countries.
+8.  Increase the number of participants in live coding events to 5 participants on average.
+
+## Strategies
+
+<!--# Strategies are the high-level plans that outline how an organization will achieve its goals. They are broad and long-term in nature and provide a starting point to generate ideas on how they may be achieved -->
+
+-   Develop and maintain a data warehouse on the openwashdata website that provides an overview of published datasets.
+-   Develop a guide as a companion to workshops, live coding events, etc. that documents how to participate in the community and publish data following FAIR principles.
+-   Build a cohort of students, scientists, practitioners, and civil servants, that are comfortable using R statistical software for exploratory data analysis and Git version control and GitHub for communication and collaboration.
+-   Prepare all communication material for openwashdata using Quarto publishing framework\^\[https://quarto.org/\] and R statistical software.
+-   Provide tools and resources to promote the use of open data in the WASH sector
+-   Publish workshops as open educational material.
+-   Introduce people to the concept of "open by default", as well as the use of open source software, the concept of open science, and benefits of open government (data).
+-   Build material always in mind with learner personas[^3] that were defined for the community.
+-   Communication material does not refer to openwashdata as a project, but as a community.
+-   Design a common corporate identity using defined color palettes, fonts, etc.
+-   Ensure that material developed for openwashdata follows best practices for accessibility.
+
+[^3]: https://github.com/openwashdata/learner-personas
+
+## Tactics
+
+<!--# Tactics, in comparison to strategies, are the specific measures undertaken by the organization in pursuit of the objectives identified as part of the strategy. Tactics are the actual change projects that will fulfill the strategies. They are the specific actions that an organization takes to achieve its goals. Tactics are more detailed and short-term in nature than strategies. -->
+
+-   Provide a 10-week online workshop for a selected group of participants to share tools and workflows that support publishing of open data following FAIR principles.
+-   Publish monthly blog posts on the openwashdata website about selected open datasets, community stories, workflows, insights into community management, use cases, etc.
+-   Publish monthly issues of the openwashdata newsletter.
+-   Host quarterly community meetups with invited speakers that share stories from their organisations related to data management, data analysis, open data, etc.
+-   Visualize and disseminate published open data using interactive dashboards, maps, articles, etc.
+
+# References
