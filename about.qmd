@@ -14,7 +14,7 @@ The openwashdata community is an ongoing effort that has started in about 2021. 
 
 # VMOST
 
-We have used VMOST as a tool to define our vision and mission, and to evaluate if an overall objectives, strategies and tactics are in alignment [^1].
+We have used VMOST as a tool to define our vision and mission, and to evaluate if overall objectives, strategies and tactics are in alignment [^1].
 
 [^1]: [openwashdata community VMOST analysis](/pages/gallery/vmost/)
 
