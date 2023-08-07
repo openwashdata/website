@@ -1,0 +1,20 @@
+---
+title: "Dr. Matthias (Matt) Bannert"
+subtitle: "Software Engineering"
+image: profile.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/mbannert
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/matt-bannert-078168272/
+    - icon: house
+      text: whatsgood.io
+      href: https://whatsgood.io/
+---
+

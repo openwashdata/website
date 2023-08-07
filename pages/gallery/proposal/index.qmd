@@ -247,7 +247,7 @@ Our proposal is not only open to all research disciplines, thematic areas, geogr
 # read_sheet(ss = "18lYuf2Icdij2N8q_s-9ZbX0DrTa3T9R8t8MOVDLjReE") |>  
 #     readr::write_csv("learner-personas.csv")
 
-readr::read_csv(here::here("pages/proposal/learner-personas.csv")) |> 
+readr::read_csv(here::here("pages/gallery/proposal/learner-personas.csv")) |> 
       knitr::kable(caption = "Overview of learner personas designed for openwashdata community.") 
 
 ```

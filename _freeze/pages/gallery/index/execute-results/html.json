@@ -1,7 +1,7 @@
 {
-  "hash": "703fc3b6c6cfeb3a6927a6d58da0a521",
+  "hash": "41a40bc5a6303a247f0611f84402e16e",
   "result": {
-    "markdown": "---\npagetitle: \"Gallery\"\nformat:\n  html:\n    toc: false\nexecute:\n  echo: false\ndescription: |\n  A gallery of presentations, data, lessons, and other media created within openwashdata. \n---\n\n\n<script defer data-domain=\"openwashdata.org\" src=\"https://plausible.io/js/script.js\"></script>\n\n# Slides\n\n- 🖥 [Colorado WASH Symposium 2023 - openwashdata presentation](slides/cu-wash-symposium-2023-openwashdata/index.html) \n- 🖥 [Colorado WASH Symposium 2023 - openjmp presentation](slides/cu-wash-symposium-2023-openjmp/index.html) ",
+    "markdown": "---\npagetitle: \"Gallery\"\nformat:\n  html:\n    toc: false\nexecute:\n  echo: false\ndescription: |\n  A gallery of presentations, data, lessons, and other media created within openwashdata. \n---\n\n\n# Slides\n\n- 🖥 [Colorado WASH Symposium 2023 - openwashdata presentation](slides/cu-wash-symposium-2023-openwashdata/index.html) \n- 🖥 [Colorado WASH Symposium 2023 - openjmp presentation](slides/cu-wash-symposium-2023-openjmp/index.html) ",
     "supporting": [
       "index_files"
     ],

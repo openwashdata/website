@@ -1,0 +1,18 @@
+---
+title: openwashdata blog
+subtitle:
+    Stories, tutorials, and tips from and for the openwashdata community
+listing:
+  sort: "date desc"
+  contents: "posts/*/index.qmd"
+  type: default
+  fields: [image, date, title, author, description, reading-time]
+  sort-ui: false
+  filter-ui: false
+  categories: true
+  feed: true
+page-layout: full
+title-block-banner: "#5b195b"
+title-block-banner-color: rgb(247,249,251)
+search: false
+---

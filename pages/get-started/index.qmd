@@ -6,3 +6,11 @@ editor: source
 Join the community:
 
 - [Chat](/pages/get-started/chat/index.qmd)
+
+Learn more in our first blog post:
+
+- [openwashdata 101](/pages/blog/posts/2023-07-04-owd101/index.qmd)
+
+Explore our first two published datasets:
+
+- [data](/pages/gallery/data/index.qmd)

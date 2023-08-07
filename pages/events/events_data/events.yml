@@ -1,7 +1,13 @@
 - title: "Colorado WASH Symposium 2023"
   site-url: https://www.colorado.edu/washsymposium/
   date: 2023-03-09
-  categories: [conference]
-  description: |
-    openwashdata - 15-minute conference presentation that introduces the community
+  description: 
+    <a href="https://openwashdata.org/pages/gallery/slides/" target="_blank">openwashdata - 15-minute conference presentation that introduces the community</a>
   calendar: <a title="Add to Calendar" class="addeventatc" data-id="MJ16078482" href="https://www.addevent.com/event/MJ16078482" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+- title: "Stockholm World Water Week 2023"
+  site-url: https://www.worldwaterweek.org/
+  date: 2023-08-20
+  description: 
+    <a href="https://www.susana.org/en/news-and-events/sanitation-events/susana-meetings/2023/859-33rd-susana-meeting" target="_blank">Find us at the 33rd SuSanA Meeting</a>
+  calendar: <a title="Email to meet us" href="mailto:mzhong@ethz.ch, sloos@ethz.ch?bcc=ghe@mavt.ethz.ch&subject=Meeting at Stockholm WWW 2023" target="_blank">Send Email</a>

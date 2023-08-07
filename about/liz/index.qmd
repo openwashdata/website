@@ -1,0 +1,22 @@
+---
+title: "Prof. Dr. Elizabeth (Liz) Tilley"
+subtitle: "Principal Investigator"
+image: profile-liz.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/elizabeth-tilley
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/elizabeth-tilley-8103b38a/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0000-0002-2095-9724
+---
+
+
+
