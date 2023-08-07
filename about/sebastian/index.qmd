@@ -1,5 +1,5 @@
 ---
-title: "Sebastion Loos"
+title: "Sebastian Loos"
 subtitle: "Data Scientist"
 image: profile-sebastian.png
 about:
@@ -12,10 +12,10 @@ about:
       href: https://github.com/sebastian-loos
     - icon: linkedin
       text: Linkedin
-      href: https://www.linkedin.com/in/larsschoebitz/
+      href: https://www.linkedin.com/in/sebastian-loos/
     - icon: search
       text: ORCID
       href: https://orcid.org/0000-0002-8830-1734
 ---
 
-
+Sebastian is a mechanical engineering student with a keen interest in open science and has been a member of the Global Health Engineering Group for over a year. He wrote his bachelor's thesis with the group and continued with an internship as a research assistant. Currently, he is part of the openwashdata project and contributing to data processing of the published data packages.
