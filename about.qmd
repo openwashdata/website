@@ -1,0 +1,33 @@
+---
+title: "About"
+listing:
+  contents: "about/*/index.qmd"
+  fields: [image, title, subtitle]
+  type: grid
+  sort-ui: false
+  filter-ui: false
+  categories: false
+bibliography: references.bib
+---
+
+The openwashdata community is an ongoing effort that has started in about 2021. While WASH (Water, Sanitation, and Hygiene) is in our acronym, we do not limit ourselves to data strictly from these three domains. Rather, we consider all domains effecting global health to be a part of this community. Beyond WASH, that is solid waste management, faecal sludge management, air quality, development economics, etc.
+
+# VMOST
+
+We have used VMOST as a tool to define our vision and mission, and to evaluate if overall objectives, strategies and tactics are in alignment [^1].
+
+[^1]: [openwashdata community VMOST analysis](/pages/gallery/vmost/)
+
+## Vision
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the great water, sanitation, and hygiene sector.
+
+## Mission
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+# Team
+
+We received funding for the first time in 2023 and are comprised of a small team actively working on building the community.
+
+Find out here who is behind all this.

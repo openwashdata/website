@@ -3,12 +3,27 @@ project:
 
 website:
   title: "openwashdata"
+  site-url: https://openwashdata.org/
+  description: "Website of the openwashdata community"
   page-navigation: true
   search: false
   page-footer: 
     left: | 
         This project was supported by the 
         [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/)
+    right:
+      - text: About
+        href: about.qmd
+      - icon: "envelope-at"
+        href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
+        aria-label: Email
+      - icon: github
+        href: https://github.com/openwashdata
+        aria-label: GitHub
+      - icon: chat-left-dots
+        href: https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch
+        aria-label: Matrix
+
   navbar:
     background: "#5b195b"
     title: false
@@ -16,27 +31,32 @@ website:
     left:
       - text: "Overview"
         href: index.qmd
+      - text: "About"
+        href: about.qmd
       - text: "Get Started"
         href: pages/get-started/index.qmd
-      - text: "Events"
-        href: pages/events/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
-      - text: "Proposal"
-        href: pages/proposal/index.qmd
-      - text: "Help"
+      - text: "Events"
+        href: pages/events/index.qmd
+      - text: "Blog"
+        href: pages/blog/index.qmd
+      - text: "Support"
         menu:
-          - text: "Donate data"
-            icon: "clipboard-data"
-            href: "https://github.com/openwashdata/data/issues"
+          - text: "Email us"
+            icon: "envelope-at"
+            href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
           - text: "Report a Bug"
             icon: "bug"
             href: "https://github.com/openwashdata/book/issues"
+          - text: "Donate data"
+            icon: "clipboard-data"
+            href: "https://github.com/openwashdata/data/issues"
 
     right:
-      - icon: twitter
-        href: https://twitter.com/openwashdata
-        aria-label: Twitter
+      - icon: envelope-at-fill
+        href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
+        aria-label: Email
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
@@ -49,16 +69,40 @@ website:
       align: left
       contents:
         - pages/get-started/index.qmd
-        - text: "Tutorial: Chat"
+        - text: "Chat"
           href: pages/get-started/chat/index.qmd
+          
+    - id: gallery
+      title: "Gallery"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - text: "Data"
+          href: pages/gallery/data/index.qmd
+        - text: "VMOST"
+          href: pages/gallery/vmost/index.qmd
+        - text: "Stats"
+          href: pages/gallery/stats/index.qmd
+        - text: "Slides"
+          href: pages/gallery/slides/index.qmd
+        - text: "Proposal"
+          href: pages/gallery/proposal/index.qmd
         
 format:
   html:
-    theme: [cosmo, theme.scss]
+    theme:
+      light: [litera, theme.scss]
+    highlight-style: a11y-dark
     css: styles.css
     code-copy: true
     code-overflow: wrap
     toc: true
+    mainfont: "Atkinson Hyperlegible"
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
     include-in-header: 
         - text: |
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>

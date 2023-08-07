@@ -1,0 +1,21 @@
+---
+title: "Sebastion Loos"
+subtitle: "Data Scientist"
+image: profile-sebastian.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/sebastian-loos
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/larsschoebitz/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0000-0002-8830-1734
+---
+
+

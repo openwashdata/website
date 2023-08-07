@@ -12,6 +12,8 @@ You will need a chat client which can either be web-based in your browser or ins
 
 This tutorial explains how to join the openwashdata chat space using the **Element (Desktop) App**. If you want to use the client please follow the steps below for non ETH Zürich members and [Join Matrix as a member of ETH](#sec-join-eth) for ETH members.
 
+{{< fa envelope-circle-check >}} If we can support you to setup the chat, get in touch with us via <a href="mailto:ghe@mavt.ethz.ch?subject=openwashdata support" target="_blank">Email</a> and we will schedule a call for a walk through. 
+
 ## Join Matrix outside ETH {#sec-join-outside-eth}
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
