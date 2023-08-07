@@ -3,7 +3,6 @@ pagetitle: "VMOST"
 format:
   html:
     toc: false
-  pdf: default
 execute:
   echo: false
 description: |
