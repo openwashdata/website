@@ -15,3 +15,4 @@ about:
       href: https://orcid.org/0009-0009-4546-7214
 ---
 
+Mian Zhong is a data scientist enthusiastic of building applications for social good. She is developing code, datasets, and events for openwashdata to promote open science practice in WASH sector. With expertise in natural language processing (NLP), she hopes to unleash the potential of "Text as Data" for openwashdata community! 

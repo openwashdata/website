@@ -21,8 +21,8 @@
 }
 
 .hero-banner .content-block {
+  min-width: 300px;
   max-width: 600px;
-  z-index: 2;
 }
 
 .hero-banner a[role="button"] {
