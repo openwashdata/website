@@ -1,0 +1,37 @@
+---
+title: "openwashdata academy"
+---
+
+The mission of this community is to empower WASH professionals to engage with tools and workflows for open data and code. To fullfil this mission, we offer learning events that are free for anyone to participate in.
+
+## data science for openwashdata
+
+This course provides learners with skills in using tools and workflows for reproducible data anaylsis and methods aligned with Open Science principles.
+
+Learners will be able to:
+
+- use the [tidyverse collection of R packages for data science](https://www.tidyverse.org/) to explore and visualise data,
+- use the [Quarto publishing system](https://quarto.org/) to produce scholarly documents with citations, footnotes, cross-references, figures, and tables,
+- use git version control to efficiently track changes to files within a folder, 
+- use GitHub and the GitHub issue tracker for collaboration and task management, 
+- use GitHub Pages to publish a public website to share data communication products (blog, slides, articles) with a broad audience,
+- use Zotero as a reference management software in combintation with Better BibTex Format to create an automated reference list in written documents
+
+To participate in this course, you need:
+
+- to have a stable internet connection
+- to somewhat be connected to the greater Water, Sanitation and Hygiene (WASH) sector (yes, public health, solid waste management, global health engineering, and related topics also count)
+- to commit 7 * 2.5 hours to participate in Zoom calls
+- to commit another 2 hours/week for readings and additional exercises for practice
+- to identify a dataset of your own or your organisation that you are interested to share with the public
+- an openess to new ideas and workflows that disrupt current practice
+
+This course is:
+
+- free
+- using exclusively tools that are free and open source
+- offers 1:1 coding support between lectures and beyond the course
+
+If you are interested, register now using the following Google Form:
+
+...
