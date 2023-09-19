@@ -30,8 +30,9 @@ This course is:
 
 - free
 - using exclusively tools that are free and open source
+- running Tuesdays, 2 pm CET from 31st October 2023 to 16th January 2024 (two week break on 26th December and 2nd January)
 - offers 1:1 coding support between lectures and beyond the course
 
-If you are interested, register now using the following Google Form:
+If you are commited to join our first course offer, register using the following Google Form:
 
 ...
