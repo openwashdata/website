@@ -33,8 +33,8 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
-      - text: "Get Started"
-        href: pages/get-started/index.qmd
+      - text: "Community"
+        href: pages/community/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
       - text: "Events"
@@ -62,15 +62,15 @@ website:
         aria-label: GitHub
 
   sidebar:
-    - id: get-started
-      title: "Get Started"
+    - id: community
+      title: "Community"
       style: "floating"
       collapse-level: 2
       align: left
       contents:
-        - pages/get-started/index.qmd
+        - pages/community/index.qmd
         - text: "Chat"
-          href: pages/get-started/chat/index.qmd
+          href: pages/community/chat/index.qmd
           
     - id: gallery
       title: "Gallery"
