@@ -13,8 +13,7 @@ about:
     - icon: linkedin
       text: Linkedin
       href: https://www.linkedin.com/in/matt-bannert-078168272/
-    - icon: house
-      text: whatsgood.io
-      href: https://whatsgood.io/
+    - icon: twitter
+      href: https://twitter.com/whatsgoodio
 ---
 
