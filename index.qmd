@@ -23,9 +23,17 @@ Our mission is to empower WASH professionals to engage with tools and workflows 
 
 ***
 
+::: {.callout-important}
+## Free data science course
+Sign-up for our first course on **data science for openwashdata**:  <https://ds4owd-001.github.io/website/>
+:::
+
+
+***
+
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
-[Community](pages/community/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
+[Get Started](pages/get-started/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
 [News](https://buttondown.email/openwashdata/archive){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
 ::: 
 
