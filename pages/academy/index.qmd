@@ -4,7 +4,7 @@ title: "openwashdata academy"
 
 The mission of this community is to empower WASH professionals to engage with tools and workflows for open data and code. To fullfil this mission, we offer learning events that are free for anyone to participate in.
 
-## data science for openwashdata
+## data science for openwashdata (ds4owd)
 
 This course provides learners with skills in using tools and workflows for reproducible data anaylsis and methods aligned with Open Science principles.
 
