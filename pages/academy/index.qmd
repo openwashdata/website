@@ -1,0 +1,25 @@
+---
+title: "openwashdata academy"
+---
+
+The mission of this community is to empower WASH professionals to engage with tools and workflows for open data and code. To fullfil this mission, we offer learning events that are free for anyone to participate in.
+
+## data science for openwashdata (ds4owd)
+
+Find all details about how to sign-up for our first edition of this course here: <https://ds4owd-001.github.io/website/>
+
+To participate in this course, you need:
+
+- to have a stable internet connection
+- to somewhat be connected to the greater Water, Sanitation and Hygiene (WASH) sector (yes, public health, solid waste management, global health engineering, and related topics also count)
+- to commit 10 * 2.5 hours to participate in Zoom calls
+- to commit another 2 hours/week for readings and additional exercises for practice
+- to identify a dataset of your own or your organisation that you are interested to share with the public
+- an openess to new ideas and workflows that disrupt current practice
+
+This course is:
+
+- free
+- using exclusively tools that are free and open source
+- offers 1:1 coding support between lectures and beyond the course
+
