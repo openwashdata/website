@@ -1,11 +1,11 @@
 ---
-title: "Community"
+title: "Get Started"
 editor: source
 ---
 
 Join the community:
 
-- [Chat](/pages/community/chat/index.qmd)
+- [Chat](/pages/get-started/chat/index.qmd)
 
 Learn more in our first blog post:
 
