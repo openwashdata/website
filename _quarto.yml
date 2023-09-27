@@ -35,6 +35,8 @@ website:
         href: about.qmd
       - text: "Community"
         href: pages/community/index.qmd
+      - text: "Academy"
+        href: pages/academy/index.qmd
       - text: "Gallery"
         href: pages/gallery/index.qmd
       - text: "Events"
