@@ -6,7 +6,7 @@ The mission of this community is to empower WASH professionals to engage with to
 
 ## data science for openwashdata (ds4owd)
 
-Find all details about how to sign-up for our first edition of this course here: <https://ds4owd-001.github.io/website/>
+You can find all details about this course and how to sign-up for it here: https://ds4owd-001.github.io/website/
 
 To participate in this course, you need:
 
@@ -20,6 +20,8 @@ To participate in this course, you need:
 This course is:
 
 - free
+- provides you with a certificate for successful completion
 - using exclusively tools that are free and open source
 - offers 1:1 coding support between lectures and beyond the course
+
 
