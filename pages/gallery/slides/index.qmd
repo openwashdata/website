@@ -2,13 +2,11 @@
 title: "Slides"
 ---
 
-<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
-
 ## ETH brownbags lunch
 
-[View slides in full screen](eth-brownbags-lunch/index.html) | [Download slides as PDF](https://github.com/Global-Health-Engineering/website/blob/main/1-slides/d03-hubris-to-hope-reference-management.pdf)
+[View slides in full screen](eth-brownbags-lunch/) | [Download slides as PDF](https://github.com/Global-Health-Engineering/website/blob/main/1-slides/d03-hubris-to-hope-reference-management.pdf)
 ```{=html}
-<iframe class="slide-deck" src="eth-brownbags-lunch/index.html" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+<iframe class="slide-deck" src="eth-brownbags-lunch/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
 ```
 
 
