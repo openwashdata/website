@@ -4,6 +4,14 @@ title: "Slides"
 
 <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
+## ETH brownbags lunch
+
+[View slides in full screen](cu-wash-symposium-2023-openwashdata/) 
+```{=html}
+<iframe class="slide-deck" src="cu-wash-symposium-2023-openwashdata/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
+
 ## openwashdata
 
 [View slides in full screen](cu-wash-symposium-2023-openwashdata/) 
