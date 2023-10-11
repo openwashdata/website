@@ -32,7 +32,7 @@ website:
     favicon: "images/OWD-logo-18.png"
     collapse-below: lg
     left:
-      - text: "Overview"
+      - text: " "
         href: index.qmd
       - text: "About"
         href: about.qmd
@@ -48,6 +48,8 @@ website:
         href: pages/events/index.qmd
       - text: "Blog"
         href: pages/blog/index.qmd
+      - text: "Partners"
+        href: pages/partners/index.qmd
       - text: "Support"
         menu:
           - text: "Email us"
