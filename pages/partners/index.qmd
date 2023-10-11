@@ -1,0 +1,13 @@
+---
+title: "Partners"
+listing:
+  contents: "*/index.qmd"
+  fields: [image, title, subtitle]
+  type: grid
+  sort-ui: false
+  filter-ui: false
+  categories: false
+---
+
+Our partnerships are informal and based on our common interest in open data and code. They comprise of contributors to the community, as well as other open data initiatives in the WASH sector. In the future, these partnerships could be formalized through identifying financial resources for a collaboration to support the community.
+

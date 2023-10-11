@@ -1,0 +1,36 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$font-family-monospace: "Source Code Pro", monospace;
+$body-bg: #fff;
+$link-color: #42affa;
+$presentation-heading-color: #5b195b; 
+$code-color: #ED6D37; 
+$code-bg: #F5F5F5;
+$code-block-bg: #F5F5F5;
+$code-block-font-size: 0.9em;
+$presentation-h2-font-size: 1.4em !default;
+$presentation-font-size-root: 36px !default;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+
+.highlight-yellow {
+  background-color: #FAE3B4;
+  padding: 0.0em 0.1em;
+}
+
+.center-align {
+  text-align: center;
+}

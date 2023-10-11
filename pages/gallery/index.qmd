@@ -12,7 +12,7 @@ Our gallery highlights media created within the openwashdata. We share our strat
 
 {{< fa chart-simple >}} [Stats](/pages/gallery/stats/index.qmd)
 
-{{< fa display >}} [Slides](/pages/gallery/slides/index.qmd)
+{{< fa display >}} [Slides](/pages/gallery/slides/)
 
 {{< fa book >}} [Funded Proposal](/pages/gallery/proposal/index.qmd)
 
