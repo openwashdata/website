@@ -4,7 +4,7 @@ title: "Slides"
 
 ## ETH brownbags lunch
 
-[View slides in full screen](eth-brownbags-lunch/) | [Download slides as PDF](https://github.com/Global-Health-Engineering/website/blob/main/1-slides/d03-hubris-to-hope-reference-management.pdf)
+[View slides in full screen](eth-brownbags-lunch/) 
 ```{=html}
 <iframe class="slide-deck" src="eth-brownbags-lunch/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
 ```
