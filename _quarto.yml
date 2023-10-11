@@ -32,7 +32,7 @@ website:
     favicon: "images/OWD-logo-18.png"
     collapse-below: lg
     left:
-      - text: "Overview"
+      - text: " "
         href: index.qmd
       - text: "About"
         href: about.qmd
@@ -43,11 +43,13 @@ website:
       - text: "Academy"
         href: pages/academy/index.qmd
       - text: "Gallery"
-        href: pages/gallery/index.qmd
+        href: pages/gallery/
       - text: "Events"
         href: pages/events/index.qmd
       - text: "Blog"
         href: pages/blog/index.qmd
+      - text: "Partners"
+        href: pages/partners/index.qmd
       - text: "Support"
         menu:
           - text: "Email us"
@@ -99,7 +101,7 @@ website:
 format:
   html:
     theme:
-      light: [litera, theme.scss]
+      light: [litera, style/theme.scss]
     highlight-style: a11y-dark
     css: styles.css
     code-copy: true

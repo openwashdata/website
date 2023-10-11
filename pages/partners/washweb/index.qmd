@@ -1,0 +1,25 @@
+---
+title: "WASH Web"
+subtitle: "Add subtitle"
+image: Logo_transparent_long-washnote.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: rectangle
+  links:
+    - icon: house
+      text: Homepage
+      href: https://washweb.org/
+    - icon: github
+      text: GitHub
+      href: https://github.com/WASHNote/WASHWeb/issues
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/company/wash-note/
+---
+
+Some text describing WASH Web.
+
+We partner with WASH Web on further development of the [jmpwashdata R package](https://github.com/WASHNote/jmpwashdata) and contribute to the working group initiative **Using Data Better**. 
+
+
