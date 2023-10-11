@@ -15,7 +15,7 @@ format:
     pointer:
       pointerSize: 22
       color: '#5b195b' 
-    theme: [default, "slides.scss"]
+    theme: "../slides.scss"
     transition: fade
     slide-number: true
     chalkboard: 

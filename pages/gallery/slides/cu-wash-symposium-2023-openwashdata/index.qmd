@@ -23,7 +23,7 @@ format:
       ticks: 400
       colors: ["#5b195b", "#5b195b", "#5b195b"]
       scalar: 0.7
-    theme: [default, "slides.scss"]
+    theme: ["../slides.scss"]
     transition: fade
     slide-number: true
     chalkboard: 
