@@ -117,4 +117,4 @@ format:
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
 execute: 
-  freeze: auto
+  freeze: false
