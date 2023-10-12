@@ -22,9 +22,38 @@ editor_options:
 bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
 ---
 
-# openwashdata community {background-color="#5b195b"}
 
-<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+# Hello! `r emo::ji("wave")` {background-color="#5b195b"}
+
+## Lars Schöbitz
+
+::: columns
+::: {.column width="50%"}
+![](../images/lars_schoebitz_profile_photo.jpg){fig-alt="Headshot of Lars Schöbitz" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   Environmental Engineer\
+-   Open Science Specialist at Global Health Engineering
+-   [RStudio certified instructor](https://education.rstudio.com/trainers/) for Data Science with R
+:::
+:::
+
+## My role - **Open Science Specialist**
+
+-   research data management
+-   reproducible workflows
+-   mindset for Open Science
+-   research communication
+-   teaching data science tools
+-   proposal writing
+
+::: footer
+Job Description: [Open Science Specialist](https://github.com/Global-Health-Engineering/job-descriptions/blob/main/open-science-specialist/README.md)
+:::
+
+
+# openwashdata community {background-color="#5b195b"}
 
 ## openwashdata community
 
