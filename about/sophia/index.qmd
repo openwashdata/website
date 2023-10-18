@@ -15,7 +15,7 @@ about:
       href: https://www.linkedin.com/in/sophia-skorik-510bab18b/
     - icon: search
       text: ORCID
-      href: ""
+      href: https://orcid.org/0009-0001-4755-1649
 ---
 
 
