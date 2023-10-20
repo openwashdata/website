@@ -1,0 +1,30 @@
+---
+title: "Tutorial: Make data dictionary"
+---
+
+For each dataset, we need a dictionary to explain what variables mean. This is important
+for other people to understand and work with the data. 
+
+1. existing dictionary 
+- Rename your dictionary file as `raw_dictionary`
+- Submit the dictionary file into `data-raw` folder 
+- Respond to openwashdata development team follow-up questions
+- Review final dictionary file
+     
+2. new dictionary
+- Get access of the dictionary google sheet (prepared by openwashdata dev)
+- Fill in the description column
+    - DO NOT CHANGE OTHER COLUMNS
+- Reivew final dictionary file
+
+guidelines of writing description
+- be self-contained, the description should stand alone to understand the variable
+- give examples
+- be clear, mention needed pieces, value range, unit, 
+- be concise, keep the length short
+
+delete variables 
+The dataset may have more than 50 variables and sometimes it is not practical to write down all descriptions. 
+
+
+old_variable_name, new_var_name, description
