@@ -1,0 +1,21 @@
+---
+title: "Sophia Skorik"
+subtitle: "Computer Scientist"
+image: ""
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/sskorik01
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/sophia-skorik-510bab18b/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0001-4755-1649
+---
+
+
