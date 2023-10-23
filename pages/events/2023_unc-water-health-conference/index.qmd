@@ -1,0 +1,99 @@
+---
+title: "Data: A Key to Unlocking Quality in WASH Programmes"
+description: |
+  Welcome to the side event page of "Data: A Key to Unlocking Quality in WASH programmes" for UNC Water and Health Conference 2023!
+
+date: "`r Sys.Date()`"
+site: distill::distill_website
+---
+
+```{=html}
+<script async defer data-domain="" src=""></script>
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+# 👋 Welcome
+
+The data landscape in which WASH programmes are delivered is growing rapidly. Data is a critical resource for contemporary WASH projects, providing valuable insights into people, places, and programmes. However, there is still much to learn about how insights can be unlocked from these ever-growing data streams to drive more effective, efficient, and accountable programming.
+
+Through a facilitated discussion, we hope to share perspectives on the current state and trajectory of WASH programme data, identify gaps and opportunities where data analytics and modelling could help improve programmes, and foster partnerships and collaboration between organisations working in this space.
+
+We see tremendous opportunities for leveraging the power of data to improve the effectiveness of WASH interventions in humanitarian and development settings. By better using monitoring data to understand public health risks, prioritize responses, and enable evidence-based programmatic decision-making, we can better target interventions to those most in need, monitor progress, and ensure impact more effectively, and hold ourselves accountable to the communities we serve.
+
+## 📆 Event Details
+
+-   **Date:** Friday, October 27, 8:30 - 10:00 AM (Eastern Time)
+
+-   **In-person Venue** Sunflower Room, Friday Conference Center, Chapel Hill, North Carolina, U.S.A. <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.937026199555!2d-79.01509692418308!3d35.89955797251748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace825f23154f7%3A0x246b4571eb67567e!2sThe%20Friday%20Conference%20Center%20at%20UNC!5e0!3m2!1sen!2sch!4v1697639439786!5m2!1sen!2sch" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+-   **Virtual Participation**: [Register to attend the UNC Water & Health online for free](https://register.waterandhealthconference.com/register/)
+
+-   **Time:**
+
+    -   6:30 AM (MST - Boulder, USA)
+    -   2:30 PM (CET - Zürich, Switzerland)
+    -   3:30 PM (EAT - Nairobi, Kenya)
+    -   8:30 PM (CST - Beijing, China)
+    -   11:30 PM (NSW - Sydney, Australia)
+
+-   **Convernors**
+
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Convernors                                                                            | Affiliations                                                                                                                                                                    |
+    +=======================================================================================+=================================================================================================================================================================================+
+    | [Mian Zhong](https://openwashdata.org/about/mian/)                                    | [openwashdata](https://openwashdata.org), Global Health Engineering Group, ETH Zurich                                                                                           |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | [James Elliot Brown](https://www.yorku.ca/dighr/person/james-brown/)                  | [The Safe Water Optimization Tool (SWOT)](https://www.safeh2o.app/), Dahdaleh Institute for Global Health Research, York University                                             |
+    |                                                                                       |                                                                                                                                                                                 |
+    | [Dr. Imran Ali](https://www.yorku.ca/dighr/person/syed-imran-ali/)                    |                                                                                                                                                                                 |
+    |                                                                                       |                                                                                                                                                                                 |
+    | [Michael De Santi](https://www.yorku.ca/dighr/person/michael-de-santi/)               |                                                                                                                                                                                 |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | [Dr. Rachel Peletz](https://aquaya.org/board-members/rachel-peletz/)                  | [Aquaya](https://aquaya.org/)                                                                                                                                                   |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | [Dr. Denis Macharia Muthike](https://www.colorado.edu/center/mortenson/denis-muthike) | [The Drought Resilience Impact Platform](https://www.colorado.edu/center/mortenson/DRIP), Mortenson Center in Global Engineering & Resilience, University of Colorado, Boulder  |
+    |                                                                                       |                                                                                                                                                                                 |
+    | [Dr. Laura MacDonald](https://www.colorado.edu/center/mortenson/laura-macdonald-phd)  |                                                                                                                                                                                 |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | [Dr. Sydney Hubbard](https://www.mwater.co/hubbard-sydney)                            | [mWater](https://www.mwater.co/)                                                                                                                                                |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Dr. Katy Sill                                                                         | [Water Point Data Exchange](https://www.waterpointdata.org/)                                                                                                                    |
+    +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+## 📝 Session Agenda
+
+-   8:30 - 8:45 AM Welcome and Introduction
+-   8:45 - 9:45 AM Discussion Groups
+-   9:45 - 10:00 AM Feedback in Plenary and Closing
+
+# 🏁 Objectives
+
+In this event, we aim to create space for an inclusive discussion between experts working on WASH data initiatives and users of WASH data products and technologies. We aim to:
+
+-   Develop a **collective understanding** of the challenges and opportunities for leveraging field-level WASH data to generate insights for improving the effectiveness, efficiency, and accountability of WASH programmes.
+-   Identify **research gaps** from the perspectives of implementers, donors, coordination platforms, and affected populations that could be addressed.
+-   **Discover who is working** in this space and identify opportunities for collaboration and partnership.
+-   Provide a space for **showcasing data initiatives** and ideas for future development that aim to improve WASH programming effectiveness, efficiency, and accountability.
+
+# 💧 Discussion Themes
+
+The following themes have been proposed to reflect the experience of the co-convenors:
+
+-   Measuring what matters: Indicators and tools for data collection;
+-   Open data -- Transparency, attribution, privacy
+-   Analysis and driving action -- closing the loop
+-   Data integration, forecasting and collaboration
+
+# 💻 Virtual Engagement
+
+This year UNC Water & Health Conference has virtual venue to participate in the conference. We welcome virtual participation in this event, [register here to attend the UNC Water & Health online for free](https://register.waterandhealthconference.com/register/).
+
+# Reflections
+
+TBA

@@ -1,7 +1,7 @@
 ---
 title: "WASH Web"
-subtitle: "Add subtitle"
-image: Logo_transparent_long-washnote.png
+subtitle: "making WASH information discoverable, representative, and useful"
+image: 274307545-078b7144-60e0-44e4-8c47-98447e94e29b.png
 about:
   template: trestles
   image-width: 10em
@@ -15,10 +15,10 @@ about:
       href: https://github.com/WASHNote/WASHWeb/issues
     - icon: linkedin
       text: Linkedin
-      href: https://www.linkedin.com/company/wash-note/
+      href: https://www.linkedin.com/company/washweb/
 ---
 
-Some text describing WASH Web.
+WASH Web is a set of participatory initiatives to give you and everyone you know better access to water, sanitation and hygiene (WASH) information. WASH Web is made up of people and organizations that work to fill WASH gap to make data discoverable, usable and representative. WASH Web is meant to serve as an open platform and requires diverse inputs to work.
 
 We partner with WASH Web on further development of the [jmpwashdata R package](https://github.com/WASHNote/jmpwashdata) and contribute to the working group initiative **Using Data Better**. 
 

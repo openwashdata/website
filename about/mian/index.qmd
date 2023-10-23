@@ -12,7 +12,7 @@ about:
       href: https://github.com/mianzg
     - icon: linkedin
       text: Linkedin
-      href: www.linkedin.com/in/mian-zhong-7aab10274
+      href: https://www.linkedin.com/in/mian-zhong-7aab10274/
     - icon: search
       text: ORCID
       href: https://orcid.org/0009-0009-4546-7214
