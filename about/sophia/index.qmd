@@ -1,7 +1,7 @@
 ---
 title: "Sophia Skorik"
 subtitle: "Computer Scientist"
-image: ""
+image: "SophiaSkorik.jpg"
 about:
   template: trestles
   image-width: 10em
@@ -18,4 +18,4 @@ about:
       href: https://orcid.org/0009-0001-4755-1649
 ---
 
-
+Sophia, a Computer Science student at ETH Zürich, is on a mission to use her tech skills for a greater good. She's currently interning with the Global Health Engineering Group, working on the openwashdata project. Her role involves handling and processing data in the Water, Sanitation, and Hygiene (WASH) sector. Additionally, Sophia contributes to the openwashdata course, which equips WASH professionals with the tools and workflows needed for open data and code.
