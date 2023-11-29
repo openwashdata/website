@@ -1,0 +1,21 @@
+---
+title: "WASH AI"
+subtitle: "Rethinking WASH Knowledge"
+image: wash_ai_logo_text_large.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: rectangle
+  links:
+    - icon: house
+      text: Homepage
+      href: https://www.washai.org/
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/showcase/wash-ai/
+---
+
+WASH AI is an innovative knowledge-sharing platform designed to transform the accessibility and understanding of Water, Sanitation, and Hygiene (WASH) information. Moving beyond traditional search methods, it integrates hundreds of thousands of curated WASH resources, ensuring a comprehensive and up-to-date knowledge base. The platform's knowledge is updated daily and offers interactive, context-specific insights in various languages, enhancing decision-making processes. Its advanced AI capabilities simplify the complexities of WASH through a combination of text, images, and learning tools, aiming to make WASH knowledge more accessible and understandable for a diverse audience.
+
+We partner with WASH AI as an alignment with our mission and value and feel confident that there will be opportunities to contribute to each others work. 
+
