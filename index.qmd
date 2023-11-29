@@ -22,15 +22,6 @@ toc: false
 Our mission is to empower WASH professionals to engage with tools and workflows for open data and code.
 
 ***
-
-::: {.callout-important}
-## Side Event: UNC Water & Health Conference 2023
-Join us at the side event ["Data A Key to Unlocking Quality in WASH Programmes"](/pages/events/2023_unc-water-health-conference/) on Friday, 27th October: <https://openwashdata.org/pages/events/2023_unc-water-health-conference/>
-:::
-
-
-***
-
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Get Started](pages/get-started/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
