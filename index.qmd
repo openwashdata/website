@@ -22,6 +22,14 @@ toc: false
 Our mission is to empower WASH professionals to engage with tools and workflows for open data and code.
 
 ***
+
+::: {.callout-important}
+## openwashdata webinar: a data sharing workflow that may please the publishers
+Join us for our first webinar with with the Public Library of Science (PLOS) on **January 23, 2:00 - 3:00 PM (CET)**. where we will introduce you to a workflow for sharing data openly. You will learn about the importance of open data and tangible benefits for sharing. <https://openwashdata.org/pages/events/2023-01-24-webinar-data-publishing/>
+:::
+
+
+***
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Get Started](pages/get-started/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
