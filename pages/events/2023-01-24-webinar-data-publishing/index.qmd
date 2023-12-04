@@ -14,7 +14,7 @@ editor_options:
 
 Are you wondering why anyone should be interested in your data beyond your project? Do you want to know how to satisfy publisher policies for sharing your data in the process of submitting your scientific article? 
 
-Join us for this joint webinar with PLOS Water to learn more about:
+Join us for this joint webinar with PLOS to learn more about:
 
 - the openwashdata community and PLOS Water community
 - a workflow for sharing data following FAIR principles for data management @wilkinson2016
@@ -26,7 +26,7 @@ Join us for this joint webinar with PLOS Water to learn more about:
 
 -   **Date:** Tuesday, January 23, 2:00 - 3:00 PM (CET)
 
--   **Zoom Registration**: ADD LINK
+-   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/u50lce-vrD0iGN06ywPHr2gPU84Ljr_zmNAf>
 
 -   `r emo::ji("us")` 6:00 AM (MST - Boulder, USA) 
 -   `r emo::ji("uk")` 1:00 PM (GMT - London, UK)
