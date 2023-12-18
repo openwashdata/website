@@ -1,0 +1,140 @@
+
+
+
+
+# Lay summary (public, 1/2 page) 
+
+Please summarise the objectives of the project, explain the progress achieved so far and – if applicable - the planned activities for the next period. This lay summary  (maximum:  ½ page) should be understandable by a non-expert audience and will be used for outreach and communications activities. By submitting this lay summary, you thus agree to making it potentially public. 
+
+https://www.snf.ch/SiteCollectionDocuments/allg_laysummary_bsp_d.pdf
+
+
+
+# Achievements (2 pages)
+
+Please describe the work conducted and what was achieved since the beginning of the project, referring to the planned objectives, milestones, and expected results described in the proposal (maximum: 2 pages). You should also explain how the project contributes to the wider aims of the ORD Explore programme (please refer to page 1 of the application guidelines for Contribute). 
+
+This Project consists of 5 main Work Packages: WP0: Infrastructure design and installation; WP1: Mobilize community; WP2: Mobilize data; WP3: Data cleaning; and WP4: Data sharing and data publishing, which are elaborated in detail below.
+
+## WP0: Infrastructure Design and Installation
+
+:::{.callout-note}
+
+## Goal: The Goal of WP0 is to prototype a technical foundation for the ORD toolchain at ETH in a a way that allows teaching and scientific collaboration to continue beyond the explore project’s funding.
+
+The activities of WP0 were completed in the first three months of the project.
+
+**RQ 0.1:** What are the costs and requirements for ORD tools to be hosted and maintained within the ETH domain?
+
+**Activity 0.1:** Collaborate with ETH IT Services to establish Virtual Machines and RStudio Server (open source version) for 50 learners
+
+Instead of setting up Virtual Machines and RStudio Server, we decided to use Posit Cloud by Posit PBC, which is a cloud-based version of RStudio Server. The main advantage of Posit Cloud is that it is easier to set up and maintain than Virtual Machines. As an academic institution, we are eligble to an Instructor license for Posit Cloud, which allows unlimited shared spaces and projects. It includes 300 compute hours per month and additional compute hours can be purchased at 10 cents per hour. The cost of the Instructor license is 15 USD per month and during peak teaching activity in October we pay 50 USD for additional compute hours.
+
+**Activity 0.2:** Evaluate the advantages and disadvantages of three open source tools for communication (Slack, Discord, Matrix Protocol)
+
+We decided to use the Matrix Protocol for communication. The main advantage of Matrix is that it is open source and decentralized. While the per user pricing models of software-as-a-service (SaaS) providers like Slack or Discord allow to use all of features without thinking of operating an own server, the underlying software is not open source nor do we have control over the data. Fortunately, ETH Zurich operates a so-called homeserver for the *matrix* network. This means that we can use the *matrix* network for secure, decentralized communication without having to operate our own server.
+
+**Activity 0.3:** Compare hosting costs and technical overhead (maintenance) of Posit Cloud by RStudio PBC with Virtual Machines hosted at ETH Zurich.
+
+This activity is ongoing and will be completed by the end of the project.
+
+:::
+
+## WP1: Mobilize Community
+
+:::{.callout-note}
+
+## Goal: Create and grow an international network of data-curious practitioners and students who may be interested in pursuing one or more of the subsequent activities.
+
+**Activity 1.1:** Advertising the opportunities to contribute to the openwashdata community
+
+We advertised the opportunities to contribute to the openwashdata community at three conferences, two of which with accepted abstracts for presentation and a side event. Beyond this, we have actively used the Global Health Engineering LinkedIn account (> 1600 followers as of December 2023) to advertise for the openwashdata community. However, our main activity to advertise the openwashdata community was to develop and teach a 10 x 2.5 hour online course for data science with R. We anticipate 40 graduates, each of which will prepare a final capstone project report with their own data and publish it openly using GitHub Pages. We will invite every who publishes their capstone project report to work with us on publishing their data using our defined data publishing workflow. Please refer to the table in Section X for detailed numbers.
+
+**Activity 1.2:** Weekly live-coding event to engage early adopters and demonstrate the low-barrier of entry to the data-sceptical
+
+We have not hosted any live coding events yet. While we expected that hosting such events would be straightforward, we have not given it priority over other activities. 
+
+:::
+
+## WP2: Data sharing
+
+:::{.callout-note}
+
+## Goal: Solicit and receive interest in providing data to be published openly; develop an easy-to-use data-collection protocol and tool; receive data from interested partners.
+
+**Activity 2.1:** Create a GitHub repository template for submission of data, and documentation and metadata that follows general ORD standards.
+
+Instead of using a GitHub repository template we have decided to utilize existing templates for R packages to publish all datasets. R has a rich ecosystem for documenting functions which can also be used for documenting datasets. R packages exist that make reduce the load of documenting datasets to a minimum and allow for visually attractive outputs. Each dataset receives a unique DOI using Zenodo and the data package is published using GitHub Pages. Any R user can install the data package using a single command and we further provide the cleaned data as a CSV and XLSX to allow for use in other software.
+
+**Activity 2.2:** Reach out to participants identified in WP1 as well as pre-identified colleagues who have, but have not made their research data open
+
+This activity is ongoing and we have not yet reached out to all pre-identified sources from the proposal. Reasons include that we are slower than expected in documenting and publishing datasets, but also have realized that people with an existing motivation to share their data have found us and we can hold back on reaching out to others until we have published the datasets we have already received.
+
+**Activity 2.3:** Produce a suite of learning materials (videos tutorials, printed instructions, support-group platorms, Wikis) that enable interested parties to easily share research data
+
+We have provided instructions for joining the openwashdata community on Element using the Matrix Chat and have published a blog post with a starter kit to become a part of the openwashdata community. At this point, we have focused our efforts on building a community of like-minded people and to teach the tools we use for our publishing process. 
+
+:::
+
+## WP3: Data cleaning
+
+:::{.callout-note}
+
+## Goal: Facilitate user-directed data cleaning (including documentation and metadata) to produce a first set of analysis-ready open data sets
+
+**Activity 3.1:** Invite and encourage openwashdata community members to contribute to data cleaning activities.
+
+We have not yet invited openwashdata community members to contribute to data cleaning activities. This will start once we have a set of graduates from our first "data science for openwashdata" course.
+
+**Activity 3.2:** Categorise provided data sources into rubrics of “effort for cleaning” and “impact of clean data” to prioritise which data to invest in first.
+
+We use GitHub labels to categorize data sources into rubrics of "effort for cleaning" and "impact of clean data", however, we have also realized that this estimate is rather objective and that we need to work with the data to get a better understanding of the effort required to clean the data. 
+
+**Activity 3.3:** Teach a 7-week synchronous online course (3 hours per week) for openwashdata community members to learn the competencies needed to clean submitted data.
+
+We are currently teaching a 10-week synchronous online course (2.5 hours per week) for openwashdata community members to learn the competencies needed to clean submitted data. We had 210 registrations, of which 110 shows up for the first module. By the end of November 2023, we have about 40 participants that have not missed a single module and expect these 40 participants will graduate in February 2024.
+
+**Activity 3.4:** Host two online hackathons where selected data sets are cleaned by participants.
+
+We have not yet hosted any online hackathons. 
+
+**Activity 3.5:** Host a 2-day workshop in-person workshop at a sector relevant conference with an element of capacity building
+
+We have not provided an in-person workshop at a sector relevant conference and are re-considering if this effort is better spent on teaching online advanced online courses. 
+
+## WP4: Data publishing and communication
+
+:::{.callout-note}
+
+## Goal: Increase reach and impact of data by making it citable and creating data communication products
+
+**Activity 4.1:** Publish GitHub repository containing data and code in general-purpose long-term archiving repository Zenodo.
+
+**Activity 4.2:** Prepare data communication products using published data to generate new insights and results.
+
+**Activity 4.3:** Prepare R Data Packages for published data sets with the most promising reuse potential
+
+**Activity 4.4:** Aggregate published data sets into websites that are data warehouses and data catalogues
+
+:::
+
+# Deviations from original plan ()
+
+Please describe and justify any major changes or deviations from the original plan as set out in the application form (e.g. expected results and objectives), notably unexpected challenges/problems (or unforeseen/unexpected positive outcomes) and how they have been addressed. Events such as changes of personnel, changes in the financial resources’ usage plan and delayed start of project must be mentioned and – if needed – agreed in advance. If applicable, the implications and impact for the 2nd phase of the project must also be described. 
+
+# Value delivered for ORD practices/communities
+
+Please explain the impact (achieved or expected) of the project and ORD practices on new or existing ORD communit(ies) during and beyond the funding period, including on the wider ETH Domain. Please explain whether the project will continue and if so, how it will be sustained. Please also describe the main outreach and dissemination activities undertaken and/or planned. 
+
+
+
+# List of Outputs
+
+Please indicate the outputs directly related to this ORD project since it began and provide further details in the table below, if and as applicable. 
+
+# Appendix
+
+Please attach any additional documentation relevant to the ORD project (e.g. screenshots, resources developed, outreach material, copies/link to publications etc.).  
+
+
+
