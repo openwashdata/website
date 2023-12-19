@@ -110,11 +110,19 @@ We have not provided an in-person workshop at a sector relevant conference and a
 
 **Activity 4.1:** Publish GitHub repository containing data and code in general-purpose long-term archiving repository Zenodo.
 
+We have completed the publication of eight data sets and have another seven und actively development. Our long list of datasets contains an additional 15 datasets. The archived GitHub repositories contains the original unprocessed (raw) data, the processed analysis-ready data, and the code to get from the raw to analysis-ready, ensuring reproducibility and allowing others to verify the correctness of our data cleaning process. 
+
 **Activity 4.2:** Prepare data communication products using published data to generate new insights and results.
+
+We have opted for using the `pkgdown` R package to develop and build websites for each dataset. Each landing page uses one refined data visualisation to communicate the key insights of the dataset, followed by a short description of the dataset, and a list of all variables. For each dataset, we prepare additional analysis and data visualisations to showcase how R can be used with the data to produce data communication products. The code is shared alongisde the ouput, so that it can copied into a users environment for further exploration.
 
 **Activity 4.3:** Prepare R Data Packages for published data sets with the most promising reuse potential
 
+Instead doing this for selected data sets only, we have opted for publishing all datasets as R Data Packages. This allows us to use the same process for all datasets and to ensure that all datasets are published in a consistent manner.
+
 **Activity 4.4:** Aggregate published data sets into websites that are data warehouses and data catalogues
+
+We have setup an additional metadata table for all datasets from which we publish a data catalogue on our main website. In the future, we intend to enrich this metadata table with further information and exploring additional metadata standards that we can use to describe our datasets and publish them in formats that increase discoverability and reuse.
 
 :::
 
@@ -122,9 +130,22 @@ We have not provided an in-person workshop at a sector relevant conference and a
 
 Please describe and justify any major changes or deviations from the original plan as set out in the application form (e.g. expected results and objectives), notably unexpected challenges/problems (or unforeseen/unexpected positive outcomes) and how they have been addressed. Events such as changes of personnel, changes in the financial resources’ usage plan and delayed start of project must be mentioned and – if needed – agreed in advance. If applicable, the implications and impact for the 2nd phase of the project must also be described. 
 
+We have had no major deviations from the original plan. More challening than expected is the interaction with people that provide datasets or that we have identified as potential sources of datasets. In our workflow we have deviated from working with GitHub issues and have reverted largely to email for communication with people that are not yet familiar with GitHub. The most challenging part of the process is to get a complete description of all variables, especially for datasets that are surveys have have 100s of variables which are acronmys. 
+
+While we had always expected that the planned data science course would meet high demand, we did not foresee such a large number of participants to follow through the course in all modules, submitting homework assignments and intending to complete the capstone project report. Strategically, the capstone project report is the only requirement that we have to receive a certificate of completion. This is independent of the number of classes that were attended or homework assignments completed. We believe that without class attendance, a completion of the capstone report would be feasible, unless participants already had enough prior knowledge. We therefore expect about 30 to 40 public project reports using real-life data that participants identified themselves. This effort will have a significant impact on the community and beyond as we have a cohort of 40 graduates that have worked with real-life data and have learned the tools and skills to clean and analyse data. 
+
+Another unexpected positive outcome is the effect of the course on networking and community building. While we intentionally developed lesson plans which include 45 minutes (1/3 of total) of work in break-out rooms with 3 to 4 participants, we did not expect that this would lead to such a strong sense of community. We have observed that participants have started to work together on their homework assignments and exchange contact details to connect beyond the course.
+
 # Value delivered for ORD practices/communities
 
 Please explain the impact (achieved or expected) of the project and ORD practices on new or existing ORD communit(ies) during and beyond the funding period, including on the wider ETH Domain. Please explain whether the project will continue and if so, how it will be sustained. Please also describe the main outreach and dissemination activities undertaken and/or planned. 
+
+The short-term impact of the on ORD practices in the WASH community is that we equipped 40 participants with the skills and tools to work reproducibly with data and code. We expect that these participants will continue to work with data and code and that they will share their knowledge with others. It has impact on each organisation that these 40 participants work for and we expect a domino effect that will attract more people to join our course in the future and actively invest into ORD practices. The long-term impact will become visible as more WASH researchers will publish their data alongside scientific articles, which are able to verify as we currently work on an article with an analysis of current ORD practices. 
+
+The ORD practices that were developed for the openwashdata community have also established themselves within the research practice of the Global Health Engineering group and partners. Workflows and tools will continously be refined, so that they remain transferrable to other discliplines and communities, benefitting the wider ETH Domain.
+
+To continue building the community, we are working on securing additional funding through the 2nd Explore call of the ETH Board. We have further started partnerships with like-minded organisations and are exploring how we can work together to increase the sustainability of our work and the project. And even without third-party funding, we will be able to sustain our work as we can leverage the existing expertise infrastructure of the Global Health Engineering group and partners.
+
 
 
 
