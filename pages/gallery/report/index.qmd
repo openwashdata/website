@@ -1,14 +1,14 @@
-
-
-
-
 # Lay summary (public, 1/2 page) 
+
+
+Poor data management practices hold back progress in the Water, Sanitation, and Hygiene (WASH) sector. WASH professionals are not taught the competencies needed to manage the vast quantities of data they collect. Specifically, the activities and strategies related to the storage, organization, description, and sharing of data and other materials (i.e. data analysis code) following FAIR data principles are underused. We will approach this gap by building the openwashdata community to support members in this process. We use and teach open-source computational tools, enabling community members to further competencies aligned with FAIR data principles. Weexpect to publish a large number (> 50) of previously unpublished data sets shared by community members who will contribute to the process throughout the program. The result will be a growing network of WASH professionals passionate about applying FAIR data principles to their work, which will benefit everyone in the entire sector.
 
 Please summarise the objectives of the project, explain the progress achieved so far and – if applicable - the planned activities for the next period. This lay summary  (maximum:  ½ page) should be understandable by a non-expert audience and will be used for outreach and communications activities. By submitting this lay summary, you thus agree to making it potentially public. 
 
+The vision of this project is to create an active global community that applies FAIR principles [@wilkinson2016] to data generated in the great water, sanitation, and hygiene (WASH) sector. Current data management practices hold brack progress which we address by empowering WASH professionals to engage with tools and workflows for open data and code. We introduce people to the concept of "open by default", as well as the use of open source software, the principles of open science, and benefits of open government (data). So far we have achieved to develop a data cleaning and publishing workflow using the R ecosystem and consistently applying the concepts and principles we teach. We are delivering a free online course with 10 modules for data science with R and expect 40 people to graduate from the course, applying the learned material to a real-life dataset of their own. 
+
+
 https://www.snf.ch/SiteCollectionDocuments/allg_laysummary_bsp_d.pdf
-
-
 
 # Achievements (2 pages)
 
@@ -145,8 +145,6 @@ The short-term impact of the on ORD practices in the WASH community is that we e
 The ORD practices that were developed for the openwashdata community have also established themselves within the research practice of the Global Health Engineering group and partners. Workflows and tools will continously be refined, so that they remain transferrable to other discliplines and communities, benefitting the wider ETH Domain.
 
 To continue building the community, we are working on securing additional funding through the 2nd Explore call of the ETH Board. We have further started partnerships with like-minded organisations and are exploring how we can work together to increase the sustainability of our work and the project. And even without third-party funding, we will be able to sustain our work as we can leverage the existing expertise infrastructure of the Global Health Engineering group and partners.
-
-
 
 
 # List of Outputs
