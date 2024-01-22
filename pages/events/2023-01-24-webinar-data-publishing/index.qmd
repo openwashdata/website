@@ -50,6 +50,15 @@ agenda  |>
     knitr::kable()
 ```
 
+## Slides
+
+[View slides in full screen](../../gallery/slides/eth-brownbags-lunch/index.html) | [Download slides as PDF]()
+
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/eth-brownbags-lunch/index.html" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
+
 ## 🏁 Objectives
 
 By the end of this webinar, participants will be able to:
