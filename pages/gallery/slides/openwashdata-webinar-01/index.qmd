@@ -188,6 +188,7 @@ Screenshot from @mupinga2021addendum
 
 - Website: [openwashdata.org](https://openwashdata.org/)
 - Newsletter: [buttondown.email/openwashdata](https://buttondown.email/openwashdata)
+- Email: <ghe@mavt.ethz.ch>
 :::
 
 ::: {.column width="5%"}
