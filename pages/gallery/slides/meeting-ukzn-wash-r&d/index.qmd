@@ -15,7 +15,6 @@ format:
     transition: fade
     slide-number: true
     preview-links: auto
-    footer: <https://openwashdata.org/pages/gallery/slides/>
 editor: source
 editor_options: 
   chunk_output_type: console
@@ -229,7 +228,7 @@ Registration open for next course: <https://forms.gle/AhhWpPfnbLwzp5Ai9>
 - expected 40 graduates all with a reproducible data analysis report (paper)
 - motivating graduates to publish underlying data with openwashdata
 
-# Collaboration
+# openwashdata collaboration {background-color="#5b195b"}
 
 ## Funding - ETH ORD (Open Research Data) Explore programme
 
@@ -238,7 +237,7 @@ Registration open for next course: <https://forms.gle/AhhWpPfnbLwzp5Ai9>
 ::: {.column width="50%"}
 **Phase 1**
 
-- Funding: 150'000 CHF for 18 months ends 30 August 2024
+- Funding: 150'000 CHF (3 million ZAR) for 18 months ends 30 August 2024
 - Goals: 
     - Setup infrastructure
     - Build community
@@ -251,64 +250,44 @@ Registration open for next course: <https://forms.gle/AhhWpPfnbLwzp5Ai9>
 
 - Funding: due date for 2nd call is 29 February 2024
 - Goals: 
-    - Establish strategic partnerships / Governance
+    - [Establish strategic partnerships / Governance]{.highlight-yellow}
     - Grow data science competency
     - Increase data discover-ability
 :::
 
 ::::
 
-# open - misconceptions {background-color="#5b195b"}
+## Strategic partnership
 
-## open - misconceptions
+- Co-funding (50/50) of a data steward for 12 months
+- Works at and for UKZN WASH R&D Center
+- Collaborates with openwashdata to publish research data 
+- Establishes draft data management strategy for UKZN WASH R&D Center
 
-- Misconception 1: Publishing my data does not benefit anyone
-- Misconception 2: Others may criticize my code
-- Misconception 3: Publishing my content under CC-BY-NC will prevent people from exploiting my content commercially. (go for CC-BY)
+## Next steps
 
-. . .
+- GHE to identify how UKZN WASH R&D Center can be included as co-applicant
+- UKZN WASH R&D Center to provide information about costs for salary & overhead
+- GHE to prepare a draft support letter as Appendix to proposal
 
-> The only way to write good code is to write tons of shitty code first. Feeling shame about bad code stops you from getting to good code. - [Hadley Wickham (Chief Scientist, Posit PBC)](https://twitter.com/hadleywickham/status/589068687669243905?lang=en)
+# Teaching collaboration {background-color="#5b195b"}
 
-::: {.notes}
+## ETH4D Teaching Stay Grant
 
-**Misconception 1**
-
-- You don't know all the ways that somebody else could use to work with the data you collected
-- Publishing research data can benefit both the researcher and the scientific community. Sharing data increases the visibility of the research, potentially leading to more citations and recognition for the researcher. It promotes collaboration and enables other researchers to build upon the existing work, fostering innovation and scientific progress while avoiding inefficiencies.
-
-**Misconception 2**
-
-- While it is true that open-​source code may be subject to criticism, this can be a positive aspect of Open Science. Constructive criticism can help identify potential issues, improve the code, and contribute to the overall quality of the project.
-
-
-**Misconception 3**
-
-While the CC-BY-NC (Creative Commons Attribution-NonCommercial) license does restrict commercial use of the content, it may also inadvertently limit the potential impact and reach of your work.
-
-By using a CC-BY-NC license, you prevent the following use cases:
-
-- Commercial use in academic research: Researchers working in collaboration with commercial entities or receiving funding from commercial sources may be unable to use your content, limiting the potential for interdisciplinary research and collaboration.
-
-- Commercial use in educational materials: Publishers of textbooks, online courses, and other educational materials that are sold for profit may be unable to include your content, reducing its potential reach and impact on students and educators.
-
-- Commercial use in software development: Companies developing software or applications that incorporate your content may be unable to do so under a CC-​BY-NC license, limiting the potential for innovation and the development of new tools and technologies.
-
-- Commercial use in creative works: Artists, writers, and other creators who wish to incorporate your content into their commercial works may be unable to do so, limiting the potential for your work to inspire and influence others.
-
-:::
-
+- Funding: 5'000 CHF (100'000 ZAR) 
+- Proposal: due 30 April 2024
+- In-kind contributions from GHE and UKZN WASH R&D Center encouraged
+- Goals: 
+    - Establish a teaching collaboration between ETH and UKZN
+    - Develop a course drawing from "data science for openwashdata"
+    - Deliver the course at UKZN WASH R&D Center
+    - Link with students/researchers at ETH
+- Course delivery: 10 weeks between October and December 2024
 
 ## Thanks `r emo::ji("sunflower")` {.center-align} 
 
 This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
 
-The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
-
-You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/eth-brownbags-lunch/index.qmd)
-
-Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/openwashdata-webinar-01/openwashdata-webinar-01.pdf)
-  
 This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## References
