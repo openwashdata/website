@@ -2,21 +2,8 @@
 title: "Data: A Key to Unlocking Quality in WASH Programmes"
 description: |
   Welcome to the side event page of "Data: A Key to Unlocking Quality in WASH programmes" for UNC Water and Health Conference 2023!
-
-date: "`r Sys.Date()`"
-site: distill::distill_website
+date: today
 ---
-
-```{=html}
-<script async defer data-domain="" src=""></script>
-```
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-```
 
 # 👋 Welcome
 
