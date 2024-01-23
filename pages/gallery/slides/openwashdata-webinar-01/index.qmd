@@ -6,7 +6,7 @@ author:
     email: lschoebitz@ethz.ch
     affiliations:
         - name: Global Health Engineering
-date: 2024-01-22
+date: 2024-01-23
 date-format: long
 format: 
   revealjs:
