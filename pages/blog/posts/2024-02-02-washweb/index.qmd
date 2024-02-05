@@ -1,0 +1,77 @@
+---
+title: Strategic partnership with WASHWeb
+subtitle: The WASHWeb & openwashdata partnership is a significant step forward
+description: |
+  A description could be place here.
+categories:
+  - partnership
+  - open data
+  - accountability
+author:
+  - name: Merel Laauwen
+    url: https://www.linkedin.com/in/merel-laauwen/
+    affiliation: Independent Consultant
+    affiliation-url: https://lwn.earth/
+date: "2024-02-06"
+draft: false
+image: "thumbnail.jpg"
+image-alt: "A laptop, coffee, a notebook, and a mobile phone on a brown desk by window."
+---
+
+WASHWeb and openwashdata have formed a strategic partnership to facilitate improvements in access to water, sanitation and hygiene (WASH) data. The openwashdata community empowers WASH professionals to engage with tools and workflows for open data and code by increasing the reuse potential of existing data and providing courses to build the required competencies.
+
+We envision joint activities including:
+
+-   Maintaining open source tools for researchers and product developers to download and analyze WHO/UNICEF JMP and GLAAS data on indicators of SDG 6
+
+-   Facilitating the WASHWeb working group discussions and hosting a webinar on how to improve the use of existing datasets
+
+-   Setting up a registry of who is doing what, when, and where in the WASH sector (4Ws) so that data can be better contextualized
+
+## Moving towards open data and code
+
+The majority of data and information in the water, sanitation, and hygiene (WASH) sector, such as reports, datasets, and analyses, remain largely in the hands of experts and is not widely shared. Even information that is available, is often in formats or platforms that are not (easily) reusable for further research. To target this need, WASHWeb and openwashdata have set these joint activities.
+
+## openwashdata supports WASH professionals in engaging with tools for open data
+
+openwashdata's goal is to empower WASH professionals to engage with tools and workflows for open data and code. As an active global community, they apply [FAIR](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable) principles to data generated in the greater WASH sector. To operationalize this vision, openwashdata allows individuals to:
+
+-   Receive credit for work that is not a scientific paper
+
+-   Give recognition to those that support your work
+
+-   Analyze and tell stories with data
+
+-   Meet people that care about data and code being open and reusable
+
+## openwashdata academy features WASHWeb’s software library
+
+openwashdata has recently launched their [first academy](https://ds4owd-001.github.io/website/) course on data science. Participants were guided through 10 weeks of lessons on the data science life-cycle, data organization, data transformation, data communication (Quarto), amongst a range of other topics. In Module 3 on [Data Transformation with dyplr](https://ds4owd-001.github.io/website/modules/md-03.html), participants were given a dataset created by WASHWeb’s Nicolas Dickinson allowing them to access all of the Joint Monitoring Programme’s (JMP) WASH data in a [single, usable dataset](https://github.com/washnote/jmpwashdata). Through this partnership we will continue to improve these tools for by improving documentation and metadata so that people less familiar with the data will be able to use it for further analysis.
+
+![*WASHWeb's JMP dataset used in the openwashdata academy*](images/JMP%20Data%20usage%20v2.png)
+
+## WASHWeb is fostering a community to encourage better use, discoverability, and representativeness of WASH data.
+
+WASHWeb is a participatory, bottom-up initiative consisting of four working groups. With these working groups, we hope to facilitate collaboration and discussions on initiatives for an improved and healthy data environment.
+
+This partnership will strengthen the following topical areas:
+
+-   [Using Data Better:]{.underline} There is a wealth of information and knowledge available regarding WASH data. Organizations like the UNICEF/WHO JMP, GLAAS, World Bank, and OECD have generated valuable data for the sector. How can we make this publicly available data more accessible and more usable? How can we incorporate data that is more difficult to find? How can we involve smaller organizations?
+
+-   [Accountability: 4Ws:]{.underline} The actors accountable for water and sanitation decision-making are often dispersed throughout diverse organizations. As a result, there is a scattered and disconnected WASH data ecosystem. It is proposed to make a WASH Registry to offer an overview of who is where, when, and doing what for formal change agents. Can this make the WASH sector more accountable?
+
+Through our participatory approach, we hope to engage people from a variety of sectors in leading and contributing to these working groups. Other areas we also cover for which we are seeking partnership are:
+
+-   [Systems Thinking:]{.underline} In the WASH sector, it is increasingly recognized that systems strengthening is critical to achieve universal services. Understanding and acting on systems requires that qualitative and quantitative information is used holistically in collective action. How do we bring together diverse sources of information to support systems strengthening? What are the benefits and risks of using artificial intelligence and information technology for this task?
+
+-   [Social Justice:]{.underline} Access to safe drinking water is a basic human right, and access to WASH systems is a social justice issue. What information is needed to improve access for marginalized people? What specific ethical issues around data collection, privacy, data ownership, and use of data need to be addressed?
+
+If you're curious to know more about the origin of WASHWeb, you can read more in [our introductory blogpost](https://washweb.org/posts/2023-09-26-intro/). Learn more about joining the WASHWeb community [on our website](https://washweb.org/join.html).
+
+### Interested in this work and want to learn more?
+
+[Follow WASHWeb on LinkedIn](https://www.linkedin.com/company/washweb/)
+
+[Sign up for the openwashdata newsletter](https://openwashdata.org/)
+
+
