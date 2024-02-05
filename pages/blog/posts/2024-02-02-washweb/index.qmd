@@ -26,11 +26,11 @@ We envision joint activities including:
 
 -   Facilitating the WASHWeb working group discussions and hosting a webinar on how to improve the use of existing datasets
 
--   Setting up a registry of who is doing what, when, and where in the WASH sector (4Ws) so that data can be better contextualized
+-   Developing a registry of Who works in the sector, What they do, Where they do it, and When it’s been done so that data is placed in context
 
 ## Moving towards open data and code
 
-The majority of data and information in the water, sanitation, and hygiene (WASH) sector, such as reports, datasets, and analyses, remain largely in the hands of experts and is not widely shared. Even information that is available, is often in formats or platforms that are not (easily) reusable for further research. To target this need, WASHWeb and openwashdata have set these joint activities.
+The majority of data and information in the WASH sector, such as reports, datasets, and analyses, remain largely in the hands of experts and are not widely shared. Even information that is available, is often in formats or platforms that are not (easily) reusable for further research. To target this need, WASHWeb and openwashdata have set these joint activities.
 
 ## openwashdata supports WASH professionals in engaging with tools for open data
 
@@ -38,7 +38,7 @@ openwashdata's goal is to empower WASH professionals to engage with tools and wo
 
 -   Receive credit for work that is not a scientific paper
 
--   Give recognition to those that support your work
+-   Give recognition to those that support their work
 
 -   Analyze and tell stories with data
 
@@ -46,7 +46,7 @@ openwashdata's goal is to empower WASH professionals to engage with tools and wo
 
 ## openwashdata academy features WASHWeb’s software library
 
-openwashdata has recently launched their [first academy](https://ds4owd-001.github.io/website/) course on data science. Participants were guided through 10 weeks of lessons on the data science life-cycle, data organization, data transformation, data communication (Quarto), amongst a range of other topics. In Module 3 on [Data Transformation with dyplr](https://ds4owd-001.github.io/website/modules/md-03.html), participants were given a dataset created by WASHWeb’s Nicolas Dickinson allowing them to access all of the Joint Monitoring Programme’s (JMP) WASH data in a [single, usable dataset](https://github.com/washnote/jmpwashdata). Through this partnership we will continue to improve these tools for by improving documentation and metadata so that people less familiar with the data will be able to use it for further analysis.
+openwashdata has recently launched their [first academy](https://ds4owd-001.github.io/website/) course on data science. Participants were guided through 10 weeks of lessons on the data science life-cycle, data organization, data transformation, data communication (Quarto), and other relevant topics. In Module 3 on [Data Transformation with dyplr](https://ds4owd-001.github.io/website/modules/md-03.html), participants were given a dataset created by WASHWeb’s Nicolas Dickinson allowing them to access all of the Joint Monitoring Programme’s (JMP) WASH data in a [single, usable dataset](https://github.com/washnote/jmpwashdata). Through this partnership we will continue to improve these tools for by improving documentation and metadata so that people less familiar with the data will be able to use it for further analysis.
 
 ![*WASHWeb's JMP dataset used in the openwashdata academy*](images/JMP%20Data%20usage%20v2.png)
 
