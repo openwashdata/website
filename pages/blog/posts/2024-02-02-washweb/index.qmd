@@ -2,7 +2,7 @@
 title: Strategic partnership with WASHWeb
 subtitle: The WASHWeb & openwashdata partnership is a significant step forward
 description: |
-  A description could be place here.
+  WASHWeb and openwashdata have formed a strategic partnership to facilitate improvements in access to water, sanitation and hygiene (WASH) data. Together, we will 1) maintain open source tools, 2) facilitate discussions and learning events, and 3) develop a WASH registry of Who works in the sector, What they do, Where they do it, and When it’s been done.
 categories:
   - partnership
   - open data
@@ -14,8 +14,6 @@ author:
     affiliation-url: https://lwn.earth/
 date: "2024-02-06"
 draft: false
-image: "thumbnail.jpg"
-image-alt: "A laptop, coffee, a notebook, and a mobile phone on a brown desk by window."
 ---
 
 WASHWeb and openwashdata have formed a strategic partnership to facilitate improvements in access to water, sanitation and hygiene (WASH) data. The openwashdata community empowers WASH professionals to engage with tools and workflows for open data and code by increasing the reuse potential of existing data and providing courses to build the required competencies.
@@ -48,7 +46,7 @@ openwashdata's goal is to empower WASH professionals to engage with tools and wo
 
 openwashdata has recently launched their [first academy](https://ds4owd-001.github.io/website/) course on data science. Participants were guided through 10 weeks of lessons on the data science life-cycle, data organization, data transformation, data communication (Quarto), and other relevant topics. In Module 3 on [Data Transformation with dyplr](https://ds4owd-001.github.io/website/modules/md-03.html), participants were given a dataset created by WASHWeb’s Nicolas Dickinson allowing them to access all of the Joint Monitoring Programme’s (JMP) WASH data in a [single, usable dataset](https://github.com/washnote/jmpwashdata). Through this partnership we will continue to improve these tools for by improving documentation and metadata so that people less familiar with the data will be able to use it for further analysis.
 
-![*WASHWeb's JMP dataset used in the openwashdata academy*](images/JMP%20Data%20usage%20v2.png)
+![*WASHWeb's JMP dataset used in the openwashdata academy*](302299827-e5066e97-84cf-4fda-a3f7-94e112b72a61.png)
 
 ## WASHWeb is fostering a community to encourage better use, discoverability, and representativeness of WASH data.
 
