@@ -6,7 +6,7 @@ author:
     email: lschoebitz@ethz.ch
     affiliations:
         - name: Global Health Engineering
-date: 2024-01-24
+date: 2024-02-23
 date-format: long
 format: 
   revealjs:
@@ -257,18 +257,31 @@ Registration open for next course: <https://forms.gle/AhhWpPfnbLwzp5Ai9>
 
 ::::
 
-## Strategic partnership
+## Sketch of Phase 2 proposal
 
-- Co-funding (50/50) of a data steward for 12 months
+```{r}
+knitr::include_graphics("openwashdata-vision.png")
+```
+
+
+## Strategic partnership UKZN
+
+- Co-funding of a data steward for 12 months (we secure for 24 months)
 - Works at and for UKZN WASH R&D Center
 - Collaborates with openwashdata to publish research data 
 - Establishes draft data management strategy for UKZN WASH R&D Center
 
-## Next steps
+## Activities
 
-- GHE to identify how UKZN WASH R&D Center can be included as co-applicant
-- UKZN WASH R&D Center to provide information about costs for salary & overhead
-- GHE to prepare a draft support letter as Appendix to proposal
+::: incremental
+
+- Activity 1.3: Identify how ethical approval for data collection differs for types of organizations (university, NGO) and types of data (quantitative, qualitative).
+
+- Activity 1.4: Identify current data management practices and develop a draft data management strategy for organization.
+
+- Activity 1.5: Publish at least five datasets of two different types that are available to the organization, following openwashdata data publishing workflow.
+
+:::
 
 # Teaching collaboration {background-color="#5b195b"}
 
