@@ -1,0 +1,144 @@
+---
+title: Creating and visualizing maps of WASH data - Part 1
+subtitle: Where are the pumps, waste skips, and humanitarian organizations?
+description: In this series of blog posts, you will learn how to create maps with your geospatial WASH data, and with the help of external geospatial data. 
+categories:
+author: 
+  - name: "Mian Zhong"
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid_id: 0009-0009-4546-7214
+date: 2024-03-04
+draft: true
+#image: "thumbnail.jpg"
+#image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+## Why a map?
+
+We love maps in WASH. Geo-location information is one of the most important type of data to collect and use. It helps to evaluate and monitor many aspects of WASH such as infrastructure planning or service access. To create and visualize such information on a map gives multiple benefits.
+
+-   Map is straight-forward. To understand how waste skips are distributed across a town, it is more intuitive to label the skips locations on a map instead of reading a long list of locations.
+-   Map is informative. To compare the concentration of humanitarian organizations globally, a thematic map can illustrate nicely by coloring the regions differently based on the concentration. To gain this insight from a table, however, needs multiple aggregation back and forth.
+-   Map is fun. To play around with a map is not a difficult job anymore. With a few lines in R, we can produce interactive WASH maps to communicate with a broad range of audience.
+
+## Useful R libraries
+
+To create and visualize maps, we will need the help with the following R libraries to process geospatial data and plot the maps. We start with two useful libraries that will deliver a static map showing the locations:
+
+-   `sf`: a package that supports "simple features" (an encoding of spatial data).
+-   `tmap`: a package that can quickly plot thematic maps.
+
+There are other libraries that are commonly used to add external geodata (e.g, `rnaturalearth`) and make interactive plots (e.g., `leaflet`). You will learn more about them in the next blog posts.
+
+## Useful openwashdata datasets
+
+Typically, a location point is described by its longitude and latitude. For this tutorial, we select two published datasets in openwashdata that collected geo-location data points.
+
+-   `wasteskipsblantyre`: Data on locations of the publicly accessible waste skips in Blantyre, Malawi collected in 2021.
+-   `cbssuitabilityhaiti`: Spatial data to support an analysis of suitability of container-based sanitation in flood prone areas of Haiti.
+
+# Plot map with collected data
+
+## Preparation
+
+1.  You have R and RStudio installed, or you can access Posit Cloud.
+2.  You have programmed a few lines in R programming, and know how to run commands in the console window.
+3.  You have installed and used R packages before.
+4.  You have familiarity with geospatial data, such as longitude, latitude, and coordinate reference system.
+
+## Package Installation
+
+To install the above-mentioned R packages, run the following command in the console.
+
+``` r
+install.packages("sf", "tmap")      
+```
+
+To install an openwashdata R data package, for example, the \``` cbssuitabilityhaiti` `` package. Run the following command in the console. If you do not have the package `devtools` installed, you need to run the first line too.
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openwashdata/cbssuitabilityhaiti")
+```
+
+If you want to install another openwashdata R data package, you need to change the `cbssuitabilityhaiti` to the corresponding package name.
+
+## Basic thematic map
+
+Now we have installed all needed R libraries. In the following sections, we will show two examples to create a quick view of the collected location data.
+
+First, load the libraries.
+
+```{r, message=FALSE, warning=FALSE}
+library(tmap)
+library(sf)
+```
+
+### 1. Example: Waste skips in Blantyre, Malawi
+
+```{r}
+library(wasteskipsblantyre) # Load the openwashdata R package
+```
+
+You could get a taste of the dataset by looking at the first a few rows of the data,
+
+```{r}
+head(wasteskipsblantyre)
+```
+
+Each row in the dataset `wasteskipsblantyre` is a geolocation of a waste skip. We focus on the columns `long` and `lat` to plot these skips. First, we need to convert the location columns into a format that is designed for geospatial data. To achieve this, we use the function `st_as_sf` from the `sf` package as the following:
+
+```{r}
+sf_wsb <- st_as_sf(wasteskipsblantyre, coords = c('long', 'lat'), crs = 4326)
+```
+
+We specify two parameters here, `coords` and `crs`. Because we are plotting points on the map, we need to tell what columns from our data holding these points (i.e. coordinates). In our case, we have seen that the column `long` and `lat` provide the longitude and latitude coordinates. Then, we need to give which coordinate reference system is used.
+
+Now we can use this formatted geodata to plot a map showing waste skip locations.
+
+```{r}
+#| label: fig-waste-skips-simple
+#| fig-cap: Locations of waste skips in this dataset
+sf_wsb |>
+  tm_shape() + # a necessary step to tell a map will be created
+  tm_dots() + # plot the locations
+  tm_graticules() # create coordinate grid lines
+```
+
+If you are interested in knowing more about the dataset, check out this amazing tutorial: <https://openwashdata.github.io/wasteskipsblantyre/articles/examples.html>
+
+### 2. Example: Water access in Cap Haïtien, Haiti
+
+A quicker way of doing it?
+
+```{r}
+library(cbssuitabilityhaiti)
+#| label: fig-water-access-points
+#| fig-cap: Locations of water access points in this dataset
+
+qtm(mwater) +
+  tm_graticules()
+```
+
+If you are interested in knowing more about this dataset, we have a wonderful detailed tutorial: <https://openwashdata.github.io/cbssuitabilityhaiti/articles/examples.html>
+
+## What's next?
+
+-   Plot maps with external geospatial data
+-   Make an interactive map
+
+References:
+
+\[1\] [wasteskipsblantyre Example Tutorial](https://openwashdata.github.io/wasteskipsblantyre/articles/examples.html)
+
+\[2\] [cbssuitabilityhaiti Example Tutorial](https://openwashdata.github.io/cbssuitabilityhaiti/articles/examples.html)
