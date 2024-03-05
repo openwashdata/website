@@ -2,16 +2,17 @@
 title: Creating and visualizing maps of WASH data - Part 1
 subtitle: Where are the pumps, waste skips, and humanitarian organizations?
 description: In this series of blog posts, you will learn how to create maps with your geospatial WASH data, and with the help of external geospatial data. 
-categories:
+categories: 
+  - r-tutorial
 author: 
   - name: "Mian Zhong"
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid_id: 0009-0009-4546-7214
-date: 2024-03-04
-draft: true
-#image: "thumbnail.jpg"
-#image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
+date: "2024-03-05"
+draft: false
+image: "thumbnail.jpg"
+image-alt: "A map of water access points in Haiti"
 ---
 
 ```{r, include = FALSE}
@@ -44,8 +45,8 @@ There are other libraries that are commonly used to add external geodata (e.g, `
 
 Typically, a location point is described by its longitude and latitude. For this tutorial, we select two published datasets in openwashdata that collected geo-location data points.
 
--   `wasteskipsblantyre`: Data on locations of the publicly accessible waste skips in Blantyre, Malawi collected in 2021.
--   `cbssuitabilityhaiti`: Spatial data to support an analysis of suitability of container-based sanitation in flood prone areas of Haiti.
+-   [`wasteskipsblantyre`](https://github.com/openwashdata/wasteskipsblantyre): Data on locations of the publicly accessible waste skips in Blantyre, Malawi collected in 2021.
+-   [`cbssuitabilityhaiti`](https://github.com/openwashdata/cbssuitabilityhaiti): Spatial data to support an analysis of suitability of container-based sanitation in flood prone areas of Haiti.
 
 # Plot map with collected data
 
@@ -54,7 +55,7 @@ Typically, a location point is described by its longitude and latitude. For this
 1.  You have R and RStudio installed, or you can access Posit Cloud.
 2.  You have programmed a few lines in R programming, and know how to run commands in the console window.
 3.  You have installed and used R packages before.
-4.  You have familiarity with geospatial data, such as longitude, latitude, and coordinate reference system.
+4.  You have familiarity with geospatial data and terms, such as longitude, latitude, and coordinate reference system.
 
 ## Package Installation
 
@@ -109,6 +110,7 @@ Now we can use this formatted geodata to plot a map showing waste skip locations
 ```{r}
 #| label: fig-waste-skips-simple
 #| fig-cap: Locations of waste skips in this dataset
+
 sf_wsb |>
   tm_shape() + # a necessary step to tell a map will be created
   tm_dots() + # plot the locations
@@ -119,15 +121,69 @@ If you are interested in knowing more about the dataset, check out this amazing 
 
 ### 2. Example: Water access in Cap Haïtien, Haiti
 
-A quicker way of doing it?
+You might notice that the first example only shows the locations rather than locations on top of a base map, such as the city map. This is because the data does not include the geospatial information about the city, for example, the boundaries between districts. You will learn how to combine with external data to resolve this in the next post. Now, what if we also collected data to plot the base map?  
 
+In this example, the dataset contains both water access points (in `mwater`) as well as the base map geometry (in `okap`) for the municipality of Cap Haïtien. As before, we can plot the water access points like:
 ```{r}
 library(cbssuitabilityhaiti)
-#| label: fig-water-access-points
-#| fig-cap: Locations of water access points in this dataset
 
-qtm(mwater) +
-  tm_graticules()
+mwater|> tm_shape() +
+    tm_dots() +
+    tm_graticules()
+```
+We can plot the base map from `okap` as the following:
+```{r}
+okap |> tm_shape() +
+    tm_borders() +
+    tm_fill(alpha = 0.6) +
+    tm_graticules()
+```
+We can see that `okap` data contains more than Cap Haïtien data. Therefore, we need to filter the data `okap` on `cte` variable (Name of the communes) to keep data only relevant to Cap Haïtien before combining the two maps. 
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+caphaitien <- filter(okap, cte == "ctecaphaitien")
+
+caphaitien |> tm_shape() +
+    tm_borders() +
+    tm_fill(alpha = 0.6) +
+    tm_graticules()
+```
+Now, let's see what happens if we stack these two map layers together.
+```{r}
+# Create base map layer
+tm_shape(caphaitien) +
+    tm_borders() +
+    tm_fill(alpha = 0.6)  +
+  # create second map layer: locations of the water points
+    tm_shape(mwater) +
+    tm_dots() +
+    tm_graticules()
+```
+This is still a little problematic. Many water points are plotted outside of the base map.The base map may not contain enough boundary information to cover all areas where certain water points were recorded. One way is to join the two datasets to include water points within the base map area. We might also want to remove the coordinate gridlines for better visuals.
+
+We join join the base map data to `mwater` data and remove observations that do not have a unique identifying number neighborhood unit. Note: joining map data takes order into account, `st_join(caphaitien, mwater)` would render different results. 
+```{r}
+# Join the data and filter
+caphaitien_join <- st_join(mwater, caphaitien) |> drop_na(neighborho)
+
+# Create base map layer
+tm_shape(caphaitien) +
+    tm_borders() +
+    tm_fill(alpha = 0.6)  +
+  # create second map layer: locations of the water points
+    tm_shape(caphaitien_join) +
+    tm_dots()
+```
+
+Finally, we can visualize other features about the water points by adding parameters in `tm_dots()`. For example, we can color different types of the water points as follows:
+```{r}
+# Create base map layer
+tm_shape(caphaitien) +
+    tm_borders() +
+    tm_fill(alpha = 0.6)  +
+  # create second map layer: locations of the water points
+    tm_shape(caphaitien_join) +
+    tm_dots(col = "type")
 ```
 
 If you are interested in knowing more about this dataset, we have a wonderful detailed tutorial: <https://openwashdata.github.io/cbssuitabilityhaiti/articles/examples.html>
