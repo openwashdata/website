@@ -53,3 +53,9 @@ rsconnect/
 
 # Mac files
 .DS_Store
+
+# folder
+report
+
+# files
+*.docx

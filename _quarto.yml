@@ -94,7 +94,7 @@ website:
         - text: "Stats"
           href: pages/gallery/stats/index.qmd
         - text: "Slides"
-          href: pages/gallery/slides/index.qmd
+          href: pages/gallery/slides/
         - text: "Proposal"
           href: pages/gallery/proposal/index.qmd
         

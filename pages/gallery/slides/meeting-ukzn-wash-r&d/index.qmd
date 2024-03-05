@@ -1,0 +1,308 @@
+---
+title: "openwashdata"
+subtitle: "a community effort to bring open data practices to the WASH sector"
+author: 
+  - name: Lars Schöbitz
+    email: lschoebitz@ethz.ch
+    affiliations:
+        - name: Global Health Engineering
+date: 2024-02-23
+date-format: long
+format: 
+  revealjs:
+    logo: "../images/OWD-logo-20.png"
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
+---
+
+# openwashdata community {background-color="#5b195b"}
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+## openwashdata community
+
+### [Vision]{.highlight-yellow}
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the great water, sanitation, and hygiene sector.
+
+### [Mission]{.highlight-yellow}
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+::: footer
+
+From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+:::
+
+# The Opportunity {background-color="#5b195b"}
+
+## Journal Articles
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-supplementary-data-ms-word-01.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## Journal Articles
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-supplementary-data-ms-word-02.png")
+```
+
+::: footer
+Screenshot from @greene2021
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-pdf-report-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-pdf-table-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-pdf-table-example-02.png")
+```
+
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+## PDF reports + Dropbox
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-dropbox-example-01.png")
+```
+
+::: footer
+Screenshot from @mupinga2021addendum
+:::
+
+# The Journey {background-color="#5b195b"}
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-01.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-02.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-03.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-04.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-05.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-06.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-07.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-08.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-09.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-10.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-11.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-12.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-13.svg)
+
+## 
+
+![](../cu-wash-symposium-2023-openwashdata/img/openwashdata-journey.drawio-14.svg)
+
+# The Product {background-color="#5b195b"}
+
+## What does final look like?
+
+[
+![](../images/screenshot-wasteskipsblantyre-website.png){fig-alt="Screenshot of the wasteskipsblantyre R package documentation homepage at https://openwashdata.github.io/wasteskipsblantyre/." fig-align="center"}
+](https://openwashdata.github.io/wasteskipsblantyre/)
+
+::: footer
+[wasteskipsblantyre documenation website](https://openwashdata.github.io/wasteskipsblantyre/) by @yesaya2023wasteskipsblantyrea built with [pkgdown](https://pkgdown.r-lib.org/)
+:::
+
+# Engage {background-color="#5b195b"}
+
+## Our channels 
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**One-way communication**
+
+- Website: [openwashdata.org](https://openwashdata.org/)
+- Newsletter: [buttondown.email/openwashdata](https://buttondown.email/openwashdata)
+- Email: <ghe@mavt.ethz.ch>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Two-way engagement**
+
+- Instant messaging: [Element based on Matrix Chat](https://openwashdata.org/pages/get-started/chat/#sec-join-eth) | [openwashdata-lobby](https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch) | [ghe-open](https://matrix.to/#/#ghe-open:staffchat.ethz.ch) 
+- Data donation ideas: [github.com/openwashdata/data/issues](https://github.com/openwashdata/data/issues)
+- Social media: [Global Health Engineering LinkedIn](https://ch.linkedin.com/company/global-health-engineering)
+:::
+
+::::
+
+:::
+
+## course: data science for openwashdata
+
+[ds4owd-001.github.io/website/](https://ds4owd-001.github.io/website/?utm_medium=Slides)
+
+Zoom for 10 modules over 2 months at the following times:
+
+- [Start:]{.highlight-yellow} 31st October 2023 - 2 pm to 4:30 pm CET
+- [End:]{.highlight-yellow} 20th February 2024 - 2 pm to 4:30 pm CET
+
+Registration open for next course: <https://forms.gle/AhhWpPfnbLwzp5Ai9>
+
+- free
+- provides participants with a certificate
+- using exclusively tools that are free and open source
+- offers 1:1 coding support for a final project with own data
+
+## course: data science for openwashdata 001
+
+- 200 registrations
+- 110 show-ups
+- expected 40 graduates all with a reproducible data analysis report (paper)
+- motivating graduates to publish underlying data with openwashdata
+
+# openwashdata collaboration {background-color="#5b195b"}
+
+## Funding - ETH ORD (Open Research Data) Explore programme
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Phase 1**
+
+- Funding: 150'000 CHF (3 million ZAR) for 18 months ends 30 August 2024
+- Goals: 
+    - Setup infrastructure
+    - Build community
+    - Design course
+    - Define workflows
+:::
+
+::: {.column width="50%"}
+**Phase 2**
+
+- Funding: due date for 2nd call is 29 February 2024
+- Goals: 
+    - [Establish strategic partnerships / Governance]{.highlight-yellow}
+    - Grow data science competency
+    - Increase data discover-ability
+:::
+
+::::
+
+## Sketch of Phase 2 proposal
+
+```{r}
+knitr::include_graphics("openwashdata-vision.png")
+```
+
+
+## Strategic partnership UKZN
+
+- Co-funding of a data steward for 12 months (we secure for 24 months)
+- Works at and for UKZN WASH R&D Center
+- Collaborates with openwashdata to publish research data 
+- Establishes draft data management strategy for UKZN WASH R&D Center
+
+## Activities
+
+::: incremental
+
+- Activity 1.3: Identify how ethical approval for data collection differs for types of organizations (university, NGO) and types of data (quantitative, qualitative).
+
+- Activity 1.4: Identify current data management practices and develop a draft data management strategy for organization.
+
+- Activity 1.5: Publish at least five datasets of two different types that are available to the organization, following openwashdata data publishing workflow.
+
+:::
+
+# Teaching collaboration {background-color="#5b195b"}
+
+## ETH4D Teaching Stay Grant
+
+- Funding: 5'000 CHF (100'000 ZAR) 
+- Proposal: due 30 April 2024
+- In-kind contributions from GHE and UKZN WASH R&D Center encouraged
+- Goals: 
+    - Establish a teaching collaboration between ETH and UKZN
+    - Develop a course drawing from "data science for openwashdata"
+    - Deliver the course at UKZN WASH R&D Center
+    - Link with students/researchers at ETH
+- Course delivery: 10 weeks between October and December 2024
+
+## Thanks `r emo::ji("sunflower")` {.center-align} 
+
+This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+
+This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## References
+
+

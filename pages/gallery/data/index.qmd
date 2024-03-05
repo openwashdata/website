@@ -21,8 +21,8 @@ The table on this pages shows data that is published following our R data packag
 
 ```{r}
 
-# data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
-# data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
+data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
+data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
 
 data <- readr::read_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
 
@@ -47,7 +47,8 @@ tbl_data <- data |>
                   description, 
                   published = date_published, 
                   website = link_pkg_website) |> 
-    dplyr::mutate(published = format(published, "%d. %B %Y"))
+    dplyr::mutate(published = format(published, "%d. %B %Y")) |> 
+    dplyr::arrange(id)
 
 tbl_data |> 
     knitr::kable(padding = 0)
