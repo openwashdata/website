@@ -1,6 +1,6 @@
 ---
 title: "Margaux Götschmann"
-subtitle: "Applied Mathematician"
+subtitle: "Data Science Intern"
 image: profile-margaux.jpg
 about:
   template: trestles
