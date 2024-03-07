@@ -1,0 +1,28 @@
+---
+title: Get Started with Blogging
+subtitle: A template to use for the openwashdata blog
+description: |
+  This is a template from which the YAML metadata can be copied for a new blog post.
+categories:
+  - template
+author: Lars Schöbitz
+date: "2023-06-21"
+draft: true
+image: "thumbnail.jpg"
+image-alt: "A laptop, coffee, a notebook, and a mobile phone on a brown desk by window."
+---
+
+Surveys
+
+Is everyone doing surveys? What qualifications are needed to design a good survey? And who teaches them? What even is a good survey? And how do you make sure to protect people's privacy when sharing survey data?
+
+Over the years of working as a researcher, consultant, and data steward I have seen many different types and forms of surveys. I have created very few myself, but whenever I discuss with someone who is in the process of designing a survey, I notice one particular thing:
+
+- Questions are added for anything that might be relevant instead asking what is actually needed
+
+What does result in? It results in surveys with 100+ questions
+
+I have been asking myself these questions for a while, but
+
+- It seems like everyone is doing surveys, but very few
+
