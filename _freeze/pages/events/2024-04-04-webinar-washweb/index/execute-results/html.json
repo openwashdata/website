@@ -1,9 +1,11 @@
 {
-  "hash": "1fbb21e8b32a1581d6eee9d3d2fc967d",
+  "hash": "7adc45153f63494c2707e2e0d1348f7c",
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: \"WASHWeb Webinar: The Future of Our WASH Data Ecosystem\"\ndescription: |\n  openwashdata will be represented at an event organised by our partner WASHWeb. \n  Amongst seven other guest speakers, we will introduce the openwashdata \n  community, our phase 1 achievements, and a vision for the next phases.\nbibliography: ../../../references.bib\nexecute:\n    echo: false\n    warning: false\neditor_options: \n  chunk_output_type: console\n  markdown: \n    wrap: 72\n---\n\n\n## 👋 Welcome\n\nWASHWeb is proud to announce that it is hosting its first ever webinar,\nwith guest speakers from Akvo, Aquaya, IRCWASH Systems Academy, mWater,\nopenwashdata, Segura Consulting, WASHAI, and WASHNote.\n\nWe will delve into different innovations working towards an improved\nWASH data ecosystem - from the use of AI and open data, to creating\nscalable management information systems. \n\nJoin us for this joint webinar with PLOS to learn more about:\n\n-   the openwashdata community and PLOS Water community\n-   a workflow for sharing data following FAIR principles for data\n    management @wilkinson2016\n-   why open data is important\n-   tangible benefits of sharing your data\n-   how PLOS supports open data sharing & open science\n\n## 📆 Event Details\n\n-   **Date:** Thursday, April 04, 3:00 - 4:30 PM (CET)\n\n-   **Zoom Registration**:\n    <https://us06web.zoom.us/meeting/register/tZUpfuGqqjoqEtEzlGdETK1t7dPsfswHnozN#/registration>\n\n-   🇺🇸 7:00 AM (MST - Boulder, USA)\n\n-   🇬🇧 2:00 PM (GMT - London, UK)\n\n-   🇳🇬 3:00 PM (WAT - Katsina, Nigeria)\n\n-   🇰🇪 5:00 PM (EAT - Nairobi, Kenya)\n\n-   🇮🇳 7:30 PM (IST - New Delhi, India)\n\n-   🇮🇩 9:00 PM (WIB - Jakarta, Indonesia)\n\n## 📝 Agenda\n\n- in preparation\n\n\n::: {.cell .column-page tbl-colwidths='[15,35,15,45]'}\n\n:::\n\n\n## Slides \n\nWill be shared after event. \n\n",
-    "supporting": [],
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
