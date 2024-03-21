@@ -61,7 +61,7 @@ Join us for this joint webinar with PLOS to learn more about:
 #| column: page
 #| eval: false
 
-agenda <- readr::read_csv(here::here("pages/events/2023-01-24-webinar-data-publishing/data/tbl-05-washweb-webinar-agenda.csv"))
+agenda <- readr::read_csv(here::here("pages/events/2024-04-04-webinar-washweb/data/tbl-05-washweb-webinar-agenda.csv"))
 
 agenda  |> 
     dplyr::select(-start_time, -end_time, -speaker_link, -affiliation_link) |>
