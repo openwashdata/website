@@ -24,15 +24,6 @@ We will delve into different innovations working towards an improved
 WASH data ecosystem - from the use of AI and open data, to creating
 scalable management information systems. 
 
-Join us for this joint webinar with PLOS to learn more about:
-
--   the openwashdata community and PLOS Water community
--   a workflow for sharing data following FAIR principles for data
-    management @wilkinson2016
--   why open data is important
--   tangible benefits of sharing your data
--   how PLOS supports open data sharing & open science
-
 ## 📆 Event Details
 
 -   **Date:** Thursday, April 04, 3:00 - 4:30 PM (CET)
@@ -59,15 +50,15 @@ Join us for this joint webinar with PLOS to learn more about:
 ```{r}
 #| tbl-colwidths: [15, 35, 15, 45]
 #| column: page
-#| eval: false
+#| eval: true
 
 agenda <- readr::read_csv(here::here("pages/events/2024-04-04-webinar-washweb/data/tbl-05-washweb-webinar-agenda.csv"))
 
-agenda  |> 
-    dplyr::select(-start_time, -end_time, -speaker_link, -affiliation_link) |>
-    dplyr::relocate(time) |> 
+agenda |> 
+    dplyr::select(time, title, speaker, affiliation) |> 
     dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
     knitr::kable()
+    
 ```
 
 ## Slides 
