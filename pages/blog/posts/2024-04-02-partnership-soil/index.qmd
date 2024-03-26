@@ -1,0 +1,42 @@
+---
+title: Strategic partnership with SOIL
+subtitle: Data stewardship at a non-profit organisation in Haiti
+description: |
+  openwashdata and SOIL have formed a strategic partnership to collaborate on 
+  data stewardship. Together, we will assess existing data management 
+  practices, formulate a preliminary data management strategy, and pinpoint
+  datasets ready for open publication.
+categories:
+  - partnership
+  - open data
+  - data stewardship
+author:
+  - name: Lars Schöbitz
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation-url: https://ghe.ethz.ch/open-science.html
+bibliography: ../../../../references.bib
+date: "2024-04-02"
+draft: true
+---
+
+# SOIL
+
+SOIL is a non-profit research and development organization working in Haiti to design, test, and implement sustainable and equitable solutions to the sanitation crisis. Their mission is to ensure safe, dignified, and sustainable sanitation in urban Haiti, creating a model for urban sanitation which is replicable in Haiti and globally.
+
+# Data stewardship
+
+Data stewardship is managing and overseeing an organization's data assets to help provide management, business users, funders, and the public with high-quality data communication products (e.g., KPI dashboards). While many organizations have established sufficient data collection and storage infrastructure, they often need more resources to analyse data and communicate information effectively beyond the organization.
+
+# Data stewardship for openwashdata
+
+In our approach at openwashdata, we focus on developing data management practices that follow FAIR data sharing principles [@wilkinson2016]. We recently submitted a proposal for phase 2 of building the openwashdata community to the Open Research Data Program of the ETH Board[^1]. Building on our success in training 100 WASH professionals in data science[^2], we will develop a 12-module "data stewardship for openwashdata" training programme. This training will be offered to a data stewardship network comprised of graduates from our data science course, official partners funded by the phase 2 proposal, and organisations like SOIL, whom we have a long-standing trustful relationship with and who are one of the few organizations in the WASH sector that are actively sharing their data openly. Together, we will assess existing data management practices, formulate a preliminary data management strategy, and pinpoint datasets ready for open publication.
+
+# Are you interested, too?
+
+If you or your organisation works in WASH and would like to join the data stewardship network, [email us](mailto:ghe@mavt.ethz.ch?subject=data stewardship network). We look forward to hearing from you! 
+
+
+[^1]: Submitted proposal: <https://github.com/openwashdata-dev/prop-eth-ord-explore-02-openwashdata/blob/master/proposal.md>
+
+[^2]: course website <https://ds4owd-001.github.io/website/>
