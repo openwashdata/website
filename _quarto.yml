@@ -95,8 +95,10 @@ website:
           href: pages/gallery/stats/index.qmd
         - text: "Slides"
           href: pages/gallery/slides/
-        - text: "Proposal"
+        - text: "Phase 1 Proposal"
           href: pages/gallery/proposal/index.qmd
+        - text: "Phase 2 Proposal"
+          href: pages/gallery/proposal-02/index.qmd
         
 format:
   html:
