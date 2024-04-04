@@ -2,11 +2,11 @@
 title: "openwashdata"
 subtitle: "a community effort to bring open data practices to the WASH sector"
 author: 
-  - name: "Lars Schöbitz"
-    url: https://openwashdata.org/about/lars/
-    affiliation: Global Health Engineering, ETH Zurich
-    affiliation_url: https://ghe.ethz.ch/
-date: 2024-04-04
+  - name: Lars Schöbitz
+    email: lschoebitz@ethz.ch
+    affiliations:
+        - name: Global Health Engineering
+date: 2024-01-23
 date-format: long
 format: 
   revealjs:
@@ -15,25 +15,22 @@ format:
     transition: fade
     slide-number: true
     preview-links: auto
-    footer: "[{{< fa link >}} openwashdata.org/pages/gallery/slides/](https://openwashdata.org/pages/gallery/slides/)"
+    footer: <https://openwashdata.org/pages/gallery/slides/>
 editor: source
 editor_options: 
   chunk_output_type: console
 bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
 ---
 
+# openwashdata community {background-color="#5b195b"}
 
-# {background-color="#5b195b"}
-
-```{r}
-knitr::include_graphics("../images/OWD-logo-04.svg")
-```
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
 
 ## openwashdata community
 
 ### [Vision]{.highlight-yellow}
 
-An active global community that applies FAIR principles [@wilkinson2016] to data generated in the greater water, sanitation, and hygiene sector.
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the great water, sanitation, and hygiene sector.
 
 ### [Mission]{.highlight-yellow}
 
