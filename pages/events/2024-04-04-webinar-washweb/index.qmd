@@ -63,5 +63,9 @@ agenda |>
 
 ## Slides 
 
-Will be shared after event. 
+[View slides in full screen](../../gallery/slides/washweb-webinar/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar/washweb-webinar-openwashdata.pdf)
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/washweb-webinar/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
 
