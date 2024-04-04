@@ -137,6 +137,8 @@ tbl_supp_type <- washdev_supp_file_type_n |>
 
 # The Opportunity {background-color="#5b195b"}
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
 ## Journal articles
 
 ```{r}
