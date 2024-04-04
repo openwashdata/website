@@ -17,6 +17,6 @@ about:
 
 SOIL is a US 501(c)3 non-profit organization dedicated to promoting dignity, health, and sustainable livelihoods through the transformation of wastes to resources. SOIL has been working in Haiti since 2006 to facilitate the community-identified priority of ecological sanitation, where human wastes are transformed into rich compost critical for agriculture and reforestation efforts.
 
-We partner with SOIL as part of our initiative to establish a global data stewardship network for the WASH sector, which is a key component of our [phase 2 proposal](https://github.com/openwashdata-dev/prop-eth-ord-explore-02-openwashdata) for the openwashdata community. Learn more in this blog post: [Strategic partnership with SOIL - Data stewardship at a non-profit organisation in Haiti](https://openwashdata.org/pages/blog/posts/2024-04-02-partnership-soil/)
+We partner with SOIL as part of our initiative to establish a global data stewardship network for the WASH sector, which is a key component of our [phase 2 proposal](https://github.com/openwashdata-dev/prop-eth-ord-explore-02-openwashdata/blob/master/proposal.md) for the openwashdata community. Learn more in this blog post: [Strategic partnership with SOIL - Data stewardship at a non-profit organisation in Haiti](https://openwashdata.org/pages/blog/posts/2024-04-02-partnership-soil/)
 
 
