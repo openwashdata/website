@@ -60,4 +60,21 @@ tbl_washweb <- googlesheets4::read_sheet(ss = sheet_washweb) |>
 tbl_washweb |> 
     write_csv(here::here("pages/events/2024-04-04-webinar-washweb/data/tbl-05-washweb-webinar-agenda.csv"))
 
+## Workshop
+
+sheet_workshop <- "https://docs.google.com/spreadsheets/d/1d4I9TDNfxwIdRoe-T6FnJ6m3cpEC3V7u75Ne7B4fYKw/edit#gid=0"
+
+googlesheets4::read_sheet(ss = sheet_workshop, range = "Sheet1!A1:G16") |> 
+    bind_rows(googlesheets4::read_sheet(ss = sheet_workshop, range = "Sheet1!A19:G27")) |>  
+    select(-duration) |> 
+    mutate(start_time = as.character(start_time)) |>
+    mutate(start_time = str_extract(start_time, "\\b\\d{2}:\\d{2}\\b")) |>
+    mutate(end_time = as.character(end_time)) |>
+    mutate(end_time = str_extract(end_time, "\\b\\d{2}:\\d{2}\\b")) |>
+    mutate(time = paste(start_time, end_time, sep = " - ")) |>  
+    select(-...6) |> 
+    write_csv(here::here("pages/events/2024-08-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
+
+
+
 
