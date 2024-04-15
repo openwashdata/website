@@ -10,8 +10,8 @@ author:
     orcid_id: 0009-0009-4546-7214
 date: 2024-04-15
 draft: true
-#image: "thumbnail.jpg"
-#image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
+image: "thumbnail.jpg"
+image-alt: "Global map of humanitarian headquarter concentration."
 ---
 
 ```{r, include = FALSE}
