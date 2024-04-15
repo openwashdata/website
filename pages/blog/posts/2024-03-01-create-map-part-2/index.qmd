@@ -2,13 +2,14 @@
 title: Creating and visualizing maps of WASH data - Part 2
 subtitle: Where are the pumps, waste skips, and humanitarian organizations?
 description: In this series of blog posts, you will learn how to create maps with your geospatial data or plot a map with the help of external geospatial data.
-categories:
+categories: 
+  - r-tutorial
 author: 
   - name: "Mian Zhong"
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid_id: 0009-0009-4546-7214
-date: 2024-04-15
+date: "2024-04-15"
 draft: true
 image: "thumbnail.jpg"
 image-alt: "Global map of humanitarian headquarter concentration."
