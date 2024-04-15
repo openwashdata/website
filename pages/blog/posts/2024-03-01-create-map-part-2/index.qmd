@@ -1,0 +1,157 @@
+---
+title: Creating and visualizing maps of WASH data - Part 2
+subtitle: Where are the pumps, waste skips, and humanitarian organizations?
+description: In this series of blog posts, you will learn how to create maps with your geospatial data or plot a map with the help of external geospatial data.
+categories:
+author: 
+  - name: "Mian Zhong"
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid_id: 0009-0009-4546-7214
+date: 2024-04-15
+draft: true
+#image: "thumbnail.jpg"
+#image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE
+)
+```
+
+# Introduction
+
+In the [previous post](https://openwashdata.org/pages/blog/posts/2024-03-01-create-map-part-1/), we start to plot maps with the collected data. However, we may only collect location data points or variables based on implicit geodata (e.g. countries). Therefore, we need external geodata like country boundaries as the base layers for our maps. In this blog post, we will dive into plotting maps with external geodata. We combine such external geodata with the dataset from an openwashdata package, and plot a thematic map.
+
+## Thematic map: what and why?
+
+What is a thematic map? According to Wikipedia, we can think of thematic map as
+
+> A thematic map is a type of map that portrays the geographic pattern of a particular subject matter in a geographic area. This usually involves the use of map symbols to visualize selected properties of geographic features that are not naturally visible, such as temperature, language, or population. [^1]
+
+[^1]: [Wikipedia: Thematic map](https://en.wikipedia.org/wiki/Thematic_map)
+
+## Useful R libraries:
+
+-   `rnaturalearth`: An R package to hold and facilitate interaction with natural earth map data
+
+## Useful openwashdata datasets
+
+-   `gdho`: Global database of humanitarian organizations from Humanitarian Outcomes.
+
+# Plot a thematic map with external geodata
+
+In this demo, we will show you how to plot a map to reflect the headquarter concentration of the humanitarian headquarters around the world. At the end of the demo, you will learn how to:
+
+-   Summarize headquarter information from `gdho` data
+-   Combine `gdho` data with external geolocation data
+-   Visualize a thematic map about headquarter location distribution
+
+```{r setup, message=FALSE, warning=FALSE}
+# Load libraries
+library(gdho)
+library(dplyr)
+library(ggplot2)
+library(sf) # for geolocation 
+library(rnaturalearth) # for geolocation 
+library(viridis)  
+library(kableExtra) # for nice table display
+```
+
+## 1. Data processing: summarize headquarters {#sec-data-processing}
+
+The data `gdho` contains the headquarter information of each humanitarian organization in the variable `hq_location`. First, we look at how many headquarters each country has. We process the column `hq_location` and display the top countries:
+
+```{r data_processing}
+gdho_hq <- gdho |>
+  filter(!is.na(hq_location)) |> # remove NA data 
+  group_by(hq_location) |> # group by countries
+  summarise(count = n()) |> # count the number of headquarters of each country
+  arrange(desc(count)) # sort by descending order
+  
+gdho_hq |>
+  head() |>
+  kbl()
+```
+
+We can see that the top six countries having the most humanitarian organization headquarters are United States, Somalia, Afgahnistan, Pakistan, Colombia and Ukraine.
+
+## 2. Data combination: join with geodata
+
+Now, we need to acquire geographical information of the countries (e.g. the borders). Here we use the package `rnaturalearth` and `sf` to help. The package `rnaturalearth` contains geodata about the countries in the world, and we import this dataset and combine it with our `gdho` data on the column `hq_location`.
+
+```{r data_combine}
+world <- rnaturalearth::ne_countries(returnclass = "sf")
+
+hq_map_data <- left_join(world, gdho_hq, by = c("name_long" = "hq_location"))
+```
+
+## 3. Map visualization: concentration of the headquarters
+
+We have the data that contains all information we need: the counts of humanitarian organization headquarters each country has, and the geo-information of each country. We start by plotting the world view of the headquarter concentration.
+
+```{r world_map}
+hq_map <- ggplot() +
+  theme_void() +
+  geom_sf(data = hq_map_data, aes(fill = count), color = "white", lwd = 0)  # plot map
+hq_map
+```
+
+Hooray! We got a map that reflects about the humanitarian headquarter concentration globally. The lighter blue indicates a larger number of headquarters, where we can see some countries like U.S. and Ukraine are on this side. That is matching our findings in @sec-data-processing.
+
+But this map is somehow hart to read and lack of description to stand alone. We will polish the map by grouping the countries into several groups depending on their headquarter numbers and add more explanations.
+
+### 3.1 Rescale the data
+To better visualize the concentration, we rescale the data and set up groups for the number of headquarters, i.e. countries having 1-10 headquarters, having 10-50 headquarters and etc.. A useful trick is to transform the data via a log transformation so the color will be set up more distinguishable. We use `scale_fill_viridis` to achieve this as the following:
+```{r hq_map_rescale}
+hq_map <- hq_map +
+    scale_fill_viridis(trans = "log", breaks=c(1,10,50,100,300), 
+                       # Legend style
+                       name = "Num. Headquarters",
+                       guide = guide_legend(
+                           keyheight = unit (2, units = "mm"),
+                           label.position = "bottom", 
+                           title.position = 'top', nrow = 1))
+hq_map
+```
+
+For comparison, if we do not apply the log transformation `trans = "log"`, it will look the following:
+```{r hq_map_noscale, message=FALSE}
+hq_map +
+    scale_fill_viridis(breaks=c(1,10,50,100,300))
+```
+
+### 3.2 Provide clear description
+We add title and caption to explain the figure.
+```{r hq_map_description}
+hq_map <- hq_map +
+    labs(
+    title = "Humanitarian Organization Headquarters Concentration",
+    subtitle = "Number of headquarters per country"
+  )  # add metadata
+hq_map
+```
+
+### 3.3 Format the theme
+Almost done! The final polish is to make it more visually appealing. For instance, we do not have headquarters on Antarctic, so removing it from the map is good to reduce unnecessary information. We further provide a grey background and reposition the legend.
+```{r hq_map_theme}
+hq_map <- hq_map +
+  theme(
+    plot.background = element_rect(fill = "#f5f5f2", color = NA),
+    legend.position = c(0.13, 0.15)
+  ) + # polish the appearance
+  coord_sf(ylim = c(-50, 90)) # Remove antarctic
+hq_map
+```
+
+# Read more
+- [Part 1: Plot basic map with collected data](https://openwashdata.org/pages/blog/posts/2024-03-01-create-map-part-1/#plot-map-with-collected-data)
+- Part 3: Make an interactive map
+
+References:
+
+\[1\] [Choropleth map with R and ggplot2](https://r-graph-gallery.com/327-chloropleth-map-from-geojson-with-ggplot2.html)
+\[2\] [gdho Example Tutorial: Where are the headquarters of humanitarian organizations?](https://openwashdata.github.io/gdho/articles/examples.html)
