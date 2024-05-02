@@ -1,0 +1,71 @@
+---
+title: "WASHWeb Webinar: The Future of Our WASH Data Ecosystem"
+description: |
+  openwashdata will be represented at an event organised by our partner WASHWeb. 
+  Amongst seven other guest speakers, we will introduce the openwashdata 
+  community, our phase 1 achievements, and a vision for the next phases.
+bibliography: ../../../references.bib
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+## 👋 Welcome
+
+WASHWeb is proud to announce that it is hosting its first ever webinar,
+with guest speakers from Akvo, Aquaya, IRCWASH Systems Academy, mWater,
+openwashdata, Segura Consulting, WASHAI, and WASHNote.
+
+We will delve into different innovations working towards an improved
+WASH data ecosystem - from the use of AI and open data, to creating
+scalable management information systems. 
+
+## 📆 Event Details
+
+-   **Date:** Thursday, April 04, 3:00 - 4:30 PM (CET)
+
+-   **Zoom Registration**:
+    <https://us06web.zoom.us/meeting/register/tZUpfuGqqjoqEtEzlGdETK1t7dPsfswHnozN#/registration>
+
+-   `r emo::ji("us")` 7:00 AM (MST - Boulder, USA)
+
+-   `r emo::ji("uk")` 2:00 PM (GMT - London, UK)
+
+-   `r emo::ji("nigeria")` 3:00 PM (WAT - Katsina, Nigeria)
+
+-   `r emo::ji("kenya")` 5:00 PM (EAT - Nairobi, Kenya)
+
+-   `r emo::ji("india")` 7:30 PM (IST - New Delhi, India)
+
+-   `r emo::ji("indonesia")` 9:00 PM (WIB - Jakarta, Indonesia)
+
+## 📝 Agenda
+
+- in preparation
+
+```{r}
+#| tbl-colwidths: [15, 35, 15, 45]
+#| column: page
+#| eval: true
+
+agenda <- readr::read_csv(here::here("pages/events/2024-04-04-webinar-washweb/data/tbl-05-washweb-webinar-agenda.csv"))
+
+agenda |> 
+    dplyr::select(time, title, speaker, affiliation) |> 
+    dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+    
+```
+
+## Slides 
+
+[View slides in full screen](../../gallery/slides/washweb-webinar/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar/washweb-webinar-openwashdata.pdf)
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/washweb-webinar/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
+

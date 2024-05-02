@@ -2,6 +2,14 @@
 title: "Slides"
 ---
 
+
+## WASHWeb webinar
+
+[View slides in full screen](washweb-webinar/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar/washweb-webinar-openwashdata.pdf)
+```{=html}
+<iframe class="slide-deck" src="washweb-webinar/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
 ## openwashdata webinar
 
 [View slides in full screen](openwashdata-webinar-01/) | [Download slides as PDF](https://github.com/Global-Health-Engineering/website/blob/main/1-slides/d03-hubris-to-hope-reference-management.pdf)
