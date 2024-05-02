@@ -1,0 +1,81 @@
+---
+title: "openwashdata & WASHWeb partnership workshop"
+description: |
+  This workshop is hosted by the Global Health Engineering group at ETH Zurich. 
+  It's our first time to meet in person and the goals are to get to know each other,
+  discuss on items of collaboration and define task responsibilities, and 
+  actively work on material for collaborative events.
+bibliography: ../../../references.bib
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+options(knitr.kable.NA = '')
+```
+
+
+## Participants
+
+- Merel Laauwen, [WASHWeb](https://washweb.org/)
+- Nick Dickinson, [WASHWeb](https://washweb.org/)
+- Elizabeth Tilley, [Global Health Engineering, ETH Zurich](https://ghe.ethz.ch/)
+- Colin Walder, [Global Health Engineering, ETH Zurich](https://ghe.ethz.ch/)
+- Lars Schöbitz, [Global Health Engineering, ETH Zurich](https://ghe.ethz.ch/)
+
+
+## 📆 Event Details
+
+- Dates: 08 April & 09 April 2024
+- Location: Zurich, Switzerland
+
+## 📝 Agenda
+
+### Day 1
+
+```{r}
+#| tbl-colwidths: [50, 35, 15, 30]
+#| column: page
+#| eval: true
+
+agenda <- readr::read_csv(here::here("pages/events/2024-04-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
+
+agenda |> 
+    filter(day == 1) |> 
+    dplyr::select(time, title, lead) |> 
+    dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+    
+```
+
+### Day 2
+
+```{r}
+#| tbl-colwidths: [50, 35, 15, 30]
+#| column: page
+#| eval: true
+
+agenda |> 
+    filter(day == 2) |> 
+    dplyr::select(time, title, lead) |> 
+    dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+```
+
+
+## Resources
+
+1. openwashdata vision presentation: <https://openwashdata.org/pages/gallery/slides/washweb-webinar/#/title-slide>
+2. openjmp funded proposal: <https://github.com/openwashdata-dev/prop-eth-ord-explore-02-openwashdata/blob/master/proposal.md>
+3. openjmp slides: <https://openwashdata.org/pages/gallery/slides/cu-wash-symposium-2023-openjmp/#/title-slide>
+4. jmpwashdata R package: <https://github.com/WASHNote/jmpwashdata>
+
