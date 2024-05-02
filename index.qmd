@@ -19,17 +19,18 @@ toc: false
 - Meet people that care about data and code being open and reusable
 
 ***
+
 Our mission is to empower WASH professionals to engage with tools and workflows for open data and code.
 
 ***
 
 ::: {.callout-important}
-## openwashdata webinar: a data sharing workflow that may please the publishers
-Join us for our first webinar with with the Public Library of Science (PLOS) on **January 23, 2:00 - 3:00 PM (CET)**. where we will introduce you to a workflow for sharing data openly. You will learn about the importance of open data and tangible benefits for sharing. <https://openwashdata.org/pages/events/2023-01-24-webinar-data-publishing/>
+## WASHWeb Webinar: The Future of Our WASH Data Ecosystem
+openwashdata will be represented at an event organised by our partner WASHWeb on April 4th 2024.  Amongst seven other guest speakers, we will introduce the openwashdata  community, our phase 1 achievements, and a vision for the next phases. <https://openwashdata.org/pages/events/2024-04-04-webinar-washweb/>
 :::
 
+*** 
 
-***
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Get Started](pages/get-started/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}

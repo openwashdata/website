@@ -1,0 +1,26 @@
+WP,Name,Project Activity,Research Question,Lead,Q1,Q2,Q3,Q4,Q5,Q6
+WP1,NA,Activity 1.1: Identify and engage potential partner organizations for collaboration.,RQ 1.1: What are the key factors for successful strategic partnerships in promoting ORD practices?,LS,NA,NA,NA,NA,NA,NA
+WP1,NA,Activity 1.2: Develop and implement data stewardship training program with network.,RQ 1.2: How does the integration of data stewards within organizations affect the adoption of ORD practices?,LS,NA,NA,NA,NA,NA,NA
+Loading...,NA,"Activity 1.3: Identify how ethical approval for data collection differs for types of organizations (university, NGO) and types of data (quantitative, qualitative).","RQ 1.3: How do ethical approval processes for projects vary across different types of organizations and data, and how can these differences be addressed to promote open data practices?","DS1, DS2",NA,NA,NA,NA,NA,NA
+Loading...,NA,Activity 1.4: Identify current data management practices and develop a draft data management strategy for organization.,NA,"DS1, DS2",NA,NA,NA,NA,NA,NA
+Loading...,NA,"Activity 1.5: Publish at least five datasets of two different types that are available to the organization, following openwashdata data publishing workflow.",NA,"DS1, DS2",NA,NA,NA,NA,NA,NA
+Loading...,NA,"Activity 1.6: Record, transcribe, and analyse each of the 12 modules in addition to other meetings notes of network.",RQ 1.6: What are the greatest barriers to the development of a data management strategy for WASH organisations?,LS,NA,NA,NA,NA,NA,NA
+WP2,NA,Activity 2.1: Develop a governance structure for a community organization and decision-making processes.,RQ 2.1: What governance structures best support the sustainability of ORD communities?,LS,NA,NA,NA,NA,NA,NA
+WP2,NA,Activity 2.2: Form a sounding board comprising community members to provide directional feedback.,RQ 2.2: How does community feedback influence the direction and effectiveness of ORD initiatives?,LS,NA,NA,NA,NA,NA,NA
+WP2,NA,Activity 2.3: Create a long-term funding strategy for the openwashdata community.,RQ 2.3: What are the key elements of a successful long-term funding strategy for ORD initiatives?,LS,NA,NA,NA,NA,NA,NA
+WP3,NA,Activity 3.1: Offer advanced data science training and workshops to community members.,RQ 3.1: What are the most effective methods for building and maintaining an active ORD community?,SA,NA,NA,NA,NA,NA,NA
+WP3,NA,Activity 3.2: Develop a mentorship program to support new members in adopting ORD practices.,RQ 3.2: How does mentorship contribute to the adoption of ORD practices among community members?,SA,NA,NA,NA,NA,NA,NA
+WP3,NA,Activity 3.3: Organize community events to foster networking and collaboration.,RQ 3.3: What role do community events play in promoting collaboration and knowledge exchange?,SA,NA,NA,NA,NA,NA,NA
+WP4,NA,Activity 4.1: Develop and submit an R package to CRAN for easier data exploration and installation.,RQ 4.1: How does the availability of an R package on CRAN affect the findability and reuse of datasets?,SA,NA,NA,NA,NA,NA,NA
+WP4,NA,Activity 4.2: Assess and improve the FAIRness of datasets using existing tools.,RQ 4.2: What improvements in FAIRness metrics can be achieved through targeted interventions?,SA,NA,NA,NA,NA,NA,NA
+WP4,NA,Activity 4.3: Prototype Python data packages for increased interoperability with the Python community.,RQ 4.3: What are the challenges and benefits of creating cross-platform data packages for R and Python users?,SA,NA,NA,NA,NA,NA,NA
+Loading...,NA,Activity 5.1:,RQ 5.1:,LS,NA,NA,NA,NA,NA,NA
+Loading...,NA,Activity 5.2:,RQ 5.2:,LS,NA,NA,NA,NA,NA,NA
+Loading...,NA,Activity 5.3:,RQ 5.3:,LS,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+tbl-01-work-packages,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

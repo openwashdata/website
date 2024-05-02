@@ -1,0 +1,22 @@
+---
+title: "Margaux Götschmann"
+subtitle: "Data Science Intern"
+image: profile-margaux.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/margauxgo
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/margaux-g%C3%B6tschmann-23671a259/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0002-2567-3343
+---
+
+Margaux is a Master's student in Applied Mathematics willing to work with real-world data and make use of her theoretical knowledge. The openwashdata internship gives her the possibility to help the community and learn about open data.
+

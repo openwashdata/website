@@ -1,0 +1,5 @@
+Cost Category,Cost Item,Description,Cost,Source,Start,End
+Personell,Salary Data Steward 1 (University South Africa),50% of 1 year salary,15000,ETH ORD Explore,2025-01-01T00:00:00Z,2025-12-31T00:00:00Z
+Personell,Salary Data Steward 1 (University South Africa),50% of 1 year salary,15000,Global Health Engineering,2025-01-01T00:00:00Z,2025-12-31T00:00:00Z
+Personell,Salary Data Steward 1 (University South Africa),100% of 1 year salary,30000,Global Health Engineering,2026-01-01T00:00:00Z,2026-12-31T00:00:00Z
+Personell,Salary Data Steward 1 (University South Africa),100% of 3 year salary,90000,3rd party + Global Health Engineering,2027-01-01T00:00:00Z,2029-12-31T00:00:00Z
