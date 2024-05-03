@@ -1,0 +1,22 @@
+---
+title: "Colin Walder"
+subtitle: "Partnerships & Education"
+image: profile-colin.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/bonschorno
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/colin-walder-58386a166/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0006-0969-1954
+
+---
+
+Colin works as a data steward for the Global Health Engineering Group at ETH Zürich. His primary focus lies in developing R packages to enhance the accessibility and reproducibility of research data. Within the realm of openwashdata, his main contributions will revolve around improving packages for accessing data from the Joint Monitoring Programme (JMP) by WHO/UNICEF.
