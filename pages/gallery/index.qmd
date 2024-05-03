@@ -14,5 +14,7 @@ Our gallery highlights media created within the openwashdata. We share our strat
 
 {{< fa display >}} [Slides](/pages/gallery/slides/)
 
-{{< fa book >}} [Funded Proposal](/pages/gallery/proposal/index.qmd)
+{{< fa book >}} [Phase 1 Proposal (funded)](/pages/gallery/proposal/index.qmd)
+
+{{< fa book >}} [Phase 2 Proposal (submitted)](/pages/gallery/proposal-02/index.qmd)
 

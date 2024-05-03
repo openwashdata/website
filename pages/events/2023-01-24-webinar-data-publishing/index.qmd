@@ -50,6 +50,20 @@ agenda  |>
     knitr::kable()
 ```
 
+## Slides
+
+### openwashdata community & workflow
+
+[View slides in full screen](../../gallery/slides/openwashdata-webinar-01/index.html) | [Download slides as PDF](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/openwashdata-webinar-01/openwashdata-webinar-01.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/openwashdata-webinar-01/index.html" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
+### Open data: A publishers perspective
+
+[Download slides as PDF](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/openwashdata-webinar-01/plos-water-openwashdata-webinar-slides.pdf)
+
 ## 🏁 Objectives
 
 By the end of this webinar, participants will be able to:

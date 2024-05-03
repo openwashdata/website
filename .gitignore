@@ -55,5 +55,7 @@ rsconnect/
 .DS_Store
 
 # folder
-
 report
+
+# files
+*.docx

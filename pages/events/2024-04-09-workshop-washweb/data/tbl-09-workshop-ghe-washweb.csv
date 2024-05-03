@@ -1,0 +1,24 @@
+day,start_time,end_time,title,lead,resources,time
+1,12:45,13:00,Arrival at GHE,NA,https://ghe.ethz.ch/about/how-to-find-us.html,12:45 - 13:00
+1,13:00,13:15,Getting to know each other - Speed interview activity,Lars Schöbitz,NA,13:00 - 13:15
+1,13:15,13:30,Getting to know each other - Round of personal introductions,all,NA,13:15 - 13:30
+1,13:30,13:45,Getting to know each other - Brief overview of GHE,Elizabeth Tilley,NA,13:30 - 13:45
+1,13:45,14:15,Getting to know each other - Introduction to WASHWeb vision & working groups,Nick Dickinson & Merel Laauwen,https://washweb.org/,13:45 - 14:15
+1,14:15,14:30,Break,NA,NA,14:15 - 14:30
+1,14:30,15:00,Introduction to openwashdata vision & phase 2 proposal,Lars Schöbitz,https://github.com/openwashdata-dev/prop-eth-ord-explore-02-openwashdata/blob/master/proposal.md,14:30 - 15:00
+1,15:00,15:30,Discussion on synergies and strategies for aligning visions,all,NA,15:00 - 15:30
+1,15:30,15:40,Break,NA,NA,15:30 - 15:40
+1,15:40,15:50,Wake-up activity,Lars Schöbitz,NA,15:40 - 15:50
+1,15:50,16:10,Overview of ETH ORD Contribute project - openjmp,Lars Schöbitz,https://openwashdata.org/pages/gallery/slides/,15:50 - 16:10
+1,16:10,16:30,Overview of jmpwashdata package and wishlist / roadmap issue,Nick Dickinson,https://github.com/WASHNote/jmpwashdata,16:10 - 16:30
+1,16:30,16:35,Short break,NA,NA,16:30 - 16:35
+1,16:30,16:45,Discussion and assignment of tasks & timelines for jmpwashdata & openjmp packages,all,NA,16:30 - 16:45
+1,16:45,17:00,Wrap-up,NA,NA,16:45 - 17:00
+2,09:00,09:15,Warm-up activity,NA,NA,09:00 - 09:15
+2,09:15,09:30,Overview of SWWW 2024 proposal,NA,NA,09:15 - 09:30
+2,09:30,09:45,Overview of ETH ORD Contribute proposal,NA,NA,09:30 - 09:45
+2,09:45,10:00,Coffee break,NA,NA,09:45 - 10:00
+2,10:00,11:00,Wriring session on SWWW 2024 programme and ETH ORD Contribute proposal,NA,NA,10:00 - 11:00
+2,11:00,11:05,Short break,NA,NA,11:00 - 11:05
+2,11:05,11:45,Feedback on writing session and definition on action points and next steps,NA,NA,11:05 - 11:45
+2,11:45,12:00,Wrap-up,NA,NA,11:45 - 12:00
