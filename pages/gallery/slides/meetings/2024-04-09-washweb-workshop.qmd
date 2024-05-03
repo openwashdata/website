@@ -1,0 +1,110 @@
+---
+title: "Workshop"
+subtitle: "GHE & WASHWeb"
+author: 
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2024-04-09
+date-format: long
+format: 
+  revealjs:
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
+---
+
+```{r}
+
+library(washopenresearch)
+library(tidyverse)
+library(ggthemes)
+library(ggtext)
+library(gt)
+library(countdown)
+
+# set ggplot theme --------------------------------------------------------
+
+ggplot2::theme_set(
+    # Pick a starting theme
+    ggplot2::theme_gray(base_size = 14) +
+        # Add your favourite elements
+        ggplot2::theme(
+            axis.line = element_line(),
+            panel.background = element_rect(fill = "white"),
+            panel.grid.major = element_line("grey95", linewidth = 0.25),
+            legend.key  = element_rect(fill = NA) 
+        )
+)
+
+```
+
+# Getting to know each other - Speed interview activity 
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Coffee or Tea?
+:::
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Twitter or LinkedIn?
+:::
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Do you have a personal role model and if so who is it?
+:::
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+What is your favorite place to travel? Why?
+:::
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+What do you think is the best invention of our existence?
+:::
+
+## {{< fa circle-question >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Something that nobody teaches you, but that everyone should learn.
+:::
+
+# Getting to know each other - Round of personal introductions
+
+##  {{< fa handshake-simple >}} {auto-animate="true"}
+
+::: task
+
+- [Past]{.highlight-peach}: How did you end up caring about data and WASH?
+- [Present]{.highlight-peach}: What are you working on right now?
+- [Future]{.highlight-peach}: What are you hoping to do in the future?
+- [You]{.highlight-peach}: Add a personal note about yourself, if you like. 
+
+::: hand
+Think & take notes for 2 minutes, then share for 1 minute
+:::
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 2)
+```
+
+# Getting to know each other - Brief overview of GHE
+
+# Getting to know each other - Introduction to WASHWeb vision & working groups
