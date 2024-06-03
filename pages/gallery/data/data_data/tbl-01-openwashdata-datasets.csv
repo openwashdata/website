@@ -15,5 +15,7 @@ id,pkg_name,maintainer,source,difficulty,status,description,location,date_publis
 NA,dryingfaecal,mianzg,academic,high,in-progress,Engineering experiments related to drying of faecal sludge from on-site sanitation facilities and fresh faeces.,Global,NA,<https://github.com/openwashdata/dryingfaecal>,<https://openwashdata.github.io/dryingfaecal>
 NA,climatevulnerabilitykhm,mianzg,academic,low,in-progress,"Data on Effects of Climate Vulnerability on Sanitation Access, Sanitation Infrastructure Functionality and Households’ Fecal Sludge Management Practices in Rural Cambodia.",Cambodia,NA,<https://github.com/openwashdata/climatevulnerabilitykhm>,<https://openwashdata.github.io/climatevulnerabilitykhm>
 NA,wasteburningblantyre,larnsce,academic,high,in-progress,NA,Malawi,NA,<https://github.com/openwashdata/wasteburningblantyre>,<https://openwashdata.github.io/wasteburningblantyre>
-NA,whatawaste,mianzg,NA,low,in-progress,NA,Global,NA,<https://github.com/openwashdata/whatawaste>,<https://openwashdata.github.io/whatawaste>
+NA,whatawaste,mianzg,NA,low,in-progress,Data about a global project What a Waste that aggregated data on solid waste management from around the world,Global,NA,<https://github.com/openwashdata/whatawaste>,<https://openwashdata.github.io/whatawaste>
 13,washopenresearch,mianzg,academic,high,published,"Dataset about open research data availability in Water, Sanitation and Hygiene (WASH).",Global,2024-05-13T00:00:00Z,<https://github.com/openwashdata/washopenresearch>,<https://openwashdata.github.io/washopenresearch>
+NA,wsabrazil,margauxgo,NA,NA,in-progress,NA,NA,NA,<https://github.com/openwashdata/wsabrazil>,NA
+NA,ugabore,margauxgo,NA,NA,in-progress,NA,NA,NA,<https://github.com/openwashdata/ugabore>,NA
