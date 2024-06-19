@@ -69,6 +69,8 @@ agenda |>
     -   File -\> New Project -\> New Directory -\> **R Package using
         devtools**
         -   Scroll down, this option is usually at bottom
+
+            ![](figure/create_pkg_with_devtools.png)
     -   Copy-and-paste assigned GitHub repo name as the directory name
     -   Choose a location of sub-directory
 
@@ -78,7 +80,12 @@ agenda |>
 
     -   `library(usethis)`
 
-5.  Set up Git version control and connect to GitHub #TODO
+5.  Configure Git version control on your local computer, in console,
+    run:
+
+    ``` r
+    use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
+    ```
 
 6.  Add git version control to local directory, in console, run
 
@@ -89,12 +96,19 @@ agenda |>
     \- yes, restart
 
 7.  Open **Terminal** (the tab next to Console), connect remote
-    repository on GitHub with local repository. Run the following
-    commands line by line
+    repository on GitHub with local repository. Run commands suggested
+    in your assigned GitHub repository. The commands should look like
+    the following where `URL` is replaced by your assigned repo url
 
     -   `git remote add origin URL`
+
     -   `git branch -M main`
+
     -   `git push -u origin main`
+
+    -   For example,
+
+        ![](figure/connect_github.png)
 
 ### Create Dataset
 
