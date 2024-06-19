@@ -1,6 +1,11 @@
 time,title,remark
-08:30 - 09:00, Check in & Breakfast,
-09:00 - 09:05, Opening,
-09:05 - 09:50, Introduction workshop for washr R package, 
+08:30 - 09:00, Check in & Breakfast, ""
+09:00 - 09:05, Opening, ""
+09:05 - 09:50, Introduction workshop for washr R package, ""
 10:00 - 12:00, Coding, Package Setup & Data Cleaning
-12:00 - 12:40, Lunch
+12:00 - 12:40, Lunch, ""
+12:45 - 14:45, Coding, Data Cleaning & README writing 
+14:45 - 15:00, Break / Stretch, "" 
+15:00 - 15:30, Final Polish, Write Feedback Survey
+15:30 - 16:15, Showcase, ""
+16:25 - 16:30, Closing, ""
