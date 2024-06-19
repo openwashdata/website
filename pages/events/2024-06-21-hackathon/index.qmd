@@ -1,8 +1,7 @@
 ---
 title: "openwashdata Data Package Hackathon"
 description: |
-  TODO
-bibliography: ../../../references.bib
+  Develop an openwashdata R data package with washr 
 execute:
     echo: false
     warning: false
@@ -12,15 +11,18 @@ editor_options:
     wrap: 72
 ---
 
-## 👋 Welcome
+## 🎯 Objectives
+
+-   Deliver publishable openwashdata data packages
+-   Beta-test the `washr` R package to receive feedback for the package
+    release
+-   Meet openwashdata friends and have fun
 
 ## 📆 Event Details
 
 -   **Date:** Friday, June 21, 9:00 AM - 4:30 PM (CET)
 
 ## 📝 Agenda
-
--   in preparation
 
 ```{r}
 #| tbl-colwidths: [15, 35, 15, 45]
@@ -39,10 +41,10 @@ agenda |>
 
 ## 🖼️ Slides
 
-[View slides in full screen]() \| [Download slides as PDF]()
+[View slides in full screen](../../gallery/slides/hackathon-2024/)
 
 ```{=html}
-<iframe class="slide-deck" src="" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+<iframe class="slide-deck" src="../../gallery/slides/hackathon-2024/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
 ```
 ## 🧑‍💻 Workflow
 
@@ -82,8 +84,9 @@ agenda |>
 
     -   [ ] `library(usethis)`
 
-5.  Configure Git version control on your local computer. 
-    - [ ] In console, run:
+5.  Configure Git version control on your local computer.
+
+    -   [ ] In console, run:
 
     ``` r
     use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
@@ -91,28 +94,31 @@ agenda |>
 
 6.  Add git version control to local directory, in console, run
 
-    - [ ] `use_git()`
+    -   [ ] `use_git()`
 
-    -    yes, commit
+    -   yes, commit
 
-    -    yes, restart
+    -   yes, restart
 
 7.  Connect local computer with GitHub, please refer to
     <https://happygitwithr.com/https-pat.html> for more details.
 
-    - [ ]  In Console, run
+    -   [ ] In Console, run
 
         ```         
         usethis::create_github_token()
         ```
 
-    - [ ]  Click “Generate token”.
+    -   [ ] Click “Generate token”.
 
-    - [ ]  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT. You will need the PAT in the next step.
+    -   [ ] Copy the generated PAT to your clipboard. Or leave that
+        browser window open and available for a little while, so you can
+        come back to copy the PAT. You will need the PAT in the next
+        step.
 
-   
-
-8.  Open **Terminal** (the tab next to Console), run commands suggested in your assigned GitHub repository. The commands should look like the following where `URL` is replaced by your assigned repo url
+8.  Open **Terminal** (the tab next to Console), run commands suggested
+    in your assigned GitHub repository. The commands should look like
+    the following where `URL` is replaced by your assigned repo url
 
     -   `git remote add origin URL`
 
