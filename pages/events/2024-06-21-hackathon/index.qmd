@@ -31,6 +31,7 @@ agenda <- readr::read_csv(here::here("pages/events/2024-06-21-hackathon/data/hac
 
 agenda |> 
     dplyr::select(time, title, remark) |> 
+    dplyr::mutate(remark = stringr::str_replace_na(remark, replacement = "")) |>
     dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
     knitr::kable()
     
@@ -49,15 +50,15 @@ agenda |>
 
 1.  **Open GitHub**
 
-    1.  Accept the GitHub invitation to contribute
+    -   [ ] 1. Accept the GitHub invitation to contribute
 
 2.  **Open RStudio IDE**
 
-    1.  Check if R Packages `devtools` and `usethis` are installed.
-        Otherwise, in console, run
+    -   [ ] 1. Check if R Packages `devtools` and `usethis` are
+        installed. Otherwise, in console, run
         `install.packages(c("devtools", "usethis"))`.
 
-    2.  Install `washr` R package, in console, run:
+    -   [ ] 2. Install `washr` R package, in console, run:
 
         ``` r
         library(devtools)
@@ -66,22 +67,23 @@ agenda |>
 
 3.  Create a new project following:
 
-    -   File -\> New Project -\> New Directory -\> **R Package using
+    -   [ ] File -\> New Project -\> New Directory -\> **R Package using
         devtools**
         -   Scroll down, this option is usually at bottom
 
             ![](figure/create_pkg_with_devtools.png)
-    -   Copy-and-paste assigned GitHub repo name as the directory name
-    -   Choose a location of sub-directory
+    -   [ ] Copy-and-paste assigned GitHub repo name as the directory
+        name
+    -   [ ] Choose a location of sub-directory
 
 4.  Load required libraries:
 
-    -   `library(washr)`
+    -   [ ] `library(washr)`
 
-    -   `library(usethis)`
+    -   [ ] `library(usethis)`
 
-5.  Configure Git version control on your local computer, in console,
-    run:
+5.  Configure Git version control on your local computer. 
+    - [ ] In console, run:
 
     ``` r
     use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
@@ -89,16 +91,28 @@ agenda |>
 
 6.  Add git version control to local directory, in console, run
 
-    \- `use_git()`
+    - [ ] `use_git()`
 
-    \- yes, commit
+    -    yes, commit
 
-    \- yes, restart
+    -    yes, restart
 
-7.  Open **Terminal** (the tab next to Console), connect remote
-    repository on GitHub with local repository. Run commands suggested
-    in your assigned GitHub repository. The commands should look like
-    the following where `URL` is replaced by your assigned repo url
+7.  Connect local computer with GitHub, please refer to
+    <https://happygitwithr.com/https-pat.html> for more details.
+
+    - [ ]  In Console, run
+
+        ```         
+        usethis::create_github_token()
+        ```
+
+    - [ ]  Click “Generate token”.
+
+    - [ ]  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT. You will need the PAT in the next step.
+
+   
+
+8.  Open **Terminal** (the tab next to Console), run commands suggested in your assigned GitHub repository. The commands should look like the following where `URL` is replaced by your assigned repo url
 
     -   `git remote add origin URL`
 
