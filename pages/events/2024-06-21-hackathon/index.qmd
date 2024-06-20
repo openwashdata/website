@@ -170,7 +170,8 @@ agenda |>
     tidy data.**
     -   You may need to modify or delete some code in
         `data_processing.R`
-4.  Export the tidy data by executing your finalized `data_processing.R`
+4.  Export the tidy data by executing the whole `data_processing.R`
+    -   Add, commit and push all changes to GitHub
 
 #### Dictionary
 
@@ -179,6 +180,9 @@ agenda |>
     -   Go to `data-raw/dictionary.csv`
     -   Fill the column "description" in `dictionary.csv` for each
         dataset and variable
+        -   It might be easier to edit in a spreadsheet software (e.g.
+            Excel)
+    -   Save `dictionary.csv`
 2.  Add, commit and push all changes to GitHub:
 
 ### Document Dataset
@@ -189,6 +193,8 @@ agenda |>
     console: `setup_roxygen()`
     -   Open each documentation file in `R/` to write a human-readable
         title and description about the dataset
+
+        ![](figure/write_dict.gif)
 2.  Add, commit and push all changes to GitHub
 3.  Use `devtools` to document, check and install the package
     -   `devtools::document()`
@@ -198,7 +204,8 @@ agenda |>
     -   `devtools::install()`
 
         If there is any error or warning, please let me know and we can
-        look together.
+        look together. You will have a warning message about license
+        which will be addressed in the next step.
 
 #### DESCRIPTION
 
@@ -225,7 +232,10 @@ use_author(given = "First Name", family = "Last Name",
     use_author(given = "Second Author", family = "Second Author", role = "aut")
     ```
 
-3.  Complete `DESCRIPTION` file by ruuning: `update_description()`
+3.  Go to `DESCRIPTION` file, write the `Title` and `Description` about
+    the package. Then, in console, run: `update_description()` to update
+    other fields. Proof-read the `DESCRIPTION` file to make sure that
+    the fields are correct.
 
 4.  Use `devtools` to document, check and install the package
 
@@ -243,8 +253,8 @@ use_author(given = "First Name", family = "Last Name",
 #### README
 
 1.  In console, execute `setup_readme()`.
-    -   Optionally, enable `has_example=TRUE` to create an example
-        article for the package.
+    -   If you are not tight on time, optionally, enable
+        `has_example=TRUE` to create an example article for the package.
 2.  Open `README.Rmd` and edit the sections.
     -   **Make at least one plot about the data in the section
         "Example"**
@@ -255,6 +265,8 @@ use_author(given = "First Name", family = "Last Name",
 
 2.  In console, run `setup_website()` to create an openwashdata style
     pkgdown website
+    -   Select "No" option to not override the `_pkgdown.yml` in the
+        console
 3.  Use `devtools` to document, check and install the package
     -   `devtools::document()`
 
@@ -266,6 +278,4 @@ use_author(given = "First Name", family = "Last Name",
         look together.
 4.  Add, commit and push all changes to GitHub
 
-### Resources
-
--   Use keyboard shortcuts
+### 
