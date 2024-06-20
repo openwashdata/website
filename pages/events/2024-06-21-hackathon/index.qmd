@@ -1,0 +1,287 @@
+---
+title: "openwashdata Data Package Hackathon"
+description: |
+  This hackathon is hosted by the Global Health Engineering group at ETH Zurich. Participants will develop an openwashdata R data package with washr package.
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+## 🎯 Objectives
+
+-   Deliver publishable openwashdata data packages
+-   Beta-test the `washr` R package to receive feedback for the package
+    release
+-   Meet openwashdata friends and have fun
+
+## 📆 Event Details
+
+-   **Date:** Friday, June 21, 9:00 AM - 4:30 PM (CET)
+
+## 📝 Agenda
+
+```{r}
+#| tbl-colwidths: [15, 35, 15, 45]
+#| column: page
+#| eval: true
+
+agenda <- readr::read_csv(here::here("pages/events/2024-06-21-hackathon/data/hackathon-agenda.csv"))
+
+agenda |> 
+    dplyr::select(time, title, remark) |> 
+    dplyr::mutate(remark = stringr::str_replace_na(remark, replacement = "")) |>
+    dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+    
+```
+
+## 🖼️ Slides
+
+[View slides in full screen](../../gallery/slides/hackathon-2024/) ｜
+[Download slides as
+PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hackathon-2024/openwashdata-data-package-hackathon.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/hackathon-2024/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+## 🧑‍💻 Workflow
+
+### Initialize package repository
+
+1.  **Open GitHub**
+
+    -   [ ] 1. Open your invitation email from GitHub, follow the link,
+        and accept the GitHub invitation to contribute
+
+2.  **Open RStudio IDE**
+
+    -   [ ] 1. Check if R Packages `devtools` and `usethis` are
+        installed. Otherwise, in console, run
+        `install.packages(c("devtools", "usethis"))`.
+
+    -   [ ] 2. Install `washr` R package, in console, run:
+
+        ``` r
+        library(devtools)
+        devtools::install_github("openwashdata-dev/washr")
+        ```
+
+        You might encounter a message to update packages, choose the
+        option "All" to continue.
+
+        ![](figure/pkg_update.png)
+
+3.  Create a new project following:
+
+    -   [ ] File -\> New Project -\> New Directory -\> **R Package using
+        devtools**
+        -   Scroll down, this option is usually at bottom
+
+            ![](figure/create_pkg_with_devtools.png)
+    -   [ ] Copy-and-paste assigned GitHub repo name as the directory
+        name
+    -   [ ] Choose a location of sub-directory
+
+4.  Load required libraries:
+
+    -   [ ] `library(washr)`
+
+    -   [ ] `library(devtools)`
+
+    -   [ ] `library(usethis)`
+
+5.  Configure Git version control on your local computer.
+
+    -   [ ] In console, run:
+
+    ``` r
+    use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
+    ```
+
+6.  Add git version control to local directory, in console, run
+
+    -   [ ] `use_git()`
+
+    -   yes, commit
+
+    -   yes, restart
+
+7.  Connect local computer with GitHub, please refer to
+    <https://happygitwithr.com/https-pat.html> for more details.
+
+    -   [ ] In Console, run
+
+        ```         
+        usethis::create_github_token()
+        ```
+
+    -   [ ] Click “Generate token”.
+
+    -   [ ] Copy the generated PAT to your clipboard. Or leave that
+        browser window open and available for a little while, so you can
+        come back to copy the PAT. You will need the PAT in the next
+        step.
+
+        -   [ ] Please consider to store the PAT securely, e.g., a
+            password manager. You may store it by following the steps
+            [here](https://happygitwithr.com/https-pat#tldr) .
+
+8.  Open **Terminal** (the tab next to Console), run commands suggested
+    in your assigned GitHub repository. The commands should look like
+    the following:
+
+    ``` bash
+    # Change the url link to be your assigned GitHub repo
+    git remote add origin "https://github.com/openwashdata/fssample.git" 
+
+    git branch -M main
+
+    git push -u origin main
+    ```
+
+    -   You can find and copy the commands in your assigned repo too:
+
+        ![](figure/connect_github.png)
+
+    -   If this is your FIRST TIME connecting RStudio with GitHub, you
+        will receive a message in the Terminal to log in. Enter your
+        GitHub username, and for the password, copy-and-paste the PAT
+        token generated from Step 7 (`ghp_xxxxxxxxxxxxxxxxxxxx`)
+
+        ![](figure/connect_github_rstudio.JPG)
+
+### Create Dataset
+
+#### Data Processing
+
+1.  Add directory for raw data to project
+    -   In Console, execute `setup_rawdata()`
+2.  Move raw data files to the directory `data-raw`
+    -   Add, commit and push all changes to GitHub
+
+        -   Select "Git" tab on the top-right panel
+        -   (Click "Pull" first for good practice)
+        -   Tick all files and click Commit
+        -   Enter a commit message and click
+            "push"![](figure/commit_msg.png)
+
+        ![](figure/git_panel.png)
+3.  **Work on `data-raw/data_processing.R` to clean raw data and export
+    tidy data.**
+    -   You may need to modify or delete some code in
+        `data_processing.R`
+4.  Export the tidy data by executing the whole `data_processing.R`
+    -   Add, commit and push all changes to GitHub
+
+#### Dictionary
+
+1.  Once data reaches tidy state, in console, execute
+    `setup_dictionary()`
+    -   Go to `data-raw/dictionary.csv`
+    -   Fill the column "description" in `dictionary.csv` for each
+        dataset and variable
+        -   It might be easier to edit in a spreadsheet software (e.g.
+            Excel)
+    -   Save `dictionary.csv`
+2.  Add, commit and push all changes to GitHub:
+
+### Document Dataset
+
+#### Roxygen
+
+1.  Initiate and write documentation in `R/` folder by executing in
+    console: `setup_roxygen()`
+    -   Open each documentation file in `R/` to write a human-readable
+        title and description about the dataset
+
+        ![](figure/write_dict.gif)
+2.  Add, commit and push all changes to GitHub
+3.  Use `devtools` to document, check and install the package
+    -   `devtools::document()`
+
+    -   `devtools::check()`
+
+    -   `devtools::install()`
+
+        If there is any error or warning, please let me know and we can
+        look together. You will have a warning message about license
+        which will be addressed in the next step.
+
+#### DESCRIPTION
+
+1.  Add yourself as the creator and author of the package
+
+```{r eval = FALSE, echo = TRUE}
+use_author(given = "First Name", family = "Last Name", 
+           role = c("aut", "cre"), email = "Your email",
+           comment = c(ORCID = "XXXX-XXXX-XXXX-XXXX"))
+```
+
+2.  On GitHub, create an issue with details to write up author
+    information for `DESCRIPTION` file
+
+    -   Contributors (name, email, role, ORCID)
+        -   Include everyone here
+            -   Roles
+                -   cre = maintainer
+                -   aut = significant contributions
+                -   ctb = contributor with smaller contributions
+    -   Add other author(s):
+
+    ```{r eval=F, echo=T}
+    use_author(given = "Second Author", family = "Second Author", role = "aut")
+    ```
+
+3.  Go to `DESCRIPTION` file, write the `Title` and `Description` about
+    the package. Then, in console, run: `update_description()` to update
+    other fields. Proof-read the `DESCRIPTION` file to make sure that
+    the fields are correct.
+
+4.  Use `devtools` to document, check and install the package
+
+    -   `devtools::document()`
+
+    -   `devtools::check()`
+
+    -   `devtools::install()`
+
+        If there is any error or warning, please let me know and we can
+        look together.
+
+### Communicate Dataset
+
+#### README
+
+1.  In console, execute `setup_readme()`.
+    -   If you are not tight on time, optionally, enable
+        `has_example=TRUE` to create an example article for the package.
+2.  Open `README.Rmd` and edit the sections.
+    -   **Make at least one plot about the data in the section
+        "Example"**
+3.  Once you finish writing `README.Rmd`, run `build_readme()`.
+4.  Add, commit and push all changes to GitHub
+
+#### Pkgdown Website
+
+2.  In console, run `setup_website()` to create an openwashdata style
+    pkgdown website
+    -   Select "No" option to not override the `_pkgdown.yml` in the
+        console
+
+        ![](figure/no_override_pkgdown.png)
+3.  Use `devtools` to document, check and install the package
+    -   `devtools::document()`
+
+    -   `devtools::check()`
+
+    -   `devtools::install()`
+
+        If there is any error or warning, please let me know and we can
+        look together.
+4.  Add, commit and push all changes to GitHub
+
+### 

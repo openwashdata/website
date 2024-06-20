@@ -1,0 +1,244 @@
+---
+title: "openwashdata Data Package Hackathon"
+author: 
+  - name: "Mian Zhong"
+    url: https://openwashdata.org/about/mian/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2024-06-21
+date-format: long
+format: 
+  revealjs:
+    logo: "../images/OWD-logo-20.png"
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+    footer: "[{{< fa link >}} openwashdata.org/pages/gallery/slides/](https://openwashdata.org/pages/gallery/slides/)"
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = TRUE,
+  eval = FALSE
+)
+```
+
+# Welcome!
+
+![](baby_elephant.jpeg){width="340"}
+
+## Data Package - Raw Data
+
+::: columns
+::: {.column width="50%"}
+Conceptually
+
+-   Raw Dataset(s)
+
+    | ID  | Date         | Country       |
+    |-----|--------------|---------------|
+    | 1   | 21.06.2024   | U.S.A.        |
+    | 2   | June 22 2024 | United States |
+    | ... | ...          | ...           |
+:::
+
+::: {.column width="50%"}
+Technically
+
+-   Spreadsheets, PDF reports, Hand-written documents ![](./spreadsheet.png)
+:::
+:::
+
+## Data Package - Tidy Data
+
+::: columns
+::: {.column width="65%"}
+Conceptually
+
+-   Tidy/Processed Dataset(s)
+
+    | id  | date       | country       |
+    |-----|------------|---------------|
+    | 1   | 2024-06-21 | United States |
+    | 2   | 2024-06-22 | United States |
+    | ... | ...        | ...           |
+:::
+
+::: {.column width="35%"}
+Technically
+
+-   .rda Data Objects ![](./rda-data-object.png)
+:::
+:::
+
+## Data Package - Dictionary
+
+::: columns
+::: {.column width="50%"}
+Conceptually
+
+-   Dictionary
+
+| variable | description                   |
+|----------|-------------------------------|
+| id       | The unique ID                 |
+| date     | Date in the format YYYY-MM-DD |
+| country  | Full name of the country      |
+:::
+
+::: {.column width="50%"}
+Technically
+
+-   Dictionary csvfile
+-   R Roxygen documentation
+
+![](perfect_data.png){width="399"}
+:::
+:::
+
+## Data Package - Summary
+
+::: columns
+::: {.column width="40%"}
+Conceptually
+
+-   Raw Dataset(s)
+-   Tidy/Processed Dataset(s)
+-   Dictionary
+:::
+
+::: {.column width="60%"}
+Technically
+
+-   Spreadsheets, PDF reports, Hand-written documents
+-   .rda Data Objects
+-   Dictionary csvfile
+-   R Roxygen documentation
+-   R package metadata
+    -   DESCRIPTION
+    -   CITATION
+:::
+:::
+
+## openwashdata Workflow
+
+-   Initialize package repository
+
+-   Create dataset
+
+-   Document dataset
+
+-   Communicate dataset
+
+## openwashdata Workflow
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Initialize package repository
+
+    ::: incremental
+    -   create GitHub repo
+    -   create local repo
+    -   sync local with GitHub
+    :::
+
+-   Create dataset(s)
+
+    ::: incremental
+    -   Import raw data
+    -   [**Clean data to tidy version**]{.underline}
+    -   Export tidy data
+    -   Write data dictionary
+    :::
+:::
+:::
+
+::: {.column width="50%"}
+::: incremental
+-   Document dataset(s)
+
+    -   write package metadata (e.g. authors)
+    -   document dataset in R
+
+-   Communicate Dataset(s)
+
+    -   README
+
+    -   Website
+
+    -   Tutorial/Example
+:::
+:::
+:::
+
+## washr Overview
+
+> A set of automation tools to set up an openwashdata data package in a consistent structure. It helps to reduce manual entries on tidy data exporting, README writing, pkgdown configuration and content, and etc.
+
+## Create Dataset
+
+1.  Initialize raw data directory
+
+```{r}
+setup_rawdata()
+```
+
+2.  Import raw data into `data-raw`
+
+3.  Go to `data-raw/data-processing.R` and happy data cleaning
+
+    ![](data_cleaning_meme.png){width="398"}
+
+## Document Dataset
+
+1.  Update Package Metadata
+
+```{r update_dict}
+update_description()
+# add author information(All authors)
+usethis::use_author(given = "Mian", family = "Zhong",  
+                    role = c("aut", "cre"), email = "mzhong@ethz.ch", 
+                    comment = c(ORCID = "0009-0009-4546-7214"))
+usethis::use_author(given = "Lars", family = "Schöbitz",  role = "aut", 
+                    email = "lschoebitz@ethz.ch", 
+                    comment = c(ORCID = "0000-0003-2196-5015"))
+```
+
+2.  Create a dictionary for the dataset
+
+```{r}
+setup_dictionary()
+```
+
+## Document Dataset
+
+3.  Go to `data-raw/dictionary.csv`, and fill in the descriptions of the variables
+4.  Convert the dictionary csvfile to R documentation
+
+```{r}
+setup_roxygen()
+```
+
+Go to `R/` and fill in the title and description for the dataset.
+
+![](documentation.png){width="156"}
+
+## Communicate Dataset
+
+1.  Create README and a stand-alone webpage
+
+```{r}
+setup_readme()
+# Go to README.Rmd and complete it
+build_readme()
+setup_website(has_example = TRUE)
+```
+
+![](./washopenresearch-pkgdown.png){width="580"}
