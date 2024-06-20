@@ -60,6 +60,8 @@ agenda |>
     You might encounter a message to update packages when following the
     steps, choose the option "All" to continue.
 
+    ![](figure/pkg_update.png)
+
     -   [ ] 1. Check if R Packages `devtools` and `usethis` are
         installed. Otherwise, in console, run
         `install.packages(c("devtools", "usethis"))`.
@@ -267,6 +269,8 @@ use_author(given = "First Name", family = "Last Name",
     pkgdown website
     -   Select "No" option to not override the `_pkgdown.yml` in the
         console
+
+        ![](figure/no_override_pkgdown.png)
 3.  Use `devtools` to document, check and install the package
     -   `devtools::document()`
 
