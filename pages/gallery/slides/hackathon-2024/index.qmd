@@ -228,6 +228,8 @@ setup_roxygen()
 
 Go to `R/` and fill in the title and description for the dataset.
 
+![](documentation.png){width="156"}
+
 ## Communicate Dataset
 
 1.  Create README and a stand-alone webpage

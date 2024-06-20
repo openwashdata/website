@@ -52,9 +52,13 @@ agenda |>
 
 1.  **Open GitHub**
 
-    -   [ ] 1. Accept the GitHub invitation to contribute
+    -   [ ] 1. Open your invitation email from GitHub, follow the link,
+        and accept the GitHub invitation to contribute
 
 2.  **Open RStudio IDE**
+
+    You might encounter a message to update packages when following the
+    steps, choose the option "All" to continue.
 
     -   [ ] 1. Check if R Packages `devtools` and `usethis` are
         installed. Otherwise, in console, run
@@ -81,6 +85,8 @@ agenda |>
 4.  Load required libraries:
 
     -   [ ] `library(washr)`
+
+    -   [ ] `library(devtools)`
 
     -   [ ] `library(usethis)`
 
@@ -116,19 +122,33 @@ agenda |>
         come back to copy the PAT. You will need the PAT in the next
         step.
 
+        -   [ ] Please consider to store the PAT securely, e.g., a
+            password manager. You may store it by following the steps
+            [here](https://happygitwithr.com/https-pat#tldr) .
+
 8.  Open **Terminal** (the tab next to Console), run commands suggested
     in your assigned GitHub repository. The commands should look like
-    the following where `URL` is replaced by your assigned repo url
+    the following:
 
-    -   `git remote add origin URL`
+    ``` bash
+    # Change the url link to be your assigned GitHub repo
+    git remote add origin "https://github.com/openwashdata/fssample.git" 
 
-    -   `git branch -M main`
+    git branch -M main
 
-    -   `git push -u origin main`
+    git push -u origin main
+    ```
 
-    -   For example,
+    -   You can find and copy the commands in your assigned repo too:
 
         ![](figure/connect_github.png)
+
+    -   If this is your FIRST TIME connecting RStudio with GitHub, you
+        will receive a message in the Terminal to log in. Enter your
+        GitHub username, and for the password, copy-and-paste the PAT
+        token generated from Step 7 (`ghp_xxxxxxxxxxxxxxxxxxxx`)
+
+        ![](figure/connect_rstudio_github.png)
 
 ### Create Dataset
 
