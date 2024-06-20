@@ -1,5 +1,5 @@
 ---
-title: My data science internship with the openwashdata team at Global Health Engineering, ETH Zurich 
+title: My data science internship with the openwashdata team 
 subtitle: Insights from Margaux Götschmann
 description: |
   This is a report of an internship that lasted for four months between March and June 2024. The intern, Margaux Götschmann, shares her experiences and learnings from working with the openwashdata team at the Global Health Engineering (GHE) group at ETH Zurich.
@@ -8,8 +8,8 @@ categories:
   - data science
 author: Margaux Götschmann
 date: today
-draft: true
-image: "screenshot-github.jpg"
+draft: false
+image: "screenshot-github.png"
 image-alt: "Screenshot of GitHub profile showing contributions to repositories."
 ---
 
