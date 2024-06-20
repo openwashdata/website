@@ -148,7 +148,7 @@ agenda |>
         GitHub username, and for the password, copy-and-paste the PAT
         token generated from Step 7 (`ghp_xxxxxxxxxxxxxxxxxxxx`)
 
-        ![](figure/connect_rstudio_github.png)
+        ![](figure/connect_github_rstudio.JPG)
 
 ### Create Dataset
 
@@ -156,13 +156,16 @@ agenda |>
 
 1.  Add directory for raw data to project
     -   In Console, execute `setup_rawdata()`
+2.  Move raw data files to the directory `data-raw`
     -   Add, commit and push all changes to GitHub
+
         -   Select "Git" tab on the top-right panel
         -   (Click "Pull" first for good practice)
         -   Tick all files and click Commit
-        -   Enter a commit message and click "push"
-    -   \[Insert a screenshot here\]
-2.  Move raw data files to the directory `data-raw`
+        -   Enter a commit message and click
+            "push"![](figure/commit_msg.png)
+
+        ![](figure/git_panel.png)
 3.  **Work on `data-raw/data_processing.R` to clean raw data and export
     tidy data.**
     -   You may need to modify or delete some code in
