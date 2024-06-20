@@ -1,7 +1,7 @@
 ---
 title: "openwashdata Data Package Hackathon"
 description: |
-  Develop an openwashdata R data package with washr 
+  This hackathon is hosted by the Global Health Engineering group at ETH Zurich. Participants will develop an openwashdata R data package with washr package.
 execute:
     echo: false
     warning: false
@@ -41,7 +41,9 @@ agenda |>
 
 ## 🖼️ Slides
 
-[View slides in full screen](../../gallery/slides/hackathon-2024/)
+[View slides in full screen](../../gallery/slides/hackathon-2024/) ｜
+[Download slides as
+PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hackathon-2024/openwashdata-data-package-hackathon.pdf)
 
 ```{=html}
 <iframe class="slide-deck" src="../../gallery/slides/hackathon-2024/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
@@ -57,11 +59,6 @@ agenda |>
 
 2.  **Open RStudio IDE**
 
-    You might encounter a message to update packages when following the
-    steps, choose the option "All" to continue.
-
-    ![](figure/pkg_update.png)
-
     -   [ ] 1. Check if R Packages `devtools` and `usethis` are
         installed. Otherwise, in console, run
         `install.packages(c("devtools", "usethis"))`.
@@ -72,6 +69,11 @@ agenda |>
         library(devtools)
         devtools::install_github("openwashdata-dev/washr")
         ```
+
+        You might encounter a message to update packages, choose the
+        option "All" to continue.
+
+        ![](figure/pkg_update.png)
 
 3.  Create a new project following:
 
