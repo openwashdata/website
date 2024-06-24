@@ -137,6 +137,15 @@ tbl_supp_type <- washdev_supp_file_type_n |>
 
 # The Opportunity {background-color="#5b195b"}
 
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+::: {.notes}
+
+- We have a huge and missed opportunity in our sector
+- Very little data is shared publicly and following best practices for reuse
+
+:::
+
 ## Journal articles
 
 ```{r}
@@ -157,7 +166,7 @@ perc_missing <- washdev_das_type_2020 |>
 
 perc_in_paper <- washdev_das_type_2020 |> 
     filter(das_type == "available in paper") |> 
-    pull(n)
+    pull(perc)
 ```
 
 
@@ -166,22 +175,29 @@ Data: R package washopenresearch to be published at <https://github.com/openwash
 :::
 
 ::: {.notes}
-- The first missed opportunity are Scientists
+- The first missed opportunity are journal articles and data from researchers
 
-- In an analysis we are preparing a journal publication, we looked at the data availability statements in 924 articles published in the Journal of Water, Sanitation and Hygiene for Development from 2011 to 2023.
+- We looked at the Data Availability Statements in 924 articles published in the Journal of Water, Sanitation and Hygiene for Development from 2011 to 2023.
 
-- A policy for data availability statements was introduced in 2020, after which a remaining `r round(perc_missing, 0)` % of articles did not include a data availability statement and `r round(perc_in_paper, 0)` % of articles stated that data was available in paper.
+- You can see the data availability statements on the vertical axis and the number of publications on the horizontal axis
+
+- Colors differentiate between papers published before 2020 and in 2020 or later, when a policy was introduced that requires authors to select one of the three data availability statements
+
+- After that policy was introduced, we still found 15% of papers without a data availability statement, while 60% of articles stated that data was available in the paper, which could also be as supplementary material
+
 :::
 
-## Journal articles
+## Journal articles {.smaller}
+
+#### Supplementary Material
 
 :::: {.columns}
 
 ::: {.column width="60%"}
 
-[Take-away]{.highlight-yellow}: Not a single file is in [machine-readable]{.highlight-yellow}, [non-proprietary]{.highlight-yellow} file type that would qualify for following FAIR principles for data sharing [@wilkinson2016].
+[Take-away]{.highlight-yellow}: Not a single file is in [machine-readable]{.highlight-yellow}, [non-proprietary]{.highlight-yellow} file type format that would qualify for following FAIR principles for data sharing [@wilkinson2016].
 
-[Good practice]{.highlight-yellow}: CSV (comma-separated values) 
+[Good practice]{.highlight-yellow}: CSV file (comma-separated values), including a data dictionary for all variables/columns in the data
 :::
 
 ::: {.column width="40%"}
@@ -209,13 +225,15 @@ tbl_supp_type |>
 Data: R package washopenresearch to be published at <https://github.com/openwashdata/washopenresearch>
 :::
 
-
 ::: {.notes}
-- we further extracted data about the supplementary material that were shared with the articles.
-- for articles published 2020 or later, we found that half still had no supplementary files
-- but, more importantly, of those files shared, not a single file is in a machine-readable, non-proprietary file format that would qualify for data shared following FAIR principles for data sharing [@wilkinson2016].
-:::
 
+- We then looked at the Supplementary Material of all articles published in 2020 or later and found that have half of the published articles still had no data published alongside the article
+
+- But, the most insightful take-away is that not a single file was shared in a file type format that would qualify for following FAIR principles for data sharing.
+
+- That is something we are hoping to change, where sharing data as CSV files would already go a long way.
+
+:::
 
 ## PDF reports
 
@@ -225,6 +243,10 @@ knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-p
 
 ::: footer
 Screenshot from @soeters2021treatment
+:::
+
+::: {.notes}
+Another data sink are PDF reports. We love them. They are everywhere. They are typically designed by a graphic designer that receives content from us.
 :::
 
 ## PDF reports
@@ -237,7 +259,18 @@ knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-p
 Screenshot from @soeters2021treatment
 :::
 
+::: {.notes}
+- Unfortunately, these valueble reports never come with the underlying unprocessed raw data attached. In this particular report, we could get access to treatment performance data of eight faecal sludge treatment plants across Africa and Asia
+
+- What we get are tables of ranges instead of the complete number of data points that was collected. 
+
+:::
+
 # openwashdata community {background-color="#5b195b"} 
+
+::: {.notes}
+- To address this, we started the openwashdata community
+:::
 
 ## openwashdata community
 
@@ -257,6 +290,10 @@ From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gal
 
 # openwashdata publishing {background-color="#5b195b"}
 
+::: {.notes}
+We are doing this through our openwashdata publishing arm, for which we developed a workflow that uses data donated by WASH professionals or available online, and re-publishes it following FAIR principles for data sharing
+:::
+
 ## 
 
 ::: learn-more
@@ -271,7 +308,24 @@ From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gal
 [fsmglobal documenation website](https://openwashdata.github.io/fsmglobal/) by @greene2023fsmglobal built with [pkgdown R package](https://pkgdown.r-lib.org/)
 :::
 
+::: {.notes}
+- The product is an R package published as a website for each dataset. We assign a digital object identifier that enables the tracking of citations of the data package and list all contributors with their ORCID iD, so that contributions and citations are linked.
+
+- Data is documented in a way where all variables/columns are described in detail.
+
+- And for those who do not use R, we also share the data as a CSV and XLSX file.
+
+- To date, we have published 12 datasets following this workflow.
+
+:::
+
+
 # openwashdata academy {background-color="#5b195b"}
+
+::: {.notes}
+- We also established the openwashdata academy through which we provide training to anyone interested in the greater WASH sector.
+:::
+
 
 ## data science for openwashdata 001 {.smaller}
 
@@ -279,8 +333,7 @@ From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gal
 - 200 registrations
 - 100 show-ups
 - 40 graduates
-- next iteration: September/October 2024
-- sign-up: https://forms.gle/MP5rNYZagBdfG2ZRA
+- next iteration: September/October 2024, sign-up: <https://forms.gle/MP5rNYZagBdfG2ZRA>
 
 ::: learn-more
 [ds4owd-001.github.io/website/](https://ds4owd-001.github.io/website/)
