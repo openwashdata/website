@@ -180,13 +180,7 @@ Technically
 
 ## washr Overview
 
-Installation.
-
-```{r}
-# install.packages("devtools")
-library(devtools)
-install_github("openwashdata-dev/washr")
-```
+> A set of automation tools to set up an openwashdata data package in a consistent structure. It helps to reduce manual entries on tidy data exporting, README writing, pkgdown configuration and content, and etc.
 
 ## Create Dataset
 
@@ -233,6 +227,8 @@ setup_roxygen()
 ```
 
 Go to `R/` and fill in the title and description for the dataset.
+
+![](documentation.png){width="156"}
 
 ## Communicate Dataset
 
