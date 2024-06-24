@@ -21,6 +21,7 @@ editor_options:
 ## 📆 Event Details
 
 -   **Date:** Friday, June 21, 9:00 AM - 4:30 PM (CET)
+-   **Location:** Location: Zurich, Switzerland
 
 ## 📝 Agenda
 
@@ -282,6 +283,7 @@ use_author(given = "First Name", family = "Last Name",
 
         If there is any error or warning, please let me know and we can
         look together.
-4.  Add, commit and push all changes to GitHub
+4.  Open `.gitignore`, remove `docs`, and save the file.
+5.  Add, commit and push all changes to GitHub
 
 ### 
