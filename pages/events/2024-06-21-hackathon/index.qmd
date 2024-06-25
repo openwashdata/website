@@ -5,11 +5,11 @@ description: |
 execute:
     echo: false
     warning: false
-include-in-header: ./styles.css
 editor_options: 
   chunk_output_type: console
   markdown: 
     wrap: 72
+include-in-header: styles.css
 ---
 
 ## 🎯 Objectives
@@ -21,12 +21,13 @@ editor_options:
 
 ## 🌟 Showcase
 
-::: grid
-::: g-col-4
+::: {.grid}
+
+::: {.g-col-4 style="align-items-stretch"}
 ::: card
 <img src="https://github.com/openwashdata/boreholefuncmwi/raw/main/man/figures/README-unnamed-chunk-7-1.png" alt="Image 1" class="card-img-top"/>
 
-::: card-body
+::: card-body 
 <h5 class="card-title">
 
 boreholefuncmwi
@@ -45,9 +46,9 @@ survey.
 :::
 :::
 
-::: g-col-4
+::: {.g-col-4 style="align-items-stretch"}
 ::: card
-<img src="https://via.placeholder.com/150" alt="Image 3" class="card-img-top"/>
+<img src="figure/portawaterperu.png" alt="Image 3" class="card-img-top"/>
 
 ::: card-body
 <h5 class="card-title">
@@ -67,7 +68,7 @@ Data about a preliminary review of peruvian portable water system.
 :::
 :::
 
-::: g-col-4
+::: {.g-col-4 style="align-items-stretch"}
 ::: card
 <img src="figure/ugabore.png" alt="Image 3" class="card-img-top"/>
 
@@ -89,7 +90,7 @@ Data about borehole repair collected from two districts in central Uganda.
 :::
 :::
 
-::: g-col-4
+::: {.g-col-4 style="align-items-stretch"}
 ::: card
 <img src="figure/watercostaccra.png" alt="Image 2" class="card-img-top"/>
 
@@ -111,7 +112,7 @@ Data about surveys on household water costs, coping mechanisms as well as water 
 :::
 :::
 
-::: g-col-4
+::: {.g-col-4 style="align-items-stretch"}
 ::: card
 <img src="figure/waschoolpiracema.png" alt="Image 3" class="card-img-top"/>
 

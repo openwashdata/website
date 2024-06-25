@@ -2,22 +2,22 @@
   title: WASH in Schools in  Piracema, Brazil
   published: private
   public_link: project report is set to private on GitHub
-  data_package: open data in GitHub repository
-  author: ' - '
+  data_package: <https://openwashdata.github.io/waschoolpiracema/>
+  author: Kasandra Poague
 
 - github_username: '[laurenjudah](https://github.com/laurenjudah)'
   title: A Preliminary Review of Peruvian Potable Water System Data
   published: private
   public_link: project report is set to private on GitHub
-  data_package: open data in GitHub repository
-  author: ' - '
+  data_package: <https://openwashdata.github.io/portawaterperu/>
+  author: Lauren Judah
 
 - github_username: '[IsmaelWASH](https://github.com/IsmaelWASH)'
   title: Economic trends in West Africa
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Ismael Ousmane
 
 - github_username: '[Benedict-89](https://github.com/Benedict-89)'
   title: Unveiling Hydrogeological Dynamics; Advanced Statistical Analysis for Sustainable
@@ -25,7 +25,7 @@
   published: public
   public_link: <https://ds4owd-001.github.io/boreholes-Benedict-89>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Benedict Addae-Mensah
 
 - github_username: '[ljc3084](https://github.com/ljc3084)'
   title: Borehole Data Analysis for Clean Water Access
@@ -39,14 +39,14 @@
   published: public
   public_link: <https://ds4owd-001.github.io/project-bentono>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Benton Otieno
 
 - github_username: '[yaozeizei](https://github.com/yaozeizei)'
   title: Flood losses and protection measures taken by small businesses
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Zeyu Yao
 
 - github_username: '[shraysaxena88](https://github.com/shraysaxena88)'
   title: Field application of breathable laminate-lined pit latrines to capture fecal
@@ -54,49 +54,49 @@
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Shray Saxena
 
 - github_username: '[coulbyph](https://github.com/coulbyph)'
   title: .na.character
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: PHANIWA ZIE ZOUMANA COULIBALY
 
 - github_username: '[OTeeEnabor](https://github.com/OTeeEnabor)'
   title: 'Dive into South African Police Service Crime Stats: 2022-2023'
   published: public
   public_link: <https://ds4owd-001.github.io/project-OTeeEnabor>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Oselu Enabor
 
 - github_username: '[efvicario](https://github.com/efvicario)'
   title: Household survey on water costs and coping strategies in Accra
   published: public
   public_link: <https://ds4owd-001.github.io/project-efvicario>
-  data_package: open data in GitHub repository
-  author: ' - '
+  data_package: <https://openwashdata.github.io/watercostaccra/>
+  author: Elizabeth Vicario
 
 - github_username: '[jonathanoti](https://github.com/jonathanoti)'
   title: Access to WASH Services in Schools in Sub-Saharan Africa
   published: public
   public_link: <https://ds4owd-001.github.io/project-jonathanoti>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Jonathan Oti
 
 - github_username: '[alejandrasuarezcobos](https://github.com/alejandrasuarezcobos)'
   title: Lack of sanitation and drinking water in Colombia
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Monica Suarez
 
 - github_username: '[myesaya](https://github.com/myesaya)'
   title: Determinants of borehole' functionality in Northen Malawi
   published: private
   public_link: project report is set to private on GitHub
-  data_package: open data in GitHub repository
-  author: ' - '
+  data_package: <https://openwashdata.github.io/boreholefuncmwi/>
+  author: Mabvuto Yesaya
 
 - github_username: '[adnanwijayarso](https://github.com/adnanwijayarso)'
   title: 'Drinking Water Service Level and Gross Domestic Product (GDP) per capita in
@@ -104,14 +104,14 @@
   published: public
   public_link: <https://ds4owd-001.github.io/project-adnanwijayarso>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Adnan Rafif Wijayarso
 
 - github_username: '[Shakkour726](https://github.com/Shakkour726)'
   title: Producing JMP estimates
   published: public
   public_link: <https://ds4owd-001.github.io/project_Shakkour726>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Mohammad Shakkour
 
 - github_username: '[Aaronkip-42](https://github.com/Aaronkip-42)'
   title: Willingness to invest in sanitation facilities. A case study of Bomet County,
@@ -119,21 +119,21 @@
   published: public
   public_link: <https://ds4owd-001.github.io/project-Aaron-Kipngeno>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Aaron Kipngeno
 
 - github_username: '[Dominiclemus](https://github.com/Dominiclemus)'
   title: Solid Waste Generation
   published: public
   public_link: <https://ds4owd-001.github.io/project-Dominiclemus>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: BAGUMAHO DOMINIC
 
 - github_username: '[Otim-Haron](https://github.com/Otim-Haron)'
   title: 'Rainfall Dynamics in Uganda: A District-Level Analysis for 2021'
   published: public
   public_link: <https://ds4owd-001.github.io/project-Otim-Haron>
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Haron Otim Otim
 
 - github_username: '[lais-moreira](https://github.com/lais-moreira)'
   title: Inequalities in Access to Water and Sanitation in Slums of the Metropolitan
@@ -141,4 +141,4 @@
   published: private
   public_link: project report is set to private on GitHub
   data_package: open data in GitHub repository
-  author: ' - '
+  author: Lais Dos Santos
