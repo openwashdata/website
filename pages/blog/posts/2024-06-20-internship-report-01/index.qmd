@@ -1,0 +1,23 @@
+---
+title: Get Started with Blogging
+subtitle: A template to use for the openwashdata blog
+description: |
+  This is a template from which the YAML metadata can be copied for a new blog post.
+categories:
+  - template
+author: Lars Schöbitz
+date: "2023-06-21"
+draft: true
+image: "thumbnail.jpg"
+image-alt: "A laptop, coffee, a notebook, and a mobile phone on a brown desk by window."
+---
+
+This is an example post in a Quarto blog. Welcome!
+
+It has a an image included, which will be the thumbnail in the overview. Without an image in the YAML header the first image of the blog post would be used.
+
+This post is stored as a draft (`draft: true`) which results in the post not be included in the listing, site map, or site search. 
+
+To publish the post when it is complete, remove draft: true from the document options and then render it.
+
+

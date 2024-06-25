@@ -1,0 +1,15 @@
+{
+  "hash": "334870f54b20fc94f01a842492ebe603",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Data publication\nsubtitle: Introduction to our R data package workflow\ndescription: This blog post provides a first step-by-step guide on how to start developing an R data package throughout openwashdata.\ncategories:\n  - R\n  - data package\n  - github\nauthor: \n  - name: \"Margaux Götschmann\"\n    affiliation: Global Health Engineering, ETH Zurich\n    affiliation_url: https://ghe.ethz.ch/\n    orcid_id: 0009-0002-2567-3343\ndate: \"2024-05-21\"\ndraft: false\nimage: \"thumbnail.jpg\"\nimage-alt: \"data package workflow\"\n---\n\n\n\n# Getting started with data publication\n\nThis blog post provides a first step-by-step guide on how to start developing an R data package throughout openwashdata. Please follow the next steps carefully. If you encounter any issue, do not hesitate to reach out to us via email or by simply opening an issue on your GitHub repository and tagging us.\n\n## 1. Get a GitHub account\n\nBecause you landed here, you probably have some data to share. The first step is to get familiar with GitHub since we mostly communicate via the so-called ‘GitHub issues’. Please access our GitHub organization repository at the address <https://github.com/openwashdata>.\n\n➠ If you are new to GitHub, please get an account: the ‘Sign up’ button should be visible at the upper right corner of your webpage.\n\n![](openwashdata-github.png)\n\n➠ If you already have an account, please sign in.\n\n## 2. Open an issue on GitHub\n\nThe next step is to open an issue for your data so that we can communicate there directly and keep track of the ongoing data packages:\n\na.  Go to <https://github.com/openwashdata/data/issues>.\n\nb.  Click on the green button at the upper right corner of the page named ‘New issue’.\n\n![](data-issue.png)\n\nc.  Add a title and a short description about your dataset and tag one of us \\@mianzg \\@margauxgo \\@larnsce before submitting the new issue.\n\nd.  You can think about a name for your data package and add it to the issue. The name should: \n    1.  have all small letters,\n    2.  have no spaces or dashes,\n    3.  be a combination of two to three words and\n    4.  identify location and/or theme/topic.\n\n![](data-issue-2.png)",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
