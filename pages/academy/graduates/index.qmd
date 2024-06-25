@@ -1,0 +1,29 @@
+---
+sidebar: false
+description: "Graduates of our data science for openwashdata course"
+toc: true
+listing:
+  date-format: long
+  feed: true
+  filter-ui: false
+  type: table
+  table-hover: false
+  sort-ui: false
+  sort: "date desc"
+  categories: false
+  fields: [author, github_username, title, public_link, data_package]
+  id: graduates-listings
+  contents: data/graduates.yml
+aliases: ["graduates/"]
+format:
+  html:
+    page-layout: full
+    anchor-sections: true
+---
+
+This page highlights the capstone projects completed by the graduates of our [data science for openwashdata course](https://ds4owd-001.github.io/website/) for the 2023-2024 edition. To complete the course, each course participant had to conclude a capstone project with a dataset of their choice and complete a [list of requires items](https://ds4owd-001.github.io/website/project/#required-items).
+
+Please note that not all projects are publicly available. The GitHub repository is set to "private" without a public website.
+
+::: {graduates-listings}
+:::

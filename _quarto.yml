@@ -41,7 +41,11 @@ website:
       - text: "Data"
         href: pages/gallery/data/index.qmd
       - text: "Academy"
-        href: pages/academy/index.qmd
+        menu: 
+          - text: "Courses"
+            href: pages/academy/index.qmd
+          - text: "Graduates 2024"
+            href: pages/academy/graduates/index.qmd
       - text: "Gallery"
         href: pages/gallery/
       - text: "Events"
