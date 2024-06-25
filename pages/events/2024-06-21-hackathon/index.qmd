@@ -23,7 +23,7 @@ include-in-header: styles.css
 ## 🌟 Showcase
 
 Here showcase the data packages developed from our hackathon. These
-datasets cover WASH data about Malawi 🇲🇼 Uganda 🇺🇬, Brazil 🇧🇷 to Peru
+datasets cover WASH data about Malawi 🇲🇼, Uganda 🇺🇬, Brazil 🇧🇷, Peru
 🇵🇪, and Ghana. A big shoutout to all the participants for their hard
 work and dedication!
 
