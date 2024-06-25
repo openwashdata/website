@@ -1,10 +1,11 @@
 ---
 title: "openwashdata Data Package Hackathon"
 description: |
-  This hackathon is hosted by the Global Health Engineering group at ETH Zurich. Participants will develop an openwashdata R data package with washr package.
+  This hackathon is hosted by Mian Zhong from the Global Health Engineering group at ETH Zurich. Participants will make an openwashdata R data package with the washr package developed by openwashdata.
 execute:
     echo: false
     warning: false
+include-in-header: ./styles.css
 editor_options: 
   chunk_output_type: console
   markdown: 
@@ -18,10 +19,130 @@ editor_options:
     release
 -   Meet openwashdata friends and have fun
 
+## 🌟 Showcase
+
+::: grid
+::: g-col-4
+::: card
+<img src="https://github.com/openwashdata/boreholefuncmwi/raw/main/man/figures/README-unnamed-chunk-7-1.png" alt="Image 1" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+boreholefuncmwi
+
+</h5>
+
+<p class="card-text">
+
+Data about Karonga district (North of Malawi) borehole functionality
+survey.
+
+</p>
+
+<a href="https://openwashdata.github.io/boreholefuncmwi/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+:::
+:::
+:::
+
+::: g-col-4
+::: card
+<img src="https://via.placeholder.com/150" alt="Image 3" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+portawaterperu
+
+</h5>
+
+<p class="card-text">
+
+Data about a preliminary review of peruvian portable water system.
+
+</p>
+
+<a href="https://openwashdata.github.io/portawaterperu/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+:::
+:::
+:::
+
+::: g-col-4
+::: card
+<img src="figure/ugabore.png" alt="Image 3" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+ugabore
+
+</h5>
+
+<p class="card-text">
+
+Data about borehole repair collected from two districts in central Uganda. 
+
+</p>
+
+<a href="https://openwashdata.github.io/ugabore/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+:::
+:::
+:::
+
+::: g-col-4
+::: card
+<img src="figure/watercostaccra.png" alt="Image 2" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+watercostaccra
+
+</h5>
+
+<p class="card-text">
+
+Data about surveys on household water costs, coping mechanisms as well as water point estimates in Accra, Ghana. 
+
+</p>
+
+<a href="https://openwashdata.github.io/watercostaccra/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+:::
+:::
+:::
+
+::: g-col-4
+::: card
+<img src="figure/waschoolpiracema.png" alt="Image 3" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+waschoolpiracema
+
+</h5>
+
+<p class="card-text">
+
+Data about the water supply, the sewage disposal, the waste collection and the sanitary equipment of the schools in Piracema. 
+
+</p>
+
+<a href="https://example.com" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+:::
+:::
+:::
+
+:::
+
 ## 📆 Event Details
 
 -   **Date:** Friday, June 21, 9:00 AM - 4:30 PM (CET)
+
 -   **Location:** Location: Zurich, Switzerland
+
+    ![](figure/IMG_1070.jpeg){fig-alt="openwashdata hackathon participants"
+    width="450"}
 
 ## 📝 Agenda
 
