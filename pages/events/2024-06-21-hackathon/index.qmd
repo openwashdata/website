@@ -1,7 +1,7 @@
 ---
 title: "openwashdata Data Package Hackathon"
 description: |
-  This hackathon is hosted by Mian Zhong from the Global Health Engineering group at ETH Zurich. Participants will make an openwashdata R data package with the washr package developed by openwashdata.
+  This hackathon is organized by Mian Zhong from the Global Health Engineering group at ETH Zurich. Participants will make an openwashdata R data package with the washr package developed by openwashdata.
 execute:
     echo: false
     warning: false
@@ -15,19 +15,24 @@ include-in-header: styles.css
 ## 🎯 Objectives
 
 -   Deliver publishable openwashdata data packages
--   Beta-test the `washr` R package to receive feedback for the package
-    release
+-   Beta-test the [`washr` R
+    package](https://github.com/openwashdata-dev/washr) to receive
+    feedback for the package release
 -   Meet openwashdata friends and have fun
 
 ## 🌟 Showcase
 
-::: {.grid}
+Here showcase the data packages developed from our hackathon. These
+datasets cover WASH data about Malawi 🇲🇼 Uganda 🇺🇬, Brazil 🇧🇷 to Peru
+🇵🇪, and Ghana. A big shoutout to all the participants for their hard
+work and dedication!
 
-::: {.g-col-4 style="align-items-stretch"}
+::: grid
+::: {.g-col-4 style="d-flex align-items-stretch"}
 ::: card
-<img src="https://github.com/openwashdata/boreholefuncmwi/raw/main/man/figures/README-unnamed-chunk-7-1.png" alt="Image 1" class="card-img-top"/>
+<img src="https://github.com/openwashdata/boreholefuncmwi/raw/main/man/figures/README-unnamed-chunk-7-1.png" alt="barplot from boreholefuncmwi data package" class="card-img-top"/>
 
-::: card-body 
+::: card-body
 <h5 class="card-title">
 
 boreholefuncmwi
@@ -36,19 +41,20 @@ boreholefuncmwi
 
 <p class="card-text">
 
-Data about Karonga district (North of Malawi) borehole functionality
-survey.
+Data about the survey on the borehole functionality in Karonga district
+of Malawi.
 
 </p>
 
-<a href="https://openwashdata.github.io/boreholefuncmwi/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+<a href="https://openwashdata.github.io/boreholefuncmwi/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go
+to Dataset</a>
 :::
 :::
 :::
 
-::: {.g-col-4 style="align-items-stretch"}
+::: {.g-col-4 style="d-flex align-items-stretch"}
 ::: card
-<img src="figure/portawaterperu.png" alt="Image 3" class="card-img-top"/>
+<img src="https://openwashdata.github.io/portawaterperu/reference/figures/README-unnamed-chunk-7-1.png" alt="boxplot about the portawaterperu data package" class="card-img-top"/>
 
 ::: card-body
 <h5 class="card-title">
@@ -63,7 +69,8 @@ Data about a preliminary review of peruvian portable water system.
 
 </p>
 
-<a href="https://openwashdata.github.io/portawaterperu/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+<a href="https://openwashdata.github.io/portawaterperu/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go
+to Dataset</a>
 :::
 :::
 :::
@@ -81,33 +88,13 @@ ugabore
 
 <p class="card-text">
 
-Data about borehole repair collected from two districts in central Uganda. 
+Data about borehole repair collected from two districts in central
+Uganda.
 
 </p>
 
-<a href="https://openwashdata.github.io/ugabore/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
-:::
-:::
-:::
-
-::: {.g-col-4 style="align-items-stretch"}
-::: card
-<img src="figure/watercostaccra.png" alt="Image 2" class="card-img-top"/>
-
-::: card-body
-<h5 class="card-title">
-
-watercostaccra
-
-</h5>
-
-<p class="card-text">
-
-Data about surveys on household water costs, coping mechanisms as well as water point estimates in Accra, Ghana. 
-
-</p>
-
-<a href="https://openwashdata.github.io/watercostaccra/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+<a href="https://openwashdata.github.io/ugabore/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go
+to Dataset</a>
 :::
 :::
 :::
@@ -125,15 +112,40 @@ waschoolpiracema
 
 <p class="card-text">
 
-Data about the water supply, the sewage disposal, the waste collection and the sanitary equipment of the schools in Piracema. 
+Data about the water supply, the sewage disposal, the waste collection
+and the sanitary equipment of the schools in Piracema.
 
 </p>
 
-<a href="https://example.com" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go to Dataset</a>
+<a href="https://openwashdata.github.io/waschoolpiracema/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go
+to Dataset</a>
 :::
 :::
 :::
 
+::: {.g-col-4 style="align-items-stretch"}
+::: card
+<img src="figure/watercostaccra.png" alt="Image 2" class="card-img-top"/>
+
+::: card-body
+<h5 class="card-title">
+
+watercostaccra
+
+</h5>
+
+<p class="card-text">
+
+Data about surveys on household water costs, coping mechanisms as well
+as water point estimates in Accra, Ghana.
+
+</p>
+
+<a href="https://openwashdata.github.io/watercostaccra/" class="btn btn-primary" style="background-color: #531E58; color: white; border: none;">Go
+to Dataset</a>
+:::
+:::
+:::
 :::
 
 ## 📆 Event Details
@@ -186,19 +198,7 @@ PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hacka
         installed. Otherwise, in console, run
         `install.packages(c("devtools", "usethis"))`.
 
-    -   [ ] 2. Install `washr` R package, in console, run:
-
-        ``` r
-        library(devtools)
-        devtools::install_github("openwashdata-dev/washr")
-        ```
-
-        You might encounter a message to update packages, choose the
-        option "All" to continue.
-
-        ![](figure/pkg_update.png)
-
-3.  Create a new project following:
+3.  **Create a new project following:**
 
     -   [ ] File -\> New Project -\> New Directory -\> **R Package using
         devtools**
@@ -209,31 +209,23 @@ PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hacka
         name
     -   [ ] Choose a location of sub-directory
 
-4.  Load required libraries:
-
-    -   [ ] `library(washr)`
-
-    -   [ ] `library(devtools)`
-
-    -   [ ] `library(usethis)`
-
-5.  Configure Git version control on your local computer.
+4.  **Configure Git version control on your local computer.**
 
     -   [ ] In console, run:
 
     ``` r
-    use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
+    usethis::use_git_config(user.name = "Your Name", user.email = "Your GitHub Email")
     ```
 
-6.  Add git version control to local directory, in console, run
+5.  **Add git version control to local directory**
 
-    -   [ ] `use_git()`
+    -   [ ] In console, run, `usethis::use_git()`
 
     -   yes, commit
 
     -   yes, restart
 
-7.  Connect local computer with GitHub, please refer to
+6.  Connect local computer with GitHub, please refer to
     <https://happygitwithr.com/https-pat.html> for more details.
 
     -   [ ] In Console, run
@@ -253,12 +245,13 @@ PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hacka
             password manager. You may store it by following the steps
             [here](https://happygitwithr.com/https-pat#tldr) .
 
-8.  Open **Terminal** (the tab next to Console), run commands suggested
+7.  Open **Terminal** (the tab next to Console), run commands suggested
     in your assigned GitHub repository. The commands should look like
     the following:
 
     ``` bash
-    # Change the url link to be your assigned GitHub repo
+    # Change the url link to be your assigned GitHub repo!
+
     git remote add origin "https://github.com/openwashdata/fssample.git" 
 
     git branch -M main
@@ -273,9 +266,29 @@ PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/hacka
     -   If this is your FIRST TIME connecting RStudio with GitHub, you
         will receive a message in the Terminal to log in. Enter your
         GitHub username, and for the password, copy-and-paste the PAT
-        token generated from Step 7 (`ghp_xxxxxxxxxxxxxxxxxxxx`)
+        token generated from Step 7 (`ghp_xxxxxxxxxxxxxxxxxxxxxx`)
 
         ![](figure/connect_github_rstudio.JPG)
+
+8.  **Install `washr` R package:**
+
+    ``` r
+    library(devtools)
+    devtools::install_github("openwashdata-dev/washr")
+    ```
+
+    You might encounter a message to update packages, choose the option
+    "All" to continue.
+
+    ![](figure/pkg_update.png)
+
+9.  **Load required libraries**:
+
+    - `library(devtools)`
+
+    - `library(usethis)`
+
+    - `library(washr)`
 
 ### Create Dataset
 
