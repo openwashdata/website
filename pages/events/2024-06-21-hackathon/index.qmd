@@ -41,8 +41,7 @@ boreholefuncmwi
 
 <p class="card-text">
 
-Data about the survey on the borehole functionality in Karonga district
-of Malawi.
+Data about the survey on  borehole functionality in Karonga district, Malawi.
 
 </p>
 
@@ -65,7 +64,7 @@ portawaterperu
 
 <p class="card-text">
 
-Data about a preliminary review of peruvian portable water system.
+Data about a preliminary review of the portable water system in Peru.
 
 </p>
 
@@ -112,8 +111,8 @@ waschoolpiracema
 
 <p class="card-text">
 
-Data about the water supply, the sewage disposal, the waste collection
-and the sanitary equipment of the schools in Piracema.
+Data about water supply, sewage disposal, waste collection
+and sanitary equipment of the schools in Piracema, Brazil.
 
 </p>
 
@@ -136,8 +135,7 @@ watercostaccra
 
 <p class="card-text">
 
-Data about surveys on household water costs, coping mechanisms as well
-as water point estimates in Accra, Ghana.
+Data about the surveys on household water costs, coping mechanisms, and water point estimates in Accra, Ghana.
 
 </p>
 

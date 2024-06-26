@@ -11,3 +11,6 @@ Learn more in our first blog post:
 
 - [openwashdata 101](/pages/blog/posts/2023-07-04-owd101/index.qmd)
 
+Share your WASH data with us:
+
+- [openwashdata data donation](/pages/blog/posts/2024-05-17-data-publication-1/index.qmd)
