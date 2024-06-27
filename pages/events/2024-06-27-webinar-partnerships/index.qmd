@@ -1,0 +1,66 @@
+---
+title: "WASHWeb & Webinar: Partnerships"
+description: |
+  Partnerships are critical to strengthen our WASH data ecosystem. Join our next webinar on July 11 to to connect, participate, and learn from leaders in collaboration and partnerships!.
+bibliography: ../../../references.bib
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+## 👋 Welcome
+
+How are partnerships driving efforts towards a more effective WASH data
+ecosystem?
+
+Listen and engage with a variety of WASH and data leaders from different
+context and cases who have set up partnerships to improve WASH data
+sharing. This webinar will share experiences from partnerships in
+countries to partnerships in international cooperation and communities
+of practice.
+
+What can we learn from these leaders? How can we replicate these
+practices?
+
+Additionally, speakers will offer insights related to open data and data
+sharing within specific communities from different countries around the
+world.
+
+## 📆 Event Details
+
+-   **Date:** Thursday, July 11, 3:00 - 4:30 PM (CET)
+
+-   **Zoom Registration**:
+    <https://us06web.zoom.us/meeting/register/tZIqcuyvpjMqE909WHJvrJhJynL23M-taso5#/registration>
+
+-   7:00 AM (MST - Boulder, USA)
+
+-   2:00 PM (GMT - London, UK)
+
+-   3:00 PM (WAT - Katsina, Nigeria)
+
+-   5:00 PM (EAT - Nairobi, Kenya)
+
+-   7:30 PM (IST - New Delhi, India)
+
+-    9:00 PM (WIB - Jakarta, Indonesia)
+
+## 📝 Agenda
+
+Featured speakers:
+
+-   Yunia Musaazi from Uganda Water and Sanitation Network (UWASNET)
+
+-   Dr. Sandile Mbatha (Ph.D.) from the South African departments for
+    Cooperative Governance and Traditional Affairs
+
+-   Fiona Gore from World Health Organization on core indicators for
+    water, sanitation and hygiene systems strengthening
+
+-   Mutala Abdul-Mumin for RWSN - Rural Water Supply Network Data4Action
+
+-   Muthi Nhlema from BASEflow Limited on partnerships in Malawi
