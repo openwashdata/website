@@ -57,11 +57,12 @@
   author: Shray Saxena
 
 - github_username: '[coulbyph](https://github.com/coulbyph)'
-  title: .na.character
-  published: private
-  public_link: project report is set to private on GitHub
+  title: Behavior and practices of managing sanitation facilties in two low-income areas
+    of Abidjan, Cote d'Ivoire
+  published: public
+  public_link: <https://ds4owd-001.github.io/project-coulbyph>
   data_package: open data in project GitHub repository
-  author: Phaniwa Zie Zoumana Coulibaly
+  author: '[Phaniwa Zie Zoumana Coulibaly](https://www.linkedin.com/in/phaniwa-zie-coulibaly-63554b18a/)'
 
 - github_username: '[OTeeEnabor](https://github.com/OTeeEnabor)'
   title: 'Dive into South African Police Service Crime Stats: 2022-2023'
