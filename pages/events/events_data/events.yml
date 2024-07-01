@@ -2,56 +2,62 @@
   site-url: https://www.colorado.edu/washsymposium/
   date: 2023-03-09
   description: 
-    <a href="https://openwashdata.org/pages/gallery/slides/" target="_blank">openwashdata - 15-minute conference presentation that introduces the community</a>
-  calendar: <a title="Add to Calendar" class="addeventatc" data-id="MJ16078482" href="https://www.addevent.com/event/MJ16078482" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <a href="https://openwashdata.org/pages/gallery/slides/">openwashdata - 15-minute conference presentation that introduces the community</a>
+  calendar: <a title="Add to Calendar" class="addeventatc" data-id="MJ16078482" href="https://www.addevent.com/event/MJ16078482">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
 - title: "Stockholm World Water Week 2023"
   site-url: https://www.worldwaterweek.org/
   date: 2023-08-20
   description: 
-    <a href="https://www.susana.org/en/news-and-events/sanitation-events/susana-meetings/2023/859-33rd-susana-meeting" target="_blank">Find us at the 33rd SuSanA Meeting</a>
-  calendar: <a title="Email to meet us" href="mailto:mzhong@ethz.ch, sloos@ethz.ch?bcc=ghe@mavt.ethz.ch&subject=Meeting at Stockholm WWW 2023" target="_blank">Send Email</a>
+    <a href="https://www.susana.org/en/news-and-events/sanitation-events/susana-meetings/2023/859-33rd-susana-meeting">Find us at the 33rd SuSanA Meeting</a>
+  calendar: <a title="Email to meet us" href="mailto:mzhong@ethz.ch, sloos@ethz.ch?bcc=ghe@mavt.ethz.ch&subject=Meeting at Stockholm WWW 2023">Send Email</a>
   
 - title: "ds4owd-001: data science for openwashdata course 001"
   site-url: https://www.colorado.edu/washsymposium/
   date: 2023-10-31
   description: 
-    <a href="https://ds4owd-001.github.io/website/" target="_blank">Start of our first free course to learn data science</a>
-  calendar: <a title="Add to Calendar" class="addeventatc" data-id="Gl18823217" href="https://www.addevent.com/event/Gl18823217" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <a href="https://ds4owd-001.github.io/website/">Start of our first free course to learn data science</a>
+  calendar: <a title="Add to Calendar" class="addeventatc" data-id="Gl18823217" href="https://www.addevent.com/event/Gl18823217">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
   
   
 - title: "UNC Water & Health Conference 2023"
   site-url: https://waterinstitute.unc.edu/our-work/unc-water-and-health-conference
   date: 2023-10-27 
   description: 
-    <a href="https://waterinstitute.unc.edu/our-work/unc-water-and-health-conference" target="_blank">Find us at the UNC Water & Health Conference 2023</a>
-  calendar: <a title="Email to meet us" href="mailto:mzhong@ethz.ch?subject=Meeting at UNC 2023" target="_blank">Send Email</a>  
+    <a href="https://waterinstitute.unc.edu/our-work/unc-water-and-health-conference">Find us at the UNC Water & Health Conference 2023</a>
+  calendar: <a title="Email to meet us" href="mailto:mzhong@ethz.ch?subject=Meeting at UNC 2023">Send Email</a>  
   
 - title: "Side Event: UNC Water & Health Conference 2023"
   site-url: https://openwashdata.org/pages/events/2023_unc-water-health-conference/
   date: 2023-10-27
   description: 
-    <a href="/pages/events/2023_unc-water-health-conference/" target="_blank">Data A Key to Unlocking Quality in WASH Programmes</a>
-  calendar: <a title="Add to Calendar" class="addeventatc" data-id="qy18952090" href="https://www.addevent.com/event/qy18952090" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <a href="/pages/events/2023_unc-water-health-conference/">Data A Key to Unlocking Quality in WASH Programmes</a>
+  calendar: <a title="Add to Calendar" class="addeventatc" data-id="qy18952090" href="https://www.addevent.com/event/qy18952090">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
 - title: "openwashdata webinar: a data sharing workflow that may please the publishers"
   date: 2024-01-23
   description: 
-    <a href="/pages/events/2023-01-24-webinar-data-publishing/" target="_blank">A joint webinar with PLOS about the benefits of open data </a>
-  calendar: <a title="Zoom meeting registration" href="https://ethz.zoom.us/meeting/register/u50lce-vrD0iGN06ywPHr2gPU84Ljr_zmNAf" target="_blank">Register for Zoom meeting</a>
+    <a href="/pages/events/2023-01-24-webinar-data-publishing/">A joint webinar with PLOS about the benefits of open data </a>
+  calendar: <a title="Zoom meeting registration" href="https://ethz.zoom.us/meeting/register/u50lce-vrD0iGN06ywPHr2gPU84Ljr_zmNAf">Register for Zoom meeting</a>
 
 - title: "WASHWeb Webinar: The Future of Our WASH Data Ecosystem"
   date: 2024-04-04
   description: 
-    <a href="/pages/events/2024-04-04-webinar-washweb/" target="_blank"> A webinar with eight speakers leading the discussion around data in WASH</a>
-  calendar: <a title="Zoom meeting registration" href="https://us06web.zoom.us/meeting/register/tZUpfuGqqjoqEtEzlGdETK1t7dPsfswHnozN#/registration" target="_blank">Register for Zoom meeting</a>
+    <a href="/pages/events/2024-04-04-webinar-washweb/"> A webinar with eight speakers leading the discussion around data in WASH</a>
+  calendar: <a title="Zoom meeting registration" href="https://us06web.zoom.us/meeting/register/tZUpfuGqqjoqEtEzlGdETK1t7dPsfswHnozN#/registration">Register for Zoom meeting</a>
   
 - title: "openwashdata & WASHWeb partnership workshop"
   date: 2024-04-09
   description: 
-    <a href="/pages/events/2024-04-09-workshop-washweb/" target="_blank"> A workshop with our partners from WASHWeb</a>
+    <a href="/pages/events/2024-04-09-workshop-washweb/"> A workshop with our partners from WASHWeb</a>
     
 - title: "openwashdata Data Package Hackathon"
   date: 2024-06-21
   description: 
-    <a href="/pages/events/2024-06-21-hackathon/" target="_blank"> An one-day hackathon to develop an R data package with washr</a>    
+    <a href="/pages/events/2024-06-21-hackathon/"> An one-day hackathon to develop an R data package with washr</a>
+
+- title: "WASHWeb Webinar: Partnerships"
+  date: 2024-07-11
+  description: 
+    <a href="/pages/events/2024-06-27-webinar-partnerships/"> A workshop with our partners from WASHWeb</a>
+  calendar: <a title="Zoom meeting registration" href="https://us06web.zoom.us/meeting/register/tZIqcuyvpjMqE909WHJvrJhJynL23M-taso5#/registration">Register for Zoom meeting</a>
