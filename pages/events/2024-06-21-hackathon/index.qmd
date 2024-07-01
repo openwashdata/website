@@ -417,5 +417,3 @@ use_author(given = "First Name", family = "Last Name",
         look together.
 4.  Open `.gitignore`, remove `docs`, and save the file.
 5.  Add, commit and push all changes to GitHub
-
-### 
