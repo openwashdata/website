@@ -9,7 +9,6 @@ editor_options:
   chunk_output_type: console
   markdown: 
     wrap: 72
-include-in-header: styles.css
 ---
 
 ## 🎯 Objectives

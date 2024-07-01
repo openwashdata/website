@@ -3,6 +3,7 @@ title: openwashdata blog
 subtitle:
     Opinions, stories, tutorials, and tips from and for the openwashdata community
 listing:
+  id: listing
   sort: "date desc"
   contents: "posts/*/index.qmd"
   type: default
@@ -11,8 +12,19 @@ listing:
   filter-ui: false
   categories: true
   feed: true
-page-layout: full
 title-block-banner: "#5b195b"
 title-block-banner-color: rgb(247,249,251)
 search: false
+page-layout: full
 ---
+
+::: {#listing}
+:::
+
+::: footer
+<footer>
+
+Blogroll: [r-bloggers](https://www.r-bloggers.com)
+
+</footer>
+:::
