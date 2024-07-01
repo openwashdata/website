@@ -190,7 +190,7 @@ If you are interested in knowing more about this dataset, we have a wonderful de
 
 ## What's next?
 
--   Plot maps with external geospatial data
+-   [Plot maps with external geospatial data](https://openwashdata.org/pages/blog/posts/2024-03-01-create-map-part-2/)
 -   Make an interactive map
 
 References:
@@ -198,3 +198,5 @@ References:
 \[1\] [wasteskipsblantyre Example Tutorial](https://openwashdata.github.io/wasteskipsblantyre/articles/examples.html)
 
 \[2\] [cbssuitabilityhaiti Example Tutorial](https://openwashdata.github.io/cbssuitabilityhaiti/articles/examples.html)
+
+
