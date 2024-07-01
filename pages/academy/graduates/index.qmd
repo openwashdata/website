@@ -25,5 +25,6 @@ This page highlights the capstone projects completed by the graduates of our [da
 
 Please note that not all projects are publicly available. The GitHub repository is set to "private" without a public website.
 
+
 ::: {graduates-listings}
 :::
