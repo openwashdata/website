@@ -23,7 +23,7 @@
 #' df <- data.frame(
 #'   name = c("Alice", "Bob"),
 #'   age = c(30, 35),
-#'   city = c("New York", "London")
+#'   birthdate = as.Date(c("1990-01-01", "1985-05-15"))
 #' )
 #'
 #' # Convert to YAML and write to a file
@@ -33,6 +33,10 @@
 #' @importFrom magrittr %>%
 #' @importFrom yaml as.yaml
 df_to_yaml <- function(df, output_file) {
+    # Convert date columns to character to prevent conversion to numeric
+    date_columns <- sapply(df, inherits, "Date")
+    df[date_columns] <- lapply(df[date_columns], as.character)
+    
     # Convert each row to a YAML string with proper indentation
     yaml_entries <- df %>%
         split(1:nrow(.)) %>%
