@@ -9,7 +9,7 @@ source(here::here("R/df_to_yaml.R"))
 
 # read data ---------------------------------------------------------------
 
-read_sheet("1CZJuDshsUv6A-N-2fwzMElndG8Oig3N8PSv4h5lmefU") |> 
+read_sheet("https://docs.google.com/spreadsheets/d/1CZJuDshsUv6A-N-2fwzMElndG8Oig3N8PSv4h5lmefU/edit?gid=0#gid=0") |> 
     write_csv(here::here("pages/events/events_data/tbl-11-openwashdata-events.csv"))
 
 events <- read_csv(here::here("pages/events/events_data/tbl-11-openwashdata-events.csv")) |> 
