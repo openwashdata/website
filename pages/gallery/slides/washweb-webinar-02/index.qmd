@@ -2,10 +2,14 @@
 title: "openwashdata"
 subtitle: "a community effort to bring open data practices to the WASH sector"
 author: 
-  - name: "Lars Schöbitz"
-    url: https://openwashdata.org/about/lars/
-    affiliation: Global Health Engineering, ETH Zurich
-    affiliation_url: https://ghe.ethz.ch/
+  - name: | 
+        <div class="qr-container">
+        <p class="qr-text-top">news</p>
+        {{< qrcode https://buttondown.email/openwashdata colorDark='#5b195b' >}}
+        <p class="qr-text-bottom">sign-up</p>
+        </div>
+        <br>
+    affiliation: Lars Schöbitz
 date: 2024-07-10
 date-format: long
 format: 
@@ -22,7 +26,10 @@ editor_options:
 bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
 ---
 
+
 # openwashdata community {background-color="#5b195b"} 
+
+
 
 ::: {.notes}
 - To address this, we started the openwashdata community
@@ -84,7 +91,7 @@ From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gal
 ### Unlocking the hidden potential of open WASH data
 
 -   **Date:** Thursday, August 29, 09:00 - 10:30 PM (CEST)
--   **Tickets & Registration**: <https://www.worldwaterweek.org/tickets> (Online Full Access Pass is free of charge)
+-   **Tickets & Registration**: <https://www.worldwaterweek.org/tickets> ([Online Full Access Pass is free of charge]{.highlight-yellow})
 -   **Speakers and Agenda**: [openwashdata.org/pages/gallery/swww-2024/](https://openwashdata.org/pages/gallery/swww-2024/)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "WASHWeb & Webinar: Partnerships"
+title: "WASHWeb webinar: Partnerships"
 description: |
   Partnerships are critical to strengthen our WASH data ecosystem. Join our next webinar on July 11 to to connect, participate, and learn from leaders in collaboration and partnerships!.
 bibliography: ../../../references.bib
