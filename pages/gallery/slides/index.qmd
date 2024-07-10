@@ -5,7 +5,7 @@ title: "Slides"
 
 ## WASHWeb webinar - Partnerships
 
-[View slides in full screen](washweb-webinar-02/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar/washweb-webinar-02-openwashdata.pdf)
+[View slides in full screen](washweb-webinar-02/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar-02/washweb-webinar-02-openwashdata.pdf)
 ```{=html}
 <iframe class="slide-deck" src="washweb-webinar-02/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
 ```
