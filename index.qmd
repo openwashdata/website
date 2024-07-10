@@ -24,6 +24,13 @@ Our mission is to empower WASH professionals to engage with tools and workflows 
 
 *** 
 
+::: {.callout-important}
+## Stockholm World Water Week 2024: Unlocking the hidden potential of open WASH data
+A session hosted by Global Health Engineering, ETH Zurich and WASHWeb at Stockholm World Water Week 2024. The session can be attended in-person and free of charge online.  <https://openwashdata.org/pages/events/2024-08-29-swww/>
+:::
+
+***
+
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Events](pages/events/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
