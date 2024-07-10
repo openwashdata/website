@@ -3,6 +3,10 @@ library(yaml)
 library(googlesheets4)
 library(tidyverse)
 
+# source functions --------------------------------------------------------
+
+source(here::here("R/df_to_yaml.R"))
+
 # read data ---------------------------------------------------------------
 
 read_sheet("1Yz85CRRoenpnpT2PnUeIhiXgLuLzymu-LKiRP3eWRsk") |> 
@@ -35,24 +39,5 @@ graduates_tidy <- graduates |>
 
 # functions
 
-df_to_yaml <- function(df, output_file) {
-    # Convert each row to a YAML string with proper indentation
-    yaml_entries <- df %>%
-        split(1:nrow(.)) %>%
-        lapply(function(row) {
-            yaml_string <- as.yaml(as.list(row), indent = 2, indent.mapping.sequence = TRUE)
-            # Add dash to the first line and indent the rest
-            yaml_lines <- strsplit(yaml_string, "\n")[[1]]
-            paste0("- ", yaml_lines[1], "\n  ", paste(yaml_lines[-1], collapse = "\n  "))
-        })
-    
-    # Combine the YAML strings with an empty line between each entry
-    yaml_string <- paste(yaml_entries, collapse = "\n\n")
-    
-    # Write to file
-    writeLines(yaml_string, output_file)
-    
-    cat("YAML file created successfully:", output_file, "\n")
-}
 
 df_to_yaml(graduates_tidy, here::here("pages/academy/graduates/data/graduates.yml"))

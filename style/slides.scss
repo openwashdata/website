@@ -117,7 +117,32 @@ $presentation-font-size-root: 36px !default;
   padding-bottom: 10px;
 }
 
-.qrcode {
-  //margin-bottom: 1rem;
-  text-align: center;
+// qr code styling
+
+.qr-container {
+  position: relative;
+  display: inline-block;
 }
+
+.qr-text-top {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  color: #5b195b;
+}
+
+.qr-text-bottom {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  color: #5b195b;
+}
+
+
+
