@@ -1,0 +1,104 @@
+---
+title: "openwashdata"
+subtitle: "a community effort to bring open data practices to the WASH sector"
+author: 
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2024-07-10
+date-format: long
+format: 
+  revealjs:
+    logo: "../images/OWD-logo-20.png"
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+    footer: "[{{< fa link >}} openwashdata.org/pages/gallery/slides/](https://openwashdata.org/pages/gallery/slides/)"
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
+---
+
+# openwashdata community {background-color="#5b195b"} 
+
+::: {.notes}
+- To address this, we started the openwashdata community
+:::
+
+## openwashdata community
+
+### [Vision]{.highlight-yellow}
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the greater water, sanitation, and hygiene sector.
+
+### [Mission]{.highlight-yellow}
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+::: footer
+
+From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+::: 
+
+# openwashdata academy {background-color="#5b195b"}
+
+::: {.notes}
+- We also established the openwashdata academy through which we provide training to anyone interested in the greater WASH sector.
+:::
+
+
+## data science for openwashdata 001 {.smaller}
+
+- free, live, online, 10-week programme
+- 200 registrations
+- 100 show-ups
+- 20 graduates - [Check out final reports]{.highlight-yellow}: [openwashdata.org/pages/academy/graduates/](https://openwashdata.org/pages/academy/graduates/)
+- next iteration: September/October 2024, sign-up: <https://forms.gle/MP5rNYZagBdfG2ZRA>
+
+::: learn-more
+[ds4owd-001.github.io/website/](https://ds4owd-001.github.io/website/)
+
+```{=html}
+<iframe src="https://ds4owd-001.github.io/website/" width="100%" height="300" style="border:2px solid #123233;" title="Website of data science for openwashdata coursew"></iframe>
+```
+:::
+
+## openwashdata data stewardship network 
+
+```{r}
+```
+
+
+- establishing data stewardship network from September 2024 
+- `{r} emo::ji("south_africa")` University of KwaZulu-Natal WASH R&D Centre
+- `r emo::ji("malawi")` BASEflow Malawi
+- `r emo::ji("haiti")` SOIL Haiti
+- funded proposal: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+
+## Stockholm World Water Week 2024
+
+### Unlocking the hidden potential of open WASH data
+
+-   **Date:** Thursday, August 29, 09:00 - 10:30 PM (CEST)
+-   **Tickets & Registration**: <https://www.worldwaterweek.org/tickets> (Online Full Access Pass is free of charge)
+-   **Speakers and Agenda**: [openwashdata.org/pages/gallery/swww-2024/](https://openwashdata.org/pages/gallery/swww-2024/)
+
+
+## Thanks `r emo::ji("sunflower")` {.center-align} 
+
+This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+
+The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/washweb-webinar-02/index.qmd)
+
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/washweb-webinar-02/washweb-webinar-02-openwashdata.pdf)
+
+This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+
+
+# References
