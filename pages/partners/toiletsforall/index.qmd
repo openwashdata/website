@@ -1,0 +1,19 @@
+---
+title: "Toilets For All"
+subtitle: "Closing the gap on safe and sustainable sanitation for schools"
+image: ToiletsForAll-logo.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: rectangle
+  links:
+    - icon: house
+      text: Homepage
+      href: https://www.toilets4all.com/
+---
+
+Toilets For All is a Swiss foundation working with entrepreneurs and funders to deliver safe access to toilets for schools to create a healthy educational environment in the Global South. Gathering data is a crucial element of our Theory of Change in order to gather evidence of our interventions.
+
+We partner with Toilets For All on our general vision for open data and data stewardship. As part of that, Toilets for All is willing to invest into identifying data resources that could be published through openwashdata.
+
+
