@@ -83,7 +83,7 @@
   published: public
   public_link: <https://ds4owd-001.github.io/project-jonathanoti>
   data_package: open data in project GitHub repository
-  author: Jonathan Oti
+  author: '[Jonathan Oti](https://www.linkedin.com/in/jonathan-opoku-oti/)'
 
 - github_username: '[alejandrasuarezcobos](https://github.com/alejandrasuarezcobos)'
   title: Lack of sanitation and drinking water in Colombia
@@ -94,8 +94,8 @@
 
 - github_username: '[myesaya](https://github.com/myesaya)'
   title: Determinants of borehole' functionality in Northen Malawi
-  published: private
-  public_link: project report is set to private on GitHub
+  published: public
+  public_link: <https://ds4owd-001.github.io/project-myesaya>
   data_package: <https://openwashdata.github.io/boreholefuncmwi/>
   author: Mabvuto Yesaya
 
