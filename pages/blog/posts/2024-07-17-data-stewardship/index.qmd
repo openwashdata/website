@@ -1,0 +1,58 @@
+---
+title: openwashdata phase 2 proposal funded
+subtitle: Establishing a data stewardship network through strategic partnerships
+description: |
+  openwashdata received another round of funding to continue working on their vision to establish an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector. 
+categories:
+  - partnership
+  - open data
+  - data stewardship
+author:
+  - name: Lars Schöbitz
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation-url: https://ghe.ethz.ch/open-science.html
+bibliography: ../../../../references.bib
+image: "openwashdata-organogram-10.svg"
+date: "2024-08-06"
+draft: true
+---
+
+```{r}
+#| echo: false
+knitr::include_graphics("openwashdata-organogram-10.svg")
+```
+
+## Achievements in phase 1
+
+The openwashdata community was established in March 2023 and received funding for an 18 month period. Since then, we have established a website for the openwashdata community that attracts 15 unique visitors daily[^1], we disseminate a monthly newsletter that reaches 200 people, and we maintain a community chat with 100 members.
+
+[^1]: [https://openwashdata.org/pages/gallery/stats/](../../../gallery/stats)
+
+We also established the "openwashdata academy" with our 10-week “data science for openwashdata” training programme from which 20 people have graduated by preparing a final capstone project report using their own data[^2].
+
+[^2]: Find open reports and associated data packages here: https://openwashdata.org/pages/academy/graduates/
+
+Lastly, we established "openwashdata publishing": a clear and efficient data publishing workflow for datasets and code that follows FAIR principles, as outlined by @wilkinson2016, and highest standards for computational reproducibility and version control. We are in the process of submitting our developed R package `washr`[^3] to the Comprehensive R Archive Network (CRAN) to increase usage potential within the community.
+
+[^3]: Find the package under development here: <https://github.com/openwashdata-dev/washr>
+
+## Data stewardship in phase 2
+
+In phase 2 we will use a more hands-on approach by embedding a full-time data steward within two entities. This steward will collaborate with the openwashdata team to identify existing open data practices, formulate a preliminary data management strategy, pinpoint datasets ready for open publication, and identify datasets requiring more careful scrutiny before publication due to ethical approvals, data privacy, or industry partnerships.
+
+The long-term goal is to introduce and eventually solidify practices that enable open data (e.g. Data Management Strategy & Data Management Plans) to the WASH sector.
+
+The full proposal with additional work packages can be accessed at [https://openwashdata.org/pages/gallery/proposal-02/](../../../gallery/proposal-02)
+
+## BASEflow & UKZN WASH R&D Centre & SOIL
+
+Our partners BASEflow and the UKZN WASH R&D Centre will receive funding through the phase 2 grant to hire a full-time data steward. We will start the 12-month training programme around October/November 2024, together with SOIL, who have separately agreed to identify a data steward within their organization.
+
+## Sanima & Toilets For All - new partnerships
+
+Sanima and Toilets For All have joined our vision for openwashdata. We have established new partnerships and are excited to explore how we can collaborate going forward. 
+
+# Are you interested, too?
+
+If you or your organization works in WASH and would like to join the data stewardship network, [email us](mailto:ghe@mavt.ethz.ch?subject=data%20stewardship%20network). We look forward to hearing from you!
