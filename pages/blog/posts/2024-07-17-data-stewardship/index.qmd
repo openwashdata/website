@@ -47,11 +47,11 @@ The full proposal with additional work packages can be accessed at [https://open
 
 ## BASEflow & UKZN WASH R&D Centre & SOIL
 
-Our partners BASEflow and the UKZN WASH R&D Centre will receive funding through the phase 2 grant to hire a full-time data steward. We will start the 12-month training programme around October/November 2024, together with SOIL, who have separately agreed to identify a data steward within their organization.
+Our partners [BASEflow](../../../partners/baseflow) and the [UKZN WASH R&D Centre](../../../partners/ukznwashrd) will receive funding through the phase 2 grant to hire a full-time data steward. We will start the 12-month training programme around October/November 2024, together with SOIL, who have separately agreed to identify a data steward within their organization.
 
 ## Sanima & Toilets For All - new partnerships
 
-Sanima and Toilets For All have joined our vision for openwashdata. We have established new partnerships and are excited to explore how we can collaborate going forward. 
+[Sanima](../../../partners/sanima) and [Toilets For All](../../../partners/toiletsforall) have joined our vision for openwashdata. We have established new partnerships and are excited to explore how we can collaborate going forward. 
 
 # Are you interested, too?
 
