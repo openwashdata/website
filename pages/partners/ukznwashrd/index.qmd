@@ -9,7 +9,7 @@ about:
   links:
     - icon: house
       text: Homepage
-      href: http://oursoil.org/
+      href: https://washcentre.ukzn.ac.za/
     - icon: linkedin
       text: Linkedin
       href: https://www.linkedin.com/company/wash-centre-sa/
