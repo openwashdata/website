@@ -33,13 +33,13 @@ We also established the "openwashdata academy" with our 10-week “data science 
 
 [^2]: Find open reports and associated data packages here: https://openwashdata.org/pages/academy/graduates/
 
-Lastly, we established "openwashdata publishing": a clear and efficient data publishing workflow for datasets and code that follows FAIR principles, as outlined by @wilkinson2016, and highest standards for computational reproducibility and version control. We are in the process of submitting our developed R package `washr`[^3] to the Comprehensive R Archive Network (CRAN) to increase usage potential within the community.
+Lastly, we established "openwashdata publishing": a clear and efficient data publishing workflow for datasets and code that follows FAIR principles, as outlined by @wilkinson2016, and the highest standards for computational reproducibility and version control. We are in the process of submitting our developed R package `washr`[^3] to the Comprehensive R Archive Network (CRAN) to increase usage potential within the community.
 
 [^3]: Find the package under development here: <https://github.com/openwashdata-dev/washr>
 
 ## Data stewardship in phase 2
 
-In phase 2 we will use a more hands-on approach by embedding a full-time data steward within two entities. This steward will collaborate with the openwashdata team to identify existing open data practices, formulate a preliminary data management strategy, pinpoint datasets ready for open publication, and identify datasets requiring more careful scrutiny before publication due to ethical approvals, data privacy, or industry partnerships.
+In phase 2 we will expand the scope of the openwashdata program by embedding a full-time data steward at each of two institutions. These stewards will collaborate with the openwashdata team to identify existing open data practices, formulate a preliminary data management strategy, pinpoint datasets ready for open publication, and identify datasets requiring more careful scrutiny before publication due to ethical approvals, data privacy, or industry partnerships.
 
 The long-term goal is to introduce and eventually solidify practices that enable open data (e.g. Data Management Strategy & Data Management Plans) to the WASH sector.
 
@@ -54,5 +54,7 @@ Our partners [BASEflow](../../../partners/baseflow) and the [UKZN WASH R&D Centr
 [Sanima](../../../partners/sanima) and [Toilets For All](../../../partners/toiletsforall) have joined our vision for openwashdata. We have established new partnerships and are excited to explore how we can collaborate going forward. 
 
 # Are you interested, too?
+
+Check out or [partnership page](../../../partners) and get in touch with us. We will be happy to discuss how we can work together to make open data in WASH a reality. You will also find us and our partners at a [session at Stockholm World Water Week](../../../events) this year where we will be with our partners to talk about our vision for open data in WASH.
 
 If you or your organization works in WASH and would like to join the data stewardship network, [email us](mailto:ghe@mavt.ethz.ch?subject=data%20stewardship%20network). We look forward to hearing from you!
