@@ -15,6 +15,10 @@ about:
       href: https://x.com/BASEflowMW/
 ---
 
-BASEflow is an award-winning Malawian organisation that is working to improve the sustainability of groundwater resources for rural populations to access safe drinking water. 
+BASEflow is an award-winning Malawian organisation that is working to improve the sustainability of groundwater resources for rural populations to access safe drinking water.
+
+During the initial phase of openwashdata, BASEflow published a dataset using the openwashdata workflow[^1] and has expressed interest in continuing the collaboration to develop a comprehensive data management strategy. This strategy aims to ensure that all shareable data is openly published. BASEflow’s commitment to data transparency is exceptional in the WASH sector, where non-academic organizations typically have fewer incentives to share their data.
+
+[^1]: <https://openwashdata.github.io/chckapmalawi/>
 
 We collaborate with BASEflow on phase 2 of our openwashdata project supported by the Open Research Data Program of the ETH Board. BASEflow is one of two organisations who establish a data steward within their organisation whose role is to establish a data management strategy and join a 12-month programme for data stewardship for openwashdata. The full proposal is accessible here: [https://openwashdata.org/pages/gallery/proposal-02/](../../gallery/proposal-02)
