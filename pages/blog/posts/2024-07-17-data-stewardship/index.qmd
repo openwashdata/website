@@ -15,7 +15,7 @@ author:
 bibliography: ../../../../references.bib
 image: "openwashdata-organogram-10.svg"
 date: "2024-08-06"
-draft: true
+draft: false
 ---
 
 ```{r}
