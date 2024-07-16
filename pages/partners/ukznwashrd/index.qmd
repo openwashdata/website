@@ -1,0 +1,22 @@
+---
+title: "University of KwaZulu-Natal WASH R&D Centre"
+subtitle: "Transdisciplinary R&D hub in Africa that produces next-generation solutions for global water and sanitation challenges."
+image: "ukzn-washrd-logo.png"
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: rectangle
+  links:
+    - icon: house
+      text: Homepage
+      href: http://oursoil.org/
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/company/wash-centre-sa/
+---
+
+Established in the 1970s, the Water, Sanitation & Hygiene Research & Development Centre (WASH R&D Centre) at the University of KwaZulu-Natal in Durban, South Africa, is a transdisciplinary research and development hub. Formerly known as the Pollution Research Group, the Centre has become a leader in WASH R&D, providing a platform for testing innovative sanitation solutions for both local and international service providers and technology developers. 
+
+Over the years, the WASH R&D Centre has amassed a significant amount of data on WASH related topics, including data from the Sanitation Engineering Field-Testing (EFT) Platform (2017 to 2023) and the broader research community. This data is currently stored in various locations, such as the university’s network drives, the university’s data repository, the technology developers’ systems and on the personal computers of researchers, without a holistic data management strategy. While open access journal publications from the research are available, the data is not openly published and is not easily accessible to the research community.
+
+We collaborate with UKZN WASH R&D Centre on phase 2 of our openwashdata project supported by the Open Research Data Program of the ETH Board. UKZN WASH R&D Centre is one of two organisations who establish a data steward within their organisation whose role is to establish a data management strategy and join a 12-month programme for data stewardship for openwashdata. The full proposal is accessible here: [https://openwashdata.org/pages/gallery/proposal-02/](../../gallery/proposal-02)
