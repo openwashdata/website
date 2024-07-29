@@ -104,7 +104,7 @@ This proposal is outlined along the figure below which can serve as an overall o
 #| label: organogram
 #| out-width: 800px
 
-knitr::include_graphics("images/openwashdata-organogram.png")
+knitr::include_graphics("images/openwashdata-organogram-10.svg")
 ```
 
 ### ORD Phase 1
