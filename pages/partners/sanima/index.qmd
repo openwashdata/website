@@ -1,0 +1,27 @@
+---
+title: "Sanima"
+subtitle: "Safety • Privacy • Dignity"
+image: sanima-logo-purple.png
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: rectangle
+  links:
+    - icon: house
+      text: Homepage
+      href: https://sanima.pe/
+    - icon: linkedin
+      text: Linkedin
+      href: https://pe.linkedin.com/company/sanima-pe
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/sanima.pe/
+      
+      
+---
+
+Sanima is a Peruvian non-profit organization that provides container-based sanitation services, a sustainable and safe sanitation alternative, to households in urban settlements with no public provision of water and sewerage in Lima, Peru. With our solution, we have established the largest waterless sanitation network in South America, positively transforming the lives of over 7,500 people and revolutionizing the traditional approach to sanitation in Peru. Our purpose is to ensure that every person in Peru can exercise their right to safe, dignified, and sustainable sanitation.
+
+We partner with Sanima on our general vision for open data and data stewardship. As part of that, Sanima is willing to invest into identifying data resources that could be published through openwashdata.
+
+
