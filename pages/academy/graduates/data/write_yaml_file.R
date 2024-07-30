@@ -9,7 +9,9 @@ source(here::here("R/df_to_yaml.R"))
 
 # read data ---------------------------------------------------------------
 
-read_sheet("1Yz85CRRoenpnpT2PnUeIhiXgLuLzymu-LKiRP3eWRsk") |> 
+sheet_link <- "https://docs.google.com/spreadsheets/d/1Yz85CRRoenpnpT2PnUeIhiXgLuLzymu-LKiRP3eWRsk/edit?gid=0#gid=0"
+
+read_sheet(sheet_link) |> 
     select(name:repo_name, title:public_link, data_package, status = starts_with("status ")) |> 
     filter(status == "reviewed") |> 
     write_csv(here::here("pages/academy/graduates/data/tbl-06-capstone-projects-completed.csv"))
