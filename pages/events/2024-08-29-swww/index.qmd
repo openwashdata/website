@@ -15,23 +15,25 @@ library(dplyr)
 library(stringr)
 ```
 
-
 ## 👋 Welcome
 
-This highly interactive session led by openwashdata and WASHWeb will introduce two key areas for improving the WASH data ecosystem: using existing data better and innovating on open data practices. Participants will be exposed to seven 3-minute pitches of challenges that different actors in the WASH sector face, engage in live polling exercises, and brainstorm in group discussions. 
+This highly interactive session led by openwashdata and WASHWeb will introduce two key areas for improving the WASH data ecosystem: using existing data better and innovating on open data practices. Participants will be exposed to seven 3-minute pitches of challenges that different actors in the WASH sector face, engage in live polling exercises, and brainstorm in group discussions.
 
 ## 📆 Event Details
 
--   **Date:** Thursday, August 29, 09:00 - 10:30 PM (CEST)
+-   **Date:** Thursday, August 29, 09:00 - 10:30 PM (CEST) <a title="Add to Calendar" class="addeventatc" data-id="lU22275233" href="https://www.addevent.com/event/lU22275233" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 -   **Location.** Stockholm Waterfront Congress Centre, Stockholm, Sweden
 -   **Tickets & Registration**: <https://www.worldwaterweek.org/tickets> (Online Full Access Pass is free of charge)
+
+
+
 
 ## 🏁 Objectives
 
 By joining this event, participants will:
 
-1. Learn about the importance of open data sharing, its applications, and how participants can contribute
-2. Acquire a cross-sectoral understanding of ongoing innovations for the interconnectivity of WASH data (from research, government, NGOs, UN)
+1.  Learn about the importance of open data sharing, its applications, and how participants can contribute
+2.  Acquire a cross-sectoral understanding of ongoing innovations for the interconnectivity of WASH data (from research, government, NGOs, UN)
 
 ## 📝 Agenda
 
@@ -58,7 +60,7 @@ agenda  |>
 
 ### Workflows and education: openwashdata community
 
-To be prepared 
+To be prepared
 
 ### Facilitation and theme of session: WASHWeb
 
@@ -66,4 +68,4 @@ To be prepared
 
 ### Key challenges
 
-To be prepared 
+To be prepared
