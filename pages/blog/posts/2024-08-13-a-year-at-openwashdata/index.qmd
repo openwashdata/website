@@ -16,8 +16,8 @@ author:
     orcid_id: 0009-0009-4546-7214
 date: "2024-08-13"
 draft: true
-#image: "thumbnail.jpg"
-#image-alt: ""
+image: "thumbnail.jpg"
+image-alt: "Mian co-hosting a roundtable discussion at UNC Water and Health Conference 2023."
 ---
 
 ------------------------------------------------------------------------
