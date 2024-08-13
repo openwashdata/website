@@ -78,7 +78,7 @@ We'll use the tmap library in R to visualize maps showing water access points an
 ### Step 1: Downloading and Unzipping External Data
 First, we need to obtain spatial data that outlines the boundaries of Haiti's 3rd administrative level areas. We'll download this data from the Stanford database and unzip it to use in our analysis. The following code will download the files to your current working directory.
 
-```{r eval=FALSE}
+```{r}
 # Download the zip file containing Haiti ADM3 spatial data
 utils::download.file(url = "https://stacks.stanford.edu/file/druid:kz179wf4778/data.zip?download=true", destfile = "3rd-level-haiti-divisions.zip", mode = "wb")
 
@@ -92,7 +92,7 @@ file.remove("3rd-level-haiti-divisions.zip")
 ### Step 2: Reading the Spatial Data
 Once the data is unzipped, we need to read the spatial files into R so we can work with them. We'll use the `sf` package, which is great for handling spatial (geographic) data in R.
 
-```{r }
+```{r}
 # Read the shapefile of Haiti's ADM3 into an sf object
 haiti_adm3 <- 
     st_read("haiti-adm3/HTI_adm3.shp") |>
