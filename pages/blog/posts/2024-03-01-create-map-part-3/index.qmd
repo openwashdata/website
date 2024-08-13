@@ -3,7 +3,7 @@ title: Creating and visualizing maps of WASH data - Part 3
 subtitle: Where are the pumps, waste skips, and humanitarian organizations?
 description: In this series of blog posts, you will learn how to create maps with your geospatial data or plot a map with the help of external geospatial data.
 categories:
-    - r-tutorial
+  - r-tutorial
 author: 
   - name: "Mian Zhong"
     affiliation: Global Health Engineering, ETH Zurich
@@ -18,7 +18,8 @@ draft: true
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = FALSE
 )
 ```
 # Review
