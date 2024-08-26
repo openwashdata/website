@@ -1,0 +1,334 @@
+---
+title: Creating and visualizing maps of WASH data - Part 3
+subtitle: Where are the pumps, waste skips, and humanitarian organizations?
+description: In this series of blog posts, you will learn how to create maps with your geospatial data or plot a map with the help of external geospatial data.
+categories:
+  - r-tutorial
+author: 
+  - name: "Mian Zhong"
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid_id: 0009-0009-4546-7214
+date: "2024-08-12"
+draft: true
+#image: "thumbnail.jpg"
+#image-alt: "Open data in water sanitation in minimal style created by stable diffusion model."
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+# Review
+Welcome to the final post in our series on creating and visualizing WASH data maps. In this post, we'll focus on crafting an interactive map that enhances user experience and data exploration. If you missed the previous posts or need a refresher, you can revisit them here:
+
+- [Part 1: Plot map with collected data](https://openwashdata.org/pages/blog/posts/2024-03-01-create-map-part-1/)
+- [Part 2: Plot map with external geodata](https://openwashdata.org/pages/blog/posts/2024-03-01-create-map-part-2/)
+
+
+# Introduction
+
+## Why an interactive map?
+Interactive maps allow users to explore data more deeply by offering the ability to zoom in and out for different perspectives. They also make it easy to analyze various groups within the map, such as showing or hiding specific layers (e.g., water pumps of different types) to focus on particular variables. Additionally, interactive maps can include detailed regional information—like GDP or population—which can be revealed through hover effects, enriching the overall understanding of the data.
+
+
+## Useful R libraries
+In the previous post, we explored some useful R libraries such as `sf` and `tmap`.
+We will explore more with `tmap` again, and we introduce a commonly used library for plotting interactive maps, `leaflet`.
+
+- `leaflet`: an open-source JavaScript library for interactive maps.
+
+## Useful openwashdata datasets 
+Many openwashdata datasets use interactive maps in their demos. Here we will showcase the following data packages:
+
+- [`cbssuitabilityhaiti`](https://github.com/openwashdata/cbssuitabilityhaiti): Spatial data to support an analysis of suitability of container-based sanitation in flood prone areas of Haiti.
+- [`waterpumpkwale`](https://github.com/openwashdata/waterpumpkwale): Weekly volume of water pumped for handpumps monitored with Smart Handpump technology, Kwale County, Kenya
+
+
+# Plot interactive maps
+## Installing and Loading Required Packages
+Before we dive in, ensure you have the necessary packages installed and loaded:
+
+```{r import_library, message=FALSE}
+library(tidyverse)
+library(tmap)
+library(leaflet)
+library(dplyr)
+library(sf)
+# Install openwashdata packages by uncommenting the following lines
+# install.packages("devtools")
+# devtools::install_github("openwashdata/cbssuitabilityhaiti")
+# devtools::install_github("openwashdata/waterpumpkwale")
+library(cbssuitabilityhaiti)
+library(waterpumpkwale)
+```
+
+## Plotting maps with `tmap` library
+In this section, we'll learn how to create interactive maps using the `tmap` library in R. To do this, we'll work with a data package called `cbssuitabilityhaiti`, which includes two datasets: `mwater` and `okap`.
+
+- The `mwater` dataset contains information about different types of water access points in Haiti, such as boreholes and protected springs.
+- The `okap` dataset provides information on population density, socioeconomic status, suitability for pit latrines, and areas where sewage construction is prioritized. 
+
+To understand the context, Haiti is a island state in the Caribbean sea. It has four administrative levels where the 3rd level is used for this tutorial. The 3rd administrative level contains 134 areas. Our focus region is the extended area around Cap Haïtien and l'Acul-du-Nord.
+
+We'll use the tmap library in R to visualize maps showing water access points and their distribution across regions with different socioeconomic statuses.
+
+### Step 1: Downloading and Unzipping External Data
+First, we need to obtain spatial data that outlines the boundaries of Haiti's 3rd administrative level areas. We'll download this data from the Stanford database and unzip it to use in our analysis. The following code will download the files to your current working directory.
+
+```{r}
+# Download the zip file containing Haiti ADM3 spatial data
+utils::download.file(url = "https://stacks.stanford.edu/file/druid:kz179wf4778/data.zip?download=true", destfile = "3rd-level-haiti-divisions.zip", mode = "wb")
+
+# Unzip the downloaded file into current working directory
+unzip("3rd-level-haiti-divisions.zip", exdir = "haiti-adm3")
+
+# Optionally, remove the zip file to clean up your workspace
+file.remove("3rd-level-haiti-divisions.zip")
+```
+
+### Step 2: Reading the Spatial Data
+Once the data is unzipped, we need to read the spatial files into R so we can work with them. We'll use the `sf` package, which is great for handling spatial (geographic) data in R.
+
+```{r}
+# Read the shapefile of Haiti's ADM3 into an sf object
+haiti_adm3 <- 
+    st_read("haiti-adm3/HTI_adm3.shp") |>
+    st_as_sf()
+# Set tmap to interactive view mode
+tmap_mode("view")
+```
+
+We are particularly interested in the northern part of Haiti, focusing on the regions around Cap-Haïtien and l'Acul-du-Nord. These regions correspond to `ID_2 = 24` and `ID_2 = 25` in the `haiti_adm3` dataset.
+
+The code below creates an interactive map where:
+
+- All regions are shown in orange.
+- Cap-Haïtien and l'Acul-du-Nord are highlighted in yellow.
+
+You can explore the map interactively, clicking on regions to see more information.
+```{r}
+# Select Cap Haïtien and l'Acul-du-Nord
+caphaitien <- filter(haiti_adm3, (ID_2 == 24 | ID_2 == 25) & ID_3 != 76 & ID_3 != 80)
+
+haiti_adm3 |> 
+  tm_shape() +
+  tmap_options(check.and.fix = TRUE) +
+  tm_borders() +
+  tm_fill(col = "orange", alpha = 0.6) +
+  tm_shape(caphaitien) + 
+  tm_borders() +
+  tm_fill(col = "yellow", alpha = 0.6)
+```
+
+Notice that you can use your mouse to click on each region and read more information from the dataset `haiti_adm3`. 
+
+### Step 3: Prepare Data for Visualization
+Now we have three data sources: `haiti_adm3` (spatial data about Haiti), `mwater`(water access points), and `okap`(socioeconomic stauts). We filter each dataset to focus on the areas we are interested in.
+
+```{r}
+# filter Cap-Haitien adm3 map data
+cap_adm3 <- haiti_adm3 |>
+  filter(ID_3 == 77|ID_3 == 78 | ID_3 == 79 | ID_3 == 81) # select North
+
+# filter Cap-Haitien mwater data
+cap_mwater <- mwater |>
+  filter(str_detect(administra, "Cap Haitien"))
+
+# filter Cap-Haitien okap data
+cap_okap <- okap |>
+  filter(cte == "ctecaphaitien")
+```
+
+### Step 4: Plot and Visualize Map 
+Finally, we use `tmap` to plot and visualize the data on an interactive map. This code creates a multi-layered map:
+
+```{r}
+cap_adm3 |>
+  tm_shape() + # Sets up the map's base layer using the northern region's boundaries.
+  tm_borders(lwd = 2) +
+  tm_layout(bg.color = "lightblue") +
+  tm_shape(cap_okap) + # Adds a layer representing the socioeconomic data.
+  tm_borders() +
+  tm_fill(col = "economy", palette = "YlOrBr") + #  Fills regions based on their economic status
+  tm_shape(cap_mwater) +
+  tm_dots(col = "type", palette = "Blues") # Plots water access points as dots and colored based on the type of water source
+```
+
+This map visually displays the distribution of water access points and their relationship with socioeconomic conditions in the Cap-Haïtien region.
+
+## Plotting maps with `leaflet` library
+In this section, we will use the `waterpumpkwale` data package, which contains three datasets: `location`, `weeklyvol2014`, and `weeklyvol2015`. The `location` dataset provides the latitude and longitude of the pumps, stored in the `lat_wgs84` and `long_wgs84` columns, respectively. Using this information, we can create an interactive map to visualize the locations of these hand pumps. 
+
+Let's walk through the steps to achieve this.
+
+First, we observe the `pumpid` column of the `location` dataset.
+```{r}
+# Uncomment the following line to observe the whole column
+# waterpumpkwale::location$pumpid
+
+# For readability, we'll display out the first and last entries 
+head(waterpumpkwale::location$pumpid)
+tail(waterpumpkwale::location$pumpid)
+```
+Notice that each pumpid starts with a letter from “A”, “B”, “C”, “D”, or “E”, which may indicate the group to which the pumps belong. Based on this, we can later enable group options in leaflet to allow users to select which group of pumps to display.
+
+### Step 1: Plotting Hand Pumps from a Single Group
+To begin, we will filter the location dataset to include only the pumps with IDs starting with the letter "A". We’ll then plot these pumps on a map using the leaflet library.
+
+```{r}
+library(waterpumpkwale)
+
+# Select pumps with IDs starting with "A"
+group_A <- waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "A"))
+
+# Plot Group A pumps on the map
+leaflet(options = leafletOptions(crs = leafletCRS(proj4def = "WGS84"))) %>% # declare coordinate system
+  addProviderTiles("OpenStreetMap") %>% # provide the base layer of the country map
+  addMarkers(
+    data = group_A,
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`)
+```
+
+
+### Step 2:  Plotting Hand Pumps from All Groups
+
+To display pumps from all groups on the map, we can specify the group parameter in the addMarkers() function. This allows users to view pumps from different groups and choose which ones to display.
+
+
+```{r}
+# Plot an interactive map with group option
+handpumpmap <- leaflet(options = leafletOptions(crs = leafletCRS(proj4def = "WGS84"))) %>% # declare coordinate system
+  addProviderTiles("OpenStreetMap") %>%
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "A")), # select pump id that starts with a particular string pattern
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    group = "Pump ID: A"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "B")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    group = "Pump ID: B"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "C")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    group = "Pump ID: C"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "D")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    group = "Pump ID: D"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "E")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    group = "Pump ID: E"
+  ) |>
+  # Layers control
+  addLayersControl(
+    overlayGroups  = c("Pump ID: A", "Pump ID: B", "Pump ID: C", "Pump ID: D", "Pump ID: E"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+handpumpmap
+```
+
+### Step 3: Customize the Map
+Now we want to add more flavors to the map. Here are some options to enrich the map:
+
+- customize the marker icon
+- add mouse hover effects
+- add mouse click-icon effects
+
+In some cases, the default markers may not be the best representation for your data. You can customize marker icons using the `makeIcon()` function from the `leaflet` package. 
+
+
+```{r}
+# customize marker icon 
+handpumpicon <- makeIcon(
+  iconUrl = "https://cdn-icons-png.flaticon.com/512/5984/5984318.png",
+  iconWidth = 30, iconHeight = 30
+)
+
+# plot an interactive map with group option
+handpumpmap <- leaflet(options = leafletOptions(crs = leafletCRS(proj4def = "WGS84"))) %>% # declare coordinate system
+  addProviderTiles("OpenStreetMap") %>%
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "A")), # select pump id that starts with a particular string pattern
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    popup = ~pumpid,
+    label = ~description,
+    icon = handpumpicon,
+    group = "Pump ID: A"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "B")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    popup = ~pumpid,
+    label = ~description,
+    icon = handpumpicon,
+    group = "Pump ID: B"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "C")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    popup = ~pumpid,
+    label = ~description,
+    icon = handpumpicon,
+    group = "Pump ID: C"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "D")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    popup = ~pumpid,
+    label = ~description,
+    icon = handpumpicon,
+    group = "Pump ID: D"
+  ) |>
+  addMarkers(
+    data = waterpumpkwale::location |> dplyr::filter(startsWith(pumpid, "E")),
+    lng = ~`long_wgs84`,
+    lat = ~`lat_wgs84`,
+    popup = ~pumpid,
+    label = ~description,
+    icon = handpumpicon,
+    group = "Pump ID: E"
+  ) |>
+  # Layers control
+  addLayersControl(
+    overlayGroups  = c("Pump ID: A", "Pump ID: B", "Pump ID: C", "Pump ID: D", "Pump ID: E"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+handpumpmap
+```
+
+# Conclusion
+In this tutorial, we explored how to create interactive maps in R using the `tmap` and `leaflet` libraries. We worked with datasets from the `cbssuitabilityhaiti` and `waterpumpkwale` packages, focusing on visualizing water access points data in Haiti and hand pump locations in Kenya.
+
+We've covered how to:
+
+- Explored visualizing water access points and socioeconomic data for regions in Haiti using tmap.
+- Created customizable and dynamic maps of hand pump locations in Kenya with leaflet.
+- Practiced layering different data sources and adding interactivity to enhance map visualization.
+
+This series of creating maps should give you the tools to start creating your own insightful maps. As you become more comfortable with R, you can explore more advanced features such as adding polygons, customizing popups with HTML, and integrating other data sources. Happy mapping!
+
+References:
+
+1. [Example of using the package `cbssuitabilityhaiti`](https://openwashdata.github.io/cbssuitabilityhaiti/articles/examples.html)
+2. [Example: track pump location and volume change](https://openwashdata.github.io/waterpumpkwale/articles/examples.html)
