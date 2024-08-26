@@ -11,7 +11,7 @@ author:
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid_id: 0009-0002-2567-3343
-date: today
+date: "2024-05-17"
 draft: false
 image: "thumbnail.jpg"
 image-alt: "data package workflow"
@@ -52,6 +52,7 @@ b.  Click on the green button at the upper right corner of the page named ‘New
 c.  Add a title and a short description about your dataset and tag one of us \@mianzg \@margauxgo \@larnsce before submitting the new issue.
 
 d.  You can think about a name for your data package and add it to the issue. The name should:
+
     1.  have all small letters,
     2.  have no spaces or dashes,
     3.  be a combination of two to three words and

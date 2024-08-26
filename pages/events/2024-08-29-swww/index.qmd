@@ -58,9 +58,13 @@ agenda  |>
 
 ## Slides
 
-### Workflows and education: openwashdata community
+### Education: openwashdata community
 
-To be prepared
+[View slides in full screen](../../gallery/slides/swww/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/swww/swww-2024-openwashdata-tilley.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/swww/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
 
 ### Facilitation and theme of session: WASHWeb
 
