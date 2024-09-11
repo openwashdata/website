@@ -4,9 +4,6 @@ categories:
   - data stewardship
   - job advert
   - data science
-format:
-    html: default
-    pdf: default
 date: "2024-09-10"
 draft: false
 image: "OWD-logo-12.svg"
