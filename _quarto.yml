@@ -1,6 +1,6 @@
 project:
   type: website
-
+  
 website:
   title: "openwashdata"
   site-url: https://openwashdata.org/
@@ -23,6 +23,13 @@ website:
       - icon: chat-left-dots
         href: https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch
         aria-label: Matrix
+
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "[**Open position**](pages/blog/posts/2024-09-10-baseflow-data-steward/) - come work with us on data stewardship at BASEflow, Malawi"
+    type: info
+    position: below-navbar
 
   navbar:
     background: "#5b195b"

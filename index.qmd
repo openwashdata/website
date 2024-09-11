@@ -24,8 +24,6 @@ Our mission is to empower WASH professionals to engage with tools and workflows 
 
 *** 
 
-***
-
 ::: {.hero-buttons}
 [Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
 [Events](pages/events/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
