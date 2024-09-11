@@ -2,7 +2,7 @@
 title: "Job advert: Data Quality Specialist at BASEflow, Malawi"
 categories:
   - data stewardship
-  - job advert
+  - job
   - data science
 date: "2024-09-10"
 draft: false
@@ -10,7 +10,7 @@ image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
 
-Download the [PDF version](path/to/your/file.pdf) of this job advert.
+**PDF**: Download the [PDF version](https://github.com/openwashdata/website/blob/main/pages/blog/posts/2024-09-10-baseflow-data-steward/2024-09-11-baseflow-job-advert.pdf) of this job advert.
 
 **Job Title:** Data Quality Specialist  
 
@@ -21,7 +21,6 @@ Download the [PDF version](path/to/your/file.pdf) of this job advert.
 **Application due date:** 1st October 2024
 
 **Note:** Carefully review the submission requirements. Incomplete applications will not be considered.
-
 
 # Project background
 
@@ -111,11 +110,13 @@ We seek a Data Quality Specialist who will take on the role of a data steward fo
 
 ## Submission requirements
 
+Please submit the following three items as part of your application package to: info@baseflowmw.org and copy (cc) muthi@baseflowmw.org and lschoebitz@ethz.ch with the subject line: "Application Data Quality Specialist - [Your Name]"
+
 1. An online sample/portfolio of previous work showing the programming code used for a data analysis project (if no public portfolio exists, a script with programming code can be submitted with the application package).
 
 2. An updated CV in your current format (no more than 3 pages including 3 references).
 
-3. An essay (maximum 500 words) that argues in favor of the following statement: “The data we generate belongs to us and I don't see the benefits of sharing it openly.” 
+3. An essay (maximum 500 words) that argues in favor of the following statement: "The data we generate belongs to us and I don't see the benefits of sharing it openly."
 
 ## Equal Opportunity Employer
 
