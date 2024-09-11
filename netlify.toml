@@ -1,6 +1,2 @@
 [[plugins]]
 package = "@quarto/netlify-plugin-quarto"
-
-[build.environment]
-QUARTO_PRINT_STACK = "true"
-QUARTO_INSTALL_TOOLS = "tinytex"
