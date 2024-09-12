@@ -620,9 +620,9 @@ This project was supported by the  [Open Research Data Program of the ETH Board]
 
 The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
 
-You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/ukzn-webinar/index.qmd)
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/ukzn-seminar/index.qmd)
 
-Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-webinar/2024-11-12-ukzn-seminar-openwashdata.pdf)
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar/2024-09-12-ukzn-seminar-openwashdata.pdf)
 
 This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
 
