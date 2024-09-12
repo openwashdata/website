@@ -10,7 +10,7 @@ image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
 
-**PDF**: Download the [PDF version](https://github.com/openwashdata/website/blob/main/pages/blog/posts/2024-09-10-baseflow-data-steward/2024-09-11-baseflow-job-advert.pdf) of this job advert.
+**PDF**: Download the [PDF version](https://github.com/openwashdata/website/raw/main/pages/blog/posts/2024-09-10-baseflow-data-steward/2024-09-11-baseflow-job-advert.pdf) of this job advert.
 
 **Job Title:** Data Quality Specialist  
 
