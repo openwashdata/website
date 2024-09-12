@@ -7,10 +7,8 @@ title: "Slides"
 
 [View slides in full screen](ukzn-seminar/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar/2024-09-12-ukzn-seminar-openwashdata.pdf)
 ```{=html}
-<iframe class="slide-deck" src="washweb-webinar-02/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+<iframe class="slide-deck" src="ukzn-seminar/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
 ```
-
-
 
 ## WASHWeb webinar - Partnerships
 
