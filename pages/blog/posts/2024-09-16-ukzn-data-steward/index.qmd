@@ -1,0 +1,105 @@
+---
+title: "Job description: Data Steward at University of KwaZulu-Natal WASH R&D Center"
+subtitle: "Research Scientist Grade 8 Position"
+categories:
+  - data stewardship
+  - job
+  - data science
+date: "2024-09-16"
+draft: false
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
+---
+
+The University of KwaZulu-Natal (UKZN) is committed to Employment Equity with the intention to
+promote representivity within the Institution. Preference will be given to applicants from the
+designated groups in accordance with our Employment Equity Plan.
+
+**PDF**: Download the original [PDF version](https://github.com/openwashdata/website/raw/main/pages/blog/posts/2024-09-16-ukzn-data-steward/2024-09-16-ukzn-data-steward-job-description.pdf) of this job description. 
+
+**Job Title:** Data Steward (Research Scientist Grade 8 Position)
+
+**Workstation:** Durban, South Africa 
+
+**Application due date:** 25th October 2024
+
+**Ref No.:** WASH 9/2024
+
+**Note:** Carefully review the submission requirements. Incomplete applications will not be considered.
+
+## Project background
+
+The openwashdata community was established in 2023 with the vision for an active global community
+that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH)
+sector. The project is managed by the Global Health Engineering group at ETH Zurich and in its first 1.5
+years developed a 10-week "data science for openwashdata'' training programme and established a
+clear and efficient data publishing workflow for datasets and code that follows FAIR principles and
+highest standards for computational reproducibility and version control.
+
+The UKZN WASH R&D Centre at UKZN is a strategic partner for a follow-up project on data stewardship.
+However, over the years, the WASH R&D Centre has amassed a significant amount of data on WASH
+related topics, including data from the Sanitation Engineering Field-Testing (EFT) Platform and the
+broader research community.
+
+The goal of the project is to publish this historical data for wider use of the community. The
+openwashdata team will provide supervision and training for aspects of data management, including
+data management plans, data privacy, data ethics, and data publication. The training will cover
+aspects of file organization, file types, and different pathways for collaboration and task management.
+The outcome is an increase in WASH related data that is published openly.
+
+The WASH Centre is seeking a data steward for a 1-year position, with potential renewal for a 2nd year,
+who will work with researchers at the WASH R&D Centre and the openwashdata team on data
+stewardship. The incumbent will be responsible for identifying current data management practices and
+developing a draft data management strategy for the WASH R&D Centre, publishing at least 10 datasets
+of two different types that are available to the UKZN WASH R&D Centre. She/He/They will support data science trainings in varying style with several different focus topics and for a variety of audiences
+
+## Minimum requirements
+
+1. A Master’s degree or equivalent, approved qualification in Computer Science, Data Science,
+Engineering, Media and Communication, Statistics, Development Studies, or related.
+
+2. Overall total of two years of experience in the following areas:
+    - Using data science tools (e.g. Git, GitHub, R, Python, RStudio IDE, VS Code, etc.).
+    - Developing curriculum, facilitating, coordinating, and conducting training sessions.
+
+## Submission requirements
+
+Please send applications to Ms Lungile Ndlela on email ndlelal1@ukzn.ac.za and Mr Lars Schoöbitz on
+email lschoebitz@ethz.ch
+
+The subject line must clearly indicate the position’s reference number (WASH 9/2024).
+
+1. A link to an online portfolio of previous work that shows programming code for a data analysis
+project (if no public portfolio exists, a script with programming code can be submitted with the
+application package).
+
+2. An updated CV in your current format.
+
+3. A cover letter (maximum 500 words) that addresses the following statement: “The data we
+generate belongs to us as individual researchers and I don't see the benefits of sharing it openly.
+I feel concerned that people will use my data in ways that I did not intend to and that they may
+find flaws in my work.”
+
+##  Dates
+
+- 2024-10-25: due date for submission of application
+- 2024-11-08: notification about passing first selection round (three selected candidates)
+- 2024-11-11 to 2024-11-15: a week reserved for a personal and a technical interview
+- 2024-11-20: final notification about selection
+- 2025-01-15: estimated start date
+
+The total remuneration package will be in accordance with the University rates of pay and will include
+benefits.
+
+Enquiries and details regarding the post may be directed to Ms Lungile Ndlela, on email
+Ndlelal1@ukzn.ac.za.
+
+The closing date for receipt of applications is 25 October 2024.
+
+Please send applications to Ms Lungile Ndlela on email ndlelal1@ukzn.ac.za and Mr Lars Schobitz on
+email lschoebitz@ethz.ch
+
+The subject line must clearly indicate the position’s reference number.
+
+The University reserves the right not to make an appointment to this advertisement.
+
