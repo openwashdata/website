@@ -27,7 +27,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "[**Open position**](https://openwashdata.org/pages/blog/posts/2024-09-10-baseflow-data-steward/) - come work with us on data stewardship at BASEflow, Malawi"
+    content: "[**Open positions**](https://openwashdata.org/pages/blog/) - come work with us on data stewardship at [BASEflow, Malawi](https://openwashdata.org/pages/blog/posts/2024-09-10-baseflow-data-steward) and [UKZN WASH R&D Centre, South Africa](https://openwashdata.org/pages/blog/posts/2024-09-16-ukzn-data-steward)."
     type: info
     position: below-navbar
 
