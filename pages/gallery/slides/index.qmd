@@ -1,7 +1,13 @@
 ---
 title: "Slides"
 ---
+## Swiss Research Data Day 2024
 
+[View slides in full screen](srdd2024/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/srdd2024/srdd2024-cwalder.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="srdd2024/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
 
 ## UKZN lunch seminar - Data stewardship
 
