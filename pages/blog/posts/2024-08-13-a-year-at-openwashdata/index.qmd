@@ -14,15 +14,20 @@ author:
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid_id: 0009-0009-4546-7214
-date: "2024-08-13"
-draft: true
+citation:
+  type: post
+  container-title: Global Health Engineering Blog
+  doi: "10.5281/zenodo.8318442"
+  url: https://ghe.ethz.ch/ghe-blog-news.html
+date: "2024-10-16"
+draft: false
 image: "thumbnail.jpg"
 image-alt: "Mian co-hosting a roundtable discussion at UNC Water and Health Conference 2023."
 ---
 
 ------------------------------------------------------------------------
 
-**Note:** This blog post is a re-published version from the [Global Health Engineering website](). For attribution, please see the [Citation information]() at the end of this post.
+**Note:** This blog post is a re-published version from the [Global Health Engineering website](https://ghe.ethz.ch/ghe-blog-news/2024/08/blog-data-for-social-good-yes-and-then-a-year-at-openwashdata-as-a-data-scientist.html). For attribution, please see the citation information at the end of this post.
 
 ------------------------------------------------------------------------
 
