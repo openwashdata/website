@@ -5,7 +5,7 @@ categories:
   - data stewardship
   - job
   - data science
-date: "2024-09-16"
+date: today
 draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
@@ -21,7 +21,7 @@ designated groups in accordance with our Employment Equity Plan.
 
 **Workstation:** Durban, South Africa 
 
-**Application due date:** 25th October 2024
+**Application due date:** 29th November 2024
 
 **Ref No.:** WASH 9/2024
 
@@ -80,21 +80,13 @@ generate belongs to us as individual researchers and I don't see the benefits of
 I feel concerned that people will use my data in ways that I did not intend to and that they may
 find flaws in my work.”
 
-##  Dates
-
-- 2024-10-25: due date for submission of application
-- 2024-11-08: notification about passing first selection round (three selected candidates)
-- 2024-11-11 to 2024-11-15: a week reserved for a personal and a technical interview
-- 2024-11-20: final notification about selection
-- 2025-01-15: estimated start date
-
 The total remuneration package will be in accordance with the University rates of pay and will include
 benefits.
 
 Enquiries and details regarding the post may be directed to Ms Lungile Ndlela, on email
 Ndlelal1@ukzn.ac.za.
 
-The closing date for receipt of applications is 25 October 2024.
+The closing date for receipt of applications is 29 November 2024.
 
 Please send applications to Ms Lungile Ndlela on email ndlelal1@ukzn.ac.za and Mr Lars Schobitz on
 email lschoebitz@ethz.ch
