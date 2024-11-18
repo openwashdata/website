@@ -1,0 +1,63 @@
+---
+title: "openwashdata Hackathon"
+description: |
+  We are excited to invite you to our upcoming openwashdata hackathon, a fully online event dedicated to creating compelling visualizations using open data on water, sanitation, and hygiene (WASH) with prizes worth a total of 1500 CHF!
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+## 📆 Event Details
+
+Since its inception two years ago, openwashdata and its community have published nearly 30 WASH-related datasets. Now, it's time to take stock, reflect on this achievement, and celebrate this milestone by bringing the data to life through visualization.
+
+Don’t miss this opportunity to showcase your skills and contribute to the openwashdata community. We look forward to seeing your ideas and visualizations!
+
+-   **Date:** Friday, November 29, 10:00 - 16:00 PM (CET) 
+-   **Platform: ** Online (Zoom)
+-   **Registration:** <https://forms.office.com/e/L60DRYNJ2E> (due date: November 26, 2025)
+
+## 🏁 Goal
+
+- Choose one or more datasets from the openwashdata catalog.
+- Use your favorite visualization tool.
+- Create a compelling graphic that tells a story.
+
+## Process
+
+### Step 1
+
+Sign-up using this registration form: <https://forms.office.com/e/L60DRYNJ2E>
+
+### Step 2
+
+You will hear back from us with a registration for a Zoom meeting on November 27, 2025. Here we will also provide instructions for how you join our helpdesk on the Element app and provide instructions for submission of the final product. 
+
+### Step 3
+
+The event on November 29 will have the following structure:
+
+1. Kickoff Session: We'll start with a virtual kickoff, explaining the rules and providing an overview of the different datasets.
+
+2. Support: Access mentors and a help desk throughout the event to assist with any questions or technical issues.
+
+3. Prizes:
+    - First place: 750 CHF
+    - Second place: 500 CHF
+    - Third place: 250 CHF
+    
+4. Submission: Submit your project through by 16:00 CET. 
+
+## Tools and Technologies
+
+As a participant, you can use any tool or programming language you prefer. Whether you're comfortable with Python, R, MS Excel, PowerBI, Tableau, or any other technology, bring your expertise.
+
+## Judging and Awards:
+
+Our judges will evaluate the submissions based on creativity, technical difficulty, and presentation. Winners will be announced during our virtual award ceremony by 16:00 CET.
+
+
