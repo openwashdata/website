@@ -87,3 +87,11 @@
   calendar: <a title="Add to Calendar" class="addeventatc" data-id="lU22275233" href="https://www.addevent.com/event/lU22275233"
     target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"
     async defer></script>
+
+- title: openwashdata Hackathon
+  site_url: https://openwashdata.org/pages/events/2024-11-18-hackathon
+  date: '2024-11-29'
+  description: <a href="/pages/events/2024-11-18-hackathon"> Prepare a visualization
+    using one of our >30 datasets and win up to 750 CHF.</a>
+  calendar: <a title="Register here" href="https://forms.office.com/e/L60DRYNJ2E">Register
+    here</a>
