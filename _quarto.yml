@@ -27,7 +27,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "[**Re-advertised open position:**](https://openwashdata.org/pages/blog/posts/2024-09-16-ukzn-data-steward) - come work with us on data stewardship at [UKZN WASH R&D Centre, South Africa](https://openwashdata.org/pages/blog/posts/2024-09-16-ukzn-data-steward)."
+    content: "[Register for our hackathon hosted on Zoom on 29th November 2024 and win up to 750 CHF](https://openwashdata.org/pages/events/2024-11-18-hackathon/)."
     type: info
     position: below-navbar
 
