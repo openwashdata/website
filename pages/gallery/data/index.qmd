@@ -1,8 +1,8 @@
 ---
 pagetitle: "Data"
 description: |
-  A table of datasets that have been published through the openwashdata 
-  community or are currently in development. 
+    A table of datasets that have been published through the openwashdata 
+    community or are currently in development. 
 editor_options: 
   chunk_output_type: console
 execute: 
@@ -12,6 +12,7 @@ execute:
 
 ```{r}
 options(knitr.kable.NA = '')
+library(stringr)
 ```
 
 
@@ -30,7 +31,6 @@ data <- readr::read_csv(here::here("pages/gallery/data/data_data/tbl-01-openwash
 
 :::{.column-page}
 ```{r}
-
 tbl_data <- data |> 
     dplyr::mutate(link_pkg_website = dplyr::case_when(
         status == "in-progress" ~ NA_character_,
@@ -39,7 +39,7 @@ tbl_data <- data |>
     dplyr::mutate(status = dplyr::case_when(
         status == "in-progress" ~ paste0("[", status, "]", "(", link_github, ")"),
         TRUE ~ status
-        )) |> 
+    )) |> 
     dplyr::select(id, 
                   name = pkg_name,
                   location, 
@@ -51,6 +51,7 @@ tbl_data <- data |>
     dplyr::arrange(id)
 
 tbl_data |> 
+    dplyr::filter(!stringr::str_detect(status, "in-progress")) |> 
     knitr::kable(padding = 0)
 
 ```
