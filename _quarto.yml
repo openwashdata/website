@@ -27,7 +27,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "[Register for our hackathon hosted on Zoom on 29th November 2024 and win up to 750 CHF](https://openwashdata.org/pages/events/2024-11-18-hackathon/)."
+    content: "Internship announcement. [Enrolled in an MSc at ETH Zurich? Do an internship in Data Science with openwashdata.](https://openwashdata.org/pages/blog/posts/2024-12-03-internship-announement/)"
     type: info
     position: below-navbar
 
