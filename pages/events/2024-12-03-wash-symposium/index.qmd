@@ -1,0 +1,25 @@
+---
+title: "Empowering WASH Professionals: Implementing Data Stewardship and FAIR Principles through the openwashdata Community"
+--- 
+
+Instructions
+
+The abstract statement (400 words or less) should describe the research, work, or topic of the intended presentation. The abstract should address why the topic is relevant to current trends in the WASH sector and how the session supports the mission of the Colorado WASH Symposium.
+
+Submissions are encouraged from both international and domestic WASH efforts. If you plan to submit for a panel session or workshop, please consider unique or innovative presentation options to foster audience interaction and indicate this in your abstract.
+
+When submitting your abstract there are separate questions for contributors and content. Please keep all identifying information, including names, institutions, and specific experience, out of the body of the abstract to enable a blinded review of all submissions.
+
+Submission by 6th December through this form: 
+
+https://docs.google.com/forms/d/e/1FAIpQLSfLU4c-ZyV7NjVXmz-kTV5w1k1WtxSFkxav_Q6hOavVgCZE9w/viewform 
+
+Abstract (308/400 words)
+
+We established the openwashdata community for the Water, Sanitation, and Hygiene (WASH) sector. We built infrastructure and communication channels, taught 100 WASH professionals the basics of data science, developed a workflow to publish WASH data following FAIR data principles, and mobilized those in the sector who were interested in joining our vision and mission.
+
+With another grant from the ETH Board, we continue to work on our vision for an active global community that applies FAIR (Findable, Accessible, Inoperable, Reusable) principles to data generated in the WASH sector. We continue to do this by empowering WASH professionals to engage with tools and workflows for open data and code. This new grant focuses explicitly on establishing data stewardship. To do this, we have established partnerships with two well-known WASH players: (1) the WASH R&D Centre at the University of KwaZulu-Natal, Durban, South Africa, and (2) BASEflow, Malawi, a non-governmental organization. Our funding will support a fully-funded data steward position at each institution for 12 months, and we will implement a 12-month collaborative learning approach.
+
+This presentation will introduce the approach to data stewardship we have implemented at the Global Health Engineering group at ETH Zurich over the past three years. We will highlight what we have learned by introducing the role of a data steward to this group as we have started to overcome the challenges of the modern academic, such as overflowing email inboxes, browsers with hundreds of tabs, dozens of communication channels, files stored on desktops, and management of credentials, passwords, and more. We have learned that we can only implement good practices for data management if general workflows within (research) groups are improved. We treat FAIR data principles as a method applied to data within a group so that making research data openly available is not an additional task but a by-product of good data stewardship.
+
+
