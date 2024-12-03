@@ -9,7 +9,7 @@ categories:
   - data science
   - R
 author: Lars Schöbitz
-date: "2024-06-24"
+date: "2024-12-03"
 draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
@@ -23,7 +23,7 @@ As part of our Open Science team you will support us in developing efficient dat
 
 This job is for you if:
 
-- you are enrolled in an MSc programme at ETH Zurich
+- [you are enrolled in an MSc programme at ETH Zurich and planning to take a holiday term]{.highlight-yellow}
 - you care about data and code being reusable
 - you have been taught standard data science tools (e.g. Git, GitHub, R, Python, RStudio IDE, VS Code, etc.)
 - you can clean, visualize, and communicate data using R, and ideally, the collection of R tidyverse packages
@@ -35,11 +35,11 @@ Everyone is welcome here, just as they are. Our collegial and respectful interac
 
 ## Dates
 
-- 2024-07-05: due date for submission of application
-- 2024-07-09: notification about passing first selection round (two selected candidates)
-- 2024-07-10 & 2024-07-11: a personal and a technical interview
-- 2024-07-15: final notification about selection
-- 2024-08-01: ideal start date of 4 to 6 month internship
+- 2025-01-15: due date for submission of application
+- 2025-01-17: notification about passing first selection round (two selected candidates)
+- 2025-01-20 & 2025-01-21: a personal and a technical interview
+- 2025-01-23: final notification about selection
+- 2025-02-17: flexibel, but ideal start date of 4 to 6 month internship
 
 ## Submission requirements
 
