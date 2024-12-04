@@ -2,7 +2,7 @@
 title: Internship - Data Science with openwashdata - 80% or more
 subtitle: A unique opportunity to apply your data science skills to real-world problems in the WASH sector.
 description: |
-  Join our team for 4 to 6 months and support us is building the openwashdata community while learning about
+  Join our team for 4 to 6 months and support us in building the openwashdata community while learning about
   open science, open research data, reproducibility, SDG6, and WASH.
 categories:
   - internship
