@@ -5,7 +5,7 @@ categories:
   - data stewardship
   - job
   - data science
-date: today
+date: "2024-11-02"
 draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
