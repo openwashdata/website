@@ -4,7 +4,7 @@ title: "Slides"
 
 ## UKZN lunch seminar - what's next?
 
-[View slides in full screen](ukzn-seminar-02/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar/2025-02-06-ukzn-seminar-openwashdata.pdf)
+[View slides in full screen](ukzn-seminar-02/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar-02/2025-02-06-ukzn-seminar-openwashdata.pdf)
 
 ```{=html}
 <iframe class="slide-deck" src="ukzn-seminar-02/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
