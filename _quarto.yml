@@ -23,14 +23,7 @@ website:
       - icon: chat-left-dots
         href: https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch
         aria-label: Matrix
-
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "Internship announcement. [Enrolled in an MSc at ETH Zurich? Do an internship in Data Science with openwashdata.](https://openwashdata.org/pages/blog/posts/2024-12-03-internship-announcement/)"
-    type: info
-    position: below-navbar
-
+        
   navbar:
     background: "#5b195b"
     title: false
