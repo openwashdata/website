@@ -126,7 +126,7 @@ ggplot2::theme_set(
 Diagram at: <https://github.com/Global-Health-Engineering/concept-maps>
 :::
 
-# Data steward support
+# Data steward support {background-color="#5b195b"}
 
 ## Data steward for WASH R&D Center
 
