@@ -13,6 +13,7 @@ execute:
 ```{r}
 options(knitr.kable.NA = '')
 library(stringr)
+library(DT)
 ```
 
 
@@ -21,7 +22,6 @@ library(stringr)
 The table on this pages shows data that is published following our R data package workflow. Each data set comes with its own website and rich documentation to increase reusability. 
 
 ```{r}
-
 data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
 data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
 
@@ -52,7 +52,15 @@ tbl_data <- data |>
 
 tbl_data |> 
     dplyr::filter(!stringr::str_detect(status, "in-progress")) |> 
-    knitr::kable(padding = 0)
+    datatable(
+        options = list(
+            pageLength = 15,   # Number of rows per page
+            autoWidth = TRUE,  # Auto-adjust column widths
+            searchHighlight = TRUE # Highlight search matches
+        ),
+        rownames = FALSE,  # Hide row names
+        escape = FALSE # Allow HTML links to be displayed correctly
+    )
 
 ```
 
