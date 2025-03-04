@@ -5,6 +5,7 @@ website:
   title: "openwashdata"
   site-url: https://openwashdata.org/
   description: "Website of the openwashdata community"
+  favicon: "images/OWD-logo-18.png"
   page-navigation: true
   search: false
   page-footer: 
@@ -29,7 +30,6 @@ website:
     title: false
     logo: "images/OWD-logo-04.png"
     logo-alt: "openwashdata logo."
-    favicon: "images/OWD-logo-18.png"
     collapse-below: lg
     left:
       - text: " "
