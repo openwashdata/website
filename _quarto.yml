@@ -5,7 +5,6 @@ website:
   title: "openwashdata"
   site-url: https://openwashdata.org/
   description: "Website of the openwashdata community"
-  favicon: "images/OWD-logo-18.png"
   page-navigation: true
   search: false
   page-footer: 
@@ -123,6 +122,8 @@ format:
     include-in-header: 
         - text: |
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+            <link href="images/OWD-logo-18.png" rel="icon" media="(prefers-color-scheme: light)"/>
+            <link href="images/OWD-logo-13.png" rel="icon" media="(prefers-color-scheme: dark)"/>
 
 execute: 
   freeze: auto
