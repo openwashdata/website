@@ -1,0 +1,25 @@
+---
+title: "Nicolò Massari"
+subtitle: "Data Science Intern"
+image: profile-nicolo-square.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: globe
+      text: Website
+      href: https://nicmsri.github.io/
+    - icon: github
+      text: GitHub
+      href: https://github.com/nicmsri
+    - icon: linkedin
+      text: Linkedin
+      href: https://ch.linkedin.com/in/nicmsri
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0006-8421-930X
+
+---
+
+Nicolò is working as a Data Science Intern at the Global Health Engineering group at ETH Zurich, contributing to openwashdata and other research projects. He is a recent graduate with a MSc in Cosmology and a background in computational methods and programming. ヽ(^^)丿
