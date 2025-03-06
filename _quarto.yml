@@ -29,7 +29,6 @@ website:
     title: false
     logo: "images/OWD-logo-04.png"
     logo-alt: "openwashdata logo."
-    favicon: "images/OWD-logo-18.png"
     collapse-below: lg
     left:
       - text: " "
@@ -123,6 +122,8 @@ format:
     include-in-header: 
         - text: |
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+            <link href="images/OWD-logo-18.png" rel="icon" media="(prefers-color-scheme: light)"/>
+            <link href="images/OWD-logo-13.png" rel="icon" media="(prefers-color-scheme: dark)"/>
 
 execute: 
   freeze: auto
