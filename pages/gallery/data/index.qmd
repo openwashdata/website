@@ -52,15 +52,7 @@ tbl_data <- data |>
 
 tbl_data |> 
     dplyr::filter(!stringr::str_detect(status, "in-progress")) |> 
-    datatable(
-        options = list(
-            pageLength = 15,   # Number of rows per page
-            autoWidth = TRUE,  # Auto-adjust column widths
-            searchHighlight = TRUE # Highlight search matches
-        ),
-        rownames = FALSE,  # Hide row names
-        escape = FALSE # Allow HTML links to be displayed correctly
-    )
+    knitr::kable(padding = 0)
 
 ```
 
