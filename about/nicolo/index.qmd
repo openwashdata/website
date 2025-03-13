@@ -9,13 +9,13 @@ about:
   links:
     - icon: globe
       text: Website
-      href: https://nicmsri.github.io/
+      href: https://massarin.github.io/
     - icon: github
       text: GitHub
-      href: https://github.com/nicmsri
+      href: https://github.com/massarin
     - icon: linkedin
       text: Linkedin
-      href: https://ch.linkedin.com/in/nicmsri
+      href: https://ch.linkedin.com/in/massarin
     - icon: search
       text: ORCID
       href: https://orcid.org/0009-0006-8421-930X
