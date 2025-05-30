@@ -2,6 +2,14 @@
 title: "Slides"
 ---
 
+## GHE Yearly 2025 - openwashdata - past and future
+
+[View slides in full screen](ghe-yearly-2025/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ghe-yearly-2025/ghe-yearly-2025-lschoebitz.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="ghe-yearly-2025/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
 ## UKZN lunch seminar - what's next?
 
 [View slides in full screen](ukzn-seminar-02/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar-02/2025-02-06-ukzn-seminar-openwashdata.pdf)
