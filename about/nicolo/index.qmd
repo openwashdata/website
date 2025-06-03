@@ -24,3 +24,4 @@ about:
 A hitchhiker of the cosmos, with a background in computational methods and programming ヽ^^丿
 
 Working towards a [fairenough](https://github.com/openwashdata/fairenough) future for data, developing software utilising cutting edge models for automatic speech recognition and transcription at ETH Zurich [ghe_transcribe](https://github.com/Global-Health-Engineering/ghe_transcribe).
+
