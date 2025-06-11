@@ -29,5 +29,3 @@ Empower WASH professionals to engage with tools and workflows for open data and 
 # Team
 
 We received funding for the first time in 2023 and are comprised of a small team actively working on building the community.
-
-Find out here who is behind all this.

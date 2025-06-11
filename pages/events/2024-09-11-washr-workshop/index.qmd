@@ -1,0 +1,48 @@
+---
+title: "washr - a tool and workflow for sharing data"
+description: |
+  This 2-day workshop is organised by Global Health Engineering, ETH Zurich and the openwashdata community. Participants will learn about FAIR data principles and through hands-on exercises publish a dataset of their own as an R data package.
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+## 🎯 Objectives
+
+A the end of the workshop, participants will be able to:
+
+1. Describe how data published using the washr package follows FAIR principles compared to data shared in an appendix of a PDF or DOCX document.
+
+2. Follow step by step instruction to create a data package using the washr package.
+
+3. Understand the difference between human-readible and machine-readible documentation. 
+
+## 📆 Event Details
+
+-   **Date:** Week of 28th October 2024
+
+-   **Location:** University of KwaZulu-Natal, WASH R&D Center, Durban, South Africa
+
+## 📝 Agenda
+
+```{r}
+#| tbl-colwidths: [15, 35, 15, 45]
+#| column: page
+#| eval: true
+
+agenda <- readr::read_csv(here::here("pages/events/2024-06-21-hackathon/data/hackathon-agenda.csv"))
+
+agenda |> 
+    dplyr::select(time, title, remark) |> 
+    dplyr::mutate(remark = stringr::str_replace_na(remark, replacement = "")) |>
+    dplyr::rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+    
+```
+
+## 🖼️ Slides
+

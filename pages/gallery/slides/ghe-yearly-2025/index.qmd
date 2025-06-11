@@ -1,0 +1,399 @@
+---
+title: "GHE Yearly 2025"
+subtitle: "openwashdata - past and future"
+author: 
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2025-06-02
+date-format: long
+format: 
+  revealjs:
+    logo: "../images/OWD-logo-20.png"
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+    footer: "[{{< fa link >}} openwashdata.org/pages/gallery/slides/](https://openwashdata.org/pages/gallery/slides/)"
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
+---
+
+```{r}
+
+library(washopenresearch)
+library(tidyverse)
+library(ggthemes)
+library(ggtext)
+library(gt)
+
+# set ggplot theme --------------------------------------------------------
+
+ggplot2::theme_set(
+    # Pick a starting theme
+    ggplot2::theme_gray(base_size = 14) +
+        # Add your favourite elements
+        ggplot2::theme(
+            axis.line = element_line(),
+            panel.background = element_rect(fill = "white"),
+            panel.grid.major = element_line("grey95", linewidth = 0.25),
+            legend.key  = element_rect(fill = NA) 
+        )
+)
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+
+# data preparation
+
+washdev_das_type <- washdev |> 
+    mutate(das_policy = case_when(
+        published_year < 2020 ~ "pre-2020",
+        TRUE ~ "2020 or later"
+    )) |> 
+    mutate(das_type = case_when(
+        das_type == "in paper" ~ "available in paper",
+        das_type == "on request" ~ "available on request",
+        TRUE ~ das_type
+    ))  |>     
+    mutate(das_type = case_when(
+        is.na(das_type) ~ "missing",
+        TRUE ~ das_type
+    )) 
+```
+
+
+```{r}
+
+## summary for data availability statement (DAS) type and policy year
+
+washdev_das_type_n <- washdev_das_type |> 
+    count(das_policy, das_type) 
+
+
+fig_das_type <- washdev_das_type_n |> 
+    ggplot(aes(x = reorder(das_type, n), y = n, fill = das_policy)) +
+    geom_col(position = position_dodge(), width = 0.6) +
+    geom_text(aes(label = n), 
+              vjust = 0.5, 
+              hjust = -0.5,  
+              size = 3,
+              position = position_dodge(width = 0.5)
+    ) +
+    coord_flip() +
+    annotate("text", 
+             x = 3.77, 
+             y = 150, 
+             size = 3, 
+             label = "after introducing policy\nfor data availability statement", 
+             color = "gray20") +
+    geom_curve(aes(x = 3.95, y = 142, xend = 3.95, yend = 70), 
+               curvature = 0.5, 
+               arrow = arrow(type = "closed", length = unit(0.1, "inches")),
+               color = "gray20") +
+    labs(
+        title = "Data Availability Statement",
+        subtitle = "Analysis of 924 articles published in Journal of Water, Sanitation and Hygiene for Development (2011 to 2023)",
+        fill = "published year",
+        y = "number of publications",
+        x = "data availability statement") +
+    scale_y_continuous(breaks = seq(0, 600, 100), limits = c(0,600)) +
+    scale_fill_colorblind() +
+    theme(panel.grid.major.y = element_blank(),
+          plot.subtitle = element_text(size = 10))
+
+# https://www.iwapublishing.com/news/iwa-publishing-2020-annual-review
+```
+
+```{r}
+## summary for data availability statement (DAS) type and supp file type
+
+washdev_supp_file_type_n <- washdev_das_type |> 
+    filter(das_policy == "2020 or later") |> 
+    select(paperid, das_type, supp_file_type) |> 
+    unnest(supp_file_type) |> 
+    mutate(supp_file_type = case_when(
+        is.na(supp_file_type) ~ "missing",
+        TRUE ~ supp_file_type
+    )) |>
+    count(das_type, supp_file_type) 
+
+tbl_supp_type <- washdev_supp_file_type_n |> 
+    group_by(supp_file_type) |> 
+    summarise(n = sum(n)) |> 
+    arrange(desc(n)) |> 
+    mutate(perc = n / sum(n) * 100) 
+
+```
+
+# The Opportunity {background-color="#5b195b"}
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+::: {.notes}
+
+- We have a huge and missed opportunity in our sector
+- Very little data is shared publicly and following best practices for reuse
+
+:::
+
+## Journal articles
+
+```{r}
+#| fig-width: 10
+#| out-width: 100%
+fig_das_type
+```
+
+```{r}
+washdev_das_type_2020 <- washdev_das_type |> 
+    filter(das_policy == "2020 or later") |> 
+    count(das_type) |> 
+    mutate(perc = n / sum(n) * 100) 
+
+perc_missing <- washdev_das_type_2020 |> 
+    filter(das_type == "missing") |> 
+    pull(perc)
+
+perc_in_paper <- washdev_das_type_2020 |> 
+    filter(das_type == "available in paper") |> 
+    pull(perc)
+```
+
+
+::: footer
+Data: R package washopenresearch to be published at <https://github.com/openwashdata/washopenresearch>
+:::
+
+::: {.notes}
+- The first missed opportunity are journal articles and data from researchers
+
+- We looked at the Data Availability Statements in 924 articles published in the Journal of Water, Sanitation and Hygiene for Development from 2011 to 2023.
+
+- You can see the data availability statements on the vertical axis and the number of publications on the horizontal axis
+
+- Colors differentiate between papers published before 2020 and in 2020 or later, when a policy was introduced that requires authors to select one of the three data availability statements
+
+- After that policy was introduced, we still found 15% of papers without a data availability statement, while 60% of articles stated that data was available in the paper, which could also be as supplementary material
+
+:::
+
+## Journal articles {.smaller}
+
+#### Supplementary Material
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+[Take-away]{.highlight-yellow}: Not a single file is in [machine-readable]{.highlight-yellow}, [non-proprietary]{.highlight-yellow} file type format that would qualify for following FAIR principles for data sharing [@wilkinson2016].
+
+[Good practice]{.highlight-yellow}: CSV file (comma-separated values), including a data dictionary for all variables/columns in the data
+:::
+
+::: {.column width="40%"}
+```{r}
+
+tbl_supp_type |> 
+    gt() |> 
+    tab_header(title = "Supplementary Material",
+               subtitle = "Articles published 2020 or later") |>
+    tab_style(locations = cells_column_labels(), 
+              style = cell_text(weight = "bold")) |>
+    fmt_number(columns = c(perc), decimals = 1) |> 
+    cols_label(supp_file_type = "file type", n = "n", perc = "%") |> 
+    tab_footnote(
+        footnote = md("One article can have multiple files."),
+        locations = cells_column_labels(columns = n)
+        )
+
+```
+:::
+
+::::
+
+::: footer
+Data: R package washopenresearch to be published at <https://github.com/openwashdata/washopenresearch>
+:::
+
+::: {.notes}
+
+- We then looked at the Supplementary Material of all articles published in 2020 or later and found that have half of the published articles still had no data published alongside the article
+
+- But, the most insightful take-away is that not a single file was shared in a file type format that would qualify for following FAIR principles for data sharing.
+
+- That is something we are hoping to change, where sharing data as CSV files would already go a long way.
+
+:::
+
+# openwashdata community {background-color="#5b195b"} 
+
+::: {.notes}
+- To address this, we started the openwashdata community
+:::
+
+## openwashdata community
+
+- Launched 10 March 2023
+- Supported by four projects worth 340'000 CHF (50% in-kind contribution)
+- Ends in July 2026
+- So many outputs to write about (from 2026 to 2027)
+
+## [Vision]{.highlight-yellow}
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the greater water, sanitation, and hygiene sector.
+
+## [Mission]{.highlight-yellow}
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+::: footer
+
+From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+:::
+
+# VMOST as a method {background-color="#5b195b"}
+
+## VMOST
+
+- [V]{.highlight-yellow}ision
+- [M]{.highlight-yellow}ission
+- [O]{.highlight-yellow}bjectives
+- [S]{.highlight-yellow}trategy
+- [T]{.highlight-yellow}actics
+
+::: speaker-notes
+VMOST analysis is a tool used to evaluate if an overall strategy and supporting activities are in alignment. It can be used for current or future plans, and it breaks down a strategy and its core components into an easy-to-consume format 
+:::
+
+## Objectives (Indicators) {.scrollable .smaller}
+
+### By the end of March 2024 
+
+::: incremental
+
+1. Increase the number of datasets published on the website to [20 R data packages]{.highlight-yellow}.
+1. Increase the number of datasets that are donated for publication to [50 datasets]{.highlight-yellow}.
+1. Increase the number of people that have donated, cleaned, and published data independently with support of the openwashdata team to [5]{.highlight-yellow}.
+1. Increase the number of unique visitors to the website to [10 visitors/day]{.highlight-yellow}.
+1. Increase global coverage of visitors to the website to [50% of countries globally]{.highlight-yellow}.
+1. Increase the number of data users who report having used data published through openwashdata community to [2 uses per dataset on average]{.highlight-yellow}.
+1. Increase the number of subscribers to the openwashdata newsletter to[ 250 subscribers from 50 countries]{.highlight-yellow}.
+1. Increase the number of participants in live coding events to [5 participants on average]{.highlight-yellow}. 
+
+:::
+
+## Strategies
+
+... 11
+
+::: footer
+
+Check: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+:::
+
+## Tactics
+
+... 5
+
+::: footer
+
+Check: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+:::
+
+## Some Stats
+
+- Number of datasets published: [33 R data packages](https://openwashdata.org/pages/gallery/data/)
+- Number of newsletter subscribers: [202 (14 since Jan 2025)](https://openwashdata.org/pages/gallery/newsletter/)
+- Number of unique visitors (openwashdata.org): [~5 visitors/day (past 3 months)](https://openwashdata.org/pages/gallery/stats/)
+- Number of unique visitors (data packages): [~5 visitors/day (past 3 months)](https://plausible.io/openwashdata.github.io)
+
+# Future {background-color="#5b195b"}
+
+## WP2: Governance
+
+- Activity 2.1: Develop a governance structure for a community organization and decision-making processes.
+- Activity 2.2: Form a sounding board comprising community members to provide directional feedback.
+- Activity 2.3: Create a long-term funding strategy for the openwashdata community.
+
+[Open question: Does openwashdata have a long term future?]{.highlight-yellow} 
+
+## WP3: Community expansion
+
+- Activity 3.1: Offer advanced data science training and workshops to community members.
+- Activity 3.2: Develop a mentorship program to support new members in adopting ORD practices.
+- Activity 3.3: Organize community events to foster networking and collaboration.
+
+[Priority: Strong focus on WP3 for the remainder of the project.]{.highlight-yellow} 
+
+## data science for openwashdata 002 {.smaller}
+
+All efforts into the next iteration of the course.
+
+- free, live, online, 10-week programme
+- 200 registrations for 2023 iteration
+- 100 show-ups
+- 20 graduates
+- next iteration: from September 2025, sign-up: <https://forms.gle/MP5rNYZagBdfG2ZRA>
+
+::: learn-more
+[ds4owd-001.github.io/website/](https://ds4owd-001.github.io/website/)
+
+```{=html}
+<iframe src="https://ds4owd-001.github.io/website/" width="100%" height="300" style="border:2px solid #123233;" title="Website of data science for openwashdata coursew"></iframe>
+```
+:::
+
+## ds4owd-002 communication campaign (strategy)
+
+- restart monthly newsletter editions (now)
+- publish a blog post on ds4owd-001 (July)
+- start publishing a LinkedIn post every Thursday (openwashdata thursday)
+- host an information event (late August)
+- host a series of workshops for `washr` (from November 2025 to March 2026)
+
+## ds4owd-002 course preparation
+
+- Platform for access to recordings through authentication
+- Prepare quizzes for each module for participants to complete each module
+- Write R code for using GitHub API to comment and close issues
+
+# Papers from mid-2026 {background-color="#5b195b"}
+
+## 12 months, 4 papers {.smaller}
+
+::: incremental
+
+1. [Setting the baseline:]{.highlight-yellow} FAIR / Open Data practices in the WASH sector
+2. [Increasing competency:]{.highlight-yellow} Data from two iterations of data science for openwashdata course
+3. [Streamling workflows:]{.highlight-yellow} Developmnent of an R package for FAIR data publication (`washr` / `fairenough`)
+4. [Tracking impact:]{.highlight-yellow} Analytics from published data packages
+
+:::
+
+## Thanks `r emo::ji("sunflower")`
+
+This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+
+The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/ukzn-seminar/index.qmd)
+
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar/2024-09-12-ukzn-seminar-openwashdata.pdf)
+
+This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+
+# References
+

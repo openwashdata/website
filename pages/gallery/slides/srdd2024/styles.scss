@@ -1,0 +1,70 @@
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$font-family-monospace: "Source Code Pro", monospace;
+$body-bg: #fff;
+$link-color: #42affa;
+$presentation-heading-color: #0F4C81;
+$code-color: #ED6D37; 
+$code-bg: #F5F5F5;
+$code-block-bg: #F5F5F5;
+$code-block-font-size: 0.9em;
+$presentation-h2-font-size: 1.4em !default;
+$presentation-font-size-root: 36px !default;
+
+/*-- scss:rules --*/
+
+#title-slide .title {
+  font-size: 1.5em;
+}
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.reveal .hand {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.2em
+}
+
+.large {
+  font-size: 1.3em;
+}
+
+.reveal .slide .learn-more {
+  text-align: center;
+  font-family: $font-family-monospace;
+  padding-bottom: 10px;
+}
+
+.highlight-yellow {
+  background-color: #FAE3B4;
+  padding: 0.0em 0.1em;
+}
+
+.highlight-red {
+  background-color: #F8B4B4;
+  padding: 0.0em 0.1em;
+}
+
+.reveal .slide .task {
+  font-size: 0.80em;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  border-left: solid 5px #0F4C81;
+  background-color: #ECEEF8;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+   background-color: #f2f2f2;
+}
+.table-hover > tbody > tr:hover {
+   background-color: #e0e0e0;
+}

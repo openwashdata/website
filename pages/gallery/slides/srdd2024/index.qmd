@@ -1,0 +1,200 @@
+---
+title: "Publish with Ease"
+subtitle: "A Low-Cost, Open-Source Solution for Research Data Sharing"
+author: 
+  - name: Colin Walder
+    affiliations:
+        - name: Global Health Engineering - ETH Zurich
+          url: https://ghe.ethz.ch/
+date: 10-09-2024
+date-format: long
+format: 
+  revealjs: 
+    theme: styles.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    show-notes: false
+    link-external-icon: true
+    link-external-newwindow: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction
+
+::::: columns
+::: {.column width="65%"}
+-   Data Steward \@ Global Health Engineering (GHE), ETH Zürich
+-   [*"Addressing the determinants of health as a function of engineered interventions and systems".*]{style="color:#679289;"}
+-   One major component of health is WASH – [**wa**]{style="color:#679289;"}ter, [**s**]{style="color:#679289;"}anitation and [**h**]{style="color:#679289;"}ygiene
+:::
+
+::: {.column width="35%"}
+![](ghe_vision.png)
+:::
+:::::
+
+::: notes
+-   My responsibilites as a data steward at GHE: Support with data analysis, help with surveys, make researchers' life a little easier when working with data
+-   Present GHE's mission: Part of the departement of mechanical and process engineering, following an interdisciplinary approach with a focus on public health
+-   Public health: "the science and art of preventing disease, prolonging life and promoting health through the organized efforts and informed choices of society, organizations, public and private, communities and individuals."
+-   WASH is a collective term for Water, Sanitation and Hygiene – relating to access to safe, clean water, improved sanitation facilities and basic level of hygiene maintained
+-   Major problem: WASH practitioners collect various data (geographic, household, operational, and experimental) to design policies and publish research, but they often lack skills in computational data management and are unfamiliar with sharing data using FAIR principles.
+:::
+
+# One major problem {background-color="#0F4C81"}
+
+# WASH practitioners often lack skills in computational data management {background-color="#0F4C81"}
+
+## openwashdata
+
+-   Established in 2021, applying FAIR principles (Wilkinson et al. 2016) to data generated in the WASH sector
+-   [**Empower WASH professionals to engage with tools and workflows for open data and code**]{style="color:#679289;"}
+-   Support other organizations with their data management, data events (e.g., hackathon), free data science course
+-   Core team: Two data stewards and one intern at GHE; many collaborators
+
+::: notes
+-   Support other organizations: Hiring two data stewards and building a network
+-   Data events: Hosted a hackathon to publish several datasets at once and test \`washr\`
+-   10 week data science course to address the issue of computer and data literacy in the WASH sector
+:::
+
+## openwashdata academy
+
+-   10-week free data science course to empower WASH professionals to engage with tools and workflows for open data
+-   200 registrations from 46 countries
+-   27 datasets submitted as final projects
+
+![](data-to-submit.png){fig-align="center"}
+
+::: notes
+Add numbers - Key question (next slide): How can we make the data publication process easier?
+:::
+
+# How can we streamline the data publishing procedure? {background-color="#0F4C81"}
+
+## `washr`
+
+-   An R package designed to simplify WASH data publishing
+-   User-friendly functions to ensure that data adheres to FAIR principles
+-   Easy to use, with a detailed guide and workflow visualization
+
+[**So far:**]{style="color:#679289;"}
+
+- Almost a dozen datasets published 
+- Requires minimal computational power
+- Easily generalizable to benefit the wider community
+
+::: notes
+-   Standardize as much as possible
+-   Components: R(Studio), Git(Hub), Quarto
+-   Provide a few functions to illustrate
+:::
+
+## 
+
+![](workflow.png)
+
+## Preparing the data
+
+-   Start a local version-controlled folder, connect it to GitHub
+
+![](repos.png){style="border: 2px solid black;" fig-align="center"}
+
+## Preparing the data
+
+-   `setup_rawdata()`
+    -   Creates `data-raw` as suggested in `usethis` R Package[^1]
+    -   Creates `data_processing.R` for data cleaning
+
+[^1]: See [https://usethis.r-lib.org/](https://pkgdown.r-lib.org/)
+
+![](datapreparation.png){style="border: 2px solid black;" fig-align="center"}
+
+## Documenting the data
+
+::::: columns
+::: {.column width="50%"}
+-   Create roxygen skeletons
+-   Create README
+-   Codebook describing each variable
+-   Website with `pkgdown` R package[^2]
+-   Add a license and author(s)
+:::
+
+::: {.column width="50%"}
+![](documenting.png){style="border: 2px solid black;"}
+:::
+:::::
+
+[^2]: See <https://pkgdown.r-lib.org/>
+
+## Publishing the data
+
+<p style="margin-bottom: 6em;">
+
+</p>
+
+::: {style="text-align: center;"}
+[washinvestments](https://openwashdata.github.io/washinvestments/index.html)
+:::
+
+## FAIR principles from a *data perspective*
+
+-   [**Findable**]{style="color:#679289;"} by having an [ORCID](https://orcid.org/)
+-   [**Accessible**]{style="color:#679289;"} by utilizing open-source software for both preparing and publishing data
+-   [**Interoperable**]{style="color:#679289;"} by exporting harmonized data as tidy data
+-   [**Reproducible**]{style="color:#679289;"} by ensuring transparency in the data cleaning process (see `data-raw/data-processing.R`)
+
+## FAIR principles from a *user perspective*
+
+-   [**Findable**]{style="color:#679289;"} by publishing tools on accessible platforms (e.g., CRAN, group wiki)
+-   [**Accessible**]{style="color:#679289;"} by thoroughly documenting functions and use cases
+-   [**Interoperable**]{style="color:#679289;"} by maximizing generalizability
+-   [**Reproducible**]{style="color:#679289;"} by consistently updating and revising
+
+::: notes
+-   Accessibility principle is not only about the accessibility of the data itself but in our understanding also the accessibility of the tools required to publish your data
+:::
+
+## What now?
+
+-   Continue expanding `washr` R package (more functions, tests)
+-   Publish `washr` on CRAN to make it more accessible
+-   Create meta package to easily download data published on [openwashdata.org](https://openwashdata.org)
+-   Enhance the guide for building and preparing data packages using `washr`
+-   Expand the package's functionality to be applicable in diverse contexts
+
+# Thanks! {background-color="#0F4C81"}
+
+## Links and Downloads
+
+<p style="margin-bottom: 2em;">
+
+</p>
+
+`washr` source code: <https://github.com/openwashdata-dev/washr>
+
+`washr` guide: <https://global-health-engineering.github.io/ghedatapublishing>
+
+Slides: <https://ghe-open.ch/slides>
+
+openwashdata: <https://openwashdata.org>
+
+Global Health Engineering: <https://ghe.ethz.ch/>
+
+<p style="margin-bottom: 3em;">
+
+</p>
+
+::: footer
+*This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).*
+:::
+
+
+
+## Sign up for the openwashdata newsletter!
+![](qr-openwashdata.png){fig-align="center"}
+

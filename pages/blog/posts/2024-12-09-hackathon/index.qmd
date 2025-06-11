@@ -1,0 +1,49 @@
+---
+title: openwashdata hackathon
+subtitle: Check out the three winning visualizations from our latest hackathon
+description: |
+  We hosted an exciting hackathon, challenging data enthusiasts to dive into one of our 30+ datasets and craft innovative visualizations. 
+categories:
+  - hackathon
+  - data visualization
+  - openwashdata
+author: Lars Schöbitz
+date: "2024-12-10"
+draft: false
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
+---
+
+📊 What would you create if given the challenge to turn raw data into compelling stories?
+
+Last week, openwashdata at [Global Health Engineering](https://ghe.ethz.ch/) hosted an exciting hackathon, challenging data enthusiasts to dive into one of our 30+ datasets and craft innovative visualizations—and the results were absolutely inspiring! 🎉
+
+🌟 A huge congratulations to [Prerna](https://www.linkedin.com/in/prerna-prasad-17a310189/), [James](https://www.linkedin.com/in/jameshalonyere/), and [Benton](https://www.linkedin.com/in/bentonotieno/)!
+
+This event reaffirmed our belief in the power of open data to drive innovation and collaboration. If you’re curious to learn more about openwashdata or explore partnership opportunities, don’t hesitate to reach out—we’d love to connect! 🚀
+
+## 1st prize
+
+<iframe class="slide-deck" src="01-openwashdata-hackathon-prerner-prasad.pdf" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+
+<a href="01-openwashdata-hackathon-prerner-prasad.pdf" download class="btn btn-primary">
+  <i class="bi bi-download"></i> Download PDF
+</a>
+
+## 2nd prize
+
+<iframe class="slide-deck" src="02-openwashdata-hackathon-james-halonyere.pdf" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+
+<a href="02-openwashdata-hackathon-james-halonyere.pdf" download class="btn btn-primary">
+  <i class="bi bi-download"></i> Download PDF
+</a>
+
+## 3rd prize
+
+<iframe class="slide-deck" src="03-openwashdata-hackathon-benton-otieno.pdf" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+
+<a href="03-openwashdata-hackathon-benton-otieno.pdf" download class="btn btn-primary">
+  <i class="bi bi-download"></i> Download PDF
+</a>
+
+

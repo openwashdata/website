@@ -1,0 +1,21 @@
+---
+title: "Yash Dubey"
+subtitle: "Data Scientist"
+image: profile-yash.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/yashdubey132/
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/yashdubey132/
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0001-2849-970X
+---
+
+Yash is a Master’s student in Energy Policy with a keen interest in data collection, practices, and usage to drive policy solutions. The internship at openwashdata will enable him to explore and learn workflows to make data more accessible and inform future work in policies around open data.

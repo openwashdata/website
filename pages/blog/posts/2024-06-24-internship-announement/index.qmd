@@ -9,7 +9,7 @@ categories:
   - data science
   - R
 author: Lars Schöbitz
-date: today
+date: "2024-06-24"
 draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
@@ -31,7 +31,7 @@ This job is for you if:
 
 ## What's in it for you
 
-Everyone is welcome here, just as they are. Our collegial and respectful interaction creates a pleasant working atmosphere and room for new ideas. In addition to a central work location in Zurich with plenty of room and sun in your office, you can work occasionally from home. The employment conditions follow the university guidelines. They include, for example, five weeks vacation per year and a salary of 2500 CHF per month at 100%. Read an experience report of a completed internship: <https://openwashdata.org/pages/blog/posts/2024-06-20-internship-report-02/>.
+Everyone is welcome here, just as they are. Our collegial and respectful interaction creates a pleasant working atmosphere and room for new ideas. In addition to a central work location in Zurich with plenty of room and sun in your office, you can work occasionally from home. The employment conditions follow the university guidelines. They include, for example, five weeks vacation per year and a salary of 3000 CHF per month at 100%. Read an experience report of a completed internship: <https://openwashdata.org/pages/blog/posts/2024-06-20-internship-report-02/>.
 
 ## Dates
 
