@@ -1,0 +1,75 @@
+---
+title: "Unlocking the hidden potential of open WASH data"
+description: |
+  A session hosted by Global Health Engineering, ETH Zurich and WASHWeb at Stockholm World Water Week 2024. The session can be attended in-person and free of charge online. 
+bibliography: ../../../references.bib
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(dplyr)
+library(stringr)
+```
+
+## 👋 Welcome
+
+This highly interactive session led by openwashdata and WASHWeb will introduce two key areas for improving the WASH data ecosystem: using existing data better and innovating on open data practices. Participants will be exposed to seven 3-minute pitches of challenges that different actors in the WASH sector face, engage in live polling exercises, and brainstorm in group discussions.
+
+## 📆 Event Details
+
+-   **Date:** Thursday, August 29, 09:00 - 10:30 PM (CEST) <a title="Add to Calendar" class="addeventatc" data-id="lU22275233" href="https://www.addevent.com/event/lU22275233" target="_blank">Add to Calendar</a> <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+-   **Location.** Stockholm Waterfront Congress Centre, Stockholm, Sweden
+-   **Tickets & Registration**: <https://www.worldwaterweek.org/tickets> (Online Full Access Pass is free of charge)
+
+
+
+
+## 🏁 Objectives
+
+By joining this event, participants will:
+
+1.  Learn about the importance of open data sharing, its applications, and how participants can contribute
+2.  Acquire a cross-sectoral understanding of ongoing innovations for the interconnectivity of WASH data (from research, government, NGOs, UN)
+
+## 📝 Agenda
+
+```{r}
+
+agenda <- readr::read_csv(here::here("pages/events/2024-08-29-swww/data/tbl-11-openwashdata-events.csv"))
+
+agenda  |> 
+    select(-start_time, -end_time, -speaker_link, -affiliation_link) |>
+    relocate(time) |> 
+    mutate(speaker = case_when(
+        str_detect(speaker, "NA") == TRUE ~ " - ",
+        TRUE ~ speaker
+    )) |> 
+    mutate(affiliation = case_when(
+        str_detect(affiliation, "NA") == TRUE ~ " - ",
+        TRUE ~ affiliation
+    )) |>
+    rename_with(~stringr::str_to_title(.x), everything()) |> 
+    knitr::kable()
+```
+
+## Slides
+
+### Education: openwashdata community
+
+[View slides in full screen](../../gallery/slides/swww/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/swww/swww-2024-openwashdata-tilley.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="../../gallery/slides/swww/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
+### Facilitation and theme of session: WASHWeb
+
+To be prepared
+
+### Key challenges
+
+To be prepared

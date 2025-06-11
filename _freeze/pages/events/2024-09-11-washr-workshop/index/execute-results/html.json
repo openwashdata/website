@@ -1,0 +1,15 @@
+{
+  "hash": "603d7443dc76ce19c5f31ead89f8947c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"washr - a tool and workflow for sharing data\"\ndescription: |\n  This 2-day workshop is organised by Global Health Engineering, ETH Zurich and the openwashdata community. Participants will learn about FAIR data principles and through hands-on exercises publish a dataset of their own as an R data package.\nexecute:\n    echo: false\n    warning: false\neditor_options: \n  chunk_output_type: console\n  markdown: \n    wrap: 72\n---\n\n\n\n## 🎯 Objectives\n\nA the end of the workshop, participants will be able to:\n\n1. Describe how data published using the washr package follows FAIR principles compared to data shared in an appendix of a PDF or DOCX document.\n\n2. Follow step by step instruction to create a data package using the washr package.\n\n3. Understand the difference between human-readible and machine-readible documentation. \n\n## 📆 Event Details\n\n-   **Date:** Week of 28th October 2024\n\n-   **Location:** University of KwaZulu-Natal, WASH R&D Center, Durban, South Africa\n\n## 📝 Agenda\n\n\n\n::: {.cell .column-page tbl-colwidths='[15,35,15,45]'}\n::: {.cell-output-display}\n\n\n|Time          |Title                                     |Remark                         |\n|:-------------|:-----------------------------------------|:------------------------------|\n|08:30 - 09:00 |Check in & Breakfast                      |                               |\n|09:00 - 09:05 |Opening                                   |by Mian Zhong                  |\n|09:05 - 09:50 |Introduction workshop for washr R package |by Mian Zhong                  |\n|10:00 - 12:00 |Coding                                    |Package Setup & Data Cleaning  |\n|12:00 - 12:40 |Lunch                                     |                               |\n|12:45 - 14:45 |Coding                                    |Data Cleaning & README writing |\n|14:45 - 15:00 |Break / Stretch                           |                               |\n|15:00 - 15:30 |Final Polish                              |Write Feedback Survey          |\n|15:30 - 16:15 |Showcase                                  |                               |\n|16:25 - 16:30 |Closing                                   |                               |\n\n\n:::\n:::\n\n\n\n## 🖼️ Slides\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

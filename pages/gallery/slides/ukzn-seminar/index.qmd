@@ -1,0 +1,631 @@
+---
+title: "openwashdata"
+subtitle: "a community effort to bring open data practices to the WASH sector"
+author: 
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2024-09-12
+date-format: long
+format: 
+  revealjs:
+    logo: "../images/OWD-logo-20.png"
+    theme: "../../../../style/slides.scss"
+    transition: fade
+    slide-number: true
+    preview-links: auto
+    footer: "[{{< fa link >}} openwashdata.org/pages/gallery/slides/](https://openwashdata.org/pages/gallery/slides/)"
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: ["../datasets.bib", "../cu-wash-symposium-2023-openwashdata/references.bib"]
+---
+
+```{r}
+
+library(washopenresearch)
+library(tidyverse)
+library(ggthemes)
+library(ggtext)
+library(gt)
+
+# set ggplot theme --------------------------------------------------------
+
+ggplot2::theme_set(
+    # Pick a starting theme
+    ggplot2::theme_gray(base_size = 14) +
+        # Add your favourite elements
+        ggplot2::theme(
+            axis.line = element_line(),
+            panel.background = element_rect(fill = "white"),
+            panel.grid.major = element_line("grey95", linewidth = 0.25),
+            legend.key  = element_rect(fill = NA) 
+        )
+)
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+
+# data preparation
+
+washdev_das_type <- washdev |> 
+    mutate(das_policy = case_when(
+        published_year < 2020 ~ "pre-2020",
+        TRUE ~ "2020 or later"
+    )) |> 
+    mutate(das_type = case_when(
+        das_type == "in paper" ~ "available in paper",
+        das_type == "on request" ~ "available on request",
+        TRUE ~ das_type
+    ))  |>     
+    mutate(das_type = case_when(
+        is.na(das_type) ~ "missing",
+        TRUE ~ das_type
+    )) 
+```
+
+
+```{r}
+
+## summary for data availability statement (DAS) type and policy year
+
+washdev_das_type_n <- washdev_das_type |> 
+    count(das_policy, das_type) 
+
+
+fig_das_type <- washdev_das_type_n |> 
+    ggplot(aes(x = reorder(das_type, n), y = n, fill = das_policy)) +
+    geom_col(position = position_dodge(), width = 0.6) +
+    geom_text(aes(label = n), 
+              vjust = 0.5, 
+              hjust = -0.5,  
+              size = 3,
+              position = position_dodge(width = 0.5)
+    ) +
+    coord_flip() +
+    annotate("text", 
+             x = 3.77, 
+             y = 150, 
+             size = 3, 
+             label = "after introducing policy\nfor data availability statement", 
+             color = "gray20") +
+    geom_curve(aes(x = 3.95, y = 142, xend = 3.95, yend = 70), 
+               curvature = 0.5, 
+               arrow = arrow(type = "closed", length = unit(0.1, "inches")),
+               color = "gray20") +
+    labs(
+        title = "Data Availability Statement",
+        subtitle = "Analysis of 924 articles published in Journal of Water, Sanitation and Hygiene for Development (2011 to 2023)",
+        fill = "published year",
+        y = "number of publications",
+        x = "data availability statement") +
+    scale_y_continuous(breaks = seq(0, 600, 100), limits = c(0,600)) +
+    scale_fill_colorblind() +
+    theme(panel.grid.major.y = element_blank(),
+          plot.subtitle = element_text(size = 10))
+
+# https://www.iwapublishing.com/news/iwa-publishing-2020-annual-review
+```
+
+```{r}
+## summary for data availability statement (DAS) type and supp file type
+
+washdev_supp_file_type_n <- washdev_das_type |> 
+    filter(das_policy == "2020 or later") |> 
+    select(paperid, das_type, supp_file_type) |> 
+    unnest(supp_file_type) |> 
+    mutate(supp_file_type = case_when(
+        is.na(supp_file_type) ~ "missing",
+        TRUE ~ supp_file_type
+    )) |>
+    count(das_type, supp_file_type) 
+
+tbl_supp_type <- washdev_supp_file_type_n |> 
+    group_by(supp_file_type) |> 
+    summarise(n = sum(n)) |> 
+    arrange(desc(n)) |> 
+    mutate(perc = n / sum(n) * 100) 
+
+```
+
+# The Opportunity {background-color="#5b195b"}
+
+<script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+
+::: {.notes}
+
+- We have a huge and missed opportunity in our sector
+- Very little data is shared publicly and following best practices for reuse
+
+:::
+
+## Journal articles
+
+```{r}
+#| fig-width: 10
+#| out-width: 100%
+fig_das_type
+```
+
+```{r}
+washdev_das_type_2020 <- washdev_das_type |> 
+    filter(das_policy == "2020 or later") |> 
+    count(das_type) |> 
+    mutate(perc = n / sum(n) * 100) 
+
+perc_missing <- washdev_das_type_2020 |> 
+    filter(das_type == "missing") |> 
+    pull(perc)
+
+perc_in_paper <- washdev_das_type_2020 |> 
+    filter(das_type == "available in paper") |> 
+    pull(perc)
+```
+
+
+::: footer
+Data: R package washopenresearch to be published at <https://github.com/openwashdata/washopenresearch>
+:::
+
+::: {.notes}
+- The first missed opportunity are journal articles and data from researchers
+
+- We looked at the Data Availability Statements in 924 articles published in the Journal of Water, Sanitation and Hygiene for Development from 2011 to 2023.
+
+- You can see the data availability statements on the vertical axis and the number of publications on the horizontal axis
+
+- Colors differentiate between papers published before 2020 and in 2020 or later, when a policy was introduced that requires authors to select one of the three data availability statements
+
+- After that policy was introduced, we still found 15% of papers without a data availability statement, while 60% of articles stated that data was available in the paper, which could also be as supplementary material
+
+:::
+
+## Journal articles {.smaller}
+
+#### Supplementary Material
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+[Take-away]{.highlight-yellow}: Not a single file is in [machine-readable]{.highlight-yellow}, [non-proprietary]{.highlight-yellow} file type format that would qualify for following FAIR principles for data sharing [@wilkinson2016].
+
+[Good practice]{.highlight-yellow}: CSV file (comma-separated values), including a data dictionary for all variables/columns in the data
+:::
+
+::: {.column width="40%"}
+```{r}
+
+tbl_supp_type |> 
+    gt() |> 
+    tab_header(title = "Supplementary Material",
+               subtitle = "Articles published 2020 or later") |>
+    tab_style(locations = cells_column_labels(), 
+              style = cell_text(weight = "bold")) |>
+    fmt_number(columns = c(perc), decimals = 1) |> 
+    cols_label(supp_file_type = "file type", n = "n", perc = "%") |> 
+    tab_footnote(
+        footnote = md("One article can have multiple files."),
+        locations = cells_column_labels(columns = n)
+        )
+
+```
+:::
+
+::::
+
+::: footer
+Data: R package washopenresearch to be published at <https://github.com/openwashdata/washopenresearch>
+:::
+
+::: {.notes}
+
+- We then looked at the Supplementary Material of all articles published in 2020 or later and found that have half of the published articles still had no data published alongside the article
+
+- But, the most insightful take-away is that not a single file was shared in a file type format that would qualify for following FAIR principles for data sharing.
+
+- That is something we are hoping to change, where sharing data as CSV files would already go a long way.
+
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-pdf-report-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+::: {.notes}
+Another data sink are PDF reports. We love them. They are everywhere. They are typically designed by a graphic designer that receives content from us.
+:::
+
+## PDF reports
+
+```{r}
+knitr::include_graphics("../cu-wash-symposium-2023-openwashdata/img/screenshot-pdf-table-example-01.png")
+```
+
+::: footer
+Screenshot from @soeters2021treatment
+:::
+
+::: {.notes}
+- Unfortunately, these valueble reports never come with the underlying unprocessed raw data attached. In this particular report, we could get access to treatment performance data of eight faecal sludge treatment plants across Africa and Asia
+
+- What we get are tables of ranges instead of the complete number of data points that was collected. 
+
+:::
+
+# openwashdata community {background-color="#5b195b"} 
+
+::: {.notes}
+- To address this, we started the openwashdata community
+:::
+
+## openwashdata community
+
+### [Vision]{.highlight-yellow}
+
+An active global community that applies FAIR principles [@wilkinson2016] to data generated in the greater water, sanitation, and hygiene sector.
+
+### [Mission]{.highlight-yellow}
+
+Empower WASH professionals to engage with tools and workflows for open data and code.
+
+::: footer
+
+From: [openwashdata.org/pages/gallery/vmost/](https://openwashdata.org/pages/gallery/vmost/)
+
+:::
+
+# openwashdata publishing {background-color="#5b195b"}
+
+::: {.notes}
+We are doing this through our openwashdata publishing arm, for which we developed a workflow that uses data donated by WASH professionals or available online, and re-publishes it following FAIR principles for data sharing
+:::
+
+## 
+
+::: learn-more
+[openwashdata.github.io/fsmglobal/](https://openwashdata.github.io/fsmglobal/)
+
+```{=html}
+<iframe src="https://openwashdata.github.io/fsmglobal/" width="100%" height="500" style="border:2px solid #123233;" title="Website of fsmglobal R package documentation homepage"></iframe>
+```
+:::
+
+::: footer
+[fsmglobal documenation website](https://openwashdata.github.io/fsmglobal/) by @greene2023fsmglobal built with [pkgdown R package](https://pkgdown.r-lib.org/)
+:::
+
+::: {.notes}
+- The product is an R package published as a website for each dataset. We assign a digital object identifier that enables the tracking of citations of the data package and list all contributors with their ORCID iD, so that contributions and citations are linked.
+
+- Data is documented in a way where all variables/columns are described in detail.
+
+- And for those who do not use R, we also share the data as a CSV and XLSX file.
+
+- To date, we have published 12 datasets following this workflow.
+
+:::
+
+
+# openwashdata academy {background-color="#5b195b"}
+
+::: {.notes}
+- We also established the openwashdata academy through which we provide training to anyone interested in the greater WASH sector.
+:::
+
+
+## data science for openwashdata 001 {.smaller}
+
+- free, live, online, 10-week programme
+- 200 registrations
+- 100 show-ups
+- 40 graduates
+- next iteration: September/October 2024, sign-up: <https://forms.gle/MP5rNYZagBdfG2ZRA>
+
+::: learn-more
+[ds4owd-001.github.io/website/](https://ds4owd-001.github.io/website/)
+
+```{=html}
+<iframe src="https://ds4owd-001.github.io/website/" width="100%" height="300" style="border:2px solid #123233;" title="Website of data science for openwashdata coursew"></iframe>
+```
+:::
+
+# what's coming {background-color="#5b195b"}
+
+##
+
+![](../images/openwashdata-organogram-01.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-02.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-03.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-04.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-05.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-06.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-07.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-08.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-09.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+##
+
+![](../images/openwashdata-organogram-10.svg)
+
+::: footer
+Read full proposal for Phase 2 at: [openwashdata.org/pages/gallery/proposal-02/](https://openwashdata.org/pages/gallery/proposal-02/)
+:::
+
+# Data stewardship (openwashdata phase II) {background-color="#5b195b"}
+
+## {{< fa hand >}} hands up {{< fa hand >}} {.center-align auto-animate="true"}
+
+```{=html}
+<script defer data-domain="ghe-open.ch" src="https://plausible.io/js/script.js"></script>
+```
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Who has an ORCID iD?
+:::
+
+## {{< fa hand >}} hands up {{< fa hand >}} {.center-align auto-animate="true"}
+
+::: {style="margin-top: 50px; font-size: 1.5em"}
+Who has published a scientific article in a journal?
+:::
+
+## Meet a data steward
+
+::: incremental
+
+::: columns
+::: {.column width="50%"}
+**I have:**
+
+-   10+ years work experience (5 in research)
+-   empathy, compassion, patience, persistance
+-   an affinity for IT
+-   teaching experience
+:::
+
+::: {.column width="50%"}
+**I don't have:**
+
+-   a doctoral degree
+-   a qualification in computer science
+-   a qualification in statistics
+-   a lot of time
+:::
+:::
+
+:::
+
+::: footer
+Job Description: [Open Science Specialist](https://github.com/Global-Health-Engineering/job-descriptions/blob/main/open-science-specialist/README.md)
+:::
+
+::: notes
+My role - **Open Science Specialist**
+
+-   research data management
+-   reproducible workflows
+-   mindset for Open Science
+-   research communication
+-   teaching data science tools
+-   proposal writing
+:::
+
+## Your turn: Think & Note
+
+For 1 minute, think about these two questions and take some notes for later:
+
+::: task
+1.  How should I be rewarded scientifically?
+
+2.  Which career paths are there for data stewards?
+:::
+
+# Research Data Management {background-color="#5b195b"}
+
+## Three terms for three stages {.smaller}
+
+| term                                   | explanation                                                                                 | file format                     |
+|--------------------|-----------------------|------------------------------|
+| unprocessed [raw]{.highlight-yellow} data | data that is not processed and [remains in its original form and file type]{.highlight-yellow} | often XLSX, also CSV and others |
+
+: {.striped tbl-colwidths="\[20, 60, 20\]"}
+
+## Three terms for three stages {.smaller}
+
+| term                                            | explanation                                                                                                       | file format                     |
+|--------------------|-----------------------|------------------------------|
+| unprocessed [raw]{.highlight-yellow} data          | data that is not processed and [remains in its original form and file type]{.highlight-yellow}     | often XLSX, also CSV and others |
+| [processed]{.highlight-yellow} analysis-ready data | data that is processed to [prepare for an analysis]{.highlight-yellow} and is exported in its new form as a new file | CSV, R data package             |
+
+: {.striped tbl-colwidths="\[20, 60, 20\]"}
+
+## Three terms for three stages {.smaller}
+
+| term                                                  | explanation                                                                                                                                                                                  | file format                     |
+|--------------------|-----------------------|------------------------------|
+| unprocessed [raw]{.highlight-yellow} data                | data that is not processed and [remains in its original form and file type]{.highlight-yellow}                                                                                | often XLSX, also CSV and others |
+| [processed]{.highlight-yellow} analysis-ready data       | data that is processed to [prepare for an analysis]{.highlight-yellow} and is exported in its new form as a new file                                                                            | CSV, R data package             |
+| [final]{.highlight-yellow} data underlying a publication | data that is the [result of an analysis]{.highlight-yellow} (e.g descriptive statistics or data visualization) and shown in a publication, but then also exported in its new form as a new file | CSV                             |
+
+: {.striped tbl-colwidths="\[20, 60, 20\]"}
+
+::: footer
+Self-nomination for Swiss Reproducibility Award 2024: <https://ghe-open.ch/blog/posts/2024-02-27-swissrn-award/>
+:::
+
+# Data Management Strategy {background-color="#5b195b"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-01.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-02.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-03.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-04.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-05.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-06.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-07.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-08.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-09.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-10.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-11.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-12.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-13.drawio.svg" background-size="960px 540px"}
+
+##  {background-image="img/ghe-rdm-workflow-v2-14.drawio.svg" background-size="960px 540px"}
+
+::: footer
+Diagram at: <https://github.com/Global-Health-Engineering/concept-maps>
+:::
+
+## Data steward for WASH R&D Center
+
+- A fully funded 2-year position, hopefully extended to 5-years with 3rd party funding
+- Job announced soon (2024-10-25: due date for submission of application) 
+- Start date 15th January 2024 (to be discussed)
+- Going through a 12-month programme together with data steward at NGO BASEflow in Malawi
+
+## Data steward activities (WP1) {.incremental}
+
+::: {.incremental}
+
+- Activity 1.3: Identify how ethical approval for data collection differs for types of organizations (university, NGO) and types of data (quantitative, qualitative).
+
+- Activity 1.4: Identify current data management practices and develop a draft data management strategy for organization.
+
+- Activity 1.5: Publish at least 10 datasets of two different types that are available to the organization, following openwashdata data publishing workflow.
+
+:::
+
+## Hands-on workshop (end Oct / beginning Nov) {.incremental}
+
+A the end of the workshop, participants will be able to:
+
+::: {.incremental}
+ 
+1. Describe how data published using the washr package follows FAIR principles compared to data shared in an appendix of a PDF or DOCX document.
+ 
+2. Follow step by step instruction to create an R data package using the washr package.
+ 
+3. Understand the difference between human-readible and machine-readible documentation.
+
+:::
+
+# News {background-color="#5b195b"}
+
+## Support us: Sign up to our newsletter
+
+
+{{< qrcode https://buttondown.email/openwashdata >}}
+
+
+<https://buttondown.email/openwashdata>
+
+::: {.content-block}
+
+<iframe
+scrolling="no"
+style="width:100%!important;height:300px;border:0px !important"
+src="https://buttondown.email/openwashdata?as_embed=true"
+></iframe><br /><br />
+
+:::
+
+
+## Thanks `r emo::ji("sunflower")` {.center-align} 
+
+This project was supported by the  [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+
+The slides were created via revealjs and Quarto: [https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+
+You can [view source code of slides on GitHub](https://github.com/openwashdata/website/blob/main/pages/gallery/slides/ukzn-seminar/index.qmd)
+
+Or you can [download slides in PDF format](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ukzn-seminar/2024-09-12-ukzn-seminar-openwashdata.pdf)
+
+This material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## References
+
+

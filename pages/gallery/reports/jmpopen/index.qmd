@@ -1,0 +1,52 @@
+## General information
+
+|  |  |
+|----|----|
+| **Project title:** | Open JMP - unlocking the potential of global indicator data |
+| **Contribute call number:** | 3 |
+| **Project starting & end date:** | 01.05.23 to 31.07.24 (incl. 3 month no-cost extension) |
+| **Applicant responsible for project:** | Prof. Dr. Elizabeth Tilley |
+| **Function:** | Chair of Global Health Engineering |
+| **Laboratory (and/or Department):** | Department of Mechanical and Process Engineering (D-MAVT) |
+| **Institution of the applicant:** | ETH Zurich |
+
+## Lay summary
+
+This project aimed to enhance data accessibility in the Water, Sanitation, and Hygiene (WASH) sector through R package development and community engagement. While the initial plan to create new R packages faced challenges, the project helped with the successful start of a collaboration with WASHNote, contributing to their existing jmpwashdata R data package. This shift led to supporting the establishment of WASHweb and ongoing partnerships to improve WASH data management. The project team put the development of a modelling package (jmpmodel) on hold because there was no imminent use case. Instead of hosting live coding workshops, the team collaborated with WASHNote representatives, developed strategies for future work, and planned a session for Stockholm World Water Week 2024, successfully hosted in August 2024. The project’s flexibility allowed for strengthening the openwashdata community and initiating strategic partnerships focused on implementing FAIR data sharing principles. The project team secured additional funding and laid the groundwork for sustained efforts in improving WASH data accessibility.
+
+## Achievements
+
+### WP1: Document and publish R data package jmpinput. 
+
+At the beginning of this project, we started developing an R package for publishing data in a single-standing R package. Communication with the WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene (JMP) led us to connect with an organization called WASHNote, which we were previously not aware of. After establishing initial contact, we identified that Nick Dickinson, an R developer, was already working on an R package, which covers the intent of WP1 of this project. We decided to join forces and contribute to the existing package rather than developing a new one. We decided to avoid duplication of efforts and ensure that the package is maintained in the long term. The existing package is called jmpwashdata and is available on GitHub. We initiated a collaboration with WASHNote and supported the establishment of WASHweb (more in WP3). Our ongoing collaboration with WASHNote under a funded ORD Contribute proposal (7th) call continues developing this package further. Nick Dickinson is in close contact with the JMP team. We are in discussion to support the JMP team in developing an API for their data rather than using our current error-prone approach of extracting data from MS Excel files and then re-publishing it.
+
+### WP2: Prepare and document R software Package jmpmodel. 
+
+We have made slow progress on this work package during the project phase. We desired to collaborate with the JMP team on this package, but after initial conversations, we realized that there was no imminent use case for our idea. This package aimed to compare how our modelled data would compare to the JMP data, but we realized that working without the STATA script that JMP uses to generate their data would be a significant challenge. We decided to put this work package on hold.
+
+### WP3: Dissemination. 
+
+We did not complete the intended activities of hosting participatory live coding online workshops, as the packages we intended to work on needed to be prepared for this. However, we established a new collaboration with WASHNote and supported the establishment of WASHweb (https://washweb.org/). Instead of hosting an in-person workshop with JMP partners in Geneva, we invited Nick Dickinson and Merel Lauween, the initiators of WASHWeb, to a collaborative workshop in Zurich. During this workshop, we developed a strategy for our collaboration, from which we successfully received funding from the 7th ORD Contribute call. We re-strategized the development of WP1 and WP2 for this new proposal and hosted several online webinars to initiate the collaboration. During this session, we also developed content and strategy for a session at Stockholm World Water Week 2024 (the biggest and most prestigious sector conference), for which we wrote the proposal using allocated time that was covered under this Work Package. We are now involved in strategic decisions around the WASHWeb initiative, which goes beyond our effort of establishing a community around open data and code. Doing this work will ensure that everything we do for openwashdata will be settled in a sustainable community and when funding runs out, the community will be able to continue the work and identify new sources for long-term success.
+
+## Deviations from the original plan 
+
+This project had significant deviations from the original plan. Early in the project, we realized that parts of our ideas were already being implemented by another organization and we decided to use project funds to establish this collaboration rather than investing them into developing a new package. 
+
+Further, this project was running at the same time as our project funded under the ORD Explore program (1st & 2nd call) which focuses on establishing an active global community that applies FAIR principles to data generated in the greater WASH sector
+(https://openwashdata.org/). The projects are closely linked and staff allocated to these projects often prioritized work on the Explore projects due to the needs at the time (e.g. hosting an online course with 200 participants) which then slowed progress on this Contribute project. Therefore, outputs generated for the Explore projects have greatly benefited from the funding allocated under this Contribute project.
+
+## Value delivered for ORD practices / communities
+
+While this project did not achieve all of the intended outcomes, it has laid the groundwork for a long-term collaboration with WASHNote. It has contributed to the existing ORD community openwashdata and further helped establish the WASHWeb community, which has "Using Data Better" as a key pillar of one of 4 working groups. 
+
+To continue building the community, we have secured additional funding through the 2nd Explore call and 7th Contribute call of the ETH Board. We have further started strategic partnerships with international collaborators where we now invest into institutionalizing a data management strategy with a focus on FAIR data sharing principles. These collaborators and other partners already joined our session at Stockholm World Water Week 2024. All of these activities are building on the work initiated in this Contribute project.
+
+Lastly, we will be able to sustain our work as we can leverage the existing Global Health Engineering group and partners. The work work has also impacted the work of our group, as we are now more aware of the limitations of the JMP data, which were not at the stage of writing the proposal for the 3rd Contribute call.
+
+## List of Outputs
+
+Available as Google Sheet: <https://docs.google.com/spreadsheets/d/1LLr-i8wmMKgZcEfsCEBX0fcuGZk0oRnv3ZGtZbmEVf0/edit?gid=0#gid=0>
+
+
+
+

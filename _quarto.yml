@@ -1,6 +1,6 @@
 project:
   type: website
-
+  
 website:
   title: "openwashdata"
   site-url: https://openwashdata.org/
@@ -23,13 +23,12 @@ website:
       - icon: chat-left-dots
         href: https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch
         aria-label: Matrix
-
+        
   navbar:
     background: "#5b195b"
     title: false
     logo: "images/OWD-logo-04.png"
     logo-alt: "openwashdata logo."
-    favicon: "images/OWD-logo-18.png"
     collapse-below: lg
     left:
       - text: " "
@@ -41,7 +40,11 @@ website:
       - text: "Data"
         href: pages/gallery/data/index.qmd
       - text: "Academy"
-        href: pages/academy/index.qmd
+        menu: 
+          - text: "Courses"
+            href: pages/academy/index.qmd
+          - text: "Graduates 2024"
+            href: pages/academy/graduates/index.qmd
       - text: "Gallery"
         href: pages/gallery/
       - text: "Events"
@@ -63,6 +66,8 @@ website:
             href: "https://github.com/openwashdata/data/issues"
 
     right:
+      - text: Code of Conduct
+        href: code_of_conduct.qmd
       - icon: envelope-at-fill
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
@@ -108,6 +113,8 @@ format:
     css: styles.css
     code-copy: true
     code-overflow: wrap
+    link-external-icon: true
+    link-external-newwindow: true
     toc: true
     mainfont: "Atkinson Hyperlegible"
     grid:
@@ -117,6 +124,8 @@ format:
     include-in-header: 
         - text: |
             <script defer data-domain="openwashdata.org" src="https://plausible.io/js/script.js"></script>
+            <link href="images/OWD-logo-18.png" rel="icon" media="(prefers-color-scheme: light)"/>
+            <link href="images/OWD-logo-13.png" rel="icon" media="(prefers-color-scheme: dark)"/>
 
 execute: 
   freeze: auto
