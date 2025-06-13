@@ -1,0 +1,22 @@
+---
+title: "Adriana Clavijo Daza"
+subtitle: "Data Scientist"
+image: profile-adriana.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com//seawaR
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/adriana-clavijo
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0009-0002-0589-2274
+
+---
+
+Adriana is a data scientist and statistician with experience in industry, government and consulting. She will support the team by developing open, reproducible workflows and helping to make WASH data more accessible and usable. Adriana is especially interested in data visualization and improving how we communicate complex data to support decision-making. She looks forward to contributing through training and helping others build their data skills.
