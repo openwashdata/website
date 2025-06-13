@@ -60,3 +60,6 @@ meetings
 
 # files
 *.docx
+
+# CLAUDE file
+CLAUDE.md
