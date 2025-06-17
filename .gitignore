@@ -63,3 +63,7 @@ meetings
 
 # CLAUDE file
 CLAUDE.md
+
+# MCP files
+node_modules/
+test-pu
