@@ -1,0 +1,24 @@
+---
+title: My data science internship with the openwashdata team 
+subtitle: Insights from Yash Dubey
+description: |
+  This is a report of an internship with the openwashdata team at the Global Health Engineering (GHE) group at ETH Zurich. The intern shares their experiences and learnings from working with the team.
+categories:
+  - internship
+  - data science
+author:
+  - name: "Yash Dubey"
+    url: https://www.linkedin.com/in/yashdubey132/
+date: "2025-06-17"
+draft: false
+---
+
+I was first introduced to Global Health Engineering (GHE) when I took a fantastic class; ["International Engineering: Hubris to Hope"](https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024W&lerneinheitId=183181&lang=en) by Prof. Elizabeth Tilley. As I neared the completion of my master's program in Science, Technology, and Policy, I was keen to hone my existing data science knowledge and skills while contributing positively to the field. Fortunately, an internship in precisely this area was advertised by the openwashdata team at GHE. My initial interview with the team confirmed my belief that this was a unique opportunity to apply my skills for the fantastic goal of making data more accessible to everyone. 
+
+From the start, I was welcomed into an incredibly supportive and closely knit team. The collaborative atmosphere made it easy to share ideas, ask questions, and learn from others. Whether working on data analysis, publishing reports, or exploring new tools, I always felt encouraged to take initiative and push my skills further, especially by Lars and Colin on the openwashdata team.
+
+During my time with the team, I deepened my understanding of open data practices, including data accessibility, transparency, and reproducibility. Beyond that, I had the opportunity to explore new technologies and develop skills in areas I hadn't worked with before, working extensively with databases, Quarto dashboards, and machine learning workflows in Python. This experience strengthened my ability to work on diverse data-related challenges and direct my contributions to make a meaningful impact.
+
+Beyond the work itself, the team culture made this experience truly special. The office environment was always welcoming, and the friendships I formed made my time here even more enjoyable. The balance between meaningful work and a great social atmosphere created an ideal learning environment.
+
+Overall, this internship was an invaluable experience that not only helped me grow as a data scientist but also reinforced the importance of open data and collaboration. I'm grateful for everything I learned and the amazing people I got to work with along the way!
