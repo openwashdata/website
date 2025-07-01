@@ -1,0 +1,21 @@
+---
+title: "Emmanuel Mhango"
+subtitle: "Data Quality Specialist"
+image: profile-emmanuel.jpg
+about:
+  template: trestles
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/emmanuellmhango/
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/emmanuellmhango
+    - icon: search
+      text: ORCID
+      href: https://orcid.org/0000-0003-3197-6244
+---
+
+Emmanuel leads WASH data quality and publication efforts, supporting open data workflows in the global WASH sector. Currently attached to ETH Zurich's openwashdata project through BASEFlow Malawi. He has successfully published 5 high-quality WASH datasets, ensuring they meet standards of completeness, accessibility, and reusability.
