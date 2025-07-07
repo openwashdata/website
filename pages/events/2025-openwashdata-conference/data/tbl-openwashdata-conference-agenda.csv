@@ -1,26 +1,27 @@
 day,start_time,end_time,title,speaker,speaker_link,affiliation,affiliation_link,time
-1,09:00,09:30,Arrival at Villa Hatt. Welcome coffee and snacks.,[NA](NA/),NA,[NA](NA/),NA,09:00 - 09:30
-1,09:30,10:00,Warm-up,[Lars](https://openwashdata.org/about/lars//),https://openwashdata.org/about/lars/,"[Professor, Global Health Engineering, ETH Zurich, Switzerland](https://ghe.ethz.ch//)",https://ghe.ethz.ch/,09:30 - 10:00
+1,09:00,09:30,"Arrival at Villa Hatt. Welcome coffee, bread rolls, croissants (Gipfeli).",[NA](NA/),NA,[NA](NA/),NA,09:00 - 09:30
+1,09:30,10:00,Warm-up,[Lars](https://openwashdata.org/about/lars//),https://openwashdata.org/about/lars/,[NA](https://ghe.ethz.ch//),https://ghe.ethz.ch/,09:30 - 10:00
 1,10:00,10:45,openwashdata comunity - past and future,[Lars](NA/),NA,[NA](NA/),NA,10:00 - 10:45
 1,10:45,11:00,Break,[NA](NA/),NA,[NA](NA/),NA,10:45 - 11:00
-1,11:00,12:00,Data stewardship at BASEflow Malawi,[Emmanuel](NA/),NA,[NA](NA/),NA,11:00 - 12:00
+1,11:00,12:00,Data stewardship at BASEflow Malawi,[Emmanuel](https://openwashdata.org/about/emmanuel//),https://openwashdata.org/about/emmanuel/,[NA](NA/),NA,11:00 - 12:00
 1,12:00,13:00,Lunch break,[NA](NA/),NA,[NA](NA/),NA,12:00 - 13:00
-1,13:00,13:30,NA,[NA](NA/),NA,[NA](NA/),NA,13:00 - 13:30
-1,13:30,14:00,Setup Governance workshop,[NA](NA/),NA,[NA](NA/),NA,13:30 - 14:00
+1,13:00,13:30,openwashdata & Open Research Data - GHE position,[Liz](https://openwashdata.org/about/liz//),https://openwashdata.org/about/liz/,[NA](NA/),NA,13:00 - 13:30
+1,13:30,14:00,Afternoon Part 2 WIP,[NA](NA/),NA,[NA](NA/),NA,13:30 - 14:00
 1,14:00,14:15,Break,[NA](NA/),NA,[NA](NA/),NA,14:00 - 14:15
-1,14:15,15:30,Governance workshop,[NA](NA/),NA,[NA](NA/),NA,14:15 - 15:30
+1,14:15,15:30,Afternoon Part 2 WIP,[NA](NA/),NA,[NA](NA/),NA,14:15 - 15:30
 1,15:30,15:45,Break,[NA](NA/),NA,[NA](NA/),NA,15:30 - 15:45
-1,15:45,16:15,Governance workshop,[NA](NA/),NA,[NA](NA/),NA,15:45 - 16:15
+1,15:45,16:15,Afternoon Part 2 WIP,[NA](NA/),NA,[NA](NA/),NA,15:45 - 16:15
 1,16:15,16:30,Closing,[NA](NA/),NA,[NA](NA/),NA,16:15 - 16:30
-2,09:00,09:30,Arrival at Villa Hatt. Welcome coffee and snacks.,[NA](NA/),NA,[NA](NA/),NA,09:00 - 09:30
+2,09:00,09:30,"Arrival at Villa Hatt. Welcome coffee, bread rolls, croissants (Gipfeli).",[NA](NA/),NA,[NA](NA/),NA,09:00 - 09:30
 2,09:30,10:00,Why Claude Code,[NA](NA/),NA,[NA](NA/),NA,09:30 - 10:00
 2,10:00,10:30,Claude Code setup check,[NA](NA/),NA,[NA](NA/),NA,10:00 - 10:30
 2,10:30,10:45,Break,[NA](NA/),NA,[NA](NA/),NA,10:30 - 10:45
 2,10:45,11:15,Ideation,[NA](NA/),NA,[NA](NA/),NA,10:45 - 11:15
-2,11:15,12:00,Work session (individual),[NA](NA/),NA,[NA](NA/),NA,11:15 - 12:00
+2,11:15,12:00,Work session,[NA](NA/),NA,[NA](NA/),NA,11:15 - 12:00
 2,12:00,13:00,Lunch break,[NA](NA/),NA,[NA](NA/),NA,12:00 - 13:00
-2,13:00,14:00,NA,[NA](NA/),NA,[NA](NA/),NA,13:00 - 14:00
+2,13:00,14:00,Work session,[NA](NA/),NA,[NA](NA/),NA,13:00 - 14:00
 2,14:00,14:15,Break,[NA](NA/),NA,[NA](NA/),NA,14:00 - 14:15
 2,14:15,15:00,Work session,[NA](NA/),NA,[NA](NA/),NA,14:15 - 15:00
-2,15:00,16:00,Showcase,[NA](NA/),NA,[NA](NA/),NA,15:00 - 16:00
-2,16:00,16:30,Closing,[NA](NA/),NA,[NA](NA/),NA,16:00 - 16:30
+2,15:00,15:30,Showcase,[NA](NA/),NA,[NA](NA/),NA,15:00 - 15:30
+2,15:30,15:45,Break with small cakes,[NA](NA/),NA,[NA](NA/),NA,15:30 - 15:45
+2,15:45,16:15,Showcase,[NA](NA/),NA,[NA](NA/),NA,15:45 - 16:15
