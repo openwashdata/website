@@ -1,7 +1,6 @@
 ---
 title: "openwashdata Conference 2025"
 description: |
-  
 execute:
     echo: false
     warning: false
@@ -11,6 +10,12 @@ editor_options:
     wrap: 72
 ---
 
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+
 ## 👋 Welcome
 
 We'll be hosting the first openwashdata conference on **15-17 July 2025**. This internal event for the Global Health Engineering group at ETH Zurich will bring our team together to:
@@ -18,7 +23,7 @@ We'll be hosting the first openwashdata conference on **15-17 July 2025**. This 
 - Showcase data steward Emmanuel's work over the past 6 months
 - Plan for the future of openwashdata
 - Host a Claude Code hackathon with Global Health Engineering colleagues
-- Go on a summer excursion in Zurich
+- Go on a summer excursion around Zurich
 
 The conference will explore new AI tools like Claude Code to transform workflows at Global Health Engineering and for the openwashdata community. We will explore this from the lense of working with software and data, but also the more research focused tasks of literature review, article and proposal writing. We will share the best use cases and lessons learned in our next newsletter issues and through blog posts.
 
@@ -26,12 +31,6 @@ The conference will explore new AI tools like Claude Code to transform workflows
 
 -   **Date:** 15 to 17 July 2025 
 -   **Location:** [Villa Hatt](https://ethz.ch/de/campus/erreichen/region-zuerich/villa-hatt.html), Zurich, Switzerland
-
-## 🏁 Objectives
-
-By joining this event, participants will:
-
-1. 
 
 ## 📝 Agenda
 
@@ -49,8 +48,7 @@ agenda_final <- agenda  |>
     mutate(affiliation = case_when(
         str_detect(affiliation, "NA") == TRUE ~ " - ",
         TRUE ~ affiliation
-    )) |>
-    rename_with(~stringr::str_to_title(.x), everything()) 
+    ))
 ```
 
 ### Day 1
@@ -61,33 +59,46 @@ agenda_final <- agenda  |>
 agenda_final |> 
     filter(day == 1) |> 
     select(-day) |> 
-    rename_with(~stringr::str_to_title(.x), everything()) 
+    rename_with(~stringr::str_to_title(.x), everything()) |> 
+    kable()
 ```
 
 ### Day 2
+
+You will receive instructions for some setup requrired for the second day of the conference in advance.
 
 - Note (2025-07-07): Programme is work in progress and subject to change. Parts of it may be defined by the participants during the event.
 
 ```{r}
 agenda_final |> 
-    filter(day == 1) |> 
-    select(-day) |> 
-    rename_with(~stringr::str_to_title(.x), everything()) 
+    filter(day == 2) |> 
+    select(-day, -speaker, -affiliation) |> 
+    rename_with(~stringr::str_to_title(.x), everything()) |> 
+    kable()
 ```
 
 ### Day 3
 
-On this day, we will not work with data but rather focus on enjoying our time together. 
+On this day, we will not work with data but rather focus on enjoying our time together.
 
+To bring:
+
+- a snack for the morning break
+- comfortable shoes for walking
+- swimwear if you would like to swim at Badi Seegräben (Pfäffikersee)
+
+Programme:
 
 - 09:15: We will meet at Zurich Main Station at 09:15 am. Meeting point is in the main hall by that big clock tower.
 - 09:30: Catch Train S5 from platform 43/44 to Wetzikon ZH (direction: Pfäffikon ZH). Continue with bus from Wetzikon to Gossau, from where we will take a 500 m walk to Lama Farm Yacana
 - 10:15 - 10:30: Snack time. Now is a good time to have your self brought snacks, as we will only have lunch at atound 
-- 10:30 - ~11:45: Guided tour at Lama Farm Yacana
-- 11:45 - 13:00: Walk to Juckerfarm, Seegräben
-- 13:00 - 14:00: Lunch at Juckerfarm, Seegräben
-
-
-- 17th July: 10:30 - 12:00: Summer excursion in Zurich
+- 10:30 - 11:45: Guided tour at [Lama Farm Yacana](https://www.yacana.ch/%C3%BCber-uns/)
+- 11:45 - 13:00: 75-minute (5.4 km) walk to Juckerfarm, Seegräben
+- 13:00 - 14:30: Lunch at [Juckerfarm, Seegräben](https://www.juckerfarm.ch/restaurant/)
+- 14:30 - 14:45: 10-minute (800 m) walk to [Badi Seegräben](https://maps.app.goo.gl/tbqEuYCkoVenqofcA)
+- 14:45 - 15:45: Relax and swim at Badi Seegräben
+- 15:45 - 16:15: 30-minute walk to Aathal to catch train to Zurich at 16:20.
+- 16:20 - 16:48: Train ride from Aathal to Zurich HB. Train S14.
+- 16:48 - 17:00: Closing remarks at Zurich HB
 
 ## Slides
