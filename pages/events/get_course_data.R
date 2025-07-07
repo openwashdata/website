@@ -73,7 +73,7 @@ googlesheets4::read_sheet(ss = sheet_workshop, range = "Sheet1!A1:G16") |>
     mutate(end_time = str_extract(end_time, "\\b\\d{2}:\\d{2}\\b")) |>
     mutate(time = paste(start_time, end_time, sep = " - ")) |>  
     select(-...6) |> 
-    write_csv(here::here("pages/events/2024-08-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
+    write_csv(here::here("pages/events/2024-04-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
 
 
 ## SWWW 2024
