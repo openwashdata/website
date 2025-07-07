@@ -73,7 +73,7 @@ googlesheets4::read_sheet(ss = sheet_workshop, range = "Sheet1!A1:G16") |>
     mutate(end_time = str_extract(end_time, "\\b\\d{2}:\\d{2}\\b")) |>
     mutate(time = paste(start_time, end_time, sep = " - ")) |>  
     select(-...6) |> 
-    write_csv(here::here("pages/events/2024-08-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
+    write_csv(here::here("pages/events/2024-04-09-workshop-washweb/data/tbl-09-workshop-ghe-washweb.csv"))
 
 
 ## SWWW 2024
@@ -90,4 +90,19 @@ googlesheets4::read_sheet(ss = sheet_swww) |>
     mutate(end_time = str_extract(end_time, "\\b\\d{2}:\\d{2}\\b")) |>
     mutate(time = paste(start_time, end_time, sep = " - ")) |>  
     write_csv(here::here("pages/events/2024-08-29-swww/data/tbl-11-openwashdata-events.csv"))
+
+## openwashdata conference
+
+sheet_openwashdata <- "https://docs.google.com/spreadsheets/d/1dvdHE4GMUmqPhM_1GUdYh6RB5vNbvnWY_XCR37luIHg/edit?gid=0#gid=0"
+
+googlesheets4::read_sheet(ss = sheet_openwashdata) |> 
+    select(-duration) |> 
+    mutate(speaker = paste0("[", speaker, "](", speaker_link, "/)")) |>
+    mutate(affiliation = paste0("[", affiliation, "](", affiliation_link, "/)")) |>
+    mutate(start_time = as.character(start_time)) |>
+    mutate(start_time = str_extract(start_time, "\\b\\d{2}:\\d{2}\\b")) |>
+    mutate(end_time = as.character(end_time)) |>
+    mutate(end_time = str_extract(end_time, "\\b\\d{2}:\\d{2}\\b")) |>
+    mutate(time = paste(start_time, end_time, sep = " - ")) |>  
+    write_csv(here::here("pages/events/2025-openwashdata-conference/data/tbl-openwashdata-conference-agenda.csv"))
 
