@@ -11,7 +11,6 @@ editor_options:
     wrap: 72
 ---
 
-
 ## 👋 Welcome
 
 We'll be hosting the first openwashdata conference on **15-17 July 2025**. This internal event for the Global Health Engineering group at ETH Zurich will bring our team together to:
@@ -32,16 +31,15 @@ The conference will explore new AI tools like Claude Code to transform workflows
 
 By joining this event, participants will:
 
-1.  Learn about the importance of open data sharing, its applications, and how participants can contribute
-2.  Acquire a cross-sectoral understanding of ongoing innovations for the interconnectivity of WASH data (from research, government, NGOs, UN)
+1. 
 
 ## 📝 Agenda
 
 ```{r}
 
-agenda <- readr::read_csv(here::here("pages/events/2024-08-29-swww/data/tbl-11-openwashdata-events.csv"))
+agenda <- readr::read_csv(here::here("pages/events/2025-openwashdata-conference/data/tbl-openwashdata-conference-agenda.csv"))
 
-agenda  |> 
+agenda_final <- agenda  |> 
     select(-start_time, -end_time, -speaker_link, -affiliation_link) |>
     relocate(time) |> 
     mutate(speaker = case_when(
@@ -52,8 +50,44 @@ agenda  |>
         str_detect(affiliation, "NA") == TRUE ~ " - ",
         TRUE ~ affiliation
     )) |>
-    rename_with(~stringr::str_to_title(.x), everything()) |> 
-    knitr::kable()
+    rename_with(~stringr::str_to_title(.x), everything()) 
 ```
+
+### Day 1
+
+- Note (2025-07-07): Programme is work in progress and subject to change. Parts of it may be defined by the participants during the event.
+
+```{r}
+agenda_final |> 
+    filter(day == 1) |> 
+    select(-day) |> 
+    rename_with(~stringr::str_to_title(.x), everything()) 
+```
+
+### Day 2
+
+- Note (2025-07-07): Programme is work in progress and subject to change. Parts of it may be defined by the participants during the event.
+
+```{r}
+agenda_final |> 
+    filter(day == 1) |> 
+    select(-day) |> 
+    rename_with(~stringr::str_to_title(.x), everything()) 
+```
+
+### Day 3
+
+On this day, we will not work with data but rather focus on enjoying our time together. 
+
+
+- 09:15: We will meet at Zurich Main Station at 09:15 am. Meeting point is in the main hall by that big clock tower.
+- 09:30: Catch Train S5 from platform 43/44 to Wetzikon ZH (direction: Pfäffikon ZH). Continue with bus from Wetzikon to Gossau, from where we will take a 500 m walk to Lama Farm Yacana
+- 10:15 - 10:30: Snack time. Now is a good time to have your self brought snacks, as we will only have lunch at atound 
+- 10:30 - ~11:45: Guided tour at Lama Farm Yacana
+- 11:45 - 13:00: Walk to Juckerfarm, Seegräben
+- 13:00 - 14:00: Lunch at Juckerfarm, Seegräben
+
+
+- 17th July: 10:30 - 12:00: Summer excursion in Zurich
 
 ## Slides
