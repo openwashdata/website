@@ -13,8 +13,8 @@ author:
     url: https://openwashdata.org/about/adriana/
     affiliation: Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
-    orcid_id: 0009-0002-0589-2274
-date: "2025-07-11"
+    orcid: 0009-0002-0589-2274
+date: "2025-07-14"
 draft: false
 image: "OWD-logo-20.svg"
 image-alt: "openwashdata logo"
@@ -22,7 +22,7 @@ image-alt: "openwashdata logo"
 
 ## A Global Response to a Critical Need 🌍
 
-When we launched the first [**Data Science for Open WASH Data (ds4owd)**](https://ds4owd-001.github.io/website/) course in October 2023, **235 WASH professionals** from from **46 countries** around the world signed up—validating our belief that this community is eager to acquire data science skills.
+When we launched the first [**Data Science for Open WASH Data (ds4owd)**](https://ds4owd-001.github.io/website/) course in October 2023, **235 WASH professionals** from **46 countries** around the world signed up—validating our belief that this community is eager to acquire data science skills.
 
 ![Figure 1: World map showing the number of registrations by country.](plot-countries-1.png)
 
@@ -32,13 +32,13 @@ The diverse backgrounds of those who registered told a compelling story about th
 
 ## The Data Reality Check 📋
 
-Our pre-course survey revealed exactly what we suspected: WASH professionals are generating valuable data but struggling with sharing and management. Most of the potential participants were storing data in sub-optimal formats for machine-readability[^1] without standardized workflows for collaboration or sharing.
+Our pre-course survey revealed exactly what we suspected: WASH professionals are generating valuable data but struggling with sharing and management. Most of the potential participants were storing data in sub-optimal formats for machine-readability[^1] without any standardized workflows for collaboration or sharing.
 
 [^1]: Machine-readable data is data structured and formatted in a way that computer programs can automatically process, interpret, and analyze without human intervention, such as CSV, JSON, XML, etc.
 
 ![Figure 3: Barchart of the method used for data storage at the time of registration.](plot-storage-1.png)
 
-Even more telling was the programming experience landscape. While participants brought diverse professional expertise, many (around 38%) were starting their coding journey from scratch. At the same time, we also discovered 13% of them had already written programs for their own use that were a couple of pages long.
+Even more telling was the programming experience landscape. While participants brought diverse professional expertise, many (around 38%) were starting their coding journey from scratch. At the same time, we also discovered 13% had already written programs for their own use that were a couple of pages long.
 
 ![Figure 4: Barchart showing the level of programming experience.](plot-programming-experience-1.png)
 
@@ -58,7 +58,7 @@ The most exciting outcome? We collaborated with graduates on taking the next ste
 
 ## The Impact Beyond Numbers 🌟
 
-Our [capstone projects](https://openwashdata.org/pages/academy/graduates/) became showcases of practical application of the learning of the course. These weren't just assignments; they are valuable data contributions to the WASH community.
+Our [capstone projects](https://openwashdata.org/pages/academy/graduates/) became showcases of practical application of the course learning. These weren't just assignments; they are valuable data contributions to the WASH community.
 
 One participant noted: *" (What I liked about the course was) the fact that it introduced me to a field (Data Science) that I just used to hear about, little did I know it was valuable in my career path..."*
 
