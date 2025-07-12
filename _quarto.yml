@@ -7,6 +7,12 @@ website:
   description: "Website of the openwashdata community"
   page-navigation: true
   search: false
+  announcement:
+    content: "📅 **Save the Date**: openwashdata Conference 2025 - June 17-18 in Zurich! [Learn more →](pages/events/2025-06-17-openwashdata-conference/)"
+    type: info
+    position: below-navbar
+    dismissable: true
+    icon: "calendar-event"
   page-footer: 
     left: | 
         This project was supported by the 
