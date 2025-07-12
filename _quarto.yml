@@ -7,6 +7,11 @@ website:
   description: "Website of the openwashdata community"
   page-navigation: true
   search: false
+  announcement:
+    content: " **Free Course**: Data Science for openwashdata (ds4owd-002) - Free 9-week programme starting soon! [Sign up now](https://ee-eu.kobotoolbox.org/x/7V3qeDYD)"
+    position: below-navbar
+    dismissable: true
+    icon: "mortarboard"
   page-footer: 
     left: | 
         This project was supported by the 
