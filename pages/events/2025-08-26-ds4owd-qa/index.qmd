@@ -1,0 +1,51 @@
+---
+title: "data science for openwashdata 002 - Questions and Answers"
+description: |
+  TODO: write a two sentence description  
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## 👋 Welcome
+
+Are you interested in our 2nd iteration of the `r emo::ji("openwashdata")` **Data Science for Openwashdata** course, but you have some questions that you would like to ask before you sign-up?
+
+This event is for you!
+
+Join us for 1-hour in which we introduce the course content (~15 minutes) and then use the remaining 45 minutes for a Q&A live session with the course instructors. Prior to the event, you can post your questions in a Google Doc, which we also use to prepare an FAQ for the course.
+
+## 📆 Event Details
+
+-   **Date:** Tuesday, August 26, 1:00 - 2:00 PM (CET)
+
+-   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/u50lce-vrD0iGN06ywPHr2gPU84Ljr_zmNAf>
+
+TODO: call-out important: Hold on to the email you receive for this registration. You will need the personalized link that you receive to join the meeting.
+
+TODO update the time to the correct time as for the date and time above
+
+-   `r emo::ji("us")` 6:00 AM (MST - Boulder, USA) 
+-   `r emo::ji("uk")` 1:00 PM (GMT - London, UK)
+-   `r emo::ji("nigeria")` 2:00 PM (WAT - Katsina, Nigeria) 
+-   `r emo::ji("kenya")` 4:00 PM (EAT - Nairobi, Kenya)
+-   `r emo::ji("india")` 6:30 PM (IST - New Delhi, India)
+-   `r emo::ji("indonesia")` 8:00 PM (WIB - Jakarta, Indonesia)
+
+## 📝 Google Doc Notes
+
+
+## Slides
+
+### data science for openwashdata (in preparation)
+
+
+
+## 🏁 Objectives
+
+By the end of this event, participants will be able to:
+
+- TODO: write three objectives
+
