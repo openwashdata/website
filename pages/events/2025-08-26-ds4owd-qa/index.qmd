@@ -1,7 +1,7 @@
 ---
 title: "data science for openwashdata 002 - Questions and Answers"
 description: |
-  TODO: write a two sentence description  
+  Join us for an interactive Q&A session about the Data Science for openwashdata course (ds4owd-002). Learn about the course structure, content, and requirements while getting your questions answered directly by the instructors.  
 execute:
     echo: false
     warning: false
@@ -21,31 +21,40 @@ Join us for 1-hour in which we introduce the course content (~15 minutes) and th
 
 -   **Date:** Tuesday, August 26, 1:00 - 2:00 PM (CET)
 
--   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/u50lce-vrD0iGN06ywPHr2gPU84Ljr_zmNAf>
+::: {.callout-important}
+## Registration Link Required
+Hold on to the email you receive for this registration. You will need the personalized link that you receive to join the meeting.
+:::
 
-TODO: call-out important: Hold on to the email you receive for this registration. You will need the personalized link that you receive to join the meeting.
+-   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/_vAJm6mJTaSShZiGMCyidA>
 
-TODO update the time to the correct time as for the date and time above
+::: {.callout-note}
+## Recording Notice
+This meeting will be recorded to Zoom cloud. The purpose of the recording is for the course instructors to learn how meeting recording will work during the live sessions of the course. The recording will not be shared publicly, but it may be used for internal purposes to improve the course delivery.
+:::
 
--   `r emo::ji("us")` 6:00 AM (MST - Boulder, USA) 
--   `r emo::ji("uk")` 1:00 PM (GMT - London, UK)
--   `r emo::ji("nigeria")` 2:00 PM (WAT - Katsina, Nigeria) 
--   `r emo::ji("kenya")` 4:00 PM (EAT - Nairobi, Kenya)
--   `r emo::ji("india")` 6:30 PM (IST - New Delhi, India)
--   `r emo::ji("indonesia")` 8:00 PM (WIB - Jakarta, Indonesia)
+-   7:00 AM (EDT - New York, USA) 
+-   12:00 PM (BST - London, UK)
+-   12:00 PM (WAT - Lagos, Nigeria) 
+-   2:00 PM (EAT - Nairobi, Kenya)
+-   4:30 PM (IST - New Delhi, India)
+-   6:00 PM (WIB - Jakarta, Indonesia)
 
 ## 📝 Google Doc Notes
 
+Add your questions ahead of time or during the session in this Google Doc: <https://docs.google.com/document/d/1ryQ1H9lyU1TCmrAl-pjab3Vv4-sEa8cLir485uRjuuk/edit?usp=sharing>
+
+## 🏁 Objectives
+
+By the end of this event, participants will be able to:
+
+- Understand the course structure, timeline, and commitment required for ds4owd-002
+- Learn about the technical prerequisites and tools used throughout the course
+- Get answers to your specific questions about participation, content, and expectations
 
 ## Slides
 
 ### data science for openwashdata (in preparation)
 
 
-
-## 🏁 Objectives
-
-By the end of this event, participants will be able to:
-
-- TODO: write three objectives
 
