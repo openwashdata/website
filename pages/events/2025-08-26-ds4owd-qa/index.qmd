@@ -11,7 +11,7 @@ editor_options:
 
 ## 👋 Welcome
 
-Are you interested in our 2nd iteration of the `r emo::ji("openwashdata")` **Data Science for Openwashdata** course, but you have some questions that you would like to ask before you sign-up?
+Are you interested in our 2nd iteration of the **data science for openwashdata** course, but you have some questions that you would like to ask before you sign-up?
 
 This event is for you!
 
@@ -22,8 +22,10 @@ Join us for 1-hour in which we introduce the course content (~15 minutes) and th
 -   **Date:** Tuesday, August 26, 1:00 - 2:00 PM (CET)
 
 ::: {.callout-important}
-## Registration Link Required
-Hold on to the email you receive for this registration. You will need the personalized link that you receive to join the meeting.
+## Zoom Authentication Required for Event
+
+Hold on to the email you receive for this registration and ensure you are logged into Zoom with the same email address you used to register for this event.
+
 :::
 
 -   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/_vAJm6mJTaSShZiGMCyidA>
@@ -43,6 +45,8 @@ This meeting will be recorded to Zoom cloud. The purpose of the recording is for
 ## 📝 Google Doc Notes
 
 Add your questions ahead of time or during the session in this Google Doc: <https://docs.google.com/document/d/1ryQ1H9lyU1TCmrAl-pjab3Vv4-sEa8cLir485uRjuuk/edit?usp=sharing>
+
+During the event, we will address the questions posted in the Google Doc and answer any additional questions that arise.
 
 ## 🏁 Objectives
 
