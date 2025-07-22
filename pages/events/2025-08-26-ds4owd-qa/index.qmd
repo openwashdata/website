@@ -1,0 +1,64 @@
+---
+title: "data science for openwashdata 002 - Questions and Answers"
+description: |
+  Join us for an interactive Q&A session about the Data Science for openwashdata course (ds4owd-002). Learn about the course structure, content, and requirements while getting your questions answered directly by the instructors.  
+execute:
+    echo: false
+    warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## 👋 Welcome
+
+Are you interested in our 2nd iteration of the **data science for openwashdata** course, but you have some questions that you would like to ask before you sign-up?
+
+This event is for you!
+
+Join us for 1-hour in which we introduce the course content (~15 minutes) and then use the remaining 45 minutes for a Q&A live session with the course instructors. Prior to the event, you can post your questions in a Google Doc, which we also use to prepare an FAQ for the course.
+
+## 📆 Event Details
+
+-   **Date:** Tuesday, August 26, 1:00 - 2:00 PM (CET)
+
+::: {.callout-important}
+## Zoom Authentication Required for Event
+
+Hold on to the email you receive for this registration and ensure you are logged into Zoom with the same email address you used to register for this event.
+
+:::
+
+-   **Zoom Registration**: <https://ethz.zoom.us/meeting/register/_vAJm6mJTaSShZiGMCyidA>
+
+::: {.callout-note}
+## Recording Notice
+This meeting will be recorded to Zoom cloud. The purpose of the recording is for the course instructors to learn how meeting recording will work during the live sessions of the course. The recording will not be shared publicly, but it may be used for internal purposes to improve the course delivery.
+:::
+
+-   7:00 AM (EDT - New York, USA) 
+-   12:00 PM (BST - London, UK)
+-   12:00 PM (WAT - Lagos, Nigeria) 
+-   2:00 PM (EAT - Nairobi, Kenya)
+-   4:30 PM (IST - New Delhi, India)
+-   6:00 PM (WIB - Jakarta, Indonesia)
+
+## 📝 Google Doc Notes
+
+Add your questions ahead of time or during the session in this Google Doc: <https://docs.google.com/document/d/1ryQ1H9lyU1TCmrAl-pjab3Vv4-sEa8cLir485uRjuuk/edit?usp=sharing>
+
+During the event, we will address the questions posted in the Google Doc and answer any additional questions that arise.
+
+## 🏁 Objectives
+
+By the end of this event, participants will be able to:
+
+- Understand the course structure, timeline, and commitment required for ds4owd-002
+- Learn about the technical prerequisites and tools used throughout the course
+- Get answers to your specific questions about participation, content, and expectations
+
+## Slides
+
+### data science for openwashdata (in preparation)
+
+
+
