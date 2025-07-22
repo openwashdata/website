@@ -95,3 +95,18 @@
     using one of our >30 datasets and win up to 750 CHF.</a>
   calendar: <a title="Register here" href="https://forms.office.com/e/L60DRYNJ2E">Register
     here</a>
+
+- title: openwashdata Conference 2025
+  site_url: https://openwashdata-conf.github.io/2025/
+  date: '2025-07-15'
+  description: <a href="https://openwashdata-conf.github.io/2025/"> The 1st openwashdata
+    conference, a 3-day event hosted in Zurich, Switzerland.</a>
+  calendar: .na.character
+
+- title: 'free 9-module course: data science for openwashdata 002'
+  site_url: https://ds4owd-002.github.io/website/
+  date: '2025-09-11'
+  description: <a href="https://ds4owd-002.github.io/website/"> Start of the 2nd iteration
+    of our free course to learn data science, data management, GitHub collaboration,
+    and more.</a>
+  calendar: .na.character
