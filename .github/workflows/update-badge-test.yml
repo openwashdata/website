@@ -1,0 +1,92 @@
+name: Update Analytics Badge (TEST)
+
+on:
+  push:
+    branches: [dev]  # This will make it run on dev branch
+  workflow_dispatch:  # Manual trigger
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+      custom_message:
+        description: 'Custom commit message (optional)'
+        required: false
+        type: string
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      # TEST MODE: Skip actual API call and use dummy data
+      - name: Fetch Plausible Analytics Data (TEST)
+        id: analytics
+        run: |
+          echo "🧪 TEST MODE: Using dummy analytics data"
+          
+          # Use dummy data for testing
+          pageviews=12345
+          formatted_pageviews="12,345"
+          
+          echo "pageviews=$pageviews" >> $GITHUB_OUTPUT
+          echo "formatted_pageviews=$formatted_pageviews" >> $GITHUB_OUTPUT
+          
+      - name: Create Badge Data
+        run: |
+          cat > badge-data.json << EOF
+          {
+            "schemaVersion": 1,
+            "label": "Total Views (TEST)",
+            "message": "${{ steps.analytics.outputs.formatted_pageviews }}",
+            "color": "orange",
+            "cacheSeconds": 86400
+          }
+          EOF
+          
+      - name: Update README Badge
+        run: |
+          # Update README.md with current timestamp
+          if grep -q "Updated:" README.md; then
+            sed -i "s/Updated: .*/Updated: $(date +'%Y-%m-%d') (TEST)/" README.md
+          else
+            echo "*Updated: $(date +'%Y-%m-%d') (TEST)*" >> README.md
+          fi
+          
+      - name: Show what will be committed
+        run: |
+          echo "📋 Files that will be updated:"
+          git diff --name-only
+          echo "📄 Badge data content:"
+          cat badge-data.json
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add badge-data.json README.md
+          
+          if [ -n "${{ github.event.inputs.custom_message }}" ]; then
+            commit_msg="${{ github.event.inputs.custom_message }}"
+          else
+            commit_msg="🧪 TEST: Update analytics badge: ${{ steps.analytics.outputs.formatted_pageviews }} total views"
+          fi
+          
+          if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+            git commit -m "$commit_msg" --allow-empty
+          else
+            git diff --staged --quiet || git commit -m "$commit_msg"
+          fi
+          
+          git push
