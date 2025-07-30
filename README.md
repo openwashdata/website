@@ -23,4 +23,4 @@ This website is part of the openwashdata project, supported by the [Open Researc
 
 - Email: ghe@mavt.ethz.ch
 - GitHub: [@openwashdata](https://github.com/openwashdata)
-- Website: [openwashdata.org](https://openwashdata.org)*Updated: 2025-07-30 (TEST)*
+- Website: [openwashdata.org](https://openwashdata.org)*Updated: 2025-07-30
