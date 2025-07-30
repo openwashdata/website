@@ -67,9 +67,10 @@ jobs:
               formatted_pageviews="Error"
               formatted_visitors="Error"
             else
-              # Extract pageview and visitor counts
-              pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
-              visitors=$(echo $response | jq -r '.results[0].visitors // 0')
+              # The response structure is: {"results":[{"metrics":[pageviews, visitors]}]}
+              # Extract pageview and visitor counts from the metrics array
+              pageviews=$(echo $response | jq -r '.results[0].metrics[0] // 0')
+              visitors=$(echo $response | jq -r '.results[0].metrics[1] // 0')
               
               echo "Extracted pageviews: $pageviews"
               echo "Extracted visitors: $visitors"
@@ -78,13 +79,13 @@ jobs:
               if [ "$pageviews" != "0" ] && [ "$pageviews" != "null" ]; then
                 formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
               else
-                formatted_pageviews="Loading..."
+                formatted_pageviews="0"
               fi
               
               if [ "$visitors" != "0" ] && [ "$visitors" != "null" ]; then
                 formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
               else
-                formatted_visitors="Loading..."
+                formatted_visitors="0"
               fi
             fi
           fi
@@ -136,21 +137,11 @@ jobs:
           echo "Content of visitors badge:"
           cat badge-data-visitors.json
           
-      - name: Update README Badge
-        run: |
-          # Update README.md with current timestamp
-          if grep -q "Updated:" README.md; then
-            sed -i "s/Updated: .*/Updated: $(date +'%Y-%m-%d')/" README.md
-          else
-            echo "" >> README.md
-            echo "*Updated: $(date +'%Y-%m-%d')*" >> README.md
-          fi
-          
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add badge-data-pageviews.json badge-data-visitors.json README.md
+          git add badge-data-pageviews.json badge-data-visitors.json
           
           # Use custom commit message if provided, otherwise use default
           if [ -n "${{ github.event.inputs.custom_message }}" ]; then
