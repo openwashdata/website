@@ -59,10 +59,8 @@ on:
         required: false
         type: string
   push:
+    branches: [dev]  # Only auto-run on dev branch pushes
     paths: ['.github/workflows/update-badge.yml']  # Only when this workflow changes
-  pull_request:  # Trigger on pull requests
-    branches: [main]
-    types: [opened, synchronize, reopened]
 
 jobs:
   update-badges:
