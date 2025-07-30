@@ -23,13 +23,6 @@ env:
         "label": "Unique Visitors",
         "color": "3B1A3B",
         "style": "for-the-badge"
-      },
-      {
-        "type": "custom",
-        "id": "top_countries",
-        "label": "Top Countries",
-        "color": "c8a3c8",
-        "style": "for-the-badge"
       }
     ]
 
@@ -116,8 +109,8 @@ jobs:
           echo "📊 Site: ${{ steps.config.outputs.site_id }}"
           echo "📅 Time period: ${{ steps.config.outputs.time_period }}"
           
-          # Extract unique metrics from badges config (excluding custom badges)
-          metrics=$(cat badges_config.json | jq -r '[.[] | select(.type != "custom") | .metric] | unique | @json')
+          # Extract unique metrics from badges config
+          metrics=$(cat badges_config.json | jq -r '[.[].metric] | unique | @json')
           echo "📈 Metrics to fetch: $metrics"
           
           # Fetch main metrics data from Plausible API
@@ -140,28 +133,6 @@ jobs:
           
           # Store the response for badge generation
           echo "$response" > api_response.json
-          
-          # Fetch top countries data (separate API call with dimensions)
-          echo "📍 Fetching top countries data..."
-          countries_response=$(curl -s -X POST https://plausible.io/api/v2/query \
-            -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"site_id\": \"${{ steps.config.outputs.site_id }}\",
-              \"metrics\": [\"visitors\"],
-              \"date_range\": \"${{ steps.config.outputs.time_period }}\",
-              \"dimensions\": [\"visit:country_name\"]
-            }")
-          
-          echo "Countries API Response: $countries_response"
-          
-          # Check for API errors on countries request
-          if echo "$countries_response" | jq -e '.error' > /dev/null 2>&1; then
-            echo "⚠️ Countries API Error: $(echo "$countries_response" | jq -r '.error')"
-            echo "null" > countries_response.json
-          else
-            echo "$countries_response" > countries_response.json
-          fi
           
           echo "✅ Analytics data fetched successfully"
           
