@@ -2,7 +2,7 @@
 
 ![Total Views](https://img.shields.io/badge/Total%20Views-20,721-2d0e2d?style=for-the-badge)
 ![Unique Visitors](https://img.shields.io/badge/Unique%20Visitors-7,301-c8a3c8?style=for-the-badge)
-![Bounce Rate](https://img.shields.io/badge/Bounce%20Rate-58.0%-orange?style=for-the-badge)
+![Bounce Rate](https://img.shields.io/badge/Bounce%20Rate-58.0-orange?style=for-the-badge)
 
 
 
