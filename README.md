@@ -1,7 +1,4 @@
 # openwashdata Website
-<!-- Views count -->
-![Total Views](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/openwashdata/website/main/badge-data-pageviews.json&style=flat-square&logo=plausible&logoColor=white)
-![Unique Visitors](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/openwashdata/website/main/badge-data-visitors.json&style=flat-square&logo=plausible&logoColor=white)
 
 This repository contains the source code for the [openwashdata.org](https://openwashdata.org) website, built with [Quarto](https://quarto.org/).
 
