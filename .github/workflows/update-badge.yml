@@ -21,15 +21,15 @@ env:
       {
         "metric": "visitors", 
         "label": "Unique Visitors",
-        "color": "c8a3c8",
+        "color": "3B1A3B",
         "style": "for-the-badge"
       },
       {
-        "metric": "bounce_rate",
-        "label": "Bounce Rate",
-        "color": "orange",
-        "style": "for-the-badge",
-        "suffix": "%"
+        "type": "custom",
+        "id": "top_countries",
+        "label": "Top Countries",
+        "color": "c8a3c8",
+        "style": "for-the-badge"
       }
     ]
 
@@ -39,7 +39,7 @@ env:
 on:
   schedule:
     - cron: '0 2 * * 1'  # Every Monday at 2 AM UTC
-  workflow_dispatch:  # Manual trigger for forced updates
+  workflow_dispatch:  # Manual trigger - MAIN TESTING METHOD
     inputs:
       force_update:
         description: 'Force update even if no changes detected'
@@ -59,7 +59,7 @@ on:
         required: false
         type: string
   push:
-    # branches: [badge]  # auto-run on specific branch pushes
+    branches: [main]  # Only auto-run on main branch pushes
     paths: ['.github/workflows/update-badge.yml']  # Only when this workflow changes
 
 jobs:
@@ -116,11 +116,11 @@ jobs:
           echo "📊 Site: ${{ steps.config.outputs.site_id }}"
           echo "📅 Time period: ${{ steps.config.outputs.time_period }}"
           
-          # Extract unique metrics from badges config
-          metrics=$(cat badges_config.json | jq -r '[.[].metric] | unique | @json')
+          # Extract unique metrics from badges config (excluding custom badges)
+          metrics=$(cat badges_config.json | jq -r '[.[] | select(.type != "custom") | .metric] | unique | @json')
           echo "📈 Metrics to fetch: $metrics"
           
-          # Fetch data from Plausible API
+          # Fetch main metrics data from Plausible API
           response=$(curl -s -X POST https://plausible.io/api/v2/query \
             -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
             -H "Content-Type: application/json" \
@@ -130,7 +130,7 @@ jobs:
               \"date_range\": \"${{ steps.config.outputs.time_period }}\"
             }")
           
-          echo "API Response: $response"
+          echo "Main API Response: $response"
           
           # Check for API errors
           if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
@@ -140,6 +140,29 @@ jobs:
           
           # Store the response for badge generation
           echo "$response" > api_response.json
+          
+          # Fetch top countries data (separate API call with dimensions)
+          echo "📍 Fetching top countries data..."
+          countries_response=$(curl -s -X POST https://plausible.io/api/v2/query \
+            -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"site_id\": \"${{ steps.config.outputs.site_id }}\",
+              \"metrics\": [\"visitors\"],
+              \"date_range\": \"${{ steps.config.outputs.time_period }}\",
+              \"dimensions\": [\"visit:country_name\"]
+            }")
+          
+          echo "Countries API Response: $countries_response"
+          
+          # Check for API errors on countries request
+          if echo "$countries_response" | jq -e '.error' > /dev/null 2>&1; then
+            echo "⚠️ Countries API Error: $(echo "$countries_response" | jq -r '.error')"
+            echo "null" > countries_response.json
+          else
+            echo "$countries_response" > countries_response.json
+          fi
+          
           echo "✅ Analytics data fetched successfully"
           
       - name: Generate Badge URLs
@@ -206,8 +229,8 @@ jobs:
             label_encoded=$(echo "$badge_label" | sed 's/ /%20/g')
             value_encoded=$(echo "$formatted_value" | sed 's/ /%20/g')
             
-            # Generate badge URL
-            badge_url="![${badge_label}](https://img.shields.io/badge/${label_encoded}-${value_encoded}-${badge_color}?style=${badge_style})"
+            # Generate badge URL with cache busting
+            badge_url="![${badge_label}](https://img.shields.io/badge/${label_encoded}-${value_encoded}-${badge_color}?style=${badge_style}&v=$(date +%s))"
             
             echo "  Badge URL: $badge_url"
             
