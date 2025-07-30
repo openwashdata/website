@@ -35,7 +35,7 @@ jobs:
       - name: Fetch Plausible Analytics Data
         id: analytics
         run: |
-          # Fetch both pageviews and unique visitors from Plausible API
+          # Fetch both pageviews and visitors from Plausible API (as per official docs)
           response=$(curl -s -X POST https://plausible.io/api/v2/query \
             -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
             -H "Content-Type: application/json" \
@@ -45,13 +45,37 @@ jobs:
               "date_range": "all"
             }')
           
+          echo "API Response: $response"
+          
+          # Check if response contains error
+          if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
+            echo "API Error: $(echo "$response" | jq -r '.error')"
+            exit 1
+          fi
+          
+          # The response for multiple metrics should be in results[0] with both values
+          # Let's see the actual structure first
+          echo "Results structure: $(echo "$response" | jq '.results[0]')"
+          
           # Extract pageview and visitor counts
           pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
           visitors=$(echo $response | jq -r '.results[0].visitors // 0')
           
+          echo "Extracted pageviews: $pageviews"
+          echo "Extracted visitors: $visitors"
+          
           # Format numbers with commas for readability
-          formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
-          formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          if [ "$pageviews" != "0" ] && [ "$pageviews" != "null" ]; then
+            formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          else
+            formatted_pageviews="Loading..."
+          fi
+          
+          if [ "$visitors" != "0" ] && [ "$visitors" != "null" ]; then
+            formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          else
+            formatted_visitors="Loading..."
+          fi
           
           echo "pageviews=$pageviews" >> $GITHUB_OUTPUT
           echo "formatted_pageviews=$formatted_pageviews" >> $GITHUB_OUTPUT
