@@ -14,6 +14,8 @@ on:
         description: 'Custom commit message (optional)'
         required: false
         type: string
+  push:  # Trigger on push to any branch
+    branches: ['**']
 
 jobs:
   update-badge:
@@ -33,24 +35,28 @@ jobs:
       - name: Fetch Plausible Analytics Data
         id: analytics
         run: |
-          # Fetch pageviews from Plausible API
+          # Fetch both pageviews and unique visitors from Plausible API
           response=$(curl -s -X POST https://plausible.io/api/v2/query \
             -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{
               "site_id": "openwashdata.org",
-              "metrics": ["pageviews"],
+              "metrics": ["pageviews", "visitors"],
               "date_range": "all"
             }')
           
-          # Extract pageview count
+          # Extract pageview and visitor counts
           pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
+          visitors=$(echo $response | jq -r '.results[0].visitors // 0')
           
-          # Format number with commas for readability
+          # Format numbers with commas for readability
           formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
           
           echo "pageviews=$pageviews" >> $GITHUB_OUTPUT
           echo "formatted_pageviews=$formatted_pageviews" >> $GITHUB_OUTPUT
+          echo "visitors=$visitors" >> $GITHUB_OUTPUT
+          echo "formatted_visitors=$formatted_visitors" >> $GITHUB_OUTPUT
           
       - name: Create Badge Data
         run: |
@@ -74,13 +80,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add badge-data.json README.md
+          git add badge-data-pageviews.json badge-data-visitors.json README.md
           
           # Use custom commit message if provided, otherwise use default
           if [ -n "${{ github.event.inputs.custom_message }}" ]; then
             commit_msg="${{ github.event.inputs.custom_message }}"
           else
-            commit_msg="Update analytics badge: ${{ steps.analytics.outputs.formatted_pageviews }} total views"
+            commit_msg="Update analytics badges: ${{ steps.analytics.outputs.formatted_pageviews }} views, ${{ steps.analytics.outputs.formatted_visitors }} visitors"
           fi
           
           # Force commit if requested, otherwise only commit if changes exist
