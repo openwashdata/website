@@ -82,7 +82,31 @@ jobs:
           echo "visitors=$visitors" >> $GITHUB_OUTPUT
           echo "formatted_visitors=$formatted_visitors" >> $GITHUB_OUTPUT
           
+      - name: Debug API Response
+        run: |
+          echo "=== DEBUG INFORMATION ==="
+          echo "Checking if API key is set..."
+          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
+            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
+          else
+            echo "✅ PLAUSIBLE_API_KEY is set (length: $(echo '${{ secrets.PLAUSIBLE_API_KEY }}' | wc -c))"
+          fi
+          
       - name: Create Badge Data
+        run: |
+          echo "=== DEBUG INFORMATION ==="
+          echo "Checking if API key is set..."
+          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
+            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
+          else
+            echo "✅ PLAUSIBLE_API_KEY is set"
+          fi
+          
+          echo "Current directory contents:"
+          ls -la
+          
+          echo "Environment variables:"
+          env | grep -E "(GITHUB|PLAUSIBLE)" || echo "No relevant environment variables found"
         run: |
           # Create badge data JSON file
           cat > badge-data.json << EOF
