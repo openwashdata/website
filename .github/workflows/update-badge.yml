@@ -1,0 +1,93 @@
+name: Update Analytics Badge
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM UTC
+  workflow_dispatch:  # Allow manual triggering with inputs
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+      custom_message:
+        description: 'Custom commit message (optional)'
+        required: false
+        type: string
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Needed to commit changes
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Fetch Plausible Analytics Data
+        id: analytics
+        run: |
+          # Fetch pageviews from Plausible API
+          response=$(curl -s -X POST https://plausible.io/api/v2/query \
+            -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "site_id": "openwashdata.org",
+              "metrics": ["pageviews"],
+              "date_range": "all"
+            }')
+          
+          # Extract pageview count
+          pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
+          
+          # Format number with commas for readability
+          formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+          
+          echo "pageviews=$pageviews" >> $GITHUB_OUTPUT
+          echo "formatted_pageviews=$formatted_pageviews" >> $GITHUB_OUTPUT
+          
+      - name: Create Badge Data
+        run: |
+          # Create badge data JSON file
+          cat > badge-data.json << EOF
+          {
+            "schemaVersion": 1,
+            "label": "Total Views",
+            "message": "${{ steps.analytics.outputs.formatted_pageviews }}",
+            "color": "brightgreen",
+            "cacheSeconds": 86400
+          }
+          EOF
+          
+      - name: Update README Badge
+        run: |
+          # Update README.md with current timestamp
+          sed -i "s/Updated: .*/Updated: $(date +'%Y-%m-%d')/" README.md
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add badge-data.json README.md
+          
+          # Use custom commit message if provided, otherwise use default
+          if [ -n "${{ github.event.inputs.custom_message }}" ]; then
+            commit_msg="${{ github.event.inputs.custom_message }}"
+          else
+            commit_msg="Update analytics badge: ${{ steps.analytics.outputs.formatted_pageviews }} total views"
+          fi
+          
+          # Force commit if requested, otherwise only commit if changes exist
+          if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+            git commit -m "$commit_msg" --allow-empty
+          else
+            git diff --staged --quiet || git commit -m "$commit_msg"
+          fi
+          
+          git push
