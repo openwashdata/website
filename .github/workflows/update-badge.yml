@@ -97,9 +97,9 @@ jobs:
           echo "visitors=$visitors" >> $GITHUB_OUTPUT
           echo "formatted_visitors=$formatted_visitors" >> $GITHUB_OUTPUT
           
-      - name: Create Badge Data
+      - name: Update README Badges
         run: |
-          echo "Creating badge files..."
+          echo "Updating README with dynamic badge URLs..."
           
           # Get values from previous step
           pageviews_value="${{ steps.analytics.outputs.formatted_pageviews }}"
@@ -108,40 +108,37 @@ jobs:
           echo "Using pageviews: $pageviews_value"
           echo "Using visitors: $visitors_value"
           
-          # Create pageviews badge data JSON file (dark purple)
-          cat > badge-data-pageviews.json << EOF
-          {
-            "schemaVersion": 1,
-            "label": "Total Views",
-            "message": "$pageviews_value",
-            "color": "2d0e2d",
-            "cacheSeconds": 86400
-          }
-          EOF
+          # URL encode the values (replace spaces and special chars)
+          pageviews_encoded=$(echo "$pageviews_value" | sed 's/ /%20/g')
+          visitors_encoded=$(echo "$visitors_value" | sed 's/ /%20/g')
           
-          # Create unique visitors badge data JSON file (light purple)
-          cat > badge-data-visitors.json << EOF
-          {
-            "schemaVersion": 1,
-            "label": "Unique Visitors",
-            "message": "$visitors_value",
-            "color": "c8a3c8",
-            "cacheSeconds": 86400
-          }
-          EOF
+          # Update the README.md with new badge URLs (for-the-badge style)
+          # Look for existing badge lines and replace them, or add them if not found
+          if grep -q "Total%20Views" README.md; then
+            # Replace existing pageviews badge
+            sed -i "s|!\[Total Views\].*|![Total Views](https://img.shields.io/badge/Total%20Views-${pageviews_encoded}-2d0e2d?style=for-the-badge)|" README.md
+          else
+            # Add pageviews badge if not found (after # OpenWashData Website line)
+            sed -i '/# OpenWashData Website/a\\n![Total Views](https://img.shields.io/badge/Total%20Views-'"${pageviews_encoded}"'-2d0e2d?style=for-the-badge)' README.md
+          fi
           
-          echo "Badge files created successfully:"
-          ls -la badge-data-*.json
-          echo "Content of pageviews badge:"
-          cat badge-data-pageviews.json
-          echo "Content of visitors badge:"
-          cat badge-data-visitors.json
+          if grep -q "Unique%20Visitors" README.md; then
+            # Replace existing visitors badge
+            sed -i "s|!\[Unique Visitors\].*|![Unique Visitors](https://img.shields.io/badge/Unique%20Visitors-${visitors_encoded}-c8a3c8?style=for-the-badge)|" README.md
+          else
+            # Add visitors badge if not found (after pageviews badge)
+            sed -i '/Total%20Views.*-2d0e2d/a![Unique Visitors](https://img.shields.io/badge/Unique%20Visitors-'"${visitors_encoded}"'-c8a3c8?style=for-the-badge)' README.md
+          fi
+          
+          echo "README updated with new badge URLs"
+          echo "Updated badges:"
+          grep -E "!\[(Total Views|Unique Visitors)\]" README.md || echo "No badges found in README"
           
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add badge-data-pageviews.json badge-data-visitors.json
+          git add README.md
           
           # Use custom commit message if provided, otherwise use default
           if [ -n "${{ github.event.inputs.custom_message }}" ]; then
