@@ -35,92 +35,116 @@ jobs:
       - name: Fetch Plausible Analytics Data
         id: analytics
         run: |
-          # Fetch both pageviews and visitors from Plausible API (as per official docs)
-          response=$(curl -s -X POST https://plausible.io/api/v2/query \
-            -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "site_id": "openwashdata.org",
-              "metrics": ["pageviews", "visitors"],
-              "date_range": "all"
-            }')
-          
-          echo "API Response: $response"
-          
-          # Check if response contains error
-          if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
-            echo "API Error: $(echo "$response" | jq -r '.error')"
-            exit 1
-          fi
-          
-          # The response for multiple metrics should be in results[0] with both values
-          # Let's see the actual structure first
-          echo "Results structure: $(echo "$response" | jq '.results[0]')"
-          
-          # Extract pageview and visitor counts
-          pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
-          visitors=$(echo $response | jq -r '.results[0].visitors // 0')
-          
-          echo "Extracted pageviews: $pageviews"
-          echo "Extracted visitors: $visitors"
-          
-          # Format numbers with commas for readability
-          if [ "$pageviews" != "0" ] && [ "$pageviews" != "null" ]; then
-            formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
-          else
+          echo "=== DEBUG INFORMATION ==="
+          echo "Checking if API key is set..."
+          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
+            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
+            echo "Using fallback values..."
+            pageviews="Loading..."
+            visitors="Loading..."
             formatted_pageviews="Loading..."
+            formatted_visitors="Loading..."
+          else
+            echo "✅ PLAUSIBLE_API_KEY is set"
+            
+            # Fetch both pageviews and visitors from Plausible API
+            response=$(curl -s -X POST https://plausible.io/api/v2/query \
+              -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "site_id": "openwashdata.org",
+                "metrics": ["pageviews", "visitors"],
+                "date_range": "all"
+              }')
+            
+            echo "API Response: $response"
+            
+            # Check if response contains error
+            if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
+              echo "API Error: $(echo "$response" | jq -r '.error')"
+              pageviews="Error"
+              visitors="Error"
+              formatted_pageviews="Error"
+              formatted_visitors="Error"
+            else
+              # Extract pageview and visitor counts
+              pageviews=$(echo $response | jq -r '.results[0].pageviews // 0')
+              visitors=$(echo $response | jq -r '.results[0].visitors // 0')
+              
+              echo "Extracted pageviews: $pageviews"
+              echo "Extracted visitors: $visitors"
+              
+              # Format numbers with commas for readability
+              if [ "$pageviews" != "0" ] && [ "$pageviews" != "null" ]; then
+                formatted_pageviews=$(echo $pageviews | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+              else
+                formatted_pageviews="Loading..."
+              fi
+              
+              if [ "$visitors" != "0" ] && [ "$visitors" != "null" ]; then
+                formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+              else
+                formatted_visitors="Loading..."
+              fi
+            fi
           fi
           
-          if [ "$visitors" != "0" ] && [ "$visitors" != "null" ]; then
-            formatted_visitors=$(echo $visitors | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
-          else
-            formatted_visitors="Loading..."
-          fi
+          echo "Final values - Pageviews: $formatted_pageviews, Visitors: $formatted_visitors"
           
           echo "pageviews=$pageviews" >> $GITHUB_OUTPUT
           echo "formatted_pageviews=$formatted_pageviews" >> $GITHUB_OUTPUT
           echo "visitors=$visitors" >> $GITHUB_OUTPUT
           echo "formatted_visitors=$formatted_visitors" >> $GITHUB_OUTPUT
           
-          echo "=== DEBUG INFORMATION ==="
-          echo "Checking if API key is set..."
-          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
-            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
-          else
-            echo "✅ PLAUSIBLE_API_KEY is set (length: $(echo '${{ secrets.PLAUSIBLE_API_KEY }}' | wc -c))"
-          fi
-          
       - name: Create Badge Data
         run: |
-          echo "=== DEBUG INFORMATION ==="
-          echo "Checking if API key is set..."
-          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
-            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
-          else
-            echo "✅ PLAUSIBLE_API_KEY is set"
-          fi
+          echo "Creating badge files..."
           
-          echo "Current directory contents:"
-          ls -la
+          # Get values from previous step
+          pageviews_value="${{ steps.analytics.outputs.formatted_pageviews }}"
+          visitors_value="${{ steps.analytics.outputs.formatted_visitors }}"
           
-          echo "Environment variables:"
-          env | grep -E "(GITHUB|PLAUSIBLE)" || echo "No relevant environment variables found"
-        run: |
-          # Create badge data JSON file
-          cat > badge-data.json << EOF
+          echo "Using pageviews: $pageviews_value"
+          echo "Using visitors: $visitors_value"
+          
+          # Create pageviews badge data JSON file (dark purple)
+          cat > badge-data-pageviews.json << EOF
           {
             "schemaVersion": 1,
             "label": "Total Views",
-            "message": "${{ steps.analytics.outputs.formatted_pageviews }}",
-            "color": "brightgreen",
+            "message": "$pageviews_value",
+            "color": "2d0e2d",
             "cacheSeconds": 86400
           }
           EOF
           
+          # Create unique visitors badge data JSON file (light purple)
+          cat > badge-data-visitors.json << EOF
+          {
+            "schemaVersion": 1,
+            "label": "Unique Visitors",
+            "message": "$visitors_value",
+            "color": "c8a3c8",
+            "cacheSeconds": 86400
+          }
+          EOF
+          
+          echo "Badge files created successfully:"
+          ls -la badge-data-*.json
+          echo "Content of pageviews badge:"
+          cat badge-data-pageviews.json
+          echo "Content of visitors badge:"
+          cat badge-data-visitors.json
+          
       - name: Update README Badge
         run: |
           # Update README.md with current timestamp
-          sed -i "s/Updated: .*/Updated: $(date +'%Y-%m-%d')/" README.md
+          if grep -q "Updated:" README.md; then
+            sed -i "s/Updated: .*/Updated: $(date +'%Y-%m-%d')/" README.md
+          else
+            echo "" >> README.md
+            echo "*Updated: $(date +'%Y-%m-%d')*" >> README.md
+          fi
           
       - name: Commit and Push Changes
         run: |
