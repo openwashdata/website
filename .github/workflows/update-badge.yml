@@ -1,0 +1,288 @@
+name: Update Analytics Badges
+
+# =============================================================================
+# CONFIGURATION SECTION - Customize these variables for your site
+# =============================================================================
+env:
+  # Site configuration
+  SITE_ID: "openwashdata.org"              # Your Plausible site ID
+  TIME_PERIOD: "all"                       # Options: "all", "7d", "30d", "month", "year", etc.
+  
+  # Badge configuration (JSON array format)
+  # Available metrics: pageviews, visitors, visits, bounce_rate, visit_duration, views_per_visit
+  BADGES_CONFIG: |
+    [
+      {
+        "metric": "pageviews",
+        "label": "Total Views",
+        "color": "2d0e2d",
+        "style": "for-the-badge"
+      },
+      {
+        "metric": "visitors", 
+        "label": "Unique Visitors",
+        "color": "3B1A3B",
+        "style": "for-the-badge"
+      }
+    ]
+
+# =============================================================================
+# WORKFLOW TRIGGERS
+# =============================================================================
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM UTC
+  workflow_dispatch:  # Manual trigger - MAIN TESTING METHOD
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+      custom_message:
+        description: 'Custom commit message (optional)'
+        required: false
+        type: string
+      site_override:
+        description: 'Override site ID (optional)'
+        required: false
+        type: string
+      time_period_override:
+        description: 'Override time period (optional)'
+        required: false
+        type: string
+  push:
+    branches: [dev]  # Only auto-run on dev branch pushes
+    paths: ['.github/workflows/update-badge.yml']  # Only when this workflow changes
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Parse Configuration
+        id: config
+        run: |
+          # Use input overrides or fall back to env vars
+          SITE_ID="${{ github.event.inputs.site_override }}"
+          if [ -z "$SITE_ID" ]; then
+            SITE_ID="${{ env.SITE_ID }}"
+          fi
+          
+          TIME_PERIOD="${{ github.event.inputs.time_period_override }}"
+          if [ -z "$TIME_PERIOD" ]; then
+            TIME_PERIOD="${{ env.TIME_PERIOD }}"
+          fi
+          
+          echo "site_id=$SITE_ID" >> $GITHUB_OUTPUT
+          echo "time_period=$TIME_PERIOD" >> $GITHUB_OUTPUT
+          echo "Using site: $SITE_ID"
+          echo "Using time period: $TIME_PERIOD"
+          
+          # Parse badges configuration
+          echo '${{ env.BADGES_CONFIG }}' > badges_config.json
+          echo "Badges configuration:"
+          cat badges_config.json | jq '.'
+          
+      - name: Fetch Analytics Data
+        id: analytics
+        run: |
+          echo "=== FETCHING ANALYTICS DATA ==="
+          
+          # Check API key
+          if [ -z "${{ secrets.PLAUSIBLE_API_KEY }}" ]; then
+            echo "❌ PLAUSIBLE_API_KEY is not set in repository secrets!"
+            exit 1
+          fi
+          
+          echo "✅ API key is set"
+          echo "📊 Site: ${{ steps.config.outputs.site_id }}"
+          echo "📅 Time period: ${{ steps.config.outputs.time_period }}"
+          
+          # Extract unique metrics from badges config
+          metrics=$(cat badges_config.json | jq -r '[.[].metric] | unique | @json')
+          echo "📈 Metrics to fetch: $metrics"
+          
+          # Fetch main metrics data from Plausible API
+          response=$(curl -s -X POST https://plausible.io/api/v2/query \
+            -H "Authorization: Bearer ${{ secrets.PLAUSIBLE_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"site_id\": \"${{ steps.config.outputs.site_id }}\",
+              \"metrics\": $metrics,
+              \"date_range\": \"${{ steps.config.outputs.time_period }}\"
+            }")
+          
+          echo "Main API Response: $response"
+          
+          # Check for API errors
+          if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
+            echo "❌ API Error: $(echo "$response" | jq -r '.error')"
+            exit 1
+          fi
+          
+          # Store the response for badge generation
+          echo "$response" > api_response.json
+          
+          echo "✅ Analytics data fetched successfully"
+          
+      - name: Generate Badge URLs
+        id: badges
+        run: |
+          echo "=== GENERATING BADGE URLS ==="
+          
+          # Read API response and badges config
+          api_data=$(cat api_response.json)
+          badges_config=$(cat badges_config.json)
+          
+          # Extract metrics array from API response  
+          metrics_data=$(echo "$api_data" | jq -r '.results[0].metrics')
+          metrics_list=$(echo "$api_data" | jq -r '.query.metrics')
+          
+          echo "Metrics data: $metrics_data"
+          echo "Metrics order: $metrics_list"
+          
+          # Generate badge URLs
+          badge_urls=""
+          badge_count=$(echo "$badges_config" | jq length)
+          
+          for i in $(seq 0 $((badge_count - 1))); do
+            # Get badge configuration
+            badge_metric=$(echo "$badges_config" | jq -r ".[$i].metric")
+            badge_label=$(echo "$badges_config" | jq -r ".[$i].label")
+            badge_color=$(echo "$badges_config" | jq -r ".[$i].color")
+            badge_style=$(echo "$badges_config" | jq -r ".[$i].style // \"flat-square\"")
+            badge_suffix=$(echo "$badges_config" | jq -r ".[$i].suffix // \"\"")
+            
+            echo "Processing badge for metric: $badge_metric"
+            
+            # Find the index of this metric in the API response
+            metric_index=$(echo "$metrics_list" | jq -r "index(\"$badge_metric\")")
+            
+            if [ "$metric_index" != "null" ]; then
+              # Extract the value for this metric
+              raw_value=$(echo "$metrics_data" | jq -r ".[$metric_index]")
+              
+              # Format the value based on metric type
+              if [ "$badge_metric" = "bounce_rate" ] || [ "$badge_metric" = "conversion_rate" ]; then
+                # Percentage metrics - round to 1 decimal place
+                formatted_value=$(echo "$raw_value" | awk '{printf "%.1f", $1}')
+              elif [[ "$raw_value" =~ ^[0-9]+$ ]]; then
+                # Integer metrics - add commas for thousands
+                formatted_value=$(echo "$raw_value" | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
+              else
+                # Other metrics - use as is
+                formatted_value="$raw_value"
+              fi
+              
+              # Add suffix if specified
+              if [ "$badge_suffix" != "" ]; then
+                formatted_value="${formatted_value}${badge_suffix}"
+              fi
+              
+              echo "  Value: $formatted_value"
+            else
+              echo "  ⚠️  Metric $badge_metric not found in API response"
+              formatted_value="N/A"
+            fi
+            
+            # URL encode the values
+            label_encoded=$(echo "$badge_label" | sed 's/ /%20/g')
+            value_encoded=$(echo "$formatted_value" | sed 's/ /%20/g')
+            
+            # Generate badge URL with cache busting
+            badge_url="![${badge_label}](https://img.shields.io/badge/${label_encoded}-${value_encoded}-${badge_color}?style=${badge_style}&v=$(date +%s))"
+            
+            echo "  Badge URL: $badge_url"
+            
+            # Collect badge URLs
+            if [ -z "$badge_urls" ]; then
+              badge_urls="$badge_url"
+            else
+              badge_urls="$badge_urls\n$badge_url"
+            fi
+          done
+          
+          echo "badge_urls<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$badge_urls" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          echo "✅ Badge URLs generated"
+          
+      - name: Update README
+        run: |
+          echo "=== UPDATING README ==="
+          
+          # Remove existing analytics badges (any line starting with ![badge_name])
+          badges_config=$(cat badges_config.json)
+          badge_count=$(echo "$badges_config" | jq length)
+          
+          for i in $(seq 0 $((badge_count - 1))); do
+            badge_label=$(echo "$badges_config" | jq -r ".[$i].label")
+            sed -i "/!\[${badge_label}\]/d" README.md
+          done
+          
+          # Add new badges after the first heading
+          badge_content="${{ steps.badges.outputs.badge_urls }}"
+          
+          if grep -q "^# " README.md; then
+            # Add badges after the first heading
+            first_heading=$(grep -n "^# " README.md | head -1 | cut -d: -f1)
+            {
+              head -n "$first_heading" README.md
+              echo ""
+              echo -e "$badge_content"
+              echo ""
+              tail -n +"$((first_heading + 1))" README.md
+            } > README.md.tmp
+            mv README.md.tmp README.md
+          else
+            # No heading found, add badges at the top
+            {
+              echo -e "$badge_content"
+              echo ""
+              cat README.md
+            } > README.md.tmp
+            mv README.md.tmp README.md
+          fi
+          
+          echo "✅ README updated with analytics badges"
+          echo "Updated badges:"
+          echo -e "$badge_content"
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          
+          # Use custom commit message if provided, otherwise use default
+          if [ -n "${{ github.event.inputs.custom_message }}" ]; then
+            commit_msg="${{ github.event.inputs.custom_message }}"
+          else
+            commit_msg="Update analytics badges for ${{ steps.config.outputs.site_id }}"
+          fi
+          
+          # Force commit if requested, otherwise only commit if changes exist
+          if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+            git commit -m "$commit_msg" --allow-empty
+          else
+            git diff --staged --quiet || git commit -m "$commit_msg"
+          fi
+          
+          git push
+          
+      - name: Cleanup
+        run: |
+          # Clean up temporary files
+          rm -f badges_config.json api_response.json
