@@ -171,7 +171,7 @@ top_llm_tools <- paste(head(llm_platforms_summary$platform_label_clean, 3), coll
 llm_users_percent <- round(sum(!is.na(registration_data$llm_platforms)) / nrow(registration_data) * 100)
 ```
 
-We're thrilled to have received **`r nrow(registration_data)` registrations** so far from passionate learners worldwide who are ready to transform water, sanitation, and hygiene data into actionable insights! 📊
+We're thrilled to have **`r nrow(registration_data)` registrations** so far from passionate learners worldwide who are ready to transform water, sanitation, and hygiene data into actionable insights! 📊
 
 ```{r}
 #| label: plot-country
@@ -239,9 +239,9 @@ pyramid_data <- registration_data |>
 plot_pyramid <- pyramid_data |> 
   ggplot(aes(x = age_label, y = n_adjusted, fill = gender_label)) +
   geom_col(width = 0.8) +
-  geom_text(aes(label = abs(n_adjusted), 
+  geom_label(aes(label = abs(n_adjusted), 
                 y = n_adjusted + ifelse(gender == "man", -0.5, 0.5)), 
-            size = 3.5, fontface = "bold") +
+            size = 3.5, fontface = "bold", fill = "lightgrey") +
   coord_flip() +
   scale_y_continuous(labels = function(x) abs(x),
                      expand = expansion(mult = c(0.15, 0.15))) +
