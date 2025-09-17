@@ -1,6 +1,8 @@
 ---
 title: "Final Scientific Report"
 format: docx
+editor_options: 
+  chunk_output_type: console
 ---
 
 |  |  |
@@ -117,6 +119,14 @@ Our data publishing workflow can be applied by any community. It is independent 
 
 *Please indicate the outputs directly related to this ORD project since it began and provide further details in the table below, if and as applicable. This list of outputs (e.g. links) may be used for outreach and dissemination activities (e.g. ORD web portal); please indicate in the table below if any information is confidential and cannot be shared.*
 
+```{r}
+library(tidyverse)
+library(googlesheets4)
+
+outputs <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/16KPKCi-bkoX9fi2PqJysdPYJXzLnsdX4wbHTxAMz7cU/edit?gid=0#gid=0")
+
+
+```
 
 
 # Appendix
