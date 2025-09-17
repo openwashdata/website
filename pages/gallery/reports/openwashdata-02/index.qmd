@@ -1,13 +1,13 @@
 ---
-title: "index"
-format: html
+title: "Final Scientific Report"
+format: docx
 ---
 
 |  |  |
-|----|----|
-| **Project title:** | Open JMP - unlocking the potential of global indicator data |
-| **Contribute call number:** | 3 |
-| **Project starting & end date:** | 01.05.23 to 31.07.24 (incl. 3 month no-cost extension) |
+|------------------------------------|------------------------------------|
+| **Project title:** | Open WASH data by building Open Science Competencies and Community (openwashdata) |
+| **Contribute call number:** | 1 |
+| **Project starting & end date:** | 01.03.2023 – 30.11.2025 (incl. 3 month no cost extension) |
 | **Applicant responsible for project:** | Prof. Dr. Elizabeth Tilley |
 | **Function:** | Chair of Global Health Engineering |
 | **Laboratory (and/or Department):** | Department of Mechanical and Process Engineering (D-MAVT) |
@@ -15,7 +15,9 @@ format: html
 
 # Lay summary (public, 1/2 page)
 
-*Please summarise the objectives of the project, explain the progress achieved so far and – if applicable - the planned activities for the next period. This lay summary  (maximum:  ½ page) should be understandable by a non-expert audience and will be used for outreach and communications activities (e.g. ORD web portal). By submitting this lay summary, you thus agree to making it potentially public.*
+*Please summarise the objectives of the project, explain the progress achieved so far and – if applicable - the planned activities for the next period. This lay summary (maximum: ½ page) should be understandable by a non-expert audience and will be used for outreach and communications activities (e.g. ORD web portal). By submitting this lay summary, you thus agree to making it potentially public.*
+
+The vision of this project is to create an active global community that applies FAIR principles to data generated in the greater Water, Sanitation, and Hygiene (WASH) sector. Current data management practices hold back progress which we address by empowering WASH professionals to engage with tools and workflows for open data and code. We introduce people to the concept of "open by default", as well as the use of open source software, the principles of open science, and benefits of open government (data). So far, we have developed a data cleaning and publishing workflow using the R ecosystem and are consistently applying the concepts and principles we teach. We are delivering a free online course with 10 modules for data science with R and concluded with 20 to graduate from the course, applying the learned material to a real-life dataset of their own.
 
 # Achievements (2 pages)
 
@@ -23,18 +25,18 @@ format: html
 
 This project consists of five work packages and 20 activities against which we will provide this report. The full name of each acitivity can be found in the activities table of the proposal: https://docs.google.com/spreadsheets/d/1T3NV75vVCeSRcN6FYghOrVFyWWi4WjQT5e4tqwp8jAQ/edit#gid=0).
 
-**Contribution to ORD Explore programme aims.** In addition to the contributions mentioned in the intermediate scientific report, our project was recognized by the Open Research Data Unit of the Swiss Academies of Arts and Sciences of which we received the [National Prize for Open Research Data 2024](https://ord.swiss-academies.ch/news/open-science-rewarded-four-projects-to-receive-the-national-prize-for-open-research-data. 
+**Contribution to ORD Explore programme aims.** In addition to the contributions mentioned in the intermediate scientific report, our project was recognized by the Open Research Data Unit of the Swiss Academies of Arts and Sciences of which we received the \[National Prize for Open Research Data 2024\](https://ord.swiss-academies.ch/news/open-science-rewarded-four-projects-to-receive-the-national-prize-for-open-research-data.
 
 ## WP0: Infrastructure Design and Installation
 
 ::: callout-note
 ## Goal: The Goal of WP0 is to prototype a technical foundation for the ORD toolchain at ETH in a a way that allows teaching and scientific collaboration to continue beyond the explore project's funding.
 
-**Activity 0.1.** Report was complete in intermediate scientific report. 
+**Activity 0.1.** Report was complete in intermediate scientific report.
 
-**Activity 0.2:** Report was complete in intermediate scientific report. 
+**Activity 0.2:** Report was complete in intermediate scientific report.
 
-**Activity 0.3:** As we identified Posit Cloud by Posit Cloud by Posit PBC to be the most suitable option four our needs, we did not compare the costs to the hosting costs and technical overhead of Virtual Machines hosted at ETH Zurich.
+**Activity 0.3:** As we identified Posit Cloud by Posit PBC to be the most suitable option for our needs, we did not compare the costs to the hosting costs and technical overhead of Virtual Machines hosted at ETH Zurich.
 :::
 
 ## WP1: Mobilize Community
@@ -42,9 +44,9 @@ This project consists of five work packages and 20 activities against which we w
 ::: callout-note
 ## Goal: Create and grow an international network of data-curious practitioners and students who may be interested in pursuing one or more of the subsequent activities.
 
-**Activity 1.1.** Report was complete in intermediate scientific report. 
+**Activity 1.1.** Report was complete in intermediate scientific report.
 
-**Activity 1.2.** Report was complete in intermediate scientific report. 
+**Activity 1.2.** Report was complete in intermediate scientific report.
 :::
 
 ## WP2: Data sharing
@@ -52,13 +54,11 @@ This project consists of five work packages and 20 activities against which we w
 ::: callout-note
 ## Goal: Solicit and receive interest in providing data to be published openly; develop an easy-to-use data-collection protocol and tool; receive data from interested partners.
 
-**Activity 2.1.** We have continued to invest time and resources into further development of our data publication. By the end of this reporting period, we expanded on the functionality of the `washr` R package, which was then further developed in the 2nd Explore project we have received funding for. 
+**Activity 2.1.** We have continued to invest time and resources into further development of our data publication. By the end of this reporting period, we expanded on the functionality of the `washr` R package, which was then further developed in the 2nd Explore project we have received funding for.
 
 **Activity 2.2.** Our strategy has shifted to encourage participants of our data science online training programmes to use their own data in our classes and follow up to publish the data as ORD, using our established workflows. More information under WP3: Data cleaning.
 
-**Activity 2.3** We continue to expand the openwashdata community on Element using the Matrix Chat, which is our main support channel. Additionally, we prepared a first version of the a guide titled ["Data Publishing with washr"](https://global-health-engineering.github.io/ghedatapublishing/) 
-
-**Activity 2.3.**
+**Activity 2.3:** We continue to expand the openwashdata community on Element using the Matrix Chat, which is our main support channel. Additionally, we prepared a first version of a guide titled ["Data Publishing with washr"](https://global-health-engineering.github.io/ghedatapublishing/).
 :::
 
 ## WP3: Data cleaning
@@ -66,17 +66,17 @@ This project consists of five work packages and 20 activities against which we w
 ::: callout-note
 ## Goal: Facilitate user-directed data cleaning (including documentation and metadata) to produce a first set of analysis-ready open datasets
 
-**Activity 3.1.** As reported in the intermediate scientific report, we have engaged with participnats of our "data science for openwashdata" course in data cleaning processes. We successuflly published five datasets from the 20 graduates of the first iteration. We realized that this approach is the most effective way to engage with the community and support them in data cleaning and data publishing. Therefore, we decided to invest more time into these data management practices in future iterations of "data science for openwashdata" and develop further material to teach our workflows. This further led to a 1-day in person workshop in Durban, South Africa under Activity 3.5.
+**Activity 3.1.** As reported in the intermediate scientific report, we have engaged with participants of our "data science for openwashdata" course in data cleaning processes. We successfully published five datasets from the 20 graduates of the first iteration. We realized that this approach is the most effective way to engage with the community and support them in data cleaning and data publishing. Therefore, we decided to invest more time into these data management practices in future iterations of "data science for openwashdata" and develop further material to teach our workflows. This further led to a 1-day in-person workshop in Durban, South Africa under Activity 3.5.
 
-**Activity 3.2.** Report was complete in intermediate scientific report. 
+**Activity 3.2.** Report was complete in intermediate scientific report.
 
-**Activity 3.3.** We concluded this first iteration of "data science for openwashdata" with 20 graduates. The programme was highly successful and learnings a future iteration were documented. One key take-away was that we have to provide video recordings of the live sessions, as many participants do not have access to a reliable source of electricity or internet connection. As watching video recordings is against our principles for effective teaching and learning, we decided to come up with a mentorship programme for participants to still have live exchanges with their peers. 
+**Activity 3.3.** We concluded this first iteration of "data science for openwashdata" with 20 graduates. The programme was highly successful and learnings a future iteration were documented. One key take-away was that we have to provide video recordings of the live sessions, as many participants do not have access to a reliable source of electricity or internet connection. As watching video recordings is against our principles for effective teaching and learning, we decided to come up with a mentorship programme for participants to still have live exchanges with their peers.
 
-**Activity 3.4:** We have hosted two hackathons. The [first hackathon](https://openwashdata.org/pages/events/2024-06-21-hackathon/) was a hands-on educational event for our `washr` data package workflow and was attended by five people. The goal was to introduce the data package to participants and then use it to publish datasets that are on our list for data publication. The hackathon helped us beta-test our R package and resulted in 5 new data publications, one by each participant. The [second hackathon](https://openwashdata.org/pages/blog/posts/2024-12-09-hackathon/) was hosted online and the goal was to use one of our data packages to produce a compliing story, using the data analysis tools that participants prefer. The hackathon was attended by 20 people and we distributed three monetary prizes worth 1500 CHF in total.
+**Activity 3.4:** We have hosted two hackathons. The [first hackathon](https://openwashdata.org/pages/events/2024-06-21-hackathon/) was a hands-on educational event for our `washr` data package workflow and was attended by five people. The goal was to introduce the data package to participants and then use it to publish datasets that are on our list for data publication. The hackathon helped us beta-test our R package and resulted in 5 new data publications, one by each participant. The [second hackathon](https://openwashdata.org/pages/blog/posts/2024-12-09-hackathon/) was hosted online and the goal was to use one of our data packages to produce a compelling story, using the data analysis tools that participants prefer. The hackathon was attended by 20 people and we distributed three monetary prizes worth 1500 CHF in total.
 
 **Activity 3.5:**
 
-We hosted a [1-day workshop](https://fairdatapub-washcentre.github.io/website/) with our partners at the WASH R&D Center at the University of Kwa-Zulu Natal. The workshop is titled "FAIR Data Publishing" and builds on the hackathon that was an educational event for our `washr` data package workflow. This 1-day workshop was atteneded by 20 participants of the research groups, representing more than 80% of the total research staff. It was highly successful as many participants are complete novices in using computational workflows such as R, Git, and GitHub, and are new to the concetps of FAIR data publishing. We could remove barriers that will allows us to effectively work with the researchers in our follow-up 2nd Explore project. 
+We hosted a [1-day workshop](https://fairdatapub-washcentre.github.io/website/) with our partners at the WASH R&D Center at the University of KwaZulu-Natal. The workshop is titled "FAIR Data Publishing" and builds on the hackathon that was an educational event for our `washr` data package workflow. This 1-day workshop was attended by 20 participants of the research groups, representing more than 80% of the total research staff. It was highly successful as many participants are complete novices in using computational workflows such as R, Git, and GitHub, and are new to the concepts of FAIR data publishing. We could remove barriers that will allow us to effectively work with the researchers in our follow-up 2nd Explore project.
 :::
 
 ## WP4: Data publishing and communication
@@ -86,18 +86,18 @@ We hosted a [1-day workshop](https://fairdatapub-washcentre.github.io/website/) 
 
 **Activity 4.1.** By the end of this project, we had published 28 datasets. An updated list is provided in the list of outputs and a live link to the datasets is available on our [openwashdata website data list](https://openwashdata.org/pages/gallery/data/). This list will continue to grow beyond the scope of the projects with our goal to continue to publish one dataset per month from the community and more than half of all primary datasets used by participants of our "data science for openwashdata" course.
 
-**Activity 4.2.** We continue to improve the templates for our data package website and identify datasets for which it is worth developing a data analysis report. 
+**Activity 4.2.** We continue to improve the templates for our data package website and identify datasets for which it is worth developing a data analysis report.
 
-**Activity 4.3.** Report was complete in intermediate scientific report. 
+**Activity 4.3.** Report was complete in intermediate scientific report.
 
-**Activity 4.4.** Report was complete in intermediate scientific report. 
+**Activity 4.4.** Report was complete in intermediate scientific report.
 :::
 
 # Deviations from original plan ()
 
 *Please describe and justify any major changes or deviations from the original plan as set out in the application form (e.g. expected results and objectives), notably unexpected challenges/problems (or unforeseen/unexpected positive outcomes) and how they have been addressed. Events such as changes of personnel, changes in the financial resources’ usage plan and delayed start of project must be mentioned and – if needed – agreed in advance. If applicable, the implications and impact for the 2nd phase of the project must also be described.*
 
-We had no further deviations from the plan that were not previously documented in the intermediate scientific report. 
+We had no further deviations from the plan that were not previously documented in the intermediate scientific report.
 
 # Value delivered for ORD practices/communities
 
@@ -105,19 +105,20 @@ We had no further deviations from the plan that were not previously documented i
 
 See intermediate scientific report for detailed reporting. The workflow continues to gain interest by the scientific community at ETH Zurich. This was recognized by the Open Research Data Unit of the Swiss Academies of Arts and Sciences, which awarded us the [National Prize for Open Research Data 2024](https://ord.swiss-academies.ch/news/open-science-rewarded-four-projects-to-receive-the-national-prize-for-open-research-data).
 
-Beyond the scope of the project, the project lead is increasingly receiving requests for support in data management and data publishing from researchers at ETH Zurich. This also resultet in providing input to the [ETH Library 17:15 Kolloquium series in November 2024](https://library.ethz.ch/news-und-kurse/veranstaltungen/17-15-kolloquium-der-eth-bibliothek/data-stewardship.html). 
+Beyond the scope of the project, the project lead is increasingly receiving requests for support in data management and data publishing from researchers at ETH Zurich. This also resulted in providing input to the [ETH Library 17:15 Kolloquium series in November 2024](https://library.ethz.ch/news-und-kurse/veranstaltungen/17-15-kolloquium-der-eth-bibliothek/data-stewardship.html).
 
 # International exposure & collaborations
 
 *Please explain – if applicable - how the project is gathering the communit(ies) around an open practice and how it is achieving international exposure and influence. Also, comment on how the project is fostering new or existing collaborations.*
 
-Our data publishing workflow can be applied by any community. It is independent of disciplines, and can be used to publish any type of data. We engage with researchers nationally and internationally to apply these open practices. The exposure at the end of the project and into the next phases beyond this reporting period has increased signifcantly where we are now in the position to influence the development of data management strategies at ETH Zurich and beyond. The final goal for us is to complete documentation of the data publishing workflow through scientific publications and develop Open Educational Resources that we can use to invest into training of trainer concepts. After any event where our workflows are presented, now collaborations have established themselves which has lead and continues to lead to writing proposals for further funding or being invited to decision making bodies (e.g. board members).
+Our data publishing workflow can be applied by any community. It is independent of disciplines, and can be used to publish any type of data. We engage with researchers nationally and internationally to apply these open practices. The exposure at the end of the project and into the next phases beyond this reporting period has increased significantly where we are now in the position to influence the development of data management strategies at ETH Zurich and beyond. The final goal for us is to complete documentation of the data publishing workflow through scientific publications and develop Open Educational Resources that we can use to invest into training of trainer concepts. After any event where our workflows are presented, new collaborations have established themselves which has led and continues to lead to writing proposals for further funding or being invited to decision-making bodies (e.g., board members).
 
 # List of Outputs
 
 *Please indicate the outputs directly related to this ORD project since it began and provide further details in the table below, if and as applicable. This list of outputs (e.g. links) may be used for outreach and dissemination activities (e.g. ORD web portal); please indicate in the table below if any information is confidential and cannot be shared.*
 
+
+
 # Appendix
 
 *Please attach any additional documentation relevant to the ORD project (e.g. screenshots, resources developed, outreach material, copies/link to publications etc.). Among other, it would be particularly useful to include any images/graphs (hereunder or as an attachment) that could be shared for the purpose of outreach and dissemination activities (e.g. ORD web portal). Please indicate if any information is confidential and cannot be shared.*
-
