@@ -1,0 +1,102 @@
+---
+title: "index"
+format: html
+---
+
+# Lay summary (public, 1/2 page)
+
+*Please summarise the objectives of the project, explain the progress achieved so far and – if applicable - the planned activities for the next period. This lay summary  (maximum:  ½ page) should be understandable by a non-expert audience and will be used for outreach and communications activities (e.g. ORD web portal). By submitting this lay summary, you thus agree to making it potentially public.*
+
+# Achievements (2 pages)
+
+*Please describe the work conducted and what was achieved since the beginning of the project, referring to the planned objectives, milestones, and expected results described in the proposal (maximum: 2 pages). You should also explain how the project contributes to the wider aims of the ORD Explore programme (please refer to page 1 of the application guidelines for Explore).*
+
+This project consists of five work packages and 20 activities against which we will provide this report. The full name of each acitivity can be found in the activities table of the proposal: ttps://docs.google.com/spreadsheets/d/1T3NV75vVCeSRcN6FYghOrVFyWWi4WjQT5e4tqwp8jAQ/edit#gid=0).
+
+**Contribution to ORD Explore programme aims.** This project significantly contributes to the overall aim of the program's measure 1 to assist researchers in becoming Open Science leaders in their fields. We are actively exploring/prototyping/building up ORD practices, and have been recognized for our efforts through being invited to speak at conferences and to collaborate with a journal to publish an opinion piece about open data in the WASH sector (in progress). The established ORD practices are fully transferable to scientific practices within the ETH-Domain and we actively promote our workflows in courses, committees, and a Data Stewardship Network established by the ETH Library.
+
+## WP0: Infrastructure Design and Installation
+
+::: callout-note
+## Goal: The Goal of WP0 is to prototype a technical foundation for the ORD toolchain at ETH in a a way that allows teaching and scientific collaboration to continue beyond the explore project's funding.
+
+**Activity 0.1.**
+
+**Activity 0.2:**
+
+**Activity 0.3:**
+:::
+
+## WP1: Mobilize Community
+
+::: callout-note
+## Goal: Create and grow an international network of data-curious practitioners and students who may be interested in pursuing one or more of the subsequent activities.
+
+**Activity 1.1.**
+
+**Activity 1.2.**
+:::
+
+## WP2: Data sharing
+
+::: callout-note
+## Goal: Solicit and receive interest in providing data to be published openly; develop an easy-to-use data-collection protocol and tool; receive data from interested partners.
+
+**Activity 2.1.**
+
+**Activity 2.2.**
+
+**Activity 2.3.**
+:::
+
+## WP3: Data cleaning
+
+::: callout-note
+## Goal: Facilitate user-directed data cleaning (including documentation and metadata) to produce a first set of analysis-ready open datasets
+
+**Activity 3.1.**
+
+**Activity 3.2.**
+
+**Activity 3.3.**
+
+**Activity 3.4:**
+
+**Activity 3.5:**
+:::
+
+## WP4: Data publishing and communication
+
+::: callout-note
+## Goal: Increase reach and impact of data by making it citable and creating data communication products
+
+**Activity 4.1.**
+
+**Activity 4.2.**
+
+**Activity 4.3.**
+
+**Activity 4.4.**
+:::
+
+# Deviations from original plan ()
+
+*Please describe and justify any major changes or deviations from the original plan as set out in the application form (e.g. expected results and objectives), notably unexpected challenges/problems (or unforeseen/unexpected positive outcomes) and how they have been addressed. Events such as changes of personnel, changes in the financial resources’ usage plan and delayed start of project must be mentioned and – if needed – agreed in advance. If applicable, the implications and impact for the 2nd phase of the project must also be described.*
+
+# Value delivered for ORD practices/communities
+
+*Please explain the impact (achieved or expected) of the project and ORD practices on new or existing ORD communit(ies) during and beyond the funding period, including on the wider ETH Domain. Please explain whether the project will continue and if so, how it will be sustained. Please also describe the main outreach and dissemination activities undertaken and/or planned.*
+
+# International exposure & collaborations
+
+*Please explain – if applicable - how the project is gathering the communit(ies) around an open practice and how it is achieving international exposure and influence. Also, comment on how the project is fostering new or existing collaborations.*
+
+
+# List of Outputs
+
+*Please indicate the outputs directly related to this ORD project since it began and provide further details in the table below, if and as applicable. This list of outputs (e.g. links) may be used for outreach and dissemination activities (e.g. ORD web portal); please indicate in the table below if any information is confidential and cannot be shared.*
+
+# Appendix
+
+*Please attach any additional documentation relevant to the ORD project (e.g. screenshots, resources developed, outreach material, copies/link to publications etc.). Among other, it would be particularly useful to include any images/graphs (hereunder or as an attachment) that could be shared for the purpose of outreach and dissemination activities (e.g. ORD web portal). Please indicate if any information is confidential and cannot be shared.*
+
