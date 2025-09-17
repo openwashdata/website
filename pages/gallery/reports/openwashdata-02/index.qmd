@@ -97,14 +97,21 @@ We hosted a [1-day workshop](https://fairdatapub-washcentre.github.io/website/) 
 
 *Please describe and justify any major changes or deviations from the original plan as set out in the application form (e.g. expected results and objectives), notably unexpected challenges/problems (or unforeseen/unexpected positive outcomes) and how they have been addressed. Events such as changes of personnel, changes in the financial resources’ usage plan and delayed start of project must be mentioned and – if needed – agreed in advance. If applicable, the implications and impact for the 2nd phase of the project must also be described.*
 
+We had no further deviations from the plan that were not previously documented in the intermediate scientific report. 
+
 # Value delivered for ORD practices/communities
 
 *Please explain the impact (achieved or expected) of the project and ORD practices on new or existing ORD communit(ies) during and beyond the funding period, including on the wider ETH Domain. Please explain whether the project will continue and if so, how it will be sustained. Please also describe the main outreach and dissemination activities undertaken and/or planned.*
+
+See intermediate scientific report for detailed reporting. The workflow continues to gain interest by the scientific community at ETH Zurich. This was recognized by the Open Research Data Unit of the Swiss Academies of Arts and Sciences, which awarded us the [National Prize for Open Research Data 2024](https://ord.swiss-academies.ch/news/open-science-rewarded-four-projects-to-receive-the-national-prize-for-open-research-data).
+
+Beyond the scope of the project, the project lead is increasingly receiving requests for support in data management and data publishing from researchers at ETH Zurich. This also resultet in providing input to the [ETH Library 17:15 Kolloquium series in November 2024](https://library.ethz.ch/news-und-kurse/veranstaltungen/17-15-kolloquium-der-eth-bibliothek/data-stewardship.html). 
 
 # International exposure & collaborations
 
 *Please explain – if applicable - how the project is gathering the communit(ies) around an open practice and how it is achieving international exposure and influence. Also, comment on how the project is fostering new or existing collaborations.*
 
+Our data publishing workflow can be applied by any community. It is independent of disciplines, and can be used to publish any type of data. We engage with researchers nationally and internationally to apply these open practices. The exposure at the end of the project and into the next phases beyond this reporting period has increased signifcantly where we are now in the position to influence the development of data management strategies at ETH Zurich and beyond. The final goal for us is to complete documentation of the data publishing workflow through scientific publications and develop Open Educational Resources that we can use to invest into training of trainer concepts. After any event where our workflows are presented, now collaborations have established themselves which has lead and continues to lead to writing proposals for further funding or being invited to decision making bodies (e.g. board members).
 
 # List of Outputs
 
