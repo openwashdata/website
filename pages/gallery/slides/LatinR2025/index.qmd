@@ -1,0 +1,335 @@
+---
+title: "LatinR 2025"
+subtitle: "Simplifying Research Data Sharing with R"
+author: 
+  - name: "Adriana Clavijo Daza"
+    url: https://openwashdata.org/about/adriana/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+date: 2025-12-04
+date-format: long
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    logo: ""
+    footer: "LatinR 2025"
+bibliography: latinr_bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.cap = NULL)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+library(gridExtra)
+library(robotoolbox)
+library(readxl)
+library(labelled)
+library(here)
+```
+
+```{r load-data, include=FALSE}
+source(here("pages", "gallery", "slides", "LatinR2025", "src", "data_collection.R"))
+
+form_id <- "ashaEDvw4ZLwGi9bqXGeqb"
+form_file <- here("pages", "gallery", "slides", "LatinR2025", "data", "registration_form.xlsx")
+
+# fetch data from Kobo with robotoolbox
+raw_data <- kobo_data(x = form_id,
+                      all_versions = TRUE)
+
+# read in questionnaire and labels from XLS form
+questionnaire <- read_xlsx(form_file,
+                           sheet = "survey")
+
+label_dict <- read_xlsx(form_file,
+                        sheet = "choices")
+```
+
+```{r plot-setup, include=FALSE}
+owd_palette <- c("#5b195b", "#9b2c60", "#ce525b",
+                 "#f08453", "#ffbd54", "#f9f871")
+
+bar_theme <- theme(plot.title.position = "plot",
+                   plot.title = element_text(hjust = 0.5,
+                                             size = 14,
+                                             face = "bold"))
+```
+
+```{r data-processing, include=FALSE}
+# Merge pre_survey and registration data
+pre_survey_subset <- pre_survey |>
+  select(data_storage = data_format) |>
+  mutate(year = 2023)
+
+registration_subset <- registration |>
+  select(data_storage) |>
+  mutate(year = 2025)
+
+# Combine both datasets
+combined_data <- bind_rows(pre_survey_subset, registration_subset) |>
+  mutate(storage_type =
+           case_when(
+             str_detect(data_storage, "Google")   ~ "Spreadsheets",
+             str_detect(data_storage, "database") ~ "Databases",
+             str_detect(data_storage, "CSV")      ~ "Machine readable files",
+             str_detect(data_storage, "paper")    ~ "Physically",
+             TRUE                                 ~ "Other"
+           )
+         ) |>
+  select(year, storage_type)
+
+# Prepare programming experience data
+prog_exp_2024 <- pre_survey |>
+  select(prog_exp, prog_exp_r) |>
+  mutate(year = 2023) |>
+  rename(programming_experience = prog_exp,
+         r_experience = prog_exp_r)
+
+prog_exp_2025 <- registration |>
+  select(programming_experience, r_experience) |>
+  mutate(year = 2025)
+
+# Combine programming experience data
+combined_prog_exp <- bind_rows(prog_exp_2024, prog_exp_2025)
+```
+
+## Contexto {.smaller}
+
+- Colaboración desde la academia con **investigadores WASH** (water, sanitation and hygiene) en países con recursos limitados
+- Conjuntos de datos valiosos son **desaprovechados** al no ser publicados
+- Familiaridad limitada con los **principios FAIR** de datos [@Wilkinson2016]
+  - Localizables (Findable)
+  - Accesibles (Accessible)
+  - Interoperables (Interoperable)
+  - Reutilizables (Reusable)
+- El trabajo requerido para generar y recolectar datos no recibe el **reconocimiento** que merece
+
+::: {.notes}
+Hemos estado colaborando con investigadores WASH en múltiples países e identificamos barreras clave para el intercambio abierto de datos.
+:::
+
+## Prácticas Actuales de Almacenamiento de Datos
+
+```{r}
+#| label: storage-practices
+#| fig-height: 5
+#| fig-width: 8
+
+storage_order <- c("Spreadsheets",
+                   "Machine readable files",
+                   "Physically",
+                   "Databases",
+                   "Other") |> rev()
+
+storage_labels <- c("Hojas de cálculo",
+                    "Archivos legibles por computadores",
+                    "Físicamente",
+                    "Bases de datos",
+                    "Otro") |> rev()
+
+# Data preprocessing
+storage_data <- combined_data |>
+  filter(!is.na(storage_type)) |>
+  count(year, storage_type) |>
+  mutate(year = factor(year),
+         storage_type = factor(storage_type,
+                              levels = storage_order,
+                              labels = storage_labels,
+                              ordered = TRUE))
+
+# Plot
+ggplot(storage_data, aes(y = storage_type, x = n, fill = year)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(y = "Tipo de Almacenamiento",
+       x = "Número de Encuestados",
+       fill = "Año",
+       title = "Prácticas de Almacenamiento de Datos \nde Investigadores WASH") +
+  theme_minimal() +
+  scale_fill_manual(values = owd_palette[c(1, 3)]) +
+  theme(legend.position = "right",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 16, face = "bold"))
+```
+
+::: {.notes}
+Los datos de encuestas de 2023 y 2025 revelan prácticas subóptimas, con muchos dependiendo del almacenamiento local en lugar de plataformas colaborativas.
+:::
+
+## Niveles de Experiencia en Programación
+
+```{r}
+#| label: programming-experience
+#| fig-height: 5
+#| fig-width: 12
+
+prog_exp_order <- c("I have none.",
+                    "I have written a few lines now and again.",
+                    "I have written programs for my own use that are a couple of pages long.",
+                    "I have written and maintained larger pieces of software.")
+
+prog_exp_labels <- c("Ninguna",
+                     "He escrito algunas\nlíneas de código",
+                     "He escrito programas\npara uso propio",
+                     "He escrito y\nmantenido software")
+
+# Plot 1: General programming experience
+prog_general <- combined_prog_exp |>
+  filter(!is.na(programming_experience)) |>
+  count(year, programming_experience) |>
+  mutate(year = factor(year),
+         programming_experience = factor(programming_experience,
+                                        levels = prog_exp_order,
+                                        labels = prog_exp_labels,
+                                        ordered = TRUE))
+
+p1 <- ggplot(prog_general, aes(y = programming_experience, x = n, fill = year)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(y = "",
+       x = "Número de Encuestados",
+       fill = "Año",
+       title = "Experiencia General en Programación") +
+  theme_minimal() +
+  scale_fill_manual(values = owd_palette[c(1, 3)]) +
+  theme(legend.position = "bottom",
+        axis.text = element_text(size = 10),
+        plot.title = element_text(size = 12, face = "bold"))
+
+# Plot 2: R experience
+r_exp <- combined_prog_exp |>
+  filter(!is.na(r_experience)) |>
+  count(year, r_experience) |>
+  mutate(year = factor(year),
+         r_experience = factor(r_experience,
+                              levels = prog_exp_order,
+                              labels = prog_exp_labels))
+
+p2 <- ggplot(r_exp, aes(y = r_experience, x = n, fill = year)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(y = "",
+       x = "Número de Encuestados",
+       fill = "Año",
+       title = "Experiencia en Programación con R") +
+  theme_minimal() +
+  scale_fill_manual(values = owd_palette[c(1, 3)]) +
+  theme(legend.position = "bottom",
+        axis.text = element_text(size = 10),
+        plot.title = element_text(size = 12, face = "bold"))
+
+gridExtra::grid.arrange(p1, p2, ncol = 2)
+```
+
+::: {.notes}
+Muchos investigadores tienen experiencia limitada en R, destacando la necesidad de herramientas fáciles de usar.
+:::
+
+## Retos y Soluciones
+
+::: {.columns}
+::: {.column width="50%"}
+### Retos
+- Falta de conocimiento de herramientas accesibles
+- Curva de aprendizaje pronunciada
+- Flujos de trabajo no estandarizados
+- Reconocimiento solo a quienes publican un artículo académico
+:::
+
+::: {.column width="50%"}
+### Soluciones propuestas
+- Minimizar requisitos técnicos
+- Interfaces amigables para el usuario
+- Guía detallada para publicación de datos
+- Énfasis en atribución apropiada 
+:::
+:::
+
+::: {.notes}
+- (nada)
+- curva de aprendizaje de lenguajes de programacion, sobretodo para audencias sin experiencia
+- atribución apropiada a quienes contribuyen en la generaciôn y recolección de datos
+- Guía que explica paso a paso como llegar de un excel o csv a una pagina web y un DOI
+:::
+
+## Nuestro Recorrido: washr
+
+- Primera iteración: paquete **washr** [@washr]
+- Flujo de trabajo simplificado de datos → publicación
+- Basado en utilidades de `devtools`
+- Guía completa de publicación [@datapublishing]
+
+::: {.fragment}
+**Pero podíamos hacerlo mejor...**
+:::
+
+## Presentando fairenough 
+
+[github.com/openwashdata/fairenough](https://github.com/openwashdata/fairenough)
+
+Un paquete de R para publicación de datos siguiendo los principios FAIR
+
+- Mínima entrada del usuario requerida
+- Documentación generada por LLMs (opcional)
+- Un solo comando para obtener el paquete terminado desde datos ordenados (tidy)
+
+## Veamos `fairenough` en acción!{.center}
+
+## fairenough: Control Granular
+
+1. **`setup()`** - Inicializa estructura de paquete R con `usethis`
+
+2. **`process()`** - Lectura y validación automática de datos (`auto_clean = TRUE`)
+
+3. **`collect()`** - Recolección interactiva de metadatos con `cli`
+
+4. **`generate()`** - Diccionarios de datos generados con LLMs vía `ellmer`
+
+5. **`build()`** - Infraestructura completa de paquete con `Roxygen`, archivos de información de citación (CFF) y sitio web
+
+## Principios FAIR 
+
+- **Localizables**: Generación integral de metadatos
+- **Accesibles**: Paquete R + sitio web + múltiples formatos (CSV, XLS)
+- **Interoperables**: Formatos legibles por máquina
+- **Reutilizables**: Licenciamiento y atribución claros
+
+::: {.fragment}
+**Además**: Facilita la asignación de DOI a través de integración de GitHub con Zenodo
+:::
+
+## Gracias! {.center}
+
+**Autores**
+
+Adriana Clavijo Daza, Lars Schöbitz, Prof. Dr. Elizabeth Tilley, Colin Walder, Nicolo Massari
+
+Global Health Engineering (GHE), ETH Zurich
+
+Yash Dubey, Mian Zhong
+
+ETH Zurich
+
+::: {.columns}
+::: {.column width="50%"}
+**Paquete**
+
+[github.com/openwashdata/fairenough](https://github.com/openwashdata/fairenough)
+:::
+
+::: {.column width="50%"}
+**Contacto**
+
+[ghe.ethz.ch](https://ghe.ethz.ch)
+
+[openwashdata.org](https://openwashdata.org/)
+:::
+:::
+
+## Referencias {.smaller}
+
+::: {#refs}
+:::
