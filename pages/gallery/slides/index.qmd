@@ -2,6 +2,14 @@
 title: "Slides"
 ---
 
+## Introducing fairenough at LatinR 2025
+
+[View slides in full screen](LatinR2025/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/LatinR2025/LatinR_2025_aclavijo.pdf)
+
+```{=html}
+<iframe class="slide-deck" src="LatinR2025/" height="420" width="747" style="border: 1px solid #123233;"></iframe>
+```
+
 ## GHE Yearly 2025 - openwashdata - past and future
 
 [View slides in full screen](ghe-yearly-2025/) | [Download slides as PDF](https://github.com/openwashdata/website/raw/main/pages/gallery/slides/ghe-yearly-2025/ghe-yearly-2025-lschoebitz.pdf)
