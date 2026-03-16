@@ -45,6 +45,8 @@ website:
             href: pages/academy/index.qmd
           - text: "Graduates 2024"
             href: pages/academy/graduates/index.qmd
+          - text: "Graduates 2026"
+            href: pages/academy/graduates-2026/index.qmd
       - text: "Gallery"
         href: pages/gallery/
       - text: "Events"
