@@ -12,6 +12,12 @@ listing:
   sort: "date desc"
   categories: false
   fields: [author, github_username, title, public_link, data_package]
+  field-display-names:
+    author: "Author"
+    github_username: "GitHub Username"
+    title: "Project Title"
+    public_link: "Project Public Link"
+    data_package: "Data Package"
   id: graduates-listings
   contents: data/graduates-2026.yml
 aliases: ["graduates-2026/"]
