@@ -1,7 +1,9 @@
 # openwashdata Website
 
-![Total Views](https://img.shields.io/badge/Total%20Views-25,281-2d0e2d?style=for-the-badge&v=1779678693)
-![Unique Visitors](https://img.shields.io/badge/Unique%20Visitors-9,255-3B1A3B?style=for-the-badge&v=1779678693)
+![Total Views](https://img.shields.io/badge/Total%20Views-25,321-2d0e2d?style=for-the-badge&v=1780283550)
+![Unique Visitors](https://img.shields.io/badge/Unique%20Visitors-9,268-3B1A3B?style=for-the-badge&v=1780283550)
+
+
 
 
 
