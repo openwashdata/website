@@ -7,10 +7,16 @@ categories:
   - collaboration
   - data publication
   - ds4owd
-author: openwashdata team
+author: Lars Schöbitz
 date: "2026-06-22"
 draft: true
 bibliography: references.bib
+format:
+  html: default
+  pdf:
+    toc: false
+    number-sections: false
+    colorlinks: true
 ---
 
 Kelsey Shaw, a PhD student at the University of Victoria, took part in the [ds4owd-001 course](https://ds4owd-001.github.io/website/) between September and December 2023. During the course she began working with data she had collected for her PhD research. The openwashdata data scientist Mian Zhong supported Kelsey's project, and after the course encouraged her to publish the data underlying her work as an open dataset with openwashdata.
