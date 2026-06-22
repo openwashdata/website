@@ -1,0 +1,67 @@
+/*-- scss:defaults --*/
+
+// Colors - using openwashdata palette
+$purple-dark: #5b195b;
+$purple-mid: #9b2c60;
+$coral: #ce525b;
+$orange: #f08453;
+$yellow-orange: #ffbd54;
+$yellow: #f9f871;
+
+// Main theme colors
+$body-color: #333333;
+$link-color: $purple-mid;
+$selection-bg: $purple-dark;
+
+/*-- scss:rules --*/
+
+.reveal h1 {
+  color: $purple-dark;
+  font-weight: bold;
+}
+
+.reveal h2 {
+  color: $purple-mid;
+  font-weight: bold;
+}
+
+.reveal h3 {
+  color: $coral;
+}
+
+.reveal .slide-number {
+  color: $purple-dark;
+}
+
+// Emphasis
+.reveal strong {
+  color: $purple-dark;
+  font-weight: bold;
+}
+
+// Code blocks
+.reveal pre code {
+  background-color: #f5f5f5;
+  border-left: 3px solid $purple-dark;
+  padding: 10px;
+}
+
+// Tables
+.reveal table {
+  font-size: 0.8em;
+}
+
+.reveal table th {
+  background-color: $purple-dark;
+  color: white;
+}
+
+// Center content
+.center {
+  text-align: center;
+}
+
+// Hide figure captions
+.reveal figcaption {
+  display: none;
+}
