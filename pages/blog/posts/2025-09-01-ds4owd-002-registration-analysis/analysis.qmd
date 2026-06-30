@@ -1,0 +1,771 @@
+---
+title: "ds4owd-002 Registration: Per-Variable Exploratory Analysis"
+description: A systematic, variable-by-variable exploratory analysis of the registration data for the Data Science for Open WASH Data (ds4owd-002) course. Each variable is summarised briefly and accompanied by a frequency plot, followed by two observations and one implication for the course.
+categories:
+    - academy
+    - open data
+    - learning
+    - data science
+    - R
+author:
+  - name: "Adriana Clavijo Daza"
+    url: https://openwashdata.org/about/adriana/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid: 0009-0002-0589-2274
+date: "2025-09-01"
+draft: true
+image: "OWD-logo-20.svg"
+image-alt: "openwashdata logo"
+toc: true
+toc-depth: 3
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Set global options
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+
+# Load required libraries
+library(tidyverse)
+library(readxl)
+library(here)
+
+# Define OWD color palette
+owd_palette <- c("#5b195b", "#9b2c60", "#ce525b",
+                 "#f08453", "#ffbd54", "#f9f871")
+
+background_color <- "#f5f5f2"
+```
+
+```{r}
+#| label: load-data
+
+form_file <- here::here("pages/blog/posts/2025-09-01-ds4owd-002-registration-analysis/data/registration_form.xlsx")
+
+raw_data <- read_csv(here::here("pages/blog/posts/2025-09-01-ds4owd-002-registration-analysis/data/raw_data.csv"))
+
+# read in questionnaire and labels from XLS form
+questionnaire <- read_xlsx(form_file, sheet = "survey")
+label_dict <- read_xlsx(form_file, sheet = "choices")
+
+# de-duplicate by GitHub username (one row per participant)
+registration_data <- raw_data |>
+  distinct(github_username, .keep_all = TRUE)
+
+n_participants <- nrow(registration_data)
+```
+
+```{r}
+#| label: helper-functions
+
+# Look up the name -> label dictionary for a given choice list
+label_for <- function(list_name) {
+  label_dict |>
+    filter(.data$list_name == !!list_name) |>
+    select(name, label)
+}
+
+# Shared minimal theme using the OWD background colour
+owd_theme <- function() {
+  theme_minimal() +
+    theme(
+      plot.background = element_rect(fill = background_color, color = NA),
+      panel.background = element_rect(fill = background_color, color = NA),
+      plot.title = element_text(face = "bold")
+    )
+}
+
+# Frequency bar plot for a single-choice (or any categorical) variable.
+# `list_name` joins the choice dictionary to recover human-readable labels.
+# `wrap` wraps long labels; `fill` selects an OWD palette colour.
+plot_freq <- function(data, var, list_name = NULL, title = NULL,
+                      fill = owd_palette[1], wrap = 30) {
+  tbl <- data |>
+    filter(!is.na(.data[[var]])) |>
+    count(.data[[var]], name = "n")
+
+  if (!is.null(list_name)) {
+    tbl <- tbl |>
+      left_join(label_for(list_name), by = setNames("name", var)) |>
+      mutate(cat = coalesce(label, .data[[var]]))
+  } else {
+    tbl <- tbl |> mutate(cat = .data[[var]])
+  }
+
+  tbl <- tbl |>
+    mutate(cat = str_wrap(cat, wrap))
+
+  ggplot(tbl, aes(x = reorder(cat, n), y = n)) +
+    geom_col(fill = fill) +
+    geom_text(aes(label = n), hjust = -0.2, size = 3.3, fontface = "bold") +
+    coord_flip() +
+    labs(x = NULL, y = "Number of participants", title = title) +
+    owd_theme() +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.15)))
+}
+
+# Frequency bar plot for a select-multiple variable stored as one 0/1
+# column per option, named `prefix_<option>`.
+plot_multi <- function(data, prefix, list_name = NULL, title = NULL,
+                       fill = owd_palette[2], top_n = NULL, wrap = 30) {
+  tbl <- data |>
+    select(starts_with(paste0(prefix, "_"))) |>
+    rename_with(~ sub(paste0("^", prefix, "_"), "", .x)) |>
+    summarise(across(everything(), ~ sum(.x, na.rm = TRUE))) |>
+    pivot_longer(everything(), names_to = "opt", values_to = "n") |>
+    filter(n > 0)
+
+  if (!is.null(list_name)) {
+    tbl <- tbl |>
+      left_join(label_for(list_name), by = c("opt" = "name")) |>
+      mutate(cat = coalesce(label, opt))
+  } else {
+    tbl <- tbl |> mutate(cat = opt)
+  }
+
+  tbl <- tbl |> arrange(desc(n))
+  if (!is.null(top_n)) tbl <- tbl |> slice_head(n = top_n)
+
+  tbl <- tbl |> mutate(cat = str_wrap(str_remove(cat, "\\s*\\(.*\\)"), wrap))
+
+  ggplot(tbl, aes(x = reorder(cat, n), y = n)) +
+    geom_col(fill = fill) +
+    geom_text(aes(label = n), hjust = -0.2, size = 3.3, fontface = "bold") +
+    coord_flip() +
+    labs(x = NULL, y = "Number of participants", title = title) +
+    owd_theme() +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.15)))
+}
+```
+
+This analysis walks through the registration data for the **Data Science for Open WASH Data (ds4owd-002)** course one variable at a time. After de-duplicating by GitHub username, the dataset contains **`r n_participants` participants**. For each variable we give a one-line summary, a frequency plot, and then two observations plus one implication for the course.
+
+A note on coverage: identifiers and free-text fields (names, emails, ORCID, open-ended goals) are summarised by completeness rather than plotted, because they are not categorical. Consent fields that every participant answered identically are reported as a single line. Everything else is plotted.
+
+# Identity and contact
+
+These five text fields identify the participant. They are not plotted (they contain personal data), but their completeness is a useful data-quality check.
+
+```{r}
+#| label: tbl-identity
+
+identity_vars <- c("github_username", "orcid_id", "email", "first_name", "surname")
+
+registration_data |>
+  summarise(across(all_of(identity_vars),
+                   ~ sum(!is.na(.x) & str_trim(as.character(.x)) != ""))) |>
+  pivot_longer(everything(), names_to = "field", values_to = "n_provided") |>
+  mutate(percent = round(n_provided / n_participants * 100)) |>
+  knitr::kable(col.names = c("Field", "Provided", "%"))
+```
+
+All five identity fields are complete for every participant, which means each registration can be linked to a GitHub account and an ORCID. This is the foundation the course relies on for issuing per-participant homework repositories and for crediting contributors.
+
+# Demographics
+
+## Gender
+
+Participants selected their gender from a fixed list, with options to prefer not to say or self-describe.
+
+```{r}
+#| label: plot-gender
+plot_freq(registration_data, "gender", "list_gender",
+          title = "Gender", fill = owd_palette[1])
+```
+
+- Men are the largest group at 115 participants, against 75 women, so men outnumber women by roughly three to two.
+- Only four participants preferred not to say, and no one self-described, so almost the entire sample falls into the two main categories.
+- *Implication:* female participation at about 39% is strong for a data-science course, and worth protecting through deliberately inclusive examples, group composition, and facilitation.
+
+## Self-described gender
+
+A free-text field offered to anyone who preferred to self-describe their gender.
+
+```{r}
+#| label: tbl-gender-self
+n_self <- sum(!is.na(registration_data$gender_self_describe) &
+              str_trim(as.character(registration_data$gender_self_describe)) != "")
+```
+
+`r n_self` participants used the self-describe field. No frequency plot is shown because the field is empty across the dataset.
+
+Because nobody used the self-describe option, the three fixed gender categories capture the full sample. The course can report gender with the standard categories without needing to handle additional free-text values.
+
+## Age group
+
+Participants reported their age band.
+
+```{r}
+#| label: plot-age
+plot_freq(registration_data, "age_group", "list_age_group",
+          title = "Age group", fill = owd_palette[1])
+```
+
+- The 25-34 band dominates with 92 participants, and together with 35-44 (53) the two early-career bands account for nearly three quarters of the sample.
+- The tails are thin: only five participants are 55 or older, and 25 are in the youngest 18-24 band.
+- *Implication:* pacing and examples can target working-age early-career professionals, while keeping the small number of older and younger learners in mind so nobody is left behind.
+
+## Accessibility needs
+
+Participants indicated whether they have accessibility needs the course should accommodate.
+
+```{r}
+#| label: plot-accessibility
+plot_freq(registration_data, "accessibility_needs", "list_accessibility",
+          title = "Accessibility needs", fill = owd_palette[1])
+```
+
+- The overwhelming majority (182) report no accessibility needs, with only three answering yes and one preferring not to say.
+- The yes group is small enough to support individually rather than through aggregate design changes.
+- *Implication:* the course can reach out personally to the three participants with stated needs, while still applying universal-design basics (captions, readable fonts, keyboard-friendly materials) for everyone.
+
+## Accessibility specification
+
+A free-text field for participants who answered yes to accessibility needs.
+
+```{r}
+#| label: tbl-accessibility-spec
+n_acc_spec <- sum(!is.na(registration_data$accessibility_specify) &
+                  str_trim(as.character(registration_data$accessibility_specify)) != "")
+```
+
+`r n_acc_spec` participants specified an accessibility need. Given the very small number, the entries are reviewed individually by the course team rather than plotted.
+
+The small number of specified needs means individual accommodation is practical: the course team can read each entry and respond personally rather than designing for aggregate patterns.
+
+## Country of residence
+
+Participants selected their country of residence. The plot shows the top 12 of `r registration_data |> filter(!is.na(country_residence)) |> distinct(country_residence) |> nrow()` countries represented.
+
+```{r}
+#| label: plot-country
+# keep only the 12 most frequent for readability
+country_tbl <- registration_data |>
+  filter(!is.na(country_residence)) |>
+  count(country_residence, name = "n") |>
+  left_join(label_for("countries"), by = c("country_residence" = "name")) |>
+  mutate(cat = coalesce(label, country_residence)) |>
+  slice_max(n, n = 12)
+
+ggplot(country_tbl, aes(x = reorder(cat, n), y = n)) +
+  geom_col(fill = owd_palette[1]) +
+  geom_text(aes(label = n), hjust = -0.2, size = 3.3, fontface = "bold") +
+  coord_flip() +
+  labs(x = NULL, y = "Number of participants", title = "Country of residence (top 12)") +
+  owd_theme() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15)))
+```
+
+- African countries lead the ranking: Nigeria (25), Uganda (16), Ghana (15), and a three-way tie between South Africa, Malawi, and Ethiopia at 13 each.
+- Switzerland (19) is the second-largest single country, reflecting the course's ETH Zurich base, while the long tail spreads across 44 countries in total.
+- *Implication:* the strong African and globally distributed cohort means scheduling, time zones, and WASH examples should centre low- and middle-income contexts rather than a single region.
+
+## Education level
+
+Participants reported their highest completed education level.
+
+```{r}
+#| label: plot-education
+plot_freq(registration_data, "education", "education_level",
+          title = "Education level", fill = owd_palette[4], wrap = 22)
+```
+
+- The cohort is highly educated: 102 hold a master's degree and 31 a doctorate, so two thirds already have a postgraduate qualification.
+- Below bachelor level is almost empty, with only two participants each at upper-secondary and postsecondary non-tertiary.
+- *Implication:* materials can assume comfort with academic reading and reasoning, while the few participants without a tertiary degree may need extra scaffolding on foundational concepts.
+
+## Employment situation
+
+Participants reported their current employment situation.
+
+```{r}
+#| label: plot-employment
+plot_freq(registration_data, "employment_situation", "employment_status",
+          title = "Employment situation", fill = owd_palette[5], wrap = 22)
+```
+
+- Employed full-time is the largest group at 92, with students (41) and people unemployed and looking for work (30) the next two.
+- A meaningful minority is not in stable employment: 30 unemployed-and-looking plus 41 students means many participants are studying alongside other commitments.
+- *Implication:* the substantial full-time-employed share argues for evening or flexible scheduling, while the unemployed-and-looking group suggests the course also has a clear career-development draw worth supporting with portfolio-friendly outputs.
+
+## Organisation name
+
+A free-text field for the participant's organisation, asked of those employed or self-employed.
+
+```{r}
+#| label: tbl-org-name
+n_org <- sum(!is.na(registration_data$organisation_name) &
+             str_trim(as.character(registration_data$organisation_name)) != "")
+```
+
+`r n_org` of `r n_participants` participants (`r round(n_org/n_participants*100)`%) named an organisation. This open field is not plotted; the structured `org_type` variable below summarises the same information categorically.
+
+About six in ten participants named an organisation, consistent with the share who are employed or self-employed. The structured `org_type` field is the better basis for analysis, while the free-text names are useful for partnership outreach.
+
+## Organisation type
+
+Participants who named an organisation classified its type. Participants who are students or not employed were not asked, so this field is blank for them.
+
+```{r}
+#| label: plot-orgtype
+plot_freq(registration_data, "org_type", "organisation_type",
+          title = "Organisation type (employed/self-employed only)",
+          fill = owd_palette[3], wrap = 22)
+```
+
+- Among those who named an organisation type, academia (42) and NGOs (38) are almost level and together dominate.
+- Private sector (15), government (10), and multilateral organisations (5) make up a smaller but real practitioner presence.
+- *Implication:* the strong academia-plus-NGO mix means examples should bridge research and field practice, since many participants will apply skills to programme data rather than only to academic studies.
+
+# Barriers to participation
+
+Participants rated six potential barriers on a three-point scale (not a barrier, a barrier, don't know). The faceted plot shows all six together.
+
+```{r}
+#| label: plot-barriers
+#| fig-height: 7
+#| fig-width: 9
+
+barrier_vars <- c("barrier_time", "barrier_supervisor", "barrier_internet",
+                  "barrier_electricity", "barrier_computer", "barrier_screen")
+
+barrier_titles <- c(
+  barrier_time = "Time availability",
+  barrier_supervisor = "Supervisor support",
+  barrier_internet = "Stable internet",
+  barrier_electricity = "Electricity",
+  barrier_computer = "Access to a computer",
+  barrier_screen = "Second screen"
+)
+
+barrier_long <- registration_data |>
+  select(all_of(barrier_vars)) |>
+  pivot_longer(everything(), names_to = "barrier", values_to = "level") |>
+  filter(!is.na(level)) |>
+  left_join(label_for("barrier_scale"), by = c("level" = "name")) |>
+  mutate(level_label = coalesce(label, level),
+         level_label = factor(level_label,
+                              levels = c("Not a barrier", "A barrier", "Don't know")),
+         barrier_label = recode(barrier, !!!barrier_titles)) |>
+  count(barrier_label, level_label)
+
+ggplot(barrier_long, aes(x = level_label, y = n, fill = level_label)) +
+  geom_col() +
+  geom_text(aes(label = n), vjust = -0.3, size = 3, fontface = "bold") +
+  facet_wrap(~ barrier_label) +
+  scale_fill_manual(values = c("Not a barrier" = owd_palette[1],
+                               "A barrier" = owd_palette[3],
+                               "Don't know" = owd_palette[5])) +
+  labs(x = NULL, y = "Number of participants", fill = NULL,
+       title = "Perceived barriers to participation") +
+  owd_theme() +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 20, hjust = 1)) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15)))
+```
+
+- Infrastructure is rarely the problem: access to a computer (191), electricity (179), supervisor support (176), and stable internet (170) are "not a barrier" for the large majority.
+- The two human-resource constraints stand out: time availability is a barrier for 42 participants and a second screen for 56, far more than any infrastructure item.
+- *Implication:* the biggest risk to completion is time, not connectivity, so short modular sessions, recordings, and single-screen-friendly layouts will help more than assuming hardware gaps.
+
+# Programming experience
+
+## General, R, and Python experience
+
+Participants rated their experience separately for programming in general, R, and Python, on the same four-point scale.
+
+```{r}
+#| label: plot-programming
+#| fig-height: 6
+#| fig-width: 9
+
+prog_vars <- c(prog_general = "General", prog_r = "R", prog_python = "Python")
+
+prog_long <- registration_data |>
+  select(prog_general, prog_r, prog_python) |>
+  pivot_longer(everything(), names_to = "skill", values_to = "level") |>
+  filter(!is.na(level)) |>
+  left_join(label_for("programming_exp"), by = c("level" = "name")) |>
+  mutate(level_label = coalesce(label, level),
+         level_label = factor(level_label, levels = c(
+           "I have none",
+           "I have written a few lines",
+           "I have written programs for own use",
+           "I have written and maintained larger software")),
+         skill = recode(skill, !!!prog_vars),
+         skill = factor(skill, levels = c("General", "R", "Python"))) |>
+  count(skill, level_label)
+
+ggplot(prog_long, aes(x = level_label, y = n, fill = skill)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = n), position = position_dodge(width = 0.9),
+            hjust = -0.2, size = 2.8, fontface = "bold") +
+  coord_flip() +
+  scale_fill_manual(values = owd_palette[1:3]) +
+  labs(x = NULL, y = "Number of participants", fill = NULL,
+       title = "Programming experience: general, R, and Python") +
+  owd_theme() +
+  theme(legend.position = "bottom") +
+  scale_x_discrete(labels = function(x) str_wrap(x, 18)) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.18)))
+```
+
+- R and Python experience is genuinely low: about 100 participants have none in each, and only three to four have maintained larger software in any language.
+- General programming experience is slightly higher than language-specific experience, with 85 having written a few lines and 44 having written programs for own use, so some transferable coding intuition exists even where R and Python are new.
+- *Implication:* the course should be taught as a true introduction to R, assuming no prior R or Python, while occasionally acknowledging the minority with general coding background so they stay engaged.
+
+## Other programming languages
+
+A select-multiple field for any other languages or tools participants have used.
+
+```{r}
+#| label: plot-languages
+#| fig-height: 6
+plot_multi(registration_data, "other_languages", "prog_languages",
+           title = "Other languages and tools used", fill = owd_palette[2])
+```
+
+- The most common answer is "none of the above" (71), confirming many participants bring no other programming language at all.
+- Among those who do, the tools are statistical and data-oriented rather than general-purpose software languages: SQL (53), SPSS (50), and STATA (34) lead, well ahead of C++ (31) or JavaScript (21).
+- *Implication:* the strong SPSS and STATA presence signals a cohort migrating from point-and-click statistics software, so framing R as a reproducible alternative to those familiar tools will resonate.
+
+# Version control and workflow
+
+## Git experience
+
+Participants rated their experience with Git.
+
+```{r}
+#| label: plot-git
+plot_freq(registration_data, "git_experience", "git_exp",
+          title = "Git experience", fill = owd_palette[1], wrap = 28)
+```
+
+- A clear majority (131, about two thirds) have never used Git, and only 18 use it regularly or extensively.
+- The experienced tail is very thin: just five participants have used Git extensively for collaborative development.
+- *Implication:* Git must be taught from absolute basics with generous hand-holding, since version control will be unfamiliar to most and is a common early stumbling block.
+
+## GitHub experience
+
+Participants rated their experience with GitHub.
+
+```{r}
+#| label: plot-github
+plot_freq(registration_data, "github_experience", "github_exp",
+          title = "GitHub experience", fill = owd_palette[1], wrap = 28)
+```
+
+- GitHub mirrors Git: 117 have never used it, while 58 have only viewed or downloaded repositories.
+- Active use is rare, with 17 regularly managing their own repositories and just four using GitHub for collaboration.
+- *Implication:* because the course relies on per-participant GitHub repositories for homework, onboarding to GitHub (accounts, cloning, pushing) needs dedicated early sessions rather than being assumed.
+
+## Data storage format
+
+Participants reported the format in which they usually store data.
+
+```{r}
+#| label: plot-dataformat
+plot_freq(registration_data, "data_format", "data_storage",
+          title = "Usual data storage format", fill = owd_palette[4], wrap = 26)
+```
+
+- Spreadsheets dominate overwhelmingly: 148 participants store data in Excel or Google Sheets, more than four times the next option.
+- Only 34 use machine-readable files such as CSV or JSON, and just eight use a database, so structured open formats are the exception.
+- *Implication:* a core teaching opportunity is the move from spreadsheets to tidy, machine-readable data, which is exactly the open-data habit the course aims to build.
+
+## Narrative documents
+
+Participants reported how they usually write documents that combine narrative and code output.
+
+```{r}
+#| label: plot-narrative
+plot_freq(registration_data, "narrative_docs", "doc_writing",
+          title = "How participants write narrative documents",
+          fill = owd_palette[4], wrap = 30)
+```
+
+- Word processors without code are the norm (137), and another 43 copy and paste code output into Word or Google Docs.
+- Literate programming with R Markdown, Quarto, or Jupyter is rare, used by only nine participants.
+- *Implication:* most participants manually move results between code and documents, so introducing Quarto for reproducible reporting addresses a clear and widespread gap.
+
+# Tooling
+
+## IDEs used
+
+A select-multiple field for the integrated development environments (IDEs) participants have used.
+
+```{r}
+#| label: plot-ide
+#| fig-height: 7
+plot_multi(registration_data, "ide_used", "ide_list",
+           title = "IDEs used", fill = owd_palette[2])
+```
+
+- RStudio is already the most-used environment at 86, a helpful head start given the course is R-based, with Jupyter Notebook (60) and VS Code (49) also common.
+- The second-largest bar is "none of the above" (72), so a large group has used no IDE at all and will be installing one for the first time.
+- *Implication:* RStudio is a natural default the course can standardise on, but setup support must assume a sizeable share are starting from zero IDE experience.
+
+## IDE experience
+
+Participants rated their overall experience with IDEs.
+
+```{r}
+#| label: plot-ide-exp
+plot_freq(registration_data, "ide_experience", "ide_exp",
+          title = "IDE experience", fill = owd_palette[1], wrap = 34)
+```
+
+- Despite RStudio being widely listed above, 103 participants say they have never used an IDE, suggesting much of that exposure is shallow or one-off.
+- Only 36 use an IDE regularly or extensively, so confident day-to-day IDE use is the minority.
+- *Implication:* time spent on the basics of the RStudio interface (panes, running code, projects) is well justified, since reported familiarity is low even where the tool name is recognised.
+
+## Command-line interface usage
+
+Participants rated their use of the command-line interface (CLI).
+
+```{r}
+#| label: plot-cli
+plot_freq(registration_data, "cli_usage", "cli_exp",
+          title = "Command-line interface usage", fill = owd_palette[1], wrap = 34)
+```
+
+- More than half (109) have never used the command line, and another 67 only use it occasionally for basic tasks.
+- Regular or extensive CLI use is rare, with 13 and seven participants respectively.
+- *Implication:* terminal-based steps (installing tools, running Git commands) should be demonstrated slowly with copy-ready commands, because the command line is genuinely new territory for most participants.
+
+# Large language models and AI
+
+## LLM platforms used
+
+A select-multiple field for the LLM and AI platforms participants have used.
+
+```{r}
+#| label: plot-llm-platforms
+#| fig-height: 7
+plot_multi(registration_data, "llm_platforms", "llm_tools",
+           title = "LLM and AI platforms used", fill = owd_palette[2], top_n = 15)
+```
+
+- ChatGPT is near-universal at 179, more than twice the next platform, Gemini (81), with Copilot for Microsoft 365 (63) third.
+- Coding-specific assistants are far less common: Copilot for IDEs reaches only 15 and Claude Code just nine, so most exposure is to general chat assistants rather than in-editor tools.
+- *Implication:* participants arrive familiar with chat-style AI but not with AI integrated into coding workflows, which is exactly the gap the planned "AI for coding support" module can fill.
+
+## LLM usage by purpose
+
+Participants rated how often they use LLMs for nine purposes, on a four-point frequency scale.
+
+```{r}
+#| label: plot-llm-freq
+#| fig-height: 7
+#| fig-width: 9
+
+llm_vars <- c(
+  llm_summarization = "Summarization",
+  llm_translation = "Translation",
+  llm_qa = "Question answering",
+  llm_conversation = "Conversation",
+  llm_data_analysis = "Data analysis",
+  llm_content_gen = "Content generation",
+  llm_learning = "Learning / teaching",
+  llm_coding = "Code assistance",
+  llm_automation = "Task automation"
+)
+
+llm_long <- registration_data |>
+  select(all_of(names(llm_vars))) |>
+  pivot_longer(everything(), names_to = "purpose", values_to = "level") |>
+  filter(!is.na(level)) |>
+  mutate(level = factor(level, levels = c("never", "occasional", "regular", "rely")),
+         purpose = recode(purpose, !!!llm_vars)) |>
+  count(purpose, level)
+
+level_labels <- c(never = "Never", occasional = "Occasionally",
+                  regular = "Regularly", rely = "Rely on it")
+
+ggplot(llm_long, aes(x = purpose, y = n, fill = level)) +
+  geom_col(position = "fill") +
+  scale_fill_manual(values = owd_palette[c(5, 4, 3, 1)],
+                    labels = level_labels) +
+  coord_flip() +
+  labs(x = NULL, y = "Share of participants", fill = NULL,
+       title = "How often participants use LLMs, by purpose") +
+  owd_theme() +
+  theme(legend.position = "bottom") +
+  scale_y_continuous(labels = scales::percent, expand = c(0, 0))
+```
+
+- Question answering and summarization are the most embedded uses, with the smallest "never" shares and the largest regular-plus-rely segments.
+- Task automation is the least adopted purpose, where "never" covers the clear majority, and code assistance also leans heavily toward never or only occasional use.
+- *Implication:* participants already trust LLMs for understanding and condensing text, so the course can build on that comfort while deliberately teaching the less-familiar coding and automation uses where the gap is largest.
+
+# Digital habits
+
+## Password storage
+
+Participants reported how they usually store their passwords.
+
+```{r}
+#| label: plot-password
+plot_freq(registration_data, "password_storage", "list_password_storage",
+          title = "Password storage practice", fill = owd_palette[3], wrap = 34)
+```
+
+- A majority (113) use a password manager, which is encouraging for a cohort that will manage GitHub and other accounts.
+- A real risk remains, though: 45 store passwords nowhere, 25 keep them in unprotected files, and 13 on paper, so about four in ten have no secure storage.
+- *Implication:* because the course requires creating and reusing several logins, a short note on password managers and account security is a low-cost, high-value addition.
+
+## Web browser
+
+Participants reported their main web browser.
+
+```{r}
+#| label: plot-browser
+plot_freq(registration_data, "web_browser", "list_web_browser",
+          title = "Main web browser", fill = owd_palette[4], wrap = 22)
+```
+
+- Google Chrome dominates at 130, more than five times Microsoft Edge (24) and Firefox (20).
+- The remaining browsers are minor, and only one participant fell outside the predefined list.
+- *Implication:* any browser-specific guidance (extensions, developer tools, rendering tips) can safely default to Chrome while noting the Firefox and Safari minorities.
+
+## Other browser
+
+A free-text field for browsers not on the list.
+
+```{r}
+#| label: tbl-browser-other
+n_browser_other <- sum(!is.na(registration_data$web_browser_other) &
+                       str_trim(as.character(registration_data$web_browser_other)) != "" &
+                       tolower(as.character(registration_data$web_browser_other)) != "na")
+```
+
+`r n_browser_other` participant used the other-browser field, so it is not plotted. The fixed browser list above covers essentially the whole sample.
+
+Almost nobody needed the free-text browser option, confirming the predefined list is comprehensive. Browser choice is dominated by mainstream options, which simplifies any browser-specific setup guidance the course provides.
+
+## Bookmark use
+
+Participants reported whether they use browser bookmarks.
+
+```{r}
+#| label: plot-bookmarks
+plot_freq(registration_data, "use_bookmarks", "yesno",
+          title = "Use browser bookmarks", fill = owd_palette[1])
+```
+
+- A clear majority (150) use browser bookmarks, against 46 who do not.
+- The roughly three-to-one split suggests most participants already organise online resources in some way.
+- *Implication:* sharing course links as a curated bookmark set or resource page fits how most participants already work and will likely be used.
+
+## Note-taking tool use
+
+Participants reported whether they use a dedicated note-taking tool.
+
+```{r}
+#| label: plot-notetaking
+plot_freq(registration_data, "use_note_taking_tool", "yesno",
+          title = "Use a note-taking tool", fill = owd_palette[1])
+```
+
+- Most participants (135) do not use a dedicated note-taking tool, with only 61 who do.
+- This is the inverse of the bookmark pattern: organising links is common, but structured note-taking is not.
+- *Implication:* the course should not assume a note-taking habit, and could gently model lightweight ways to keep code notes (for example, comments and Quarto documents) as part of building reproducible workflows.
+
+## Note-taking tool specified
+
+A free-text field for the specific note-taking tool used.
+
+```{r}
+#| label: tbl-notetaking-spec
+n_note_spec <- sum(!is.na(registration_data$note_taking_tool_specify) &
+                   str_trim(as.character(registration_data$note_taking_tool_specify)) != "" &
+                   tolower(as.character(registration_data$note_taking_tool_specify)) != "na")
+```
+
+`r n_note_spec` participants named a specific note-taking tool. As an open field with many distinct answers, it is summarised by completeness rather than plotted.
+
+Roughly a third of participants named a specific note-taking tool, matching the share who reported using one. The variety of named tools means the course should stay tool-agnostic when suggesting note-taking workflows.
+
+# Goals and consent
+
+## Learning goals
+
+A free-text field where every participant described what they want to learn.
+
+```{r}
+#| label: tbl-goals
+n_goals <- sum(!is.na(registration_data$learning_goals) &
+               str_trim(as.character(registration_data$learning_goals)) != "")
+```
+
+All `r n_goals` participants wrote a learning goal. This open field is not plotted; it is best read directly to shape course content, and is a strong signal of motivation.
+
+Full completion of the open-ended goals field shows participants are engaged and willing to articulate what they want. These free-text goals are the richest qualitative input the course has for tailoring examples and exercises to participant intent.
+
+## Data availability
+
+Participants reported whether they can identify a WASH dataset to work with.
+
+```{r}
+#| label: plot-dataavail
+plot_freq(registration_data, "data_availability", "yesno",
+          title = "Can identify a dataset to work with", fill = owd_palette[1])
+```
+
+- A majority (115) can already identify a WASH dataset to work with, but a substantial 81 cannot.
+- That roughly three-to-two split means a sizeable group will need a dataset provided to them to complete hands-on work.
+- *Implication:* the course should curate a few ready-to-use open WASH datasets so the 81 without their own data are not blocked during practical exercises.
+
+## Mentorship interest
+
+Participants reported their interest in the mentorship programme.
+
+```{r}
+#| label: plot-mentorship
+plot_freq(registration_data, "mentorship_interest", "mentorship",
+          title = "Mentorship interest", fill = owd_palette[3], wrap = 22)
+```
+
+- Interest in being a mentee is very high (161), while only 20 are not interested at all.
+- The mentor pool is small at 15, far short of the mentee demand.
+- *Implication:* the strong appetite for mentorship is a real asset, but the roughly ten-to-one mentee-to-mentor ratio means mentoring should likely be group-based or peer-supported rather than one-to-one.
+
+## Co-authorship agreement
+
+Participants indicated whether they agree to be listed as a co-author on shared outputs.
+
+```{r}
+#| label: plot-coauthorship
+plot_freq(registration_data, "coauthorship", "yesnomoreinfo",
+          title = "Co-authorship agreement", fill = owd_palette[3], wrap = 22)
+```
+
+- The vast majority (177) agree to co-authorship on shared outputs, with only one declining outright.
+- A small group of 18 want more information before committing, so they are open rather than opposed.
+- *Implication:* there is broad willingness to be credited on collaborative outputs, and a short explainer addressed to the 18 undecided participants would likely convert most of them.
+
+## Code of conduct and data privacy
+
+Both consent fields were required to complete registration.
+
+```{r}
+#| label: tbl-consent
+consent_tbl <- registration_data |>
+  summarise(
+    `Code of conduct (yes)` = sum(code_conduct == "yes", na.rm = TRUE),
+    `Data privacy (yes)` = sum(data_privacy == "yes", na.rm = TRUE)
+  ) |>
+  pivot_longer(everything(), names_to = "Field", values_to = "n") |>
+  mutate(percent = round(n / n_participants * 100))
+
+consent_tbl |> knitr::kable(col.names = c("Field", "Agreed", "%"))
+```
+
+Every participant agreed to both the code of conduct and the data privacy terms, which is expected because both were required to submit the form. This gives the course a complete consent record covering all `r n_participants` participants, with no follow-up needed before sharing materials or processing data.
