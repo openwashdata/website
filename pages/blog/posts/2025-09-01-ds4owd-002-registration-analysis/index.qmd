@@ -51,8 +51,12 @@ form_id <- "ashaEDvw4ZLwGi9bqXGeqb"
 form_file <- here::here("pages/blog/posts/2025-09-01-ds4owd-002-registration-analysis/data/registration_form.xlsx")
 
 # fetch data from Kobo with robotoolbox
-raw_data <- kobo_data(x = form_id,
-                      all_versions = TRUE)
+# raw_data <- kobo_data(x = form_id,
+#                       all_versions = TRUE)
+
+# write_csv(raw_data, "data/raw_data.csv")
+
+raw_data <- read_csv(here::here("pages/blog/posts/2025-09-01-ds4owd-002-registration-analysis/data/raw_data.csv"))
 
 # read in questionnaire and labels from XLS form 
 questionnaire <- read_xlsx(form_file,
