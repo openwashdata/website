@@ -1,0 +1,48 @@
+---
+title: "From course project to published dataset and paper: a collaboration with Kelsey Shaw"
+description: |
+  How a project started during the ds4owd-001 course grew into an open dataset and a
+  peer-reviewed publication in Environmental Science & Technology.
+categories:
+  - collaboration
+  - data publication
+  - ds4owd
+author: Lars Schöbitz
+date: "2026-06-22"
+draft: true
+bibliography: references.bib
+format:
+  html: default
+  pdf:
+    toc: false
+    number-sections: false
+    colorlinks: true
+---
+
+Kelsey Shaw, a PhD student at the University of Victoria, took part in the [ds4owd-001 course](https://ds4owd-001.github.io/website/) between September and December 2023. During the course she began working with data she had collected for her PhD research. The openwashdata data scientist Mian Zhong supported Kelsey's project, and after the course encouraged her to publish the data underlying her work as an open dataset with openwashdata.
+
+Over the following two years, Kelsey worked closely with Mian and Lars. A repository for the data was created on Kelsey's GitHub profile, where the raw data, the processed data, and the R code that turns one into the other are documented. The repository was made public at the point when the research article based on the data was published.
+
+Kelsey's paper is now published in *Environmental Science & Technology* [@shaw2026methane], and the openwashdata team is proud to have been part of this journey. The dataset is also cited in Eawag's ERIC research data repository, and it has now been curated as an R data package [@shaw2024fecalcanuga] following the openwashdata data publication workflow.
+
+Check out the data: <https://github.com/openwashdata/fecalcanuga>
+
+Check out Kelsey's article: <https://pubs.acs.org/doi/full/10.1021/acs.est.5c17325>
+
+## Citation
+
+Please cite the dataset and the article as follows.
+
+**Dataset:** Shaw K, Dorea C, Strande L, Niwagaba C, Zhong M (2024). *fecalcanuga: Demographic, Environmental, Technical and Physio-chemical Data on Non Sewered Sanitation Containments in Rural Canada and Urban Uganda.* <https://github.com/openwashdata/fecalcanuga>
+
+**Article:** Shaw K, Niwagaba CB, Strande L, Dorea CC (2026). Improving Methane Emission Estimates from Nonsewered Wastewater during Storage in Septic and Holding Tanks. *Environmental Science & Technology*, 60(20), 14467-14481. <https://doi.org/10.1021/acs.est.5c17325>
+
+## Links
+
+- ds4owd-001 course: <https://ds4owd-001.github.io/website/>
+- Dataset in Eawag's ERIC repository: <https://opendata.eawag.ch/dataset/improving-methane-emission-estimates-from-nss-containments>
+
+## References
+
+::: {#refs}
+:::
