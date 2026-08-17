@@ -1,0 +1,10 @@
+# Prompt History
+
+## 2026-08-17
+
+- 14:45 - The review for pages/blog/posts/2026-06-22-collaboration/index.qmd came back. Please add citation for ERIC dataset (find bibtex entry in page: https://opendata.eawag.ch/dataset/improving-methane-emission-estimates-from-nss-containments) and also explicitly mention the collaboration with Eawag and Makerere University (e.g., "This work was carried out in collaboration the Swiss Federal Institute of Aquatic Science and Technology (Eawag), and Makerere University."). For Makerere add Department of Civil and Environmental Engineering.
+- 14:48 - Also update the data package citation: https://openwashdata.github.io/fecalcanuga/
+- 14:55 - Commit and push the updates.
+- 14:58 - I added this sentence: "The R data package is curated as a website that helps exploring the data: https://openwashdata.github.io/fecalcanuga/". Review and see if this flows well.
+- 15:00 - Yes (apply the suggested revision and merge it into the previous paragraph).
+- 15:01 - No prompt archive for the commit.
