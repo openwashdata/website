@@ -8,3 +8,8 @@
 - 14:58 - I added this sentence: "The R data package is curated as a website that helps exploring the data: https://openwashdata.github.io/fecalcanuga/". Review and see if this flows well.
 - 15:00 - Yes (apply the suggested revision and merge it into the previous paragraph).
 - 15:01 - No prompt archive for the commit.
+
+## 2026-08-20
+
+- 16:43 - I have added a PDF with feedback on collaboration blog. Extract all comments and proposed changes, then make a plan for updating the .qmd draft.
+- 16:51 - yes, go ahead (apply the planned updates from the PDF feedback).

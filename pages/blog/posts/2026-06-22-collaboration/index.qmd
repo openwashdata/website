@@ -11,6 +11,7 @@ author: Lars Schöbitz
 date: "2026-06-22"
 draft: true
 bibliography: references.bib
+csl: elsevier-harvard.csl
 format:
   html: default
   pdf:
@@ -19,13 +20,13 @@ format:
     colorlinks: true
 ---
 
-Kelsey Shaw, a PhD student at the University of Victoria, took part in the [ds4owd-001 course](https://ds4owd-001.github.io/website/) between September and December 2023. During the course she began working with data she had collected for her PhD research. The openwashdata data scientist Mian Zhong supported Kelsey's project, and after the course encouraged her to publish the data underlying her work as an open dataset with openwashdata.
+Kelsey Shaw, a PhD student co-supervised at the University of Victoria (Canada) and the Swiss Federal Institute of Aquatic Science and Technology (Eawag, Switzerland), took part in the [ds4owd-001 course](https://ds4owd-001.github.io/website/) between September and December 2023. During the course she began working with data she had collected for her PhD research. The openwashdata data scientist Mian Zhong supported Kelsey's project, and after the course encouraged her to publish the primary dataset underlying her work that formed the basis for subsequent data analysis for future publications, as an open dataset with openwashdata.
 
 Over the following two years, Kelsey worked closely with Mian and Lars. A repository for the data was created on Kelsey's GitHub profile, where the raw data, the processed data, and the R code that turns one into the other are documented. The repository was made public at the point when the research article based on the data was published.
 
-Kelsey's paper is now published in *Environmental Science & Technology* [@shaw2026methane], and the openwashdata team is proud to have been part of this journey. The dataset is also published in Eawag's ERIC research data repository [@shaw2025eric], and it has now been curated as an R data package [@shaw2026fecalcanuga] following the openwashdata data publication workflow. The R data package comes with a website where you can explore the data: <https://openwashdata.github.io/fecalcanuga/>
+The first in a series of papers to come from this primary data collection is now published in *Environmental Science & Technology* [@shaw2026methane], and the openwashdata team is proud to have been part of this journey. The dataset is also published in Eawag's ERIC research data repository (<https://doi.org/10.25678/000FPN>), and it has now been curated as an R data package [@shaw2026fecalcanuga] following the openwashdata data publication workflow. The R data package comes with a website where you can explore the data: <https://openwashdata.github.io/fecalcanuga/>
 
-This work was carried out in collaboration with the Swiss Federal Institute of Aquatic Science and Technology (Eawag) and the Department of Civil and Environmental Engineering at Makerere University.
+This work was carried out in collaboration with the Public Health and Environmental Engineering Lab at the University of Victoria, the Management of Excreta, Wastewater and Sludge (MEWS) group at Eawag, and the Department of Civil and Environmental Engineering at Makerere University.
 
 ## References
 
