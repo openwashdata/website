@@ -13,3 +13,7 @@
 
 - 16:43 - I have added a PDF with feedback on collaboration blog. Extract all comments and proposed changes, then make a plan for updating the .qmd draft.
 - 16:51 - yes, go ahead (apply the planned updates from the PDF feedback).
+
+## 2026-08-24
+
+- 13:42 - the netlify build on github fails: (pasted Netlify build log showing "Unable to locate an installed version of R" while rendering pages/gallery/reports/openwashdata-02/index.qmd).
