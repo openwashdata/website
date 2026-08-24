@@ -9,7 +9,7 @@ categories:
   - ds4owd
 author: Lars Schöbitz
 date: "2026-06-22"
-draft: true
+draft: false
 bibliography: references.bib
 csl: elsevier-harvard.csl
 format:
