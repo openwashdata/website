@@ -67,3 +67,4 @@ CLAUDE.md
 # MCP files
 node_modules/
 test-pu
+**/*.quarto_ipynb
