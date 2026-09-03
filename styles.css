@@ -1,4 +1,5 @@
-/* css styles */
+/* Layout rules only. Colours, fonts and logos come from the brand
+   (_brand/) through style/theme.scss and style/theme-dark.scss. */
 
 .content-block {
   padding-top: 20px;
@@ -7,39 +8,13 @@
   margin-right: 30px;
 }
 
-/* Custom announcement banner styling */
-.quarto-announcement {
-  background-color: #c8a3c8 !important; /* Lighter purple than navbar #5b195b */
-  color: #2d0e2d !important; /* Dark purple text for contrast */
-  border: none !important;
-  font-weight: 500;
-}
-
-.quarto-announcement a {
-  color: #5b195b !important; /* Navbar purple for links */
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.quarto-announcement a:hover {
-  color: #2d0e2d !important;
-  text-decoration: none;
-}
-
-.quarto-announcement .bi {
-  color: #5b195b !important; /* Icon color matches navbar */
-}
-
 .hero-banner {
   position: relative;
-  background-color: rgb(237,243,249);
   display: flex;
   justify-content: center;
 }
 
-
 .hero-banner h1 {
-  color: #5b195b;
   font-size: 3.5rem;
 }
 
@@ -54,31 +29,10 @@
   margin-bottom: 1.6rem;
 }
 
-.hero-banner #btn-guide {
-  background-color: #959595 !important;
-  border: none;
-}
-
-.btn-action-primary {
-  color: white;
-  background-color: #5b195b !important;
-}
-
-.btn-action-primary:hover {
-  color: white;
-}
-
 .btn-action {
   min-width: 165px;
   border-radius: 30px;
   border: none;
-}
-
-
-.alt-background {
-  background-color: rgb(247,249,251);
-  border-top: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
 }
 
 .quarto-grid-item img.thumbnail-image {
