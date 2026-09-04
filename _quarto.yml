@@ -76,7 +76,7 @@ website:
       - text: Code of Conduct
         href: code_of_conduct.qmd
       - text: Subscribe
-        href: index-a.qmd#subscribe
+        href: index.qmd#subscribe
       - icon: envelope-at-fill
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
