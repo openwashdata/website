@@ -1,0 +1,215 @@
+---
+pagetitle: "openwashdata"
+page-layout: custom
+section-divs: false
+toc: false
+link-external-icon: false
+link-external-newwindow: false
+execute:
+  echo: false
+  warning: false
+  message: false
+listing:
+  - id: latest-posts
+    contents: pages/blog/posts/*/index.qmd
+    type: grid
+    max-items: 3
+    sort: "date desc"
+    fields: [image, date, title]
+    grid-columns: 3
+    image-height: 110px
+    sort-ui: false
+    filter-ui: false
+    categories: false
+  - id: recent-events
+    contents: pages/events/events_data/events.yml
+    type: table
+    max-items: 3
+    sort: "date desc"
+    fields: [date, title]
+    sort-ui: false
+    filter-ui: false
+---
+
+```{r}
+#| include: false
+library(dplyr)
+data <- readr::read_csv(
+  "pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv",
+  show_col_types = FALSE
+)
+pub <- data |> filter(status == "published")
+n_pub <- nrow(pub)
+n_loc <- n_distinct(pub$location)
+first_year <- min(as.integer(format(pub$date_published, "%Y")), na.rm = TRUE)
+n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
+latest <- pub |>
+  arrange(desc(date_published)) |>
+  slice_head(n = 3)
+
+card <- function(row) {
+  htmltools::tags$a(
+    class = "owd-card",
+    href = row$link_pkg_website,
+    htmltools::tags$span(
+      class = "owd-card-kicker",
+      paste(row$location, format(row$date_published, "%B %Y"), sep = ", ")
+    ),
+    htmltools::tags$strong(row$pkg_name),
+    htmltools::tags$p(row$description)
+  )
+}
+cards <- htmltools::tags$div(
+  class = "owd-cards",
+  lapply(seq_len(nrow(latest)), function(i) card(latest[i, ]))
+)
+```
+
+::: {.owd-hero-a}
+::: {.owd-section}
+
+# Open data for water, sanitation and hygiene
+
+<p class="owd-lead">openwashdata is a community that publishes WASH datasets as documented, citable R data packages, and teaches the skills to do it.</p>
+
+::: {.owd-actions}
+[Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}
+[Join the course](pages/academy/index.qmd){.btn .btn-outline}
+:::
+
+::: {#subscribe}
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-hero">One email a month: a dataset, a story, and the community's news.</label>
+<input type="email" name="email" id="owd-email-hero" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+:::
+
+:::
+:::
+
+::: {.owd-tint}
+::: {.owd-section}
+::: {.owd-numbers}
+::: {.owd-number-item}
+<div class="owd-number">`r n_pub`</div>
+<div class="owd-number-label">published data packages</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_loc`</div>
+<div class="owd-number-label">countries and regions</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_years`</div>
+<div class="owd-number-label">years of publishing, since `r first_year`</div>
+:::
+:::
+:::
+:::
+
+::: {.owd-section}
+
+## Data
+
+<p class="owd-lead">Every dataset comes as an R data package with a website, a data dictionary, a license and a citation.</p>
+
+```{r}
+cards
+```
+
+[See all `r n_pub` datasets](pages/gallery/data/index.qmd){.owd-more}
+
+:::
+
+::: {.owd-tint}
+::: {.owd-section}
+
+## Dataset of the month
+
+::: {.owd-dotm}
+::: {.owd-dotm-text}
+**jmpdata** holds the sanitation data behind the WHO/UNICEF Joint Monitoring Programme estimates: 26,926 survey data points and 424,575 modelled estimates for 232 countries and territories. The chart shows the survey data points per year, the thin base under a large body of estimates.
+
+[Open jmpdata](https://openwashdata.github.io/jmpdata){.owd-more}
+:::
+![Bar chart of survey-level sanitation data points in the JMP raw data per year, from 1991 to 2024](mockups/card-jmpdata.png)
+:::
+
+:::
+:::
+
+::: {.owd-band}
+::: {.owd-band-inner}
+
+## Get the dataset of the month in your inbox
+
+<p>Once a month we send one dataset, one story from the community, and what is new. No more than that.</p>
+
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-band">Your email</label>
+<input type="email" name="email" id="owd-email-band" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+
+:::
+:::
+
+::: {.owd-section}
+
+## Learn
+
+<p class="owd-lead">ds4owd, our free online course, teaches WASH professionals data science in R. Two cohorts have graduated so far.</p>
+
+[About the course](pages/academy/index.qmd){.owd-more}
+
+### Recent events
+
+::: {#recent-events}
+:::
+
+[All events](pages/events/index.qmd){.owd-more}
+
+:::
+
+::: {.owd-tint}
+::: {.owd-section}
+
+## Read
+
+<p class="owd-lead">Stories, tutorials and opinions from and for the community.</p>
+
+::: {#latest-posts}
+:::
+
+[All posts](pages/blog/index.qmd){.owd-more}
+
+:::
+:::
+
+::: {.owd-section}
+
+## Join
+
+```{=html}
+<div class="owd-cards">
+<a class="owd-card" href="pages/get-started/chat/index.qmd"><span class="owd-card-kicker">Talk</span><strong>Chat with us</strong><p>The community room on Matrix, open to everyone.</p></a>
+<a class="owd-card" href="pages/blog/posts/2024-05-17-data-publication-1/index.qmd"><span class="owd-card-kicker">Share</span><strong>Publish your data</strong><p>We turn your WASH dataset into a documented, citable data package with you.</p></a>
+<a class="owd-card" href="https://github.com/openwashdata"><span class="owd-card-kicker">Build</span><strong>Contribute on GitHub</strong><p>Code, data packages, the course and this website are open.</p></a>
+</div>
+```
+
+:::
+
+::: {.owd-band}
+::: {.owd-band-inner}
+
+## Stay in touch
+
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-footer">Subscribe to the monthly newsletter</label>
+<input type="email" name="email" id="owd-email-footer" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+
+:::
+:::

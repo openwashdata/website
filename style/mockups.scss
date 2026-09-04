@@ -1,0 +1,465 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+// Landing page mockups A, B and C. Brand values through $brand-<name>.
+
+// Shared: sections, headings, cards, the subscribe form.
+.owd-section {
+  padding: 2.5rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.owd-section h2 {
+  font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+  margin-bottom: 0.25rem;
+}
+
+.owd-section > p.owd-lead {
+  font-size: 1.1rem;
+  color: $brand-owd-grey;
+  margin-bottom: 1.5rem;
+}
+
+.owd-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.owd-band {
+  background-color: $brand-owd-purple;
+  color: $brand-paper;
+}
+
+.owd-band h2,
+.owd-band p,
+.owd-band label {
+  color: $brand-paper;
+}
+
+.owd-band-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.owd-tint {
+  background-color: $brand-owd-purple-bg;
+}
+
+// Subscribe form: one field, one button, posts to Buttondown.
+.owd-subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 480px;
+}
+
+.owd-subscribe label {
+  flex: 1 1 100%;
+  font-size: 0.95rem;
+}
+
+.owd-subscribe input[type="email"] {
+  flex: 1 1 170px;
+  min-width: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: $brand-paper;
+  color: $brand-ink;
+}
+
+.owd-subscribe input[type="submit"] {
+  flex: 0 0 auto;
+  padding: 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: $brand-owd-orange;
+  color: $brand-paper;
+  cursor: pointer;
+}
+
+.owd-band .owd-subscribe input[type="submit"] {
+  background-color: $brand-paper;
+  color: $brand-owd-purple;
+}
+
+// Cards in a responsive grid: one column on phones, three on desktop.
+.owd-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.owd-card {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.75rem;
+  background-color: $brand-paper;
+  color: $brand-ink;
+  text-decoration: none;
+}
+
+.owd-card:hover {
+  border-color: $brand-owd-purple;
+  text-decoration: none;
+}
+
+.owd-card-kicker {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $brand-owd-orange;
+  margin-bottom: 0.25rem;
+}
+
+.owd-card strong {
+  display: block;
+  font-size: 1.15rem;
+  color: $brand-owd-purple;
+  margin-bottom: 0.35rem;
+}
+
+.owd-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+// Numbers strip.
+.owd-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.owd-number {
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 700;
+  color: $brand-owd-purple;
+  line-height: 1.1;
+}
+
+.owd-number-label {
+  font-size: 0.95rem;
+  color: $brand-owd-grey;
+}
+
+// Buttons in the hero.
+.owd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.owd-actions .btn {
+  border-radius: 2rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+}
+
+.owd-actions .btn-primary {
+  background-color: $brand-owd-purple;
+  border-color: $brand-owd-purple;
+  color: $brand-paper;
+}
+
+.owd-actions .btn-outline {
+  background: transparent;
+  border: 2px solid $brand-owd-purple;
+  color: $brand-owd-purple;
+}
+
+// Dataset of the month.
+.owd-dotm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.owd-dotm img {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid $brand-owd-grey-light;
+}
+
+// Listings inside sections: tighter than the full pages, whole images.
+.owd-section .quarto-listing {
+  margin-top: 0.5rem;
+}
+
+.owd-section .quarto-grid-item img.thumbnail-image {
+  object-fit: contain;
+  background-color: $brand-owd-purple-bg;
+  padding: 0.75rem;
+}
+
+.owd-section .quarto-listing-table td {
+  padding: 0.5rem 0.75rem;
+}
+
+// Mockup A: hero.
+.owd-hero-a {
+  background-color: $brand-owd-purple-bg;
+}
+
+.owd-hero-a .owd-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.owd-hero-a h1 {
+  font-size: clamp(2rem, 7.5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.owd-hero-a p.owd-lead {
+  font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+  color: $brand-ink;
+  max-width: 34em;
+}
+
+// Navbar subscribe button on every page.
+.navbar .navbar-nav .nav-item a.nav-link[href*="subscribe"] {
+  background-color: $brand-owd-orange;
+  color: $brand-paper !important;
+  border-radius: 2rem;
+  padding: 0.35rem 0.9rem;
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+// Mockup B: bottom bar on phones, chart hero.
+.owd-hero-b {
+  background-color: $brand-owd-purple-bg;
+}
+
+.owd-hero-b h1 {
+  font-size: clamp(1.7rem, 6.5vw, 3rem);
+  line-height: 1.15;
+}
+
+.owd-hero-b h1 .owd-num {
+  color: $brand-owd-orange;
+}
+
+.owd-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+
+.owd-chips a {
+  border: 1px solid $brand-owd-purple;
+  color: $brand-owd-purple;
+  border-radius: 2rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.owd-search {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 520px;
+}
+
+.owd-search input[type="search"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.owd-search button {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  background-color: $brand-owd-purple;
+  color: $brand-paper;
+  font-weight: 600;
+}
+
+.owd-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+  background-color: $brand-owd-purple;
+  color: $brand-paper;
+  padding: 0.6rem 0.9rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.owd-bottom-bar .owd-subscribe {
+  max-width: none;
+}
+
+.owd-bottom-bar .owd-subscribe label {
+  color: $brand-paper;
+  font-size: 0.85rem;
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.owd-bottom-bar .owd-subscribe input[type="submit"] {
+  background-color: $brand-owd-orange;
+  color: $brand-paper;
+}
+
+@media (min-width: 992px) {
+  .owd-bottom-bar {
+    display: none;
+  }
+}
+
+body.owd-has-bottom-bar {
+  padding-bottom: 6.5rem;
+}
+
+@media (min-width: 992px) {
+  body.owd-has-bottom-bar {
+    padding-bottom: 0;
+  }
+}
+
+// Mockup C: one screen per section.
+.owd-screens {
+  scroll-snap-type: y proximity;
+}
+
+.owd-screen {
+  min-height: calc(100vh - 8rem);
+  min-height: calc(100svh - 8rem);
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 1.5rem 1.25rem;
+}
+
+.owd-screen-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .owd-screen-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.owd-screen h2 {
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  line-height: 1.1;
+}
+
+.owd-screen p.owd-lead {
+  font-size: clamp(1.05rem, 3.8vw, 1.3rem);
+  color: $brand-ink;
+}
+
+.owd-screen:nth-child(even) {
+  background-color: $brand-owd-purple-bg;
+}
+
+.owd-topbar {
+  background-color: $brand-owd-orange;
+  color: $brand-paper;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+.owd-topbar a {
+  color: $brand-paper;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.owd-step {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $brand-owd-orange;
+  margin-bottom: 0.5rem;
+}
+
+// Mockup B additions.
+.owd-bar-spacer {
+  height: 6.5rem;
+}
+
+@media (min-width: 992px) {
+  .owd-bar-spacer {
+    display: none;
+  }
+}
+
+.owd-chart {
+  margin: 1rem 0 0.5rem;
+}
+
+.owd-chart figure {
+  margin: 0;
+}
+
+.owd-chart .code-copy-button {
+  display: none;
+}
+
+.owd-chart-title {
+  font-weight: 700;
+  color: $brand-owd-purple;
+  margin: 0.5rem 0 0;
+}
+
+.owd-chart-note {
+  font-size: 0.9rem;
+  color: $brand-owd-grey;
+}
+
+.owd-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .owd-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+// Mockup C: listing images whole, not cropped.
+.owd-screen .quarto-grid-item img.thumbnail-image {
+  object-fit: contain;
+  background-color: $brand-paper;
+  padding: 1rem;
+}
+
+.owd-screen .quarto-grid-item .card-title {
+  font-size: 1.15rem;
+}
