@@ -80,7 +80,8 @@ rows = pub.map(d => ({
   group: top.includes(d.location) ? d.location : "Other"
 }))
 order = ["Malawi", "Global", "Other"]
-palette = ["#b04208", "#3EB489", "#272bd1"]
+// chart-1 to chart-3 of the proposed brand chart palette (openwashdata/brand, chart palettes issue)
+palette = ["#8a3a8a", "#b04208", "#3b5bdb"]
 Plot.plot({
   width: Math.min(width, 760),
   height: 300,
