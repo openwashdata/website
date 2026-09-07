@@ -17,3 +17,15 @@
 ## 2026-08-24
 
 - 13:42 - the netlify build on github fails: (pasted Netlify build log showing "Unable to locate an installed version of R" while rendering pages/gallery/reports/openwashdata-02/index.qmd).
+
+## 2026-09-07
+
+- 15:35 - i have worked on two blog posts, i want to finalize them now. I want to add the original LinkedIn post where these blogs were shared and claim them as repost from there and Emmanuel as author.
+- 15:39 - one link: https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/ the other: https://www.linkedin.com/pulse/i-thought-my-job-data-turned-out-people-emmanuel-mhango-rszvf/
+- 15:52 - yes, rename so folders and order match the original (LinkedIn publication dates).
+- 15:58 - it should not be on landing mockup branch. use a branch off dev. how about blog?
+- 16:04 - I don't like the titles to be capitalizes, use the convention of the other blog posts.
+- 16:07 - what's the issue with divergence on main?
+- 16:10 - git branch -f main origin/main
+- 16:48 - Commit the blog posts
+- 16:48 - 1 to 6 (prompts to archive)
