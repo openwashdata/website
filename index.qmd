@@ -15,7 +15,7 @@ listing:
     type: default
     max-items: 3
     sort: "date desc"
-    fields: [date, title]
+    fields: [date, title, author]
     sort-ui: false
     filter-ui: false
     categories: false

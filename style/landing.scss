@@ -246,7 +246,7 @@
 
 .owd-section .quarto-post {
   display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   grid-template-areas: "meta body";
   column-gap: 1rem;
   align-items: baseline;
@@ -273,7 +273,8 @@
   margin: 0;
 }
 
-.owd-section .quarto-post .listing-date {
+.owd-section .quarto-post .listing-date,
+.owd-section .quarto-post .listing-author {
   font-size: 0.95rem;
   color: $brand-owd-grey;
 }
