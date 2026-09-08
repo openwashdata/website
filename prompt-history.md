@@ -17,3 +17,11 @@
 ## 2026-08-24
 
 - 13:42 - the netlify build on github fails: (pasted Netlify build log showing "Unable to locate an installed version of R" while rendering pages/gallery/reports/openwashdata-02/index.qmd).
+
+## 2026-09-08
+
+- 09:45 - git push
+- 09:50 - Add these two blog posts as entries to the next openwashdata newsletter, also add news about the brand development announcing a reworked landing page
+- 10:15 - voice inbox has a voice note with a conversation about the website mockups, transcribe and identify the suggested changes. Note down any issues that might opening beyond the conversation about the mockup
+- 10:28 - it's there now recording 52
+- 14:52 - yes, post decision and change list, open issue, then work through change list and create a PR to dev.

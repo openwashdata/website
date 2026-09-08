@@ -12,23 +12,13 @@ execute:
 listing:
   - id: latest-posts
     contents: pages/blog/posts/*/index.qmd
-    type: grid
-    max-items: 3
-    sort: "date desc"
-    fields: [image, date, title]
-    grid-columns: 3
-    image-height: 110px
-    sort-ui: false
-    filter-ui: false
-    categories: false
-  - id: recent-events
-    contents: pages/events/events_data/events.yml
-    type: table
+    type: default
     max-items: 3
     sort: "date desc"
     fields: [date, title]
     sort-ui: false
     filter-ui: false
+    categories: false
 ---
 
 ```{r}
@@ -43,26 +33,6 @@ n_pub <- nrow(pub)
 n_loc <- n_distinct(pub$location)
 first_year <- min(as.integer(format(pub$date_published, "%Y")), na.rm = TRUE)
 n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
-latest <- pub |>
-  arrange(desc(date_published)) |>
-  slice_head(n = 3)
-
-card <- function(row) {
-  htmltools::tags$a(
-    class = "owd-card",
-    href = row$link_pkg_website,
-    htmltools::tags$span(
-      class = "owd-card-kicker",
-      paste(row$location, format(row$date_published, "%B %Y"), sep = ", ")
-    ),
-    htmltools::tags$strong(row$pkg_name),
-    htmltools::tags$p(row$description)
-  )
-}
-cards <- htmltools::tags$div(
-  class = "owd-cards",
-  lapply(seq_len(nrow(latest)), function(i) card(latest[i, ]))
-)
 ```
 
 ::: {.owd-hero-a}
@@ -70,7 +40,7 @@ cards <- htmltools::tags$div(
 
 # Open data for water, sanitation and hygiene
 
-<p class="owd-lead">openwashdata is a community that publishes WASH datasets as documented, citable R data packages, and teaches the skills to do it.</p>
+<p class="owd-lead">openwashdata is a community that publishes WASH datasets and teaches the skills to do it.</p>
 
 ::: {.owd-actions}
 [Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}
@@ -109,21 +79,6 @@ cards <- htmltools::tags$div(
 
 ::: {.owd-section}
 
-## Data
-
-<p class="owd-lead">Every dataset comes as an R data package with a website, a data dictionary, a license and a citation.</p>
-
-```{r}
-cards
-```
-
-[See all `r n_pub` datasets](pages/gallery/data/index.qmd){.owd-more}
-
-:::
-
-::: {.owd-tint}
-::: {.owd-section}
-
 ## Dataset of the month
 
 ::: {.owd-dotm}
@@ -132,28 +87,12 @@ cards
 
 [Open jmpdata](https://openwashdata.github.io/jmpdata){.owd-more}
 :::
-![Bar chart of survey-level sanitation data points in the JMP raw data per year, from 1991 to 2024](mockups/card-jmpdata.png)
+![Bar chart of survey-level sanitation data points in the JMP raw data per year, from 1991 to 2024](images/dataset-of-the-month/card-jmpdata.png)
 :::
 
 :::
-:::
 
-::: {.owd-band}
-::: {.owd-band-inner}
-
-## Get the dataset of the month in your inbox
-
-<p>Once a month we send one dataset, one story from the community, and what is new. No more than that.</p>
-
-<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
-<label for="owd-email-band">Your email</label>
-<input type="email" name="email" id="owd-email-band" placeholder="your email address" required>
-<input type="submit" value="Subscribe">
-</form>
-
-:::
-:::
-
+::: {.owd-tint}
 ::: {.owd-section}
 
 ## Learn
@@ -162,16 +101,9 @@ cards
 
 [About the course](pages/academy/index.qmd){.owd-more}
 
-### Recent events
-
-::: {#recent-events}
+:::
 :::
 
-[All events](pages/events/index.qmd){.owd-more}
-
-:::
-
-::: {.owd-tint}
 ::: {.owd-section}
 
 ## Read
@@ -184,8 +116,8 @@ cards
 [All posts](pages/blog/index.qmd){.owd-more}
 
 :::
-:::
 
+::: {.owd-tint}
 ::: {.owd-section}
 
 ## Join
@@ -198,6 +130,7 @@ cards
 </div>
 ```
 
+:::
 :::
 
 ::: {.owd-band}

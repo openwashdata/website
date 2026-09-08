@@ -1,9 +1,7 @@
 project:
   type: website
 
-brand:
-  light: _brand/_brand.yml
-  dark: _brand/_brand-dark.yml
+brand: _brand/_brand.yml
 
 website:
   title: "openwashdata"
@@ -118,9 +116,7 @@ website:
         
 format:
   html:
-    theme:
-      light: [litera, brand, style/theme.scss, style/mockups.scss]
-      dark: [litera, brand, style/theme-dark.scss, style/mockups.scss]
+    theme: [litera, brand, style/theme.scss, style/landing.scss]
     highlight-style: a11y-dark
     css: styles.css
     code-copy: true
