@@ -57,3 +57,4 @@
 - 15:57 - go for options 1, then open an issue for brand, i will need 6+ colours regularly.
 - 16:32 - that plot is lovely!
 - 16:34 - commit all work and merge into dev, also check the other branches and and open work from the two newly added blog posts. I want it all as a complete solved branch on dev before I open a PR to main. You can open PRs to dev, review them, close them. You have permission to commit and push. the newsletter issue draft doesn't belong here. it belongs into openwashdata/newsletter. move it.
+- 21:01 - Get Started can be removed from the list of items in the top
