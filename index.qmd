@@ -92,9 +92,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ```{r}
 #| label: dataset-of-the-month
-#| echo: true
-#| code-fold: true
-#| code-summary: "Show the R code behind this chart"
+#| echo: false
 #| fig-width: 7
 #| fig-height: 4.2
 #| fig-alt: "Stacked bar chart of the share of household waste mass by category for the low, middle and high income parishes in Kampala. Food makes up 75 to 82 percent in each parish. Garden and wood, plastics and polythene, other waste, paper and textiles, and glass and metals share the rest."
