@@ -1,9 +1,7 @@
 project:
   type: website
 
-brand:
-  light: _brand/_brand.yml
-  dark: _brand/_brand-dark.yml
+brand: _brand/_brand.yml
 
 website:
   title: "openwashdata"
@@ -75,6 +73,8 @@ website:
     right:
       - text: Code of Conduct
         href: code_of_conduct.qmd
+      - text: Subscribe
+        href: index.qmd#subscribe
       - icon: envelope-at-fill
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
@@ -116,9 +116,7 @@ website:
         
 format:
   html:
-    theme:
-      light: [litera, brand, style/theme.scss]
-      dark: [litera, brand, style/theme-dark.scss]
+    theme: [litera, brand, style/theme.scss, style/landing.scss]
     highlight-style: a11y-dark
     css: styles.css
     code-copy: true
