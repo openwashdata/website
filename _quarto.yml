@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "!prompts/"
 
 brand: _brand/_brand.yml
 
