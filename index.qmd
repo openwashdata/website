@@ -91,7 +91,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ::: {.owd-dotm-chart}
 
 <p class="owd-chart-title">Waste per person rises with income</p>
-<p class="owd-chart-note">One dot per household: kg of waste per person per day, with the median of each income level. Hover a dot for the household.</p>
+<p class="owd-chart-note">One dot per household: kg of waste per person per day, with the median of each income level. <span class="owd-chart-hint">Hover over a dot to see that household.</span></p>
 
 ```{r}
 #| label: dataset-of-the-month-data
@@ -210,6 +210,7 @@ Plot.plot({
 <p class="owd-lead">Data Science for openwashdata (ds4owd), our free online course, teaches WASH professionals data science in R. Two cohorts have graduated so far. A third cohort will start in September 2027. We are currently preparing the sign-up forms for the third iteration. In the meantime, you can browse the course website of the second cohort from 2025.</p>
 
 [Course website of the 2025 cohort](https://ds4owd-002.github.io/website/){.owd-more}
+[Projects of the 2026 graduates](pages/academy/graduates-2026/index.qmd){.owd-more}
 [About the course](pages/academy/index.qmd){.owd-more}
 
 :::

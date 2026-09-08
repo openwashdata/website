@@ -18,6 +18,13 @@ Find the course website here: <https://ds4owd-002.github.io/website/>
 
 Read Adriana's blog post: <https://openwashdata.org/pages/blog/posts/2025-07-07-ds4owd-001-analytics>
 
+### You want to see what graduates built?
+
+Every graduate published a data package of their own. Browse the projects of both cohorts:
+
+- [Graduates 2024](graduates-2024/index.qmd) - projects from the first iteration of the course
+- [Graduates 2026](graduates-2026/index.qmd) - projects from the second iteration of the course
+
 ### 🤔 Who can participate?
 
 To participate in this course, you need to:
