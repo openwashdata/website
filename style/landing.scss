@@ -11,8 +11,13 @@
   margin: 0 auto;
 }
 
-.owd-section h2 {
+// Quarto sets margin-top on the first heading of the first section inside
+// any wrapper (#quarto-content section:first-of-type h2:first-of-type), which
+// hits every tinted section; the section padding is the spacing here.
+.owd-section h2,
+.owd-band-inner h2 {
   font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+  margin-top: 0 !important;
   margin-bottom: 0.25rem;
 }
 
@@ -30,6 +35,13 @@
 
 .owd-more + .owd-more {
   margin-left: 1.5rem;
+}
+
+@media (max-width: 575px) {
+  .owd-more + .owd-more {
+    margin-left: 0;
+    display: block;
+  }
 }
 
 .owd-band {
@@ -201,13 +213,69 @@
   margin: 0;
 }
 
-// The latest posts list inside the Read section.
+.owd-dotm-chart figure {
+  margin: 0;
+}
+
+.owd-dotm-chart .code-copy-button {
+  display: none;
+}
+
+.owd-dotm-chart svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.owd-chart-title {
+  font-weight: 700;
+  color: $brand-owd-purple;
+  margin: 0;
+}
+
+.owd-chart-note {
+  font-size: 0.9rem;
+  color: $brand-owd-grey;
+  margin: 0 0 0.5rem;
+}
+
+// The latest posts list inside the Read section: date, then title,
+// in the body text size.
 .owd-section .quarto-listing {
   margin-top: 0.5rem;
 }
 
-.owd-section .quarto-listing .list .quarto-post {
-  margin-bottom: 0.75rem;
+.owd-section .quarto-post {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  grid-template-areas: "meta body";
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  margin: 0;
+}
+
+.owd-section .quarto-post .metadata {
+  grid-area: meta;
+}
+
+.owd-section .quarto-post .body {
+  grid-area: body;
+}
+
+.owd-section .quarto-post .thumbnail {
+  display: none;
+}
+
+.owd-section .quarto-post .listing-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.owd-section .quarto-post .listing-date {
+  font-size: 0.95rem;
+  color: $brand-owd-grey;
 }
 
 // Hero.

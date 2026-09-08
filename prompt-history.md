@@ -31,3 +31,9 @@
 - 15:17 - on openwashdata/newsletter use the gh issue to document Charles as contributor of the month for sharing his data solidwastekamapala, also add if not there yet that I will prepare a blog about the story of how that data package was created.
 - 15:22 - yes, swithc it (newsletter issue 23 draft to solidwastekampala as dataset of the month)
 - 15:25 - I don't want the code-fold option. I only want to see the code in the .qmd, hide from output
+- 15:29 - can the plot be done with D3 in an OJS cell, so that the columns are hoverable
+- 15:34 - go for recommendation (Observable Plot in an OJS cell with hover tooltip)
+- 15:35 - [image] the listing doesn't look good now. The font size is not the same as the page text
+- 15:35 - [image] each section has too much space above the heading
+- 15:42 - [image] this plot isn't readable, make a suggestion for adapting to a different plot type. what about waffle?
+- 15:42 - [image] learn and join sections still have too much space
