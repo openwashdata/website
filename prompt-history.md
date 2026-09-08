@@ -60,3 +60,4 @@
 - 21:01 - Get Started can be removed from the list of items in the top
 - 21:02 - The footer can say: Supported by the Open Research ... and Global Health Engineering ETH Zurich with a hyperlink to ghe.ethz.ch
 - 21:18 - Under the read entries, can it show the date, title and author?
+- 21:19 - the code of conduct page can sit in the bottom of the page. It doesnt fit well at the top

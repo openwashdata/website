@@ -22,6 +22,8 @@ website:
     right:
       - text: About
         href: about.qmd
+      - text: Code of Conduct
+        href: code_of_conduct.qmd
       - icon: "envelope-at"
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
@@ -74,8 +76,6 @@ website:
             href: "https://github.com/openwashdata/data/issues"
 
     right:
-      - text: Code of Conduct
-        href: code_of_conduct.qmd
       - text: Subscribe
         href: index.qmd#subscribe
       - icon: envelope-at-fill
