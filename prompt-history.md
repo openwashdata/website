@@ -63,3 +63,4 @@
 - 21:19 - the code of conduct page can sit in the bottom of the page. It doesnt fit well at the top
 - 21:24 - /ultrareview on dev; findings: Learn typos and stale freeze (already fixed), dead .owd-dotm img CSS, stale theme-dark.scss, prompts/ vs prompt-history.md undocumented
 - 21:43 - commit
+- 21:53 - open PR for website
