@@ -3,44 +3,257 @@ pagetitle: "openwashdata"
 page-layout: custom
 section-divs: false
 toc: false
+link-external-icon: false
+link-external-newwindow: false
+execute:
+  echo: false
+  warning: false
+  message: false
+listing:
+  - id: latest-posts
+    contents: pages/blog/posts/*/index.qmd
+    type: default
+    max-items: 3
+    sort: "date desc"
+    fields: [date, title, author]
+    sort-ui: false
+    filter-ui: false
+    categories: false
 ---
 
-::: {.hero-banner}
+```{r}
+#| include: false
+library(dplyr)
+data <- readr::read_csv(
+  "pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv",
+  show_col_types = FALSE
+)
+pub <- data |> filter(status == "published")
+n_pub <- nrow(pub)
+n_loc <- n_distinct(pub$location)
+first_year <- min(as.integer(format(pub$date_published, "%Y")), na.rm = TRUE)
+n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
+```
 
-::: {.content-block}
+::: {.owd-hero-a}
+::: {.owd-section}
 
-# Welcome to openwashdata
+# Open data for water, sanitation and hygiene
 
-## openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector
+<p class="owd-lead">openwashdata is an active global community that applies the FAIR principles to data from the water, sanitation and hygiene (WASH) sector, and teaches the skills to do it.</p>
 
-- Receive credit for work that is not a scientific paper
-- Give recognition to those that support your work
-- Tell stories with data that haven't yet been told 
-- Meet people that care about data and code being open and reusable
+::: {.owd-actions}
+[Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}
+[Read our stories](pages/blog/index.qmd){.btn .btn-outline}
+:::
 
-***
+::: {#subscribe}
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-hero">One email a month: a dataset, a story, and the community's news.</label>
+<input type="email" name="email" id="owd-email-hero" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+:::
 
-Our mission is to empower WASH professionals to engage with tools and workflows for open data and code.
+:::
+:::
 
-*** 
+::: {.owd-tint}
+::: {.owd-section}
+::: {.owd-numbers}
+::: {.owd-number-item}
+<div class="owd-number">`r n_pub`</div>
+<div class="owd-number-label">published data packages</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_loc`</div>
+<div class="owd-number-label">countries and regions</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_years`</div>
+<div class="owd-number-label">years of publishing, since `r first_year`</div>
+:::
+:::
+:::
+:::
 
-::: {.hero-buttons}
-[Data](pages/gallery/data){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
-[Blog](pages/blog/){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
-[News](https://buttondown.email/openwashdata/archive){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
-::: 
+::: {.owd-section}
 
+## Dataset of the month
+
+::: {.owd-dotm}
+::: {.owd-dotm-text}
+**solidwastekampala** holds the quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 kg per day on average in the low income parish to 0.98 in the high income parish, and food makes up three quarters of the mass.
+
+[Open solidwastekampala](https://openwashdata.github.io/solidwastekampala){.owd-more}
+:::
+
+::: {.owd-dotm-chart}
+
+<p class="owd-chart-title">Waste per person rises with income</p>
+<p class="owd-chart-note">One dot per household: kg of waste per person per day, with the median of each income level. Hover a dot for the household.</p>
+
+```{r}
+#| label: dataset-of-the-month-data
+#| echo: false
+# pak::pak("openwashdata/solidwastekampala")
+library(solidwastekampala)
+library(dplyr)
+
+households <- solidwastekampala |>
+  transmute(
+    household = sub("_", " ", household_id),
+    income_level,
+    label = paste(tools::toTitleCase(as.character(income_level)), "income"),
+    parish,
+    occupants,
+    per_capita = round(waste_per_capita_kg, 2),
+    per_day = round(waste_per_day_kg, 1)
+  ) |>
+  arrange(income_level) |>
+  mutate(income_level = as.character(income_level))
+
+medians <- households |>
+  summarise(
+    median = round(median(per_capita), 2),
+    n = n(),
+    .by = c(income_level, label, parish)
+  )
+
+ojs_define(
+  households_data = households,
+  medians_data = medians,
+  label_order = unique(households$label)
+)
+```
+
+```{ojs}
+//| echo: false
+households = transpose(households_data)
+medians = transpose(medians_data)
+
+// width of the chart column, so the text keeps its size on every screen
+chartWidth = Generators.observe((notify) => {
+  const el = document.querySelector(".owd-dotm-chart");
+  const report = () => notify(Math.max(280, el.clientWidth));
+  const observer = new ResizeObserver(report);
+  observer.observe(el);
+  report();
+  return () => observer.disconnect();
+})
+
+// chart-1 and chart-2 from openwashdata/brand
+palette = ["#8a3a8a", "#b04208"]
+
+Plot.plot({
+  width: chartWidth,
+  height: 310,
+  marginLeft: 10,
+  marginRight: 10,
+  marginTop: 6,
+  marginBottom: 40,
+  style: {fontFamily: "Atkinson Hyperlegible Next, sans-serif", fontSize: 13, background: "transparent"},
+  ariaLabel: "Dot plot of waste per person per day for 103 households in Kampala, one row per income level",
+  ariaDescription: "The median rises from 0.32 kg in the low income parish to 0.57 in the middle income parish and 0.93 in the high income parish. Households spread from near zero to about 1.9 kg.",
+  fy: {domain: label_order, axis: null, padding: 0.25},
+  x: {label: "kg of waste per person per day", labelAnchor: "center", domain: [0, 2], grid: true, ticks: 5},
+  marks: [
+    Plot.dot(households, Plot.dodgeY("middle", {
+      fy: "label",
+      x: "per_capita",
+      r: 3.6,
+      fill: palette[0],
+      fillOpacity: 0.75,
+      stroke: "#ffffff",
+      strokeWidth: 0.6,
+      tip: true,
+      title: (d) => `${d.household}\n${d.per_capita} kg per person per day\n${d.occupants} people, ${d.per_day} kg per day\n${d.label} (${d.parish})`
+    })),
+    Plot.ruleX(medians, {fy: "label", x: "median", stroke: palette[1], strokeWidth: 2}),
+    Plot.text(medians, {
+      fy: "label",
+      x: "median",
+      text: (d) => `median ${d.median} kg`,
+      frameAnchor: "bottom",
+      textAnchor: "start",
+      dx: 5,
+      dy: -1,
+      fill: palette[1],
+      fontWeight: 600
+    }),
+    // row titles last, with a halo so the median line does not cut through them
+    Plot.text(medians, {
+      fy: "label",
+      text: (d) => `${d.label} (${d.parish}), ${d.n} households`,
+      frameAnchor: "top-left",
+      dx: 2,
+      dy: -2,
+      fontWeight: 700,
+      fill: "#1e1e1e",
+      stroke: "#f4f4f4",
+      strokeWidth: 5
+    })
+  ]
+})
+```
+
+:::
 :::
 
 :::
 
-::: {.content-block}
+::: {.owd-tint}
+::: {.owd-section}
 
-<iframe
-scrolling="no"
-style="width:100%!important;height:300px;border:0px !important"
-src="https://buttondown.email/openwashdata?as_embed=true"
-></iframe><br /><br />
+## Learn
+
+<p class="owd-lead">Data Science for openwashdata (ds4owd), our free online course, teaches WASH professionals data science in R. Two cohorts have graduated so far. A third cohort will start in September 2027. We are currently preparing the sign-up forms for the third iteration. In the meantime, you can browse the course website of the second cohort from 2025.</p>
+
+[Course website of the 2025 cohort](https://ds4owd-002.github.io/website/){.owd-more}
+[About the course](pages/academy/index.qmd){.owd-more}
+
+:::
+:::
+
+::: {.owd-section}
+
+## Read
+
+<p class="owd-lead">Stories, tutorials and opinions from and for the community.</p>
+
+::: {#latest-posts}
+:::
+
+[All posts](pages/blog/index.qmd){.owd-more}
 
 :::
 
+::: {.owd-tint}
+::: {.owd-section}
+
+## Join
+
+```{=html}
+<div class="owd-cards">
+<a class="owd-card" href="pages/get-started/chat/index.qmd"><span class="owd-card-kicker">Talk</span><strong>Chat with us</strong><p>The community room on Matrix, open to everyone.</p></a>
+<a class="owd-card" href="pages/blog/posts/2024-05-17-data-publication-1/index.qmd"><span class="owd-card-kicker">Share</span><strong>Publish your data</strong><p>We turn your WASH dataset into a documented, citable data package with you.</p></a>
+<a class="owd-card" href="https://github.com/openwashdata"><span class="owd-card-kicker">Build</span><strong>Contribute on GitHub</strong><p>Code, data packages, the course and this website are open.</p></a>
+</div>
+```
+
+:::
+:::
+
+::: {.owd-band}
+::: {.owd-band-inner}
+
+## Stay in touch
+
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-footer">Subscribe to the monthly newsletter</label>
+<input type="email" name="email" id="owd-email-footer" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+
+:::
+:::
