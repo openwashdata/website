@@ -39,3 +39,4 @@
 - 15:42 - [image] learn and join sections still have too much space
 - 15:53 - [image] it's a question for my brand choices, but these contrasts seem poor for the chosen colors. Rework the waffle plot again. I don't like it. It doesn't improve the display. What other options could you propose?
 - 15:55 - the current landing page should not show "join the course" because we do not yet have a sign up. Read out stories and then to the blog is the best other alternative
+- 15:57 - go for options 1, then open an issue for brand, i will need 6+ colours regularly.

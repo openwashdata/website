@@ -83,15 +83,15 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ::: {.owd-dotm}
 ::: {.owd-dotm-text}
-**solidwastekampala** holds the quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 to 0.98 kg per day, and food makes up three quarters of the mass.
+**solidwastekampala** holds the quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 kg per day on average in the low income parish to 0.98 in the high income parish, and food makes up three quarters of the mass.
 
 [Open solidwastekampala](https://openwashdata.github.io/solidwastekampala){.owd-more}
 :::
 
 ::: {.owd-dotm-chart}
 
-<p class="owd-chart-title">Food makes up most of the household waste in Kampala</p>
-<p class="owd-chart-note">Each square is one percent of the waste mass, 103 households in three parishes, one week. Hover a square for the numbers.</p>
+<p class="owd-chart-title">Waste per person rises with income</p>
+<p class="owd-chart-note">One dot per household: kg of waste per person per day, with the median of each income level. Hover a dot for the household.</p>
 
 ```{r}
 #| label: dataset-of-the-month-data
@@ -99,64 +99,38 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 # pak::pak("openwashdata/solidwastekampala")
 library(solidwastekampala)
 library(dplyr)
-library(tidyr)
 
-groups <- c(
-  waste_food_kg = "Food",
-  waste_garden_kg = "Garden and wood",
-  waste_wood_kg = "Garden and wood",
-  waste_polythene_kg = "Plastics and polythene",
-  waste_plastics_kg = "Plastics and polythene",
-  waste_paper_kg = "Paper and textiles",
-  waste_textiles_kg = "Paper and textiles",
-  waste_glass_kg = "Glass and metals",
-  waste_metals_kg = "Glass and metals",
-  waste_other_kg = "Other"
-)
-
-shares <- solidwastekampala |>
-  select(income_level, parish, all_of(names(groups))) |>
-  pivot_longer(starts_with("waste_"), names_to = "category", values_to = "kg") |>
-  mutate(group = unname(groups[category])) |>
-  summarise(kg = sum(kg, na.rm = TRUE), .by = c(income_level, parish, group)) |>
-  mutate(share = kg / sum(kg), .by = income_level)
-
-group_order <- shares |>
-  summarise(kg = sum(kg), .by = group) |>
-  arrange(desc(kg)) |>
-  pull(group)
-
-# Food first, so it sits at the bottom of every stack
-shares <- shares |>
-  arrange(income_level, match(group, group_order)) |>
-  mutate(
+households <- solidwastekampala |>
+  transmute(
+    household = sub("_", " ", household_id),
+    income_level,
     label = paste(tools::toTitleCase(as.character(income_level)), "income"),
-    income_level = as.character(income_level),
-    share_pct = round(100 * share, 1),
-    kg = round(kg, 1)
+    parish,
+    occupants,
+    per_capita = round(waste_per_capita_kg, 2),
+    per_day = round(waste_per_day_kg, 1)
+  ) |>
+  arrange(income_level) |>
+  mutate(income_level = as.character(income_level))
+
+medians <- households |>
+  summarise(
+    median = round(median(per_capita), 2),
+    n = n(),
+    .by = c(income_level, label, parish)
   )
 
-# one square per percent: whole squares first, the remainders decide the rest
-shares <- shares |>
-  mutate(
-    raw = 100 * share,
-    base = floor(raw),
-    extra = as.integer(rank(-(raw - base), ties.method = "first") <= 100 - sum(base)),
-    squares = as.integer(base + extra),
-    .by = income_level
-  ) |>
-  select(-raw, -base, -extra)
-
 ojs_define(
-  shares_data = shares,
-  group_order = group_order,
-  label_order = unique(shares$label)
+  households_data = households,
+  medians_data = medians,
+  label_order = unique(households$label)
 )
 ```
 
 ```{ojs}
 //| echo: false
-shares = transpose(shares_data)
+households = transpose(households_data)
+medians = transpose(medians_data)
 
 // width of the chart column, so the text keeps its size on every screen
 chartWidth = Generators.observe((notify) => {
@@ -168,54 +142,56 @@ chartWidth = Generators.observe((notify) => {
   return () => observer.disconnect();
 })
 
-// chart-1 to chart-6 from openwashdata/brand
-palette = ["#8a3a8a", "#b04208", "#3b5bdb", "#1f8a5f", "#b8860b", "#c2477a"]
-
-// one row per square: columns fill from the left, rows from the bottom
-cells = {
-  const out = [];
-  for (const label of label_order) {
-    let i = 0;
-    for (const group of group_order) {
-      const row = shares.find((d) => d.label === label && d.group === group);
-      if (!row) continue;
-      for (let k = 0; k < row.squares; k++, i++) {
-        out.push({
-          label, group,
-          col: Math.floor(i / 10), row: i % 10,
-          share_pct: row.share_pct, kg: row.kg, squares: row.squares, parish: row.parish
-        });
-      }
-    }
-  }
-  return out;
-}
+// chart-1 and chart-2 from openwashdata/brand
+palette = ["#8a3a8a", "#b04208"]
 
 Plot.plot({
   width: chartWidth,
-  aspectRatio: 1,
-  marginLeft: 0,
-  marginRight: 0,
-  marginTop: 24,
-  marginBottom: 4,
+  height: 310,
+  marginLeft: 10,
+  marginRight: 10,
+  marginTop: 6,
+  marginBottom: 40,
   style: {fontFamily: "Atkinson Hyperlegible Next, sans-serif", fontSize: 13, background: "transparent"},
-  ariaLabel: "Three waffle charts of the share of household waste mass by category for the low, middle and high income parishes in Kampala, one square per percent",
-  ariaDescription: "Food fills 75 to 82 of the 100 squares in each parish. Garden and wood, plastics and polythene, other waste, paper and textiles, and glass and metals share the rest.",
-  fx: {domain: label_order, label: null, padding: 0.15},
-  x: {axis: null, domain: d3.range(10)},
-  y: {axis: null, domain: d3.range(10), reverse: true},
-  color: {domain: group_order, range: palette, legend: true},
+  ariaLabel: "Dot plot of waste per person per day for 103 households in Kampala, one row per income level",
+  ariaDescription: "The median rises from 0.32 kg in the low income parish to 0.57 in the middle income parish and 0.93 in the high income parish. Households spread from near zero to about 1.9 kg.",
+  fy: {domain: label_order, axis: null, padding: 0.25},
+  x: {label: "kg of waste per person per day", labelAnchor: "center", domain: [0, 2], grid: true, ticks: 5},
   marks: [
-    Plot.axisFx({anchor: "top", label: null, tickSize: 0, fontSize: 13}),
-    Plot.cell(cells, {
-      fx: "label",
-      x: "col",
-      y: "row",
-      fill: "group",
-      inset: 0.8,
-      rx: 1,
+    Plot.dot(households, Plot.dodgeY("middle", {
+      fy: "label",
+      x: "per_capita",
+      r: 3.6,
+      fill: palette[0],
+      fillOpacity: 0.75,
+      stroke: "#ffffff",
+      strokeWidth: 0.6,
       tip: true,
-      title: (d) => `${d.group}\n${d.share_pct}% of the waste mass, ${d.squares} of 100 squares\n${d.kg} kg in one week, ${d.label} (${d.parish})`
+      title: (d) => `${d.household}\n${d.per_capita} kg per person per day\n${d.occupants} people, ${d.per_day} kg per day\n${d.label} (${d.parish})`
+    })),
+    Plot.ruleX(medians, {fy: "label", x: "median", stroke: palette[1], strokeWidth: 2}),
+    Plot.text(medians, {
+      fy: "label",
+      x: "median",
+      text: (d) => `median ${d.median} kg`,
+      frameAnchor: "bottom",
+      textAnchor: "start",
+      dx: 5,
+      dy: -1,
+      fill: palette[1],
+      fontWeight: 600
+    }),
+    // row titles last, with a halo so the median line does not cut through them
+    Plot.text(medians, {
+      fy: "label",
+      text: (d) => `${d.label} (${d.parish}), ${d.n} households`,
+      frameAnchor: "top-left",
+      dx: 2,
+      dy: -2,
+      fontWeight: 700,
+      fill: "#1e1e1e",
+      stroke: "#f4f4f4",
+      strokeWidth: 5
     })
   ]
 })
