@@ -44,7 +44,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ::: {.owd-actions}
 [Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}
-[Join the course](pages/academy/index.qmd){.btn .btn-outline}
+[Read our stories](pages/blog/index.qmd){.btn .btn-outline}
 :::
 
 ::: {#subscribe}
