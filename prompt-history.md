@@ -64,3 +64,9 @@
 - 21:24 - /ultrareview on dev; findings: Learn typos and stale freeze (already fixed), dead .owd-dotm img CSS, stale theme-dark.scss, prompts/ vs prompt-history.md undocumented
 - 21:43 - commit
 - 21:53 - open PR for website
+- 21:54 - continue your work on brand.
+- 22:06 - run the tests on PR and merge when complete
+- 22:30 - on the dot plot on index, add some type of tipp to hover over the dots to see each data pont
+- 22:33 - Learn on index also needs the graduates 2026 paze link so people can look at the projects. The academy page needs both gradudate pages as entries for people to navigate to when they read that page.
+- 22:38 - the tooltip worked fine. I wanted a note for the reader in the title or subtitle to tell them to hover. people don't know that.
+- 22:44 - are those changes on dev? if so, commit, push, pr, merge.

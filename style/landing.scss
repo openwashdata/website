@@ -232,6 +232,19 @@
   margin: 0 0 0.5rem;
 }
 
+// The hover hint: readers do not expect a static chart to react, so the
+// cue is set apart from the rest of the note.
+.owd-chart-hint {
+  display: inline-block;
+  font-weight: 600;
+  color: $brand-owd-purple;
+
+  &::before {
+    content: "\2192";
+    margin-right: 0.3rem;
+  }
+}
+
 // The latest posts list inside the Read section: date, then title,
 // in the body text size.
 .owd-section .quarto-listing {
