@@ -110,8 +110,9 @@ The site uses several Quarto extensions:
 
 ## Session Standards
 
-**Prompt History**: All user prompts and interactions must be logged in `prompt-history.md` at the repository root level. Each session should be separated by date and include timestamps for each prompt. This ensures full traceability of all work performed in the repository
-.
+**Prompt History**: All user prompts and interactions must be logged in `prompt-history.md` at the repository root level. Each session should be separated by date and include timestamps for each prompt. This ensures full traceability of all work performed in the repository.
+
+**Prompt Archive**: `prompts/` holds one file per prompt that shaped a commit, verbatim and with front matter, referenced from the commit's `Prompts:` trailer (written by the commit skill). `prompt-history.md` is the chronological log of every prompt; `prompts/` is the citable archive for the prompts behind a change. The folder is excluded from the rendered site in `_quarto.yml`.
 
 ## Project Management with GitHub CLI
 
