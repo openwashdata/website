@@ -29,3 +29,9 @@
 - 16:10 - git branch -f main origin/main
 - 16:48 - Commit the blog posts
 - 16:48 - 1 to 6 (prompts to archive)
+- 18:13 - git push -u origin blog-reposts
+
+## 2026-09-08
+
+- 06:23 - Yes pr to dev
+- 06:26 - Commit
