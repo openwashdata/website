@@ -15,9 +15,10 @@ website:
   page-navigation: true
   search: false
   page-footer: 
-    left: | 
-        This project was supported by the 
+    left: |
+        Supported by the
         [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/)
+        and [Global Health Engineering, ETH Zurich](https://ghe.ethz.ch/)
     right:
       - text: About
         href: about.qmd
