@@ -40,7 +40,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 # Open data for water, sanitation and hygiene
 
-<p class="owd-lead">openwashdata is a community that publishes WASH datasets and teaches the skills to do it.</p>
+<p class="owd-lead">openwashdata is an active global community that applies the FAIR principles to data from the water, sanitation and hygiene (WASH) sector, and teaches the skills to do it.</p>
 
 ::: {.owd-actions}
 [Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}

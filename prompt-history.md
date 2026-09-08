@@ -25,3 +25,4 @@
 - 10:15 - voice inbox has a voice note with a conversation about the website mockups, transcribe and identify the suggested changes. Note down any issues that might opening beyond the conversation about the mockup
 - 10:28 - it's there now recording 52
 - 14:52 - yes, post decision and change list, open issue, then work through change list and create a PR to dev.
+- 15:09 - keep some form of FAIR principles in there openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector
