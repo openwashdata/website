@@ -40,3 +40,5 @@
 - 15:53 - [image] it's a question for my brand choices, but these contrasts seem poor for the chosen colors. Rework the waffle plot again. I don't like it. It doesn't improve the display. What other options could you propose?
 - 15:55 - the current landing page should not show "join the course" because we do not yet have a sign up. Read out stories and then to the blog is the best other alternative
 - 15:57 - go for options 1, then open an issue for brand, i will need 6+ colours regularly.
+- 16:32 - that plot is lovely!
+- 16:34 - commit all work and merge into dev, also check the other branches and and open work from the two newly added blog posts. I want it all as a complete solved branch on dev before I open a PR to main. You can open PRs to dev, review them, close them. You have permission to commit and push. the newsletter issue draft doesn't belong here. it belongs into openwashdata/newsletter. move it.
