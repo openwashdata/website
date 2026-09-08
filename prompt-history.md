@@ -26,3 +26,6 @@
 - 10:28 - it's there now recording 52
 - 14:52 - yes, post decision and change list, open issue, then work through change list and create a PR to dev.
 - 15:09 - keep some form of FAIR principles in there openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector
+- 15:13 - swap the dataset of the month, we will use https://openwashdata.github.io/solidwastekampala/, the learn part can stay with a note that we are currently preparing the sign-up forms for the 3rd iteration starting around September 2027, but people can browse the course website of the 2025 2nd cohort
+- 15:16 - the image of the dataset of the month must be a plot where I see the R code (at least for the plot) inside the code-chunk before, not a png. That is a general rule for all my work with Quarto. It belongs either into memory or a CLAUDE.md at root for all projects.
+- 15:17 - on openwashdata/newsletter use the gh issue to document Charles as contributor of the month for sharing his data solidwastekamapala, also add if not there yet that I will prepare a blog about the story of how that data package was created.

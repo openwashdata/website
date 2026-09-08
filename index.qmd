@@ -83,11 +83,89 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ::: {.owd-dotm}
 ::: {.owd-dotm-text}
-**jmpdata** holds the sanitation data behind the WHO/UNICEF Joint Monitoring Programme estimates: 26,926 survey data points and 424,575 modelled estimates for 232 countries and territories. The chart shows the survey data points per year, the thin base under a large body of estimates.
+**solidwastekampala** holds the quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 to 0.98 kg per day, and food makes up three quarters of the mass.
 
-[Open jmpdata](https://openwashdata.github.io/jmpdata){.owd-more}
+[Open solidwastekampala](https://openwashdata.github.io/solidwastekampala){.owd-more}
 :::
-![Bar chart of survey-level sanitation data points in the JMP raw data per year, from 1991 to 2024](images/dataset-of-the-month/card-jmpdata.png)
+
+::: {.owd-dotm-chart}
+
+```{r}
+#| label: dataset-of-the-month
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show the R code behind this chart"
+#| fig-width: 7
+#| fig-height: 4.2
+#| fig-alt: "Stacked bar chart of the share of household waste mass by category for the low, middle and high income parishes in Kampala. Food makes up 75 to 82 percent in each parish. Garden and wood, plastics and polythene, other waste, paper and textiles, and glass and metals share the rest."
+# pak::pak("openwashdata/solidwastekampala")
+library(solidwastekampala)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+groups <- c(
+  waste_food_kg = "Food",
+  waste_garden_kg = "Garden and wood",
+  waste_wood_kg = "Garden and wood",
+  waste_polythene_kg = "Plastics and polythene",
+  waste_plastics_kg = "Plastics and polythene",
+  waste_paper_kg = "Paper and textiles",
+  waste_textiles_kg = "Paper and textiles",
+  waste_glass_kg = "Glass and metals",
+  waste_metals_kg = "Glass and metals",
+  waste_other_kg = "Other"
+)
+
+shares <- solidwastekampala |>
+  select(income_level, parish, all_of(names(groups))) |>
+  pivot_longer(starts_with("waste_"), names_to = "category", values_to = "kg") |>
+  mutate(group = unname(groups[category])) |>
+  summarise(kg = sum(kg, na.rm = TRUE), .by = c(income_level, parish, group)) |>
+  mutate(share = kg / sum(kg), .by = income_level)
+
+group_order <- shares |>
+  summarise(kg = sum(kg), .by = group) |>
+  arrange(desc(kg)) |>
+  pull(group)
+
+parish_labels <- shares |>
+  distinct(income_level, parish) |>
+  arrange(income_level) |>
+  mutate(label = paste0(tools::toTitleCase(as.character(income_level)), " income\n(", parish, ")"))
+
+shares <- shares |>
+  left_join(parish_labels, by = c("income_level", "parish")) |>
+  mutate(
+    group = factor(group, levels = rev(group_order)),
+    label = factor(label, levels = parish_labels$label)
+  )
+
+# chart-1 to chart-6 from openwashdata/brand
+chart_colours <- c("#8a3a8a", "#b04208", "#3b5bdb", "#1f8a5f", "#b8860b", "#c2477a")
+
+ggplot(shares, aes(x = label, y = share, fill = group)) +
+  geom_col(width = 0.62) +
+  scale_y_continuous(labels = scales::percent, expand = expansion(mult = c(0, 0.02))) +
+  scale_fill_manual(values = chart_colours, breaks = group_order) +
+  labs(
+    title = "Food makes up most of the household waste in Kampala",
+    subtitle = "Share of waste mass by category, 103 households in three parishes, one week",
+    x = NULL, y = NULL, fill = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold", colour = "#1e1e1e"),
+    plot.subtitle = element_text(colour = "#5c5c5c"),
+    legend.position = "right",
+    legend.key.size = unit(0.9, "lines")
+  )
+```
+
+:::
 :::
 
 :::
@@ -99,6 +177,9 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 <p class="owd-lead">ds4owd, our free online course, teaches WASH professionals data science in R. Two cohorts have graduated so far.</p>
 
+<p>We are currently preparing the sign-up forms for the third iteration, which starts around September 2027. In the meantime, you can browse the course website of the second cohort from 2025.</p>
+
+[Course website of the 2025 cohort](https://ds4owd-002.github.io/website/){.owd-more}
 [About the course](pages/academy/index.qmd){.owd-more}
 
 :::
