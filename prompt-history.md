@@ -70,3 +70,7 @@
 - 22:33 - Learn on index also needs the graduates 2026 paze link so people can look at the projects. The academy page needs both gradudate pages as entries for people to navigate to when they read that page.
 - 22:38 - the tooltip worked fine. I wanted a note for the reader in the title or subtitle to tell them to hover. people don't know that.
 - 22:44 - are those changes on dev? if so, commit, push, pr, merge.
+
+## 2026-09-09
+
+- 05:40 - The grey is not legible. In Emmanuel's blogs, check for consistency of naming with website. It says openWASH programme. It's openwashdata and it's a community.
