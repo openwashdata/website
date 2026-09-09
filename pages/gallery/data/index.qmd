@@ -2,7 +2,7 @@
 pagetitle: "Data"
 description: |
     A searchable catalogue of the datasets published through the openwashdata
-    community, and of the variables inside them.
+    community.
 editor_options:
   chunk_output_type: console
 execute:
@@ -22,85 +22,61 @@ library(dplyr)
 owd_base <- "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/"
 
 packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types = FALSE)
-variables <- readr::read_csv(paste0(owd_base, "owd_variables.csv"), show_col_types = FALSE)
-
-n_pkg <- nrow(packages)
-n_doi <- sum(packages$published, na.rm = TRUE)
 ```
 
 ## Data
 
-The table below lists every R data package in the openwashdata organisation.
-Each one comes with its own website and documentation, so the data can be
-reused and cited.
-
-A package has a **DOI** once it is deposited on Zenodo, which is what makes it
-citable and permanently archived. Of the `r n_pkg` packages listed here,
-`r n_doi` have one. The rest are published as packages and usable today, and
-are waiting on a deposit.
+Every R data package in the openwashdata organisation. Each one comes with its
+own website and documentation, so the data can be reused and cited. A package
+with a DOI is deposited on Zenodo, which is what makes it permanently archived
+and citable.
 
 :::{.column-page}
 ```{r}
+# DT renders HTML, not markdown, so the links are written as anchors. The
+# previous version of this page passed markdown and the links came out as
+# literal text.
+link <- function(text, href) {
+  paste0('<a href="', href, '">', text, '</a>')
+}
+
 tbl <- packages |>
   mutate(
-    Package = paste0("[", pkg_name, "](", url_docs, ")"),
-    DOI = ifelse(
-      is.na(doi),
-      "",
-      paste0("[", doi, "](https://doi.org/", doi, ")")
-    ),
-    Updated = format(date, "%d %B %Y")
-  ) |>
-  select(
-    Package,
+    Package = link(pkg_name, url_docs),
     Description = description,
-    Datasets = n_datasets,
-    DOI,
-    Updated
+    DOI = ifelse(is.na(doi), "", link("DOI", paste0("https://doi.org/", doi))),
+    Updated = format(date, "%d %b %Y")
   ) |>
+  select(Package, Description, Datasets = n_datasets, DOI, Updated) |>
   arrange(Package)
 
 datatable(
   tbl,
   escape = FALSE,
   rownames = FALSE,
-  filter = "top",
+  class = "compact stripe hover",
   options = list(
     pageLength = 25,
     lengthMenu = c(10, 25, 50, 100),
-    columnDefs = list(list(width = "45%", targets = 1))
-  )
-)
-```
-:::
-
-## Variables
-
-Every variable documented across the packages with a DOI. Search here to find
-which dataset holds the measurement you need.
-
-:::{.column-page}
-```{r}
-var_tbl <- variables |>
-  left_join(select(packages, pkg_name, url_docs), by = "pkg_name") |>
-  mutate(Package = paste0("[", pkg_name, "](", url_docs, ")")) |>
-  select(
-    Package,
-    Dataset = dataset_name,
-    Variable = variable_name,
-    Type = variable_type,
-    Description = description
-  ) |>
-  arrange(Package, Dataset, Variable)
-
-datatable(
-  var_tbl,
-  escape = FALSE,
-  rownames = FALSE,
-  filter = "top",
-  options = list(
-    pageLength = 25,
-    lengthMenu = c(10, 25, 50, 100)
+    autoWidth = FALSE,
+    columnDefs = list(
+      # Descriptions run to several sentences. Truncate them and keep the full
+      # text in the title attribute, so the row stays one or two lines.
+      list(
+        targets = 1,
+        render = JS(
+          "function(data, type, row) {",
+          "  if (type !== 'display' || data === null) return data;",
+          "  var cut = 150;",
+          "  if (data.length <= cut) return data;",
+          "  return '<span title=\"' + data.replace(/\"/g, '&quot;') + '\">' +",
+          "         data.substr(0, cut) + '…</span>';",
+          "}"
+        )
+      ),
+      list(targets = c(2, 3), className = "dt-center"),
+      list(targets = 4, className = "dt-nowrap")
+    )
   )
 )
 ```

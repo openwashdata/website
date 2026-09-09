@@ -31,7 +31,6 @@ data <- readr::read_csv(
   show_col_types = FALSE
 )
 n_pub <- nrow(data)
-n_doi <- sum(data$published, na.rm = TRUE)
 n_ds <- sum(data$n_datasets, na.rm = TRUE)
 first_year <- min(as.integer(format(data$date, "%Y")), na.rm = TRUE)
 n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
@@ -65,7 +64,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ::: {.owd-numbers}
 ::: {.owd-number-item}
 <div class="owd-number">`r n_pub`</div>
-<div class="owd-number-label">open data packages, `r n_doi` with a DOI</div>
+<div class="owd-number-label">open data packages</div>
 :::
 ::: {.owd-number-item}
 <div class="owd-number">`r n_ds`</div>
