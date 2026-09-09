@@ -1,6 +1,6 @@
 ---
 title: "Beyond publishing data: what we learned building an open science culture at BASEflow Malawi"
-description: "Reflections from a Data Steward at BASEflow Malawi on how introducing Open Science through the OpenWASH program raised deeper questions about data ownership, trust, documentation, and organizational culture. The lesson: Open Science is not simply about publishing data, but about creating the conditions for knowledge to be understood, trusted, shared responsibly, and put to work."
+description: "Reflections from a Data Steward at BASEflow Malawi on how introducing Open Science through the openwashdata community raised deeper questions about data ownership, trust, documentation, and organizational culture. The lesson: Open Science is not simply about publishing data, but about creating the conditions for knowledge to be understood, trusted, shared responsibly, and put to work."
 categories:
     - data stewardship
     - open data
@@ -10,7 +10,7 @@ categories:
 author:
   - name: "Emmanuel Mhango"
     url: https://openwashdata.org/about/emmanuel/
-    affiliation: BASEflow Malawi, openwashdata (ETH Zurich)
+    affiliation: BASEflow Malawi, Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid: 0000-0003-3197-6244
 date: "2026-08-18"
@@ -18,6 +18,8 @@ draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
+
+**Note:** This post was originally published by Emmanuel Mhango on LinkedIn on 18 August 2026 ([https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/](https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/)).
 
 I expected one of the hardest parts of introducing Open Science at [BASEflow Limited](https://www.linkedin.com/company/baseflow-limited/) would be convincing people that it was necessary.
 
@@ -41,7 +43,7 @@ That has probably been one of the most valuable parts of the experience.
 
 ## Open Science starts with questions
 
-When I joined BASEflow Malawi through the OpenWASH program with [ETH Zürich](https://www.linkedin.com/school/eth-zurich/), one of my first tasks was to understand the organization's data.
+When I joined BASEflow Malawi through the openwashdata community with [ETH Zurich](https://www.linkedin.com/school/eth-zurich/), one of my first tasks was to understand the organization's data.
 
 The data had been generated through many different activities and projects. Different teams had developed different ways of storing and managing information. Some data was in mWater. Some groundwater monitoring information was in CSV files. Some datasets were well known, while others were difficult to find. In some cases, documentation was limited.
 
@@ -268,6 +270,4 @@ For me, that is what building an Open Science culture at BASEflow has been about
 
 **Not simply publishing data, but creating the conditions for knowledge to be understood, trusted, shared responsibly and put to work.**
 
-*This reflection is based on my experience as a Data Steward at BASEflow Malawi through the OpenWASH program with ETH Zurich.*
-
-**Note:** This post was originally published by Emmanuel Mhango on LinkedIn on 18 August 2026 ([https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/](https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/)).
+*This reflection is based on my experience as a Data Steward at BASEflow Malawi through the openwashdata community with ETH Zurich.*
