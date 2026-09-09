@@ -150,11 +150,36 @@
 }
 
 // Numbers strip.
+// The stats sit on the same tinted band as the hero above them, so without
+// a surface of their own the two read as one block. A card lifts them off
+// the tint and marks them as their own section.
 .owd-numbers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   text-align: center;
+  background-color: $brand-paper;
+  border: 1px solid $brand-owd-purple-light;
+  border-radius: 0.75rem;
+  padding: 1.75rem 1.25rem;
+}
+
+// Below three columns the auto-fit grid leaves the third figure stranded
+// on a row of its own, so stack all three instead.
+@media (max-width: 640px) {
+  .owd-numbers {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// Hairlines between the figures, only while they sit in one row; the
+// breakpoint has to match the stacking rule above or stacked items get
+// a stray vertical rule.
+@media (min-width: 641px) {
+  .owd-number-item + .owd-number-item {
+    border-left: 1px solid $brand-owd-purple-light;
+  }
 }
 
 .owd-number {
@@ -293,7 +318,9 @@
 
 .owd-hero-a .owd-section {
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  // The stats card below carries its own border, so the band boundary does
+  // not need to be spelled out with padding as well.
+  padding-bottom: 1.5rem;
 }
 
 .owd-hero-a h1 {
