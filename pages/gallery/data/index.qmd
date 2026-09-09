@@ -1,63 +1,121 @@
 ---
 pagetitle: "Data"
 description: |
-    A table of datasets that have been published through the openwashdata 
-    community or are currently in development. 
-editor_options: 
+    A searchable catalogue of the datasets published through the openwashdata
+    community, and of the variables inside them.
+editor_options:
   chunk_output_type: console
-execute: 
+execute:
   echo: false
   warning: false
 ---
 
 ```{r}
-options(knitr.kable.NA = '')
-library(stringr)
 library(DT)
+library(dplyr)
 ```
 
+```{r}
+# The catalogue comes from the owdata harvest, which reads every repository in
+# the organisation once a week. Until washr 1.1.0 this page read a Google Sheet
+# that nothing writes to any more (openwashdata/owdata#11).
+owd_base <- "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/"
+
+packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types = FALSE)
+variables <- readr::read_csv(paste0(owd_base, "owd_variables.csv"), show_col_types = FALSE)
+
+readr::write_csv(packages, here::here("pages/gallery/data/data_data/owd_packages.csv"))
+readr::write_csv(variables, here::here("pages/gallery/data/data_data/owd_variables.csv"))
+
+n_pkg <- nrow(packages)
+n_doi <- sum(packages$published, na.rm = TRUE)
+```
 
 ## Data
 
-The table on this pages shows data that is published following our R data package workflow. Each data set comes with its own website and rich documentation to increase reusability. 
+The table below lists every R data package in the openwashdata organisation.
+Each one comes with its own website and documentation, so the data can be
+reused and cited.
 
-```{r}
-data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
-
-data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
-
-data <- readr::read_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv")) 
-
-```
+A package has a **DOI** once it is deposited on Zenodo, which is what makes it
+citable and permanently archived. Of the `r n_pkg` packages listed here,
+`r n_doi` have one. The rest are published as packages and usable today, and
+are waiting on a deposit.
 
 :::{.column-page}
 ```{r}
-tbl_data <- data |> 
-    dplyr::mutate(link_pkg_website = dplyr::case_when(
-        status == "in-progress" ~ NA_character_,
-        TRUE ~ link_pkg_website
-    )) |> 
-    dplyr::mutate(status = dplyr::case_when(
-        status == "in-progress" ~ paste0("[", status, "]", "(", link_github, ")"),
-        TRUE ~ status
-    )) |> 
-    dplyr::select(id, 
-                  name = pkg_name,
-                  location, 
-                  status, 
-                  description, 
-                  published = date_published, 
-                  website = link_pkg_website) |> 
-    dplyr::mutate(published = format(published, "%d. %B %Y")) |> 
-    dplyr::arrange(id)
+tbl <- packages |>
+  mutate(
+    Package = paste0("[", pkg_name, "](", url_docs, ")"),
+    DOI = ifelse(
+      is.na(doi),
+      "",
+      paste0("[", doi, "](https://doi.org/", doi, ")")
+    ),
+    Updated = format(date, "%d %B %Y")
+  ) |>
+  select(
+    Package,
+    Description = description,
+    Datasets = n_datasets,
+    DOI,
+    Updated
+  ) |>
+  arrange(Package)
 
-tbl_data |> 
-    dplyr::filter(!stringr::str_detect(status, "in-progress")) |> 
-    knitr::kable(padding = 0)
-
+datatable(
+  tbl,
+  escape = FALSE,
+  rownames = FALSE,
+  filter = "top",
+  options = list(
+    pageLength = 25,
+    lengthMenu = c(10, 25, 50, 100),
+    columnDefs = list(list(width = "45%", targets = 1))
+  )
+)
 ```
-
 :::
 
+## Variables
 
+Every variable documented across the packages with a DOI. Search here to find
+which dataset holds the measurement you need.
 
+:::{.column-page}
+```{r}
+var_tbl <- variables |>
+  left_join(select(packages, pkg_name, url_docs), by = "pkg_name") |>
+  mutate(Package = paste0("[", pkg_name, "](", url_docs, ")")) |>
+  select(
+    Package,
+    Dataset = dataset_name,
+    Variable = variable_name,
+    Type = variable_type,
+    Description = description
+  ) |>
+  arrange(Package, Dataset, Variable)
+
+datatable(
+  var_tbl,
+  escape = FALSE,
+  rownames = FALSE,
+  filter = "top",
+  options = list(
+    pageLength = 25,
+    lengthMenu = c(10, 25, 50, 100)
+  )
+)
+```
+:::
+
+```{r}
+#| output: asis
+cat(
+  "\n*Catalogue harvested from the openwashdata organisation by ",
+  "[owdata](https://github.com/openwashdata/owdata). ",
+  "Most recent package update: ",
+  format(max(packages$date, na.rm = TRUE), "%d %B %Y"), ".*\n",
+  sep = ""
+)
+```
