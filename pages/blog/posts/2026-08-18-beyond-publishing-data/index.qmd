@@ -10,7 +10,7 @@ categories:
 author:
   - name: "Emmanuel Mhango"
     url: https://openwashdata.org/about/emmanuel/
-    affiliation: BASEflow Malawi, openwashdata (ETH Zurich)
+    affiliation: BASEflow Malawi, Global Health Engineering, ETH Zurich
     affiliation_url: https://ghe.ethz.ch/
     orcid: 0000-0003-3197-6244
 date: "2026-08-18"
@@ -18,6 +18,8 @@ draft: false
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
+
+**Note:** This post was originally published by Emmanuel Mhango on LinkedIn on 18 August 2026 ([https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/](https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/)).
 
 I expected one of the hardest parts of introducing Open Science at [BASEflow Limited](https://www.linkedin.com/company/baseflow-limited/) would be convincing people that it was necessary.
 
@@ -269,5 +271,3 @@ For me, that is what building an Open Science culture at BASEflow has been about
 **Not simply publishing data, but creating the conditions for knowledge to be understood, trusted, shared responsibly and put to work.**
 
 *This reflection is based on my experience as a Data Steward at BASEflow Malawi through the openwashdata community with ETH Zurich.*
-
-**Note:** This post was originally published by Emmanuel Mhango on LinkedIn on 18 August 2026 ([https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/](https://www.linkedin.com/pulse/beyond-publishing-data-what-we-learned-building-open-science-mhango-w1h8f/)).
