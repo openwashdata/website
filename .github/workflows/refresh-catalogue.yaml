@@ -1,0 +1,84 @@
+# Re-render the pages that read the owdata catalogue, and commit the
+# refreshed freeze.
+#
+# The site sets `freeze: auto` and commits `_freeze/`, and Netlify replays
+# that freeze rather than running R. So a page only changes when someone
+# renders it and commits the result. That is why the old Google Sheet
+# catalogue went stale on the site even while the sheet itself was edited.
+#
+# This job does that render on a schedule instead of by hand. It runs
+# after the owdata harvest, which is Monday 03:00 UTC, and opens a pull
+# request rather than pushing, so a catalogue change is reviewed like any
+# other change to the site.
+
+name: refresh-catalogue
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::readr
+            any::dplyr
+            any::DT
+            any::here
+            any::rmarkdown
+            any::pak
+
+      # The landing page loads whichever data package is dataset of the
+      # month, which changes by hand and is not in Config/Needs.
+      - name: Install the dataset of the month
+        run: |
+          pkg=$(grep -oE '^library\(([a-z0-9]+)\)' index.qmd | sed -n '2s/library(\(.*\))/\1/p')
+          if [ -n "$pkg" ]; then
+            Rscript -e "pak::pak(paste0('openwashdata/', '$pkg'))"
+          fi
+
+      # Only the two pages that read the catalogue. Rendering the whole
+      # site would need every data package the blog and gallery load.
+      - name: Render the catalogue pages
+        run: |
+          quarto render pages/gallery/data/index.qmd --to html
+          quarto render index.qmd --to html
+
+      - name: Open a pull request when the catalogue changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: refresh-catalogue
+          base: dev
+          add-paths: |
+            _freeze/index/**
+            _freeze/pages/gallery/data/**
+            pages/gallery/data/data_data/**
+          commit-message: "chore: refresh the data catalogue from the owdata harvest"
+          title: "Refresh the data catalogue"
+          body: |
+            The weekly owdata harvest changed the catalogue, so the frozen
+            render of the data page is out of date.
+
+            This pull request carries the re-executed freeze and the cached
+            CSVs. Merging it publishes the current catalogue.
+
+            Opened by `.github/workflows/refresh-catalogue.yaml`.
+          delete-branch: false

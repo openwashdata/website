@@ -24,14 +24,16 @@ listing:
 ```{r}
 #| include: false
 library(dplyr)
+# Same source as the data catalogue: the weekly owdata harvest of the
+# organisation (openwashdata/owdata#11).
 data <- readr::read_csv(
-  "pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv",
+  "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/owd_packages.csv",
   show_col_types = FALSE
 )
-pub <- data |> filter(status == "published")
-n_pub <- nrow(pub)
-n_loc <- n_distinct(pub$location)
-first_year <- min(as.integer(format(pub$date_published, "%Y")), na.rm = TRUE)
+n_pub <- nrow(data)
+n_doi <- sum(data$published, na.rm = TRUE)
+n_ds <- sum(data$n_datasets, na.rm = TRUE)
+first_year <- min(as.integer(format(data$date, "%Y")), na.rm = TRUE)
 n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ```
 
@@ -63,11 +65,11 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ::: {.owd-numbers}
 ::: {.owd-number-item}
 <div class="owd-number">`r n_pub`</div>
-<div class="owd-number-label">published data packages</div>
+<div class="owd-number-label">open data packages, `r n_doi` with a DOI</div>
 :::
 ::: {.owd-number-item}
-<div class="owd-number">`r n_loc`</div>
-<div class="owd-number-label">countries and regions</div>
+<div class="owd-number">`r n_ds`</div>
+<div class="owd-number-label">datasets inside them</div>
 :::
 ::: {.owd-number-item}
 <div class="owd-number">`r n_years`</div>
