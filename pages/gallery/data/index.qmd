@@ -24,9 +24,6 @@ owd_base <- "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/ext
 packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types = FALSE)
 variables <- readr::read_csv(paste0(owd_base, "owd_variables.csv"), show_col_types = FALSE)
 
-readr::write_csv(packages, here::here("pages/gallery/data/data_data/owd_packages.csv"))
-readr::write_csv(variables, here::here("pages/gallery/data/data_data/owd_variables.csv"))
-
 n_pkg <- nrow(packages)
 n_doi <- sum(packages$published, na.rm = TRUE)
 ```

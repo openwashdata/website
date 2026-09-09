@@ -70,7 +70,6 @@ jobs:
           add-paths: |
             _freeze/index/**
             _freeze/pages/gallery/data/**
-            pages/gallery/data/data_data/**
           commit-message: "chore: refresh the data catalogue from the owdata harvest"
           title: "Refresh the data catalogue"
           body: |
