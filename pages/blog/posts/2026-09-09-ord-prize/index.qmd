@@ -1,0 +1,53 @@
+---
+title: "We won the National ORD Prize two years ago. Here is what it meant."
+description: "In November 2024 openwashdata received the National Prize for Open Research Data from the Swiss Academies of Arts and Sciences. It came early in the project, at a point when we were still arguing that WASH data was worth publishing at all. Now that the funded phase is complete and we are looking for support to continue, it is a good moment to share what the prize recognised and what it changed."
+categories:
+    - open data
+    - open science
+    - community
+    - award
+author:
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid: 0000-0003-2196-5015
+date: "2026-09-09"
+draft: true
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
+---
+
+::: {.callout-note}
+Draft for issue #150. The details below are sourced from the ETH announcement and the Swiss Academies prize page, but the framing, the quotes and the closing section still need your review before this is published.
+:::
+
+In November 2024, openwashdata received the [National Prize for Open Research Data](https://ord.swiss-academies.ch/national-ord-prize/prize-winners) from the Swiss Academies of Arts and Sciences. The award ceremony was held in Bern on 27 November 2024. We never properly announced it here.
+
+That is worth correcting now, for a reason that has less to do with the prize itself than with timing. The award came early in the project, at a point when we were still making the case that data from the water, sanitation and hygiene sector was worth publishing at all. The funded phase is now complete, and we are looking for support to continue the work. This feels like the right moment to look back at what the prize recognised.
+
+## What the prize is
+
+The National ORD Prize is awarded by the Swiss Academies of Arts and Sciences to researchers at all career levels for innovative approaches and best practices in open research data. The 2024 prize was shared between four projects: Pathoplexus, ROADS, openwashdata and ENAC-IT4Research.
+
+For openwashdata, the prize went to Elizabeth Tilley, Professor of Global Health Engineering at ETH Zurich, and Colin Walder, the data steward for the Global Health Engineering group.
+
+## What it was awarded for
+
+The citation recognised openwashdata for promoting the reuse of data in water, sanitation and hygiene, and for promoting the shift towards a transparent and accessible research culture.
+
+Two things sit behind that. The first is the data itself: taking WASH datasets that existed as spreadsheets, PDFs and unpublished files, and converting them into R data packages that anyone can install, cite and reuse. The second is the teaching. The free data science course has always been as much a part of the project as the publishing workflow, because a dataset published into a community that cannot use it is not much of a contribution.
+
+## Watch the announcement
+
+{{< video https://www.youtube.com/watch?v=590qPtQNCD0 title="National Prize for Open Research Data 2024: openwashdata" >}}
+
+## Why we are sharing it now
+
+External recognition is useful for a specific reason: it is evidence that open practices are taken seriously beyond the group doing them. When we started, "publish the data properly" was a claim we had to argue for. A national prize is a different kind of argument.
+
+Since 2024 the project has grown well past the two people who accepted the award. Two cohorts have graduated from the data science course. Data stewards have been embedded at partner organisations in Malawi and South Africa, and their reflections on what that work actually involves are on this blog. Fifty data packages have been published.
+
+That funded phase has now ended. We are looking for support to continue, and the case we are making rests on the same thing the prize recognised: that data which is easy to find, easy to use and clearly documented is worth more than data that merely exists.
+
+If you want to follow what comes next, the [monthly newsletter](https://openwashdata.org/) is the best place to start.

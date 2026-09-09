@@ -78,3 +78,5 @@
 - 06:05 - The note about the LinkedIn post should sit at the top. ETH Zurich needs also Global Health Engineering, ETH Zurich (without umlaut)
 - 06:35 - There is still too much space at the top of landing page
 - 06:36 - Open an issue on website repo to write blog post about national ord prize. We never properly announced it.
+- 07:10 - This page holds the YouTube video of the prize and provides greater context of data stewardship (cven5999-ss26 case study). Use it as material to write a short draft blog post for 150.
+- 07:30 - the three statistics displayed under the sign up form need to stand out a bit more. a small box or a seperator to the above, so that it looks like it's own section
