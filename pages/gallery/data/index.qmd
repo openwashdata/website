@@ -1,63 +1,94 @@
 ---
 pagetitle: "Data"
 description: |
-    A table of datasets that have been published through the openwashdata 
-    community or are currently in development. 
-editor_options: 
+    A searchable catalogue of the datasets published through the openwashdata
+    community.
+editor_options:
   chunk_output_type: console
-execute: 
+execute:
   echo: false
   warning: false
 ---
 
 ```{r}
-options(knitr.kable.NA = '')
-library(stringr)
 library(DT)
+library(dplyr)
 ```
 
+```{r}
+# The catalogue comes from the owdata harvest, which reads every repository in
+# the organisation once a week. Until washr 1.1.0 this page read a Google Sheet
+# that nothing writes to any more (openwashdata/owdata#11).
+owd_base <- "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/"
+
+packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types = FALSE)
+```
 
 ## Data
 
-The table on this pages shows data that is published following our R data package workflow. Each data set comes with its own website and rich documentation to increase reusability. 
-
-```{r}
-data <- googlesheets4::read_sheet("1vtw16vpvJbioDirGTQcy0Ubz01Cz7lcwFVvbxsNPSVM")
-
-data |> readr::write_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv"))
-
-data <- readr::read_csv(here::here("pages/gallery/data/data_data/tbl-01-openwashdata-datasets.csv")) 
-
-```
+Every R data package in the openwashdata organisation. Each one comes with its
+own website and documentation, so the data can be reused and cited. A package
+with a DOI is deposited on Zenodo, which is what makes it permanently archived
+and citable.
 
 :::{.column-page}
 ```{r}
-tbl_data <- data |> 
-    dplyr::mutate(link_pkg_website = dplyr::case_when(
-        status == "in-progress" ~ NA_character_,
-        TRUE ~ link_pkg_website
-    )) |> 
-    dplyr::mutate(status = dplyr::case_when(
-        status == "in-progress" ~ paste0("[", status, "]", "(", link_github, ")"),
-        TRUE ~ status
-    )) |> 
-    dplyr::select(id, 
-                  name = pkg_name,
-                  location, 
-                  status, 
-                  description, 
-                  published = date_published, 
-                  website = link_pkg_website) |> 
-    dplyr::mutate(published = format(published, "%d. %B %Y")) |> 
-    dplyr::arrange(id)
+# DT renders HTML, not markdown, so the links are written as anchors. The
+# previous version of this page passed markdown and the links came out as
+# literal text.
+link <- function(text, href) {
+  paste0('<a href="', href, '">', text, '</a>')
+}
 
-tbl_data |> 
-    dplyr::filter(!stringr::str_detect(status, "in-progress")) |> 
-    knitr::kable(padding = 0)
+tbl <- packages |>
+  mutate(
+    Package = link(pkg_name, url_docs),
+    Description = description,
+    DOI = ifelse(is.na(doi), "", link("DOI", paste0("https://doi.org/", doi))),
+    Updated = format(date, "%d %b %Y")
+  ) |>
+  select(Package, Description, Datasets = n_datasets, DOI, Updated) |>
+  arrange(Package)
 
+datatable(
+  tbl,
+  escape = FALSE,
+  rownames = FALSE,
+  class = "compact stripe hover",
+  options = list(
+    pageLength = 25,
+    lengthMenu = c(10, 25, 50, 100),
+    autoWidth = FALSE,
+    columnDefs = list(
+      # Descriptions run to several sentences. Truncate them and keep the full
+      # text in the title attribute, so the row stays one or two lines.
+      list(
+        targets = 1,
+        render = JS(
+          "function(data, type, row) {",
+          "  if (type !== 'display' || data === null) return data;",
+          "  var cut = 150;",
+          "  if (data.length <= cut) return data;",
+          "  return '<span title=\"' + data.replace(/\"/g, '&quot;') + '\">' +",
+          "         data.substr(0, cut) + '…</span>';",
+          "}"
+        )
+      ),
+      list(targets = c(2, 3), className = "dt-center"),
+      list(targets = 4, className = "dt-nowrap")
+    )
+  )
+)
 ```
-
 :::
 
-
-
+```{r}
+#| output: asis
+cat(
+  "\n*Catalogue harvested from the openwashdata organisation by ",
+  "[owdata](https://github.com/openwashdata/owdata). ",
+  "Most recent package update: ",
+  format(max(packages$date, na.rm = TRUE), "%d %B %Y"), ".*\n",
+  sep = ""
+)
+```
