@@ -86,3 +86,20 @@ p {
   border-top: 1px solid $brand-owd-grey-light;
   border-bottom: 1px solid $brand-owd-grey-light;
 }
+
+// Banner title blocks (blog listing and posts): Quarto applies
+// title-block-banner-color to the title only, so the subtitle keeps the
+// theme's muted grey and drops to 2.6:1 against the purple band. Carry the
+// banner colour through to the subtitle and metadata so they stay legible.
+.quarto-title-block .quarto-title-banner {
+  .subtitle,
+  .quarto-title-meta,
+  .quarto-title-meta a,
+  .quarto-categories .quarto-category {
+    color: $brand-paper;
+  }
+
+  .quarto-title-meta-heading {
+    color: $brand-owd-purple-light;
+  }
+}
