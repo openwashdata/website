@@ -76,3 +76,5 @@
 - 05:40 - The grey is not legible. In Emmanuel's blogs, check for consistency of naming with website. It says openWASH programme. It's openwashdata and it's a community.
 - 05:51 - Move tag
 - 06:05 - The note about the LinkedIn post should sit at the top. ETH Zurich needs also Global Health Engineering, ETH Zurich (without umlaut)
+- 06:35 - There is still too much space at the top of landing page
+- 06:36 - Open an issue on website repo to write blog post about national ord prize. We never properly announced it.
