@@ -54,6 +54,11 @@ datatable(
   tbl,
   escape = FALSE,
   rownames = FALSE,
+  # A fixed id keeps the render reproducible. htmlwidgets would otherwise draw
+  # a random id on every render, and the weekly refresh-catalogue job would
+  # see a diff and open a pull request even when the harvest did not change
+  # (openwashdata/website#157).
+  elementId = "data-catalogue",
   class = "compact stripe hover",
   options = list(
     pageLength = 25,
