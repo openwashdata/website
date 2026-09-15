@@ -76,8 +76,8 @@ jobs:
             The weekly owdata harvest changed the catalogue, so the frozen
             render of the data page is out of date.
 
-            This pull request carries the re-executed freeze and the cached
-            CSVs. Merging it publishes the current catalogue.
+            This pull request carries the re-executed freeze. Merging it
+            publishes the current catalogue.
 
             Opened by `.github/workflows/refresh-catalogue.yaml`.
           delete-branch: false
