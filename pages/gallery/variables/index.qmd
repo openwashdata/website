@@ -1,0 +1,108 @@
+---
+pagetitle: "Variables"
+description: |
+    Every variable in every dataset published through the openwashdata
+    community, searchable across packages.
+editor_options:
+  chunk_output_type: console
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+library(DT)
+library(dplyr)
+```
+
+```{r}
+# Both tables come from the owdata harvest, which reads every repository in
+# the organisation once a week (openwashdata/owdata#11). The packages table
+# supplies the link to each package site.
+owd_base <- "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/"
+
+packages  <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types = FALSE)
+variables <- readr::read_csv(paste0(owd_base, "owd_variables.csv"), show_col_types = FALSE)
+```
+
+## Variables
+
+Every variable in every dataset of the [data catalogue](/pages/gallery/data/index.qmd),
+across all packages. Search for a measurement to find the datasets that hold
+it, then follow the package link to its documentation and download.
+
+```{r}
+#| output: asis
+no_description <- is.na(variables$description) | trimws(variables$description) == ""
+cat(sprintf(
+  "\n%s variables across %s datasets in %s packages. %s of them have no description yet, shown as *no description*; filling those in is tracked in [openwashdata/owdata#20](https://github.com/openwashdata/owdata/issues/20).\n",
+  format(nrow(variables), big.mark = ","),
+  n_distinct(paste(variables$pkg_name, variables$dataset_name)),
+  n_distinct(variables$pkg_name),
+  format(sum(no_description), big.mark = ",")
+))
+```
+
+:::{.column-page}
+```{r}
+# DT renders HTML, not markdown, so the links are written as anchors.
+link <- function(text, href) {
+  paste0('<a href="', href, '">', text, '</a>')
+}
+
+tbl <- variables |>
+  left_join(packages |> select(pkg_name, url_docs), by = "pkg_name") |>
+  mutate(
+    Package = ifelse(is.na(url_docs), pkg_name, link(pkg_name, url_docs)),
+    Description = ifelse(no_description,
+                         '<em class="text-muted">no description</em>',
+                         description)
+  ) |>
+  select(Package, Dataset = dataset_name, Variable = variable_name,
+         Type = variable_type, Description) |>
+  arrange(Package, Dataset, Variable)
+
+datatable(
+  tbl,
+  escape = FALSE,
+  rownames = FALSE,
+  # A fixed id keeps the render reproducible, so the weekly refresh job only
+  # opens a pull request when the harvest changed (#157).
+  elementId = "data-variables",
+  class = "compact stripe hover",
+  options = list(
+    pageLength = 25,
+    lengthMenu = c(10, 25, 50, 100),
+    autoWidth = FALSE,
+    columnDefs = list(
+      # The longest description runs to 1,220 characters. Truncate and keep
+      # the full text in the title attribute, so a row stays one or two lines.
+      list(
+        targets = 4,
+        render = JS(
+          "function(data, type, row) {",
+          "  if (type !== 'display' || data === null) return data;",
+          "  var cut = 120;",
+          "  if (data.length <= cut) return data;",
+          "  return '<span title=\"' + data.replace(/\"/g, '&quot;') + '\">' +",
+          "         data.substr(0, cut) + '…</span>';",
+          "}"
+        )
+      ),
+      list(targets = 3, className = "dt-nowrap")
+    )
+  )
+)
+```
+:::
+
+```{r}
+#| output: asis
+cat(
+  "\n*Harvested from the openwashdata organisation by ",
+  "[owdata](https://github.com/openwashdata/owdata). ",
+  "Most recent package update: ",
+  format(max(packages$date, na.rm = TRUE), "%d %B %Y"), ".*\n",
+  sep = ""
+)
+```

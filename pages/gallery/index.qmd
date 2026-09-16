@@ -8,6 +8,8 @@ Our gallery highlights media created within the openwashdata. We share our strat
 
 {{< fa database >}} [Data](/pages/gallery/data/index.qmd)
 
+{{< fa table-list >}} [Variables](/pages/gallery/variables/index.qmd)
+
 {{< fa bullseye >}} [VMOST](/pages/gallery/vmost/index.qmd)
 
 {{< fa chart-simple >}} [Stats](/pages/gallery/stats/index.qmd)

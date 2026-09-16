@@ -29,7 +29,9 @@ packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types
 Every R data package in the openwashdata organisation. Each one comes with its
 own website and documentation, so the data can be reused and cited. A package
 with a DOI is deposited on Zenodo, which is what makes it permanently archived
-and citable.
+and citable. Looking for a particular measurement? The
+[variables table](/pages/gallery/variables/index.qmd) lists every variable in
+every dataset.
 
 :::{.column-page}
 ```{r}

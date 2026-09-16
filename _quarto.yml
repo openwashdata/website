@@ -106,6 +106,8 @@ website:
       contents:
         - text: "Data"
           href: pages/gallery/data/index.qmd
+        - text: "Variables"
+          href: pages/gallery/variables/index.qmd
         - text: "VMOST"
           href: pages/gallery/vmost/index.qmd
         - text: "Stats"
