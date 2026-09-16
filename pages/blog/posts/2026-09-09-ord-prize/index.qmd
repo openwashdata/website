@@ -13,10 +13,14 @@ author:
     affiliation_url: https://ghe.ethz.ch/
     orcid: 0000-0003-2196-5015
 date: "2026-09-09"
-draft: false
+draft: true
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
+
+::: {.callout-note}
+Draft for issue #150. The details below are sourced from the ETH announcement and the Swiss Academies prize page, but the framing, the quotes and the closing section still need your review before this is published.
+:::
 
 In November 2024, openwashdata received the [National Prize for Open Research Data](https://ord.swiss-academies.ch/national-ord-prize/prize-winners) from the Swiss Academies of Arts and Sciences. The award ceremony was held in Bern on 27 November 2024. We never properly announced it here.
 
