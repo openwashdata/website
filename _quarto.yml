@@ -24,6 +24,8 @@ website:
         href: about.qmd
       - text: Code of Conduct
         href: code_of_conduct.qmd
+      - text: Newsletter
+        href: pages/newsletter/index.qmd
       - icon: "envelope-at"
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
@@ -76,8 +78,8 @@ website:
             href: "https://github.com/openwashdata/data/issues"
 
     right:
-      - text: Subscribe
-        href: index.qmd#subscribe
+      - text: Newsletter
+        href: pages/newsletter/index.qmd
       - icon: envelope-at-fill
         href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
         aria-label: Email
@@ -106,6 +108,8 @@ website:
       contents:
         - text: "Data"
           href: pages/gallery/data/index.qmd
+        - text: "Variables"
+          href: pages/gallery/variables/index.qmd
         - text: "VMOST"
           href: pages/gallery/vmost/index.qmd
         - text: "Stats"

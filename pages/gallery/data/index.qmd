@@ -29,7 +29,9 @@ packages <- readr::read_csv(paste0(owd_base, "owd_packages.csv"), show_col_types
 Every R data package in the openwashdata organisation. Each one comes with its
 own website and documentation, so the data can be reused and cited. A package
 with a DOI is deposited on Zenodo, which is what makes it permanently archived
-and citable.
+and citable. Looking for a particular measurement? The
+[variables table](/pages/gallery/variables/index.qmd) lists every variable in
+every dataset.
 
 :::{.column-page}
 ```{r}
@@ -54,6 +56,11 @@ datatable(
   tbl,
   escape = FALSE,
   rownames = FALSE,
+  # A fixed id keeps the render reproducible. htmlwidgets would otherwise draw
+  # a random id on every render, and the weekly refresh-catalogue job would
+  # see a diff and open a pull request even when the harvest did not change
+  # (openwashdata/website#157).
+  elementId = "data-catalogue",
   class = "compact stripe hover",
   options = list(
     pageLength = 25,

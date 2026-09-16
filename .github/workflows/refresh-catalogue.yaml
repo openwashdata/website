@@ -55,11 +55,12 @@ jobs:
             Rscript -e "pak::pak(paste0('openwashdata/', '$pkg'))"
           fi
 
-      # Only the two pages that read the catalogue. Rendering the whole
+      # Only the three pages that read the catalogue. Rendering the whole
       # site would need every data package the blog and gallery load.
       - name: Render the catalogue pages
         run: |
           quarto render pages/gallery/data/index.qmd --to html
+          quarto render pages/gallery/variables/index.qmd --to html
           quarto render index.qmd --to html
 
       - name: Open a pull request when the catalogue changed
@@ -70,14 +71,15 @@ jobs:
           add-paths: |
             _freeze/index/**
             _freeze/pages/gallery/data/**
+            _freeze/pages/gallery/variables/**
           commit-message: "chore: refresh the data catalogue from the owdata harvest"
           title: "Refresh the data catalogue"
           body: |
             The weekly owdata harvest changed the catalogue, so the frozen
             render of the data page is out of date.
 
-            This pull request carries the re-executed freeze and the cached
-            CSVs. Merging it publishes the current catalogue.
+            This pull request carries the re-executed freeze. Merging it
+            publishes the current catalogue.
 
             Opened by `.github/workflows/refresh-catalogue.yaml`.
           delete-branch: false

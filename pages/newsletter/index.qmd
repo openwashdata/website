@@ -1,0 +1,24 @@
+---
+pagetitle: "Newsletter"
+description: |
+    One email a month from the openwashdata community: a dataset, a story,
+    and the community's news.
+toc: false
+---
+
+## Newsletter
+
+::: {#subscribe}
+<form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="owd-subscribe">
+<label for="owd-email-newsletter">One email a month: a dataset, a story, and the community's news.</label>
+<input type="email" name="email" id="owd-email-newsletter" placeholder="your email address" required>
+<input type="submit" value="Subscribe">
+</form>
+:::
+
+Every issue features one dataset from the catalogue with a chart and the
+numbers behind it, one story from the community, and the news: new data
+packages, courses, events, and ways to get involved. Issues go out on the
+first Monday of the month. Unsubscribe with one click in any issue.
+
+Past issues are in the [newsletter archive](https://buttondown.com/openwashdata/archive/).
