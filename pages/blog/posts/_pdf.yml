@@ -1,0 +1,37 @@
+# Shared settings for posts that also render to a branded PDF
+# (openwashdata/website#24). A post opts in with a _metadata.yml in its own
+# folder that lists the two formats and pulls in this file:
+#
+#   format:
+#     html: default
+#     owd-typst: default
+#   metadata-files:
+#     - ../_pdf.yml
+#
+# The formats have to be listed there, because Quarto decides the formats
+# before it merges metadata-files. That file, not index.qmd, carries the
+# opt-in so the frozen render of the post keeps its source hash.
+#
+# The owd-typst format comes from the quarto-owd extension in _extensions/
+# and reads the brand in _brand/. Netlify replays the frozen results and
+# runs Typst, so a post with R code needs its typst freeze committed:
+#   quarto render pages/blog/posts/<post>/index.qmd --to owd-typst
+# A post whose code produces HTML (leaflet, kableExtra, DT) or needs
+# credentials to run cannot opt in.
+format:
+  html: default
+  owd-typst:
+    cover: false
+    # Figures as SVG through svglite. The default svg device needs cairo,
+    # which the R build on macOS looks for in XQuartz.
+    knitr:
+      opts_chunk:
+        dev: svglite
+
+# Quarto labels a link to an extension format "PDF (owd)", so the PDF is
+# offered under Other Links instead of the Other Formats box.
+format-links: false
+other-links:
+  - text: PDF
+    href: index.pdf
+    icon: file-pdf

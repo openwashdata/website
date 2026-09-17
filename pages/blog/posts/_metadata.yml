@@ -10,3 +10,10 @@ title-block-banner-color: rgb(247,249,251)
 toc-location: left
 format: html
 search: false
+
+# A post also gets a branded PDF when its folder holds a _metadata.yml that
+# lists the owd-typst format and pulls in ../_pdf.yml (issue #24). The PDF
+# is opt-in per post because a format listed here cannot be switched off
+# again for the posts that cannot go to PDF: interactive HTML widgets, or
+# code that needs credentials to run. See _pdf.yml for what the opt-in does
+# and what a post with R code needs.

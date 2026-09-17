@@ -12,8 +12,6 @@ date: "2026-06-22"
 draft: false
 bibliography: references.bib
 csl: elsevier-harvard.csl
-format:
-  html: default
 ---
 
 Kelsey Shaw, a PhD student co-supervised at the University of Victoria (Canada) and the Swiss Federal Institute of Aquatic Science and Technology (Eawag, Switzerland), took part in the [ds4owd-001 course](https://ds4owd-001.github.io/website/) between September and December 2023. During the course she began working with data she had collected for her PhD research. The openwashdata data scientist Mian Zhong supported Kelsey's project, and after the course encouraged her to publish the primary dataset underlying her work that formed the basis for subsequent data analysis for future publications, as an open dataset with openwashdata.
