@@ -33,6 +33,24 @@ color:
     peach: "#FEBC94"
     sand: "#FAE3B4"
     rose: "#FFC0CB"
+    # Chart series, in this order, never cycled. Lightness alternates from
+    # the second colour on (dark, dark, light, dark, light, dark), so every
+    # neighbour differs in lightness as well as hue, and the red and green
+    # hues never share a lightness level (issues #17 and #20).
+    chart-1: "#8a3a8a"
+    chart-2: "#b04208"
+    chart-3: "#CF9E40"
+    chart-4: "#006840"
+    chart-5: "#FD7AAD"
+    chart-6: "#304FC2"
+    # Counterparts of the six at the other lightness level, for charts with
+    # seven to twelve series. Series 7 to 12 take them in this order.
+    chart-1-light: "#DE87DD"
+    chart-2-light: "#F28A5B"
+    chart-3-dark: "#785300"
+    chart-4-light: "#24BC82"
+    chart-5-dark: "#B60062"
+    chart-6-light: "#9A9CFF"
     # Bootstrap-name aliases so brand-aware tools pick these up.
     purple: owd-purple
     blue: owd-blue
