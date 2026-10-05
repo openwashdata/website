@@ -11,14 +11,14 @@ This is the openwashdata organization's website repository - a Quarto-based webs
 - **Project type**: Quarto website (`_quarto.yml`)
 - **Deployment**: Netlify with `@quarto/netlify-plugin-quarto`
 - **Content structure**: `.qmd` files organized in `pages/` subdirectories
-- **Styling**: Custom SCSS in `style/` directory with Atkinson Hyperlegible font
-- **Theme**: Litera theme with custom modifications
+- **Styling**: brand in `_brand/_brand.yml` (fonts, including Atkinson Hyperlegible Next, and colours) plus custom SCSS in `style/`
+- **Theme**: Litera, then the brand, then `style/theme.scss` and `style/landing.scss`
 
 ### Key Configuration Files
 
 - **`_quarto.yml`** - Main project configuration with website structure, navbar, sidebar, and theme settings
 - **`netlify.toml`** - Deployment configuration for Netlify
-- **`package.json`** - Node dependencies (currently only Quarto Netlify plugin)
+- **`package.json`** - Node dependencies (Quarto Netlify plugin and puppeteer)
 - **`styles.css`** - Additional CSS overrides
 - **`style/theme.scss`** - Custom SCSS theme variables and rules
 
