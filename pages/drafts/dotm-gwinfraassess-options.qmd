@@ -1,0 +1,291 @@
+---
+title: "Dataset of the month: gwinfraassess, three chart options"
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+Three interactive options for the dataset of the month in October 2026. One goes on the landing page, in the same place and size as the solidwastekampala chart. The data is gwinfraassess: an assessment of 123 groundwater monitoring wells by BASEflow Malawi in 2022 and 2023.
+
+```{r}
+#| label: data
+# pak::pak("openwashdata/gwinfraassess")
+library(gwinfraassess)
+library(dplyr)
+library(tidyr)
+
+wells <- gwinfraassess |>
+  mutate(
+    well = paste("Well", row_number()),
+    assessed = format(as.Date(sub(" .*", "", submitted_on), "%m/%d/%Y"), "%d %b %Y")
+  )
+
+# Option A: what happened to the logger in each well
+logger_levels <- c(
+  "Logger data downloaded",
+  "Logger in place, data not downloaded",
+  "Logger vandalised or stolen",
+  "Logger never installed",
+  "No logger, other reason or unknown"
+)
+
+loggers <- wells |>
+  mutate(
+    status = case_when(
+      logger_available == "Yes" & logger_download == "Yes" ~ logger_levels[1],
+      logger_available == "Yes" ~ logger_levels[2],
+      logger_not_available_reason %in% c("Vandalized", "Vandalised", "Stolen by the community") ~ logger_levels[3],
+      logger_not_available_reason == "Never installed" ~ logger_levels[4],
+      TRUE ~ logger_levels[5]
+    ),
+    status = factor(status, levels = logger_levels),
+    detail = case_when(
+      status == logger_levels[2] & !is.na(download_problem_reason) ~ paste("Download problem:", tolower(download_problem_reason)),
+      status %in% logger_levels[3:5] & !is.na(logger_not_available_reason) ~ paste("Reason:", tolower(logger_not_available_reason)),
+      TRUE ~ ""
+    )
+  ) |>
+  arrange(status) |>
+  mutate(
+    i = row_number() - 1,
+    col = i %/% 5,
+    row = i %% 5,
+    status = as.character(status)
+  ) |>
+  select(well, assessed, status, detail, col, row, logger_type)
+
+logger_counts <- loggers |> count(status) |>
+  mutate(status = factor(status, levels = logger_levels)) |> arrange(status) |>
+  mutate(status = as.character(status))
+
+# Option B: improvement actions recommended per well
+action_groups <- c(
+  "Identify and training gauge reader" = "People",
+  "Provide manual dipper" = "Equipment",
+  "Replacement of the level logger" = "Equipment",
+  "Installation of a new logger" = "Equipment",
+  "Replace barologger" = "Equipment",
+  "Rehabilitation of the civil works" = "Structure",
+  "Replace end cap" = "Structure",
+  "Replacement of the cover and hinges" = "Structure",
+  "Welding on the existing hinges" = "Structure",
+  "Replace and weld the hinges" = "Structure",
+  "Redevelop the monitoring well" = "Structure",
+  "Replace the well" = "Replace or retire",
+  "Discard monitoring well" = "Replace or retire",
+  "Discard as monitoring well and donate to the community" = "Replace or retire"
+)
+
+action_labels <- c(
+  "Identify and training gauge reader" = "Find and train a gauge reader",
+  "Provide manual dipper" = "Provide a manual dipper",
+  "Replacement of the level logger" = "Replace the level logger",
+  "Installation of a new logger" = "Install a new logger",
+  "Replace barologger" = "Replace the barologger",
+  "Rehabilitation of the civil works" = "Repair the civil works",
+  "Replace end cap" = "Replace the end cap",
+  "Replacement of the cover and hinges" = "Replace cover and hinges",
+  "Welding on the existing hinges" = "Weld the existing hinges",
+  "Replace and weld the hinges" = "Replace and weld the hinges",
+  "Redevelop the monitoring well" = "Redevelop the well",
+  "Replace the well" = "Replace the well",
+  "Discard monitoring well" = "Discard the well",
+  "Discard as monitoring well and donate to the community" = "Discard, give to community"
+)
+
+n_plans <- sum(!is.na(wells$improvement_plan))
+
+actions <- wells |>
+  filter(!is.na(improvement_plan)) |>
+  separate_longer_delim(improvement_plan, ",") |>
+  mutate(action = gsub("\\s+", " ", trimws(improvement_plan))) |>
+  filter(action %in% names(action_groups)) |>
+  distinct(well, action) |>
+  count(action, name = "n") |>
+  mutate(
+    group = unname(action_groups[action]),
+    label = unname(action_labels[action]),
+    share = round(100 * n / n_plans)
+  ) |>
+  arrange(desc(n))
+
+# Option C: well depth against water level
+levels_measured <- wells |>
+  filter(level_measurable == "Yes", !is.na(well_depth), !is.na(static_level)) |>
+  transmute(
+    well, assessed,
+    depth = round(well_depth, 1),
+    level = round(static_level, 1),
+    method = ifelse(measure_method == "Data logger", "Data logger", "Manual dipper"),
+    endcap = endcap_available
+  )
+
+n_unmeasurable <- sum(wells$level_measurable == "No", na.rm = TRUE)
+n_sand <- sum(grepl("sand/rock", wells$measure_reason))
+
+ojs_define(
+  loggers_data = loggers,
+  logger_counts_data = logger_counts,
+  logger_levels = logger_levels,
+  actions_data = actions,
+  n_plans = n_plans,
+  levels_data = levels_measured,
+  n_unmeasurable = n_unmeasurable,
+  n_sand = n_sand
+)
+```
+
+```{ojs}
+loggers = transpose(loggers_data)
+logger_counts = transpose(logger_counts_data)
+actions = transpose(actions_data)
+levels = transpose(levels_data)
+
+// width of a chart column, so the text keeps its size on every screen
+widthOf = (selector) => Generators.observe((notify) => {
+  const el = document.querySelector(selector);
+  const report = () => notify(Math.max(280, Math.min(640, el.clientWidth)));
+  const observer = new ResizeObserver(report);
+  observer.observe(el);
+  report();
+  return () => observer.disconnect();
+})
+
+// openwashdata/brand chart colours
+brand = ({purple: "#8a3a8a", rust: "#b04208", ochre: "#CF9E40", green: "#006840", pink: "#FD7AAD", blue: "#304FC2", grey: "#b9b9b9"})
+font = ({fontFamily: "Atkinson Hyperlegible Next, sans-serif", fontSize: 13, background: "transparent"})
+```
+
+## Option A: only 10 of 123 wells delivered logger data
+
+::: {.owd-option-a}
+
+<p class="owd-chart-title">Only 10 of 123 wells delivered logger data</p>
+<p class="owd-chart-note">One square per monitoring well, by what happened to its automatic water level logger. <span class="owd-chart-hint">Hover over a square to see that well.</span></p>
+
+```{ojs}
+widthA = widthOf(".owd-option-a")
+Plot.plot({
+  width: widthA,
+  height: Math.round((widthA - 8) / 25 * 5) + 8,
+  marginLeft: 4,
+  marginRight: 4,
+  marginTop: 4,
+  marginBottom: 4,
+  style: font,
+  ariaLabel: "Waffle chart of 123 groundwater monitoring wells in Malawi by logger status",
+  ariaDescription: "10 wells had a logger whose data was downloaded, 57 had a logger in place whose data was not downloaded, 11 had a logger vandalised or stolen, 40 never had a logger installed, and 5 had no logger for another or unknown reason.",
+  x: {axis: null},
+  y: {axis: null, reverse: false},
+  color: {
+    domain: logger_levels,
+    range: [brand.green, brand.ochre, brand.rust, brand.purple, brand.grey],
+    legend: true,
+    tickFormat: (s) => `${s} (${logger_counts.find((d) => d.status === s).n})`
+  },
+  marks: [
+    Plot.cell(loggers, {
+      x: "col",
+      y: "row",
+      fill: "status",
+      inset: 1.5,
+      rx: 3,
+      tip: true,
+      title: (d) => `${d.well}, assessed ${d.assessed}\n${d.status}${d.logger_type ? ` (${d.logger_type})` : ""}${d.detail ? `\n${d.detail}` : ""}`
+    })
+  ]
+})
+```
+
+:::
+
+For the text: the network has loggers in 67 wells, but on the assessment day the data came off only 10 of them. The most common problem was a logger that would not connect to the computer (39 wells). 40 wells never had a logger.
+
+## Option B: the most common fix is a person
+
+::: {.owd-option-b}
+
+<p class="owd-chart-title">The most common fix is a person</p>
+<p class="owd-chart-note">Share of the 122 wells with an improvement plan that need each action, coloured by kind of action. <span class="owd-chart-hint">Hover over a bar for the number of wells.</span></p>
+
+```{ojs}
+widthB = widthOf(".owd-option-b")
+Plot.plot({
+  width: widthB,
+  height: 400,
+  marginLeft: widthB < 420 ? 170 : 220,
+  marginRight: 36,
+  marginTop: 4,
+  marginBottom: 36,
+  style: font,
+  ariaLabel: "Bar chart of improvement actions recommended for groundwater monitoring wells in Malawi",
+  ariaDescription: "62 percent of wells need a trained gauge reader, 61 percent a manual dipper, 46 percent a replaced level logger and 42 percent repaired civil works.",
+  x: {label: "% of wells", labelAnchor: "center", domain: [0, 70], grid: true, ticks: 4},
+  y: {label: null, domain: actions.map((d) => d.label)},
+  color: {
+    domain: ["People", "Equipment", "Structure", "Replace or retire"],
+    range: [brand.purple, brand.ochre, brand.rust, brand.grey],
+    legend: true
+  },
+  marks: [
+    Plot.barX(actions, {
+      y: "label",
+      x: "share",
+      fill: "group",
+      tip: true,
+      title: (d) => `${d.label}\n${d.n} of ${n_plans} wells (${d.share}%)\n${d.group}`
+    }),
+    Plot.text(actions, {y: "label", x: "share", text: (d) => `${d.share}%`, textAnchor: "start", dx: 4, fill: "#1e1e1e"}),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+:::
+
+For the text: every well but one has an improvement plan. The action named most often is a person: 76 wells need someone found and trained to read the gauge. A manual dipper follows closely (74 wells).
+
+## Option C: water levels in the wells that could be measured
+
+::: {.owd-option-c}
+
+<p class="owd-chart-title">Water levels in the wells that could be measured</p>
+<p class="owd-chart-note">One dot per well: depth of the well against the water level below ground, by how the level was measured. <span class="owd-chart-hint">Hover over a dot to see that well.</span></p>
+
+```{ojs}
+widthC = widthOf(".owd-option-c")
+Plot.plot({
+  width: widthC,
+  height: 340,
+  marginLeft: 48,
+  marginRight: 12,
+  marginTop: 12,
+  marginBottom: 40,
+  style: font,
+  ariaLabel: "Scatter plot of well depth against static water level for groundwater monitoring wells in Malawi",
+  ariaDescription: "Most wells are 40 to 100 metres deep with the water level 5 to 15 metres below ground. A few levels lie deeper than 30 metres.",
+  x: {label: "Depth of the well (m)", labelAnchor: "center", domain: [0, 125], grid: true},
+  y: {label: "Water level below ground (m)", labelAnchor: "center", reverse: true, domain: [0, 55], grid: true},
+  color: {domain: ["Manual dipper", "Data logger"], range: [brand.purple, brand.rust], legend: true},
+  marks: [
+    Plot.dot(levels, {
+      x: "depth",
+      y: "level",
+      fill: "method",
+      r: 4,
+      fillOpacity: 0.8,
+      stroke: "#ffffff",
+      strokeWidth: 0.6,
+      tip: true,
+      title: (d) => `${d.well}, assessed ${d.assessed}\n${d.depth} m deep, water at ${d.level} m below ground\nMeasured with ${d.method.toLowerCase()}\nEnd cap in place: ${d.endcap}`
+    })
+  ]
+})
+```
+
+:::
+
+```{ojs}
+md`For the text: ${n_unmeasurable} wells could not be measured at all, ${n_sand} of them because the borehole was filled with sand or rock.`
+```
