@@ -1,0 +1,211 @@
+---
+title: "From a raw spreadsheet to a FAIR data publication in a matter of hours"
+description: "The story of solidwastekampala: how a 3.4 MB Excel workbook from a household waste study in Kampala became a documented, reviewed, cited, DOI-archived R data package in about nine working hours, told through the repository's own commits, issues, and pull requests."
+categories:
+    - open data
+    - data packages
+    - FAIR
+    - AI-assisted publishing
+author:
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid: 0000-0003-2196-5015
+date: "2026-10-20"
+draft: true
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
+---
+
+On Tuesday, 22 July 2026 at 15:05, the first commit landed in a new, empty
+repository: an R package skeleton and one Excel workbook,
+`Data Sheets with Analysis.xlsx`, 3.4 MB of field data from a seven-day
+household waste characterisation campaign in Kampala, Uganda. Three minutes
+later, at 15:08, the first prompt went to Claude Code:
+
+> I am building a new data package and received a dataset in @data-raw/ to
+> process for clean up. […] strictly start with cleaning the data, writing a
+> dictionary. […] make a plan first.
+
+On Thursday, 24 July at 00:18, the same repository carried version 1.0.0 of
+[`solidwastekampala`](https://github.com/openwashdata/solidwastekampala):
+a tidy, validated dataset of 103 households, a 37-variable data dictionary,
+roxygen documentation, a pkgdown website, schema.org metadata, a CITATION
+file with ORCID-linked authors, green CI on five platforms, and a
+freshly minted Zenodo DOI:
+[10.5281/zenodo.21519797](https://doi.org/10.5281/zenodo.21519797).
+
+Thirty-three hours on the wall clock. About nine hours of actual work,
+spread over four sessions. Every step of it is public: in the commits, the
+issues, the pull requests, and (unusually) in a verbatim archive of the
+prompts that drove them. This post retells the story from that record.
+
+## The data
+
+The dataset accompanies the paper [*Quantity and composition of domestic
+solid waste in Kampala City as influenced by socioeconomic factors*](https://doi.org/10.3389/fenvs.2026.1889921)
+(Katukiza et al., Makerere University), published in Frontiers in
+Environmental Science in September 2026. Field teams weighed and sorted the
+waste of 103 households over seven days in three parishes chosen to
+represent income levels: Bwaise I (low), Bukoto I (middle), and Ggaba
+(high). Each record combines ten measured waste-category masses, derived
+per-household metrics, and household socio-economic characteristics: 37
+variables in all.
+
+It arrived the way field data usually arrives: a multi-sheet Excel workbook
+with two-level merged headers, trailing summary rows, derived-results sheets
+mixed in with raw ones, and the accumulated typos of manual data entry.
+
+## Session 1, Tuesday afternoon: plan before touching anything
+
+The first session produced no cleaning code at all. It produced a plan,
+and the plan is where the data quality work actually happened, because
+writing it forced a close inspection of the workbook. That inspection
+established, among other things:
+
+- Only three sheets are raw data; "All_data" is a consolidation (kept as a
+  cross-check) and everything else is derived results.
+- The 103 households split 39/32/32 across the parishes, matching the
+  manuscript.
+- Exactly one number in the whole workbook is stored as text: a metals cell
+  in Ggaba reading `2..674`, which Excel's SUM formula silently skipped,
+  so the recorded totals had to be preserved, not recomputed, because
+  per-day, per-capita, and density values chain off them.
+- The parish means reproduce the manuscript's headline figures (per-capita
+  generation of 0.43 / 0.53 / 0.98 kg per person per day), confirming these
+  were the right source sheets.
+
+The plan also fixed a principle that held for the rest of the project:
+**preserve, don't polish**. Seven known internal inconsistencies in the
+source workbook were documented and asserted, never silently corrected.
+
+## Session 2, Wednesday before breakfast: from plan to package
+
+Early Wednesday morning the plan was converted into GitHub issues, one per
+step, each small enough to review on its own (#1–#5, then #6–#11 for the
+later steps). At 06:27 came the entire second prompt of the project,
+preserved verbatim in the archive:
+
+> now?
+
+That was enough. Between 06:27 and 06:55 the tidy pipeline took shape in
+`data-raw/data_processing.R`: all three sheets read as text for a lossless
+round-trip, 37 hand-written snake_case column names, the `2..674` fix, two
+malformed household IDs repaired (`Household__9`, `Househols_16`), and a
+per-column harmonisation map for the categorical labels, `IIIiterate` to
+`Illiterate`, `Unpaced` to `Unpaved`, `Kawenpe Division` to `Kawempe`,
+seven spelling variants of the same income band collapsed into one. Five
+ordinal variables became ordered factors. A `stopifnot` validation block
+pinned everything down: 103 rows, no missing values, exact parish counts,
+and, crucially, the *known* inconsistencies asserted as known: the
+composition sums match the recorded totals in exactly 99 of 103 rows, and
+the four exceptions are named.
+
+By 07:19, PR #12 was merged: clean data, CSV and XLSX exports, and a
+dictionary with all 37 variable descriptions including units and factor
+levels. By 08:03, PR #13 followed with everything a dataset needs to be
+usable by a stranger: complete DESCRIPTION metadata, roxygen documentation
+generated from the dictionary, a README with a worked example reproducing a
+manuscript figure, a pkgdown website, and dataspice-generated schema.org
+JSON-LD metadata.
+
+Elapsed hands-on time since the raw workbook arrived: roughly five hours.
+Most projects would call this done. This is where the standards work began.
+
+## Session 3, Wednesday midday: the review gauntlet
+
+openwashdata packages go through a formal, versioned review (standard
+version 1.0.0, pinned in the repository so future contributors know exactly
+which bar was applied). The review is four checklist issues, each closed by
+its own PR into a `dev` branch:
+
+| Step | Issue | PR | Merged |
+|---|---|---|---|
+| Metadata & citation | #14 | #16 | 12:22 |
+| Data content & processing | #17 | #18 | 12:58 |
+| Documentation | #19 | #20 | 13:52 |
+| Tests & CI/CD | #21 | #22 | 14:50 |
+
+The review was not a rubber stamp. The metadata pass hunted down ORCID iDs
+for the co-authors on the public registry and matched five, but two
+matches could not be fully confirmed, so it opened
+issue #15 asking the main author to verify, and flagged that one record
+spelled the given name "Abubakar" while DESCRIPTION said "Abubakkar". The
+data pass re-ran the whole pipeline and confirmed the regenerated `.rda`
+was byte-identical to the committed one, then renamed the raw workbook to
+remove spaces from the file name. The documentation pass expanded the
+README narrative and cross-referenced the example figure. The CI pass added
+R-CMD-check across five platforms, with the workflow triggers patched so
+that PRs into `dev` are checked too. Result: 0 errors, 0 warnings, 0 notes.
+
+At 14:54, PR #23 merged `dev` into `main`: review complete.
+
+## Session 4, Wednesday night: the authors answer
+
+One thing no amount of tooling can rush: a reply from the field. It came
+that evening. At 23:55 the prompt archive records:
+
+> ORCIDs have arrived. Ivan Feni: 0009-0003-2012-0421 …
+
+The main author had confirmed the uncertain matches, supplied Shaluwa
+Namagembe's ORCID, and settled the spelling: Abubakar, one k, as his own
+ORCID record has it. PR #24 propagated the corrections through DESCRIPTION,
+CITATION.cff, the dataspice metadata, and the website, and aligned the
+package author order with the manuscript. It merged at 00:07.
+
+At 00:15, version 1.0.0 was released. At 00:18, the Zenodo archive and DOI
+badge landed. Done.
+
+## What "highest standards of FAIR" looked like in practice
+
+**Findable.** A DOI ([10.5281/zenodo.21519796](https://doi.org/10.5281/zenodo.21519796), which always resolves to the latest version), a dedicated
+[website](https://openwashdata.github.io/solidwastekampala/), and
+schema.org JSON-LD metadata so search engines and data catalogues can index
+the dataset as well as people browsing GitHub.
+
+**Accessible.** The data ship in four formats for four audiences: `.rda`
+for R users via `install_github()`, CSV and XLSX downloads for everyone
+else, and the archived Zenodo deposit that will outlive any repository
+reorganisation. The raw workbook stays in the package too.
+
+**Interoperable.** Tidy data, snake_case names, ordered factors for ordinal
+variables, UTF-8 throughout, missing values as `NA` (of which this dataset
+has exactly zero), standard vocabularies where they exist.
+
+**Reusable.** This is where most datasets fail, and where most of the nine
+hours went: a dictionary describing all 37 variables with units; a fully
+reproducible processing script whose assertions double as a data-quality
+statement; documented source inconsistencies; a CC BY 4.0
+license; a citation listing the authors in manuscript order, seven of the
+eight carrying an ORCID iD checked against the public registry; and CI that
+proves the package installs and the examples run. (The eighth arrived
+later: Alex Y. Katukiza's iD was supplied by the main author on 28 July, and
+version 1.0.1 of 17 September carries all eight.)
+
+And one layer the FAIR acronym doesn't name: **provenance of the process
+itself**. The repository archives every prompt verbatim in `prompts/`
+(with timestamps and the files each one touched) and every plan in
+`plans/`, with commit trailers linking prompts to commits. Anyone can
+reconstruct not only *what* the data look like, but *how every decision was
+made*, including the decision to leave four inconsistent composition sums
+exactly as the field teams recorded them.
+
+## The takeaway
+
+The interesting number isn't thirty-three hours. It's the ratio inside it:
+data cleaning took about one hour of those nine. Everything else
+(planning, dictionary, documentation, metadata, review, citation,
+verification with the authors, archiving) is what turned a spreadsheet
+into a publication. That work used to be the reason datasets stayed on hard
+drives. With a good toolchain (washr, dataspice, pkgdown, GitHub Actions,
+Zenodo), a versioned review standard, and an AI pair that never gets bored
+of checklists, it now fits between an afternoon and the following midnight.
+
+The spreadsheet was always FAIR-able. Now it's FAIR.
+
+*The `solidwastekampala` package was published by
+[openwashdata](https://openwashdata.org), funded by the Open Research Data
+Program of the ETH Board. Data: Katukiza et al., Makerere University.
+Explore it at
+[openwashdata.github.io/solidwastekampala](https://openwashdata.github.io/solidwastekampala/).*
