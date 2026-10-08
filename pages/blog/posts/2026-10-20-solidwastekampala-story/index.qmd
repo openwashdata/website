@@ -13,7 +13,6 @@ author:
     affiliation_url: https://ghe.ethz.ch/
     orcid: 0000-0003-2196-5015
 date: "2026-10-20"
-draft: true
 image: "OWD-logo-12.svg"
 image-alt: "openwashdata logo in orange"
 ---
