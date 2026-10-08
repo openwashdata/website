@@ -108,6 +108,8 @@ website:
       contents:
         - text: "Data"
           href: pages/gallery/data/index.qmd
+        - text: "Dataset of the month"
+          href: pages/gallery/dataset-of-the-month/index.qmd
         - text: "Variables"
           href: pages/gallery/variables/index.qmd
         - text: "VMOST"

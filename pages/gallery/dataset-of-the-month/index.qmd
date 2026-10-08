@@ -1,0 +1,23 @@
+---
+title: "Dataset of the month"
+description: |
+  Every month, the openwashdata landing page and newsletter feature one published dataset. This page keeps all of them.
+---
+
+Every month we feature one dataset from the openwashdata collection on the landing page and in our [newsletter](https://buttondown.com/openwashdata/archive/). This page lists every dataset of the month, newest first.
+
+```{r}
+#| echo: false
+#| output: asis
+dotm <- utils::read.csv("dataset-of-the-month.csv", colClasses = "character")
+dotm <- dotm[order(dotm$month, decreasing = TRUE), ]
+month_label <- function(m) format(as.Date(paste0(m, "-01")), "%B %Y")
+for (i in seq_len(nrow(dotm))) {
+  r <- dotm[i, ]
+  cat("## ", month_label(r$month), ": ", r$package, "\n\n", sep = "")
+  cat("*", r$title, "*\n\n", sep = "")
+  cat(r$summary, "\n\n", sep = "")
+  cat("[Open ", r$package, "](https://openwashdata.github.io/", r$package,
+      ") | Featured in newsletter issue ", r$newsletter_issue, "\n\n", sep = "")
+}
+```

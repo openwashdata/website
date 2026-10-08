@@ -84,54 +84,83 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ::: {.owd-dotm}
 ::: {.owd-dotm-text}
-**solidwastekampala** holds the quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 kg per day on average in the low income parish to 0.98 in the high income parish, and food makes up three quarters of the mass.
+**gwinfraassess** holds an assessment of 123 groundwater monitoring wells in Malawi by BASEflow Malawi in 2022 and 2023. Field teams recorded the condition of each well, its water level logger, the measuring equipment and what the well needs to keep working. Every well but one has an improvement plan, and the action named most often is a trained person to read the gauge (76 wells), ahead of a manual dipper (74 wells).
 
-[Open solidwastekampala](https://openwashdata.github.io/solidwastekampala){.owd-more}
+[Open gwinfraassess](https://openwashdata.github.io/gwinfraassess){.owd-more}
 :::
 
 ::: {.owd-dotm-chart}
 
-<p class="owd-chart-title">Waste per person rises with income</p>
-<p class="owd-chart-note">One dot per household: kg of waste per person per day, with the median of each income level. <span class="owd-chart-hint">Hover over a dot to see that household.</span></p>
+<p class="owd-chart-title">The most common fix is a person</p>
+<p class="owd-chart-note">Share of the 122 wells with an improvement plan that need each action, coloured by kind of action. <span class="owd-chart-hint">Hover over a bar for the number of wells.</span></p>
 
 ```{r}
 #| label: dataset-of-the-month-data
 #| echo: false
-# pak::pak("openwashdata/solidwastekampala")
-library(solidwastekampala)
+# pak::pak("openwashdata/gwinfraassess")
+library(gwinfraassess)
 library(dplyr)
+library(tidyr)
 
-households <- solidwastekampala |>
-  transmute(
-    household = sub("_", " ", household_id),
-    income_level,
-    label = paste(tools::toTitleCase(as.character(income_level)), "income"),
-    parish,
-    occupants,
-    per_capita = round(waste_per_capita_kg, 2),
-    per_day = round(waste_per_day_kg, 1)
-  ) |>
-  arrange(income_level) |>
-  mutate(income_level = as.character(income_level))
-
-medians <- households |>
-  summarise(
-    median = round(median(per_capita), 2),
-    n = n(),
-    .by = c(income_level, label, parish)
-  )
-
-ojs_define(
-  households_data = households,
-  medians_data = medians,
-  label_order = unique(households$label)
+action_groups <- c(
+  "Identify and training gauge reader" = "People",
+  "Provide manual dipper" = "Equipment",
+  "Replacement of the level logger" = "Equipment",
+  "Installation of a new logger" = "Equipment",
+  "Replace barologger" = "Equipment",
+  "Rehabilitation of the civil works" = "Structure",
+  "Replace end cap" = "Structure",
+  "Replacement of the cover and hinges" = "Structure",
+  "Welding on the existing hinges" = "Structure",
+  "Replace and weld the hinges" = "Structure",
+  "Redevelop the monitoring well" = "Structure",
+  "Replace the well" = "Replace or retire",
+  "Discard monitoring well" = "Replace or retire",
+  "Discard as monitoring well and donate to the community" = "Replace or retire"
 )
+
+action_labels <- c(
+  "Identify and training gauge reader" = "Find and train a gauge reader",
+  "Provide manual dipper" = "Provide a manual dipper",
+  "Replacement of the level logger" = "Replace the level logger",
+  "Installation of a new logger" = "Install a new logger",
+  "Replace barologger" = "Replace the barologger",
+  "Rehabilitation of the civil works" = "Repair the civil works",
+  "Replace end cap" = "Replace the end cap",
+  "Replacement of the cover and hinges" = "Replace cover and hinges",
+  "Welding on the existing hinges" = "Weld the existing hinges",
+  "Replace and weld the hinges" = "Replace and weld the hinges",
+  "Redevelop the monitoring well" = "Redevelop the well",
+  "Replace the well" = "Replace the well",
+  "Discard monitoring well" = "Discard the well",
+  "Discard as monitoring well and donate to the community" = "Discard, give to community"
+)
+
+wells <- gwinfraassess |>
+  mutate(well = row_number()) |>
+  filter(!is.na(improvement_plan))
+
+n_plans <- nrow(wells)
+
+actions <- wells |>
+  separate_longer_delim(improvement_plan, ",") |>
+  mutate(action = gsub("\\s+", " ", trimws(improvement_plan))) |>
+  filter(action %in% names(action_groups)) |>
+  distinct(well, action) |>
+  count(action, name = "n") |>
+  mutate(
+    group = unname(action_groups[action]),
+    label = unname(action_labels[action]),
+    share = round(100 * n / n_plans)
+  ) |>
+  arrange(desc(n))
+
+ojs_define(actions_data = actions, n_plans = n_plans)
 ```
 
 ```{ojs}
 //| echo: false
-households = transpose(households_data)
-medians = transpose(medians_data)
+actions = transpose(actions_data)
 
 // width of the chart column, so the text keeps its size on every screen
 chartWidth = Generators.observe((notify) => {
@@ -143,57 +172,36 @@ chartWidth = Generators.observe((notify) => {
   return () => observer.disconnect();
 })
 
-// chart-1 and chart-2 from openwashdata/brand
-palette = ["#8a3a8a", "#b04208"]
+// chart-1, chart-3, chart-2 and a neutral grey from openwashdata/brand
+palette = ["#8a3a8a", "#CF9E40", "#b04208", "#b9b9b9"]
 
 Plot.plot({
   width: chartWidth,
-  height: 310,
-  marginLeft: 10,
-  marginRight: 10,
-  marginTop: 6,
-  marginBottom: 40,
+  height: 400,
+  marginLeft: chartWidth < 420 ? 170 : 200,
+  marginRight: 36,
+  marginTop: 4,
+  marginBottom: 36,
   style: {fontFamily: "Atkinson Hyperlegible Next, sans-serif", fontSize: 13, background: "transparent"},
-  ariaLabel: "Dot plot of waste per person per day for 103 households in Kampala, one row per income level",
-  ariaDescription: "The median rises from 0.32 kg in the low income parish to 0.57 in the middle income parish and 0.93 in the high income parish. Households spread from near zero to about 1.9 kg.",
-  fy: {domain: label_order, axis: null, padding: 0.25},
-  x: {label: "kg of waste per person per day", labelAnchor: "center", domain: [0, 2], grid: true, ticks: 5},
+  ariaLabel: "Bar chart of improvement actions recommended for groundwater monitoring wells in Malawi",
+  ariaDescription: "62 percent of wells need a trained gauge reader, 61 percent a manual dipper, 46 percent a replaced level logger and 42 percent repaired civil works.",
+  x: {label: "% of wells", labelAnchor: "center", domain: [0, 70], grid: true, ticks: 4},
+  y: {label: null, domain: actions.map((d) => d.label)},
+  color: {
+    domain: ["People", "Equipment", "Structure", "Replace or retire"],
+    range: palette,
+    legend: true
+  },
   marks: [
-    Plot.dot(households, Plot.dodgeY("middle", {
-      fy: "label",
-      x: "per_capita",
-      r: 3.6,
-      fill: palette[0],
-      fillOpacity: 0.75,
-      stroke: "#ffffff",
-      strokeWidth: 0.6,
+    Plot.barX(actions, {
+      y: "label",
+      x: "share",
+      fill: "group",
       tip: true,
-      title: (d) => `${d.household}\n${d.per_capita} kg per person per day\n${d.occupants} people, ${d.per_day} kg per day\n${d.label} (${d.parish})`
-    })),
-    Plot.ruleX(medians, {fy: "label", x: "median", stroke: palette[1], strokeWidth: 2}),
-    Plot.text(medians, {
-      fy: "label",
-      x: "median",
-      text: (d) => `median ${d.median} kg`,
-      frameAnchor: "bottom",
-      textAnchor: "start",
-      dx: 5,
-      dy: -1,
-      fill: palette[1],
-      fontWeight: 600
+      title: (d) => `${d.label}\n${d.n} of ${n_plans} wells (${d.share}%)\n${d.group}`
     }),
-    // row titles last, with a halo so the median line does not cut through them
-    Plot.text(medians, {
-      fy: "label",
-      text: (d) => `${d.label} (${d.parish}), ${d.n} households`,
-      frameAnchor: "top-left",
-      dx: 2,
-      dy: -2,
-      fontWeight: 700,
-      fill: "#1e1e1e",
-      stroke: "#f4f4f4",
-      strokeWidth: 5
-    })
+    Plot.text(actions, {y: "label", x: "share", text: (d) => `${d.share}%`, textAnchor: "start", dx: 4, fill: "#1e1e1e"}),
+    Plot.ruleX([0])
   ]
 })
 ```
