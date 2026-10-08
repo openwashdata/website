@@ -1,0 +1,92 @@
+---
+title: "From a raw spreadsheet to a published data package in a day"
+description: "How a field workbook from a household waste study in Kampala became a documented, reviewed and citable R data package in a day, told from the record the repository keeps of every step, including every prompt to the AI."
+categories:
+    - open data
+    - data packages
+    - FAIR
+    - AI-assisted publishing
+author:
+  - name: "Lars Schöbitz"
+    url: https://openwashdata.org/about/lars/
+    affiliation: Global Health Engineering, ETH Zurich
+    affiliation_url: https://ghe.ethz.ch/
+    orcid: 0000-0003-2196-5015
+date: "2026-10-20"
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
+---
+
+On 22 July 2026 at 15:05, I made the first commit to a new repository. It held an empty R package and one Excel workbook with field data from a household waste study in Kampala, Uganda. Three minutes later I sent the first prompt to Claude Code:
+
+> I am building a new data package and received a dataset in @data-raw/ to process for clean up. \[…\] strictly start with cleaning the data, writing a dictionary. \[…\] make a plan first.
+
+On 24 July at 00:18, the repository held version 1.0.0 of [solidwastekampala](https://github.com/openwashdata/solidwastekampala) with a Zenodo DOI: a tidy and validated dataset of 103 households, a data dictionary for 37 variables, documentation, a website, machine-readable metadata, a citation with the ORCID iDs of the authors, and automated checks on five platforms.
+
+My own time on it was no more than about three hours, spread over four sessions. The repository records every step in its commits, issues and pull requests, and in an archive of every prompt I sent.
+
+## The data
+
+The dataset belongs to the paper [Quantity and composition of domestic solid waste in Kampala City as influenced by socioeconomic factors](https://doi.org/10.3389/fenvs.2026.1889921) by Katukiza et al. at Makerere University, published in Frontiers in Environmental Science in September 2026. Field teams weighed and sorted the waste of 103 households over seven days in three parishes that stand for three income levels: Bwaise I (low), Bukoto I (middle) and Ggaba (high).
+
+The data arrived the way field data usually arrives. The workbook had sheets with two rows of merged headers, summary rows at the bottom, derived results next to the raw data, and the typos that manual data entry leaves behind.
+
+## Session 1: a plan before any code
+
+The first session produced no cleaning code, only a plan based on a close look at every sheet.
+
+- Only three sheets hold raw data. All other sheets hold derived results.
+- One number is stored as text. A cell for metals in Ggaba reads `2..674`, and the SUM formula in Excel skipped it without a warning. The recorded totals stay as they are, because the values per day, per person and the density are calculated from them.
+- The means per parish reproduce the headline figures of the paper (0.43, 0.53 and 0.98 kg of waste per person per day), which confirmed that these were the right sheets.
+
+The plan also set the rule for the rest of the project. We preserve the data as recorded. Seven inconsistencies inside the workbook are documented and tested for, and none was corrected without a record.
+
+## Session 2: from plan to package
+
+Early on Wednesday the plan became GitHub issues, one per step and each small enough to review on its own. I asked for one issue at a time, with a stop for my review before each commit.
+
+By 06:55 the processing script was in place. It reads all sheets as text so that nothing is lost on import, gives the 37 columns consistent names, fixes the `2..674` cell and repairs two malformed household IDs. A map per column harmonises the categories, for example `IIIiterate` to `Illiterate` and `Unpaced` to `Unpaved`. A validation block checks the result, including the inconsistencies we know about: the sums of the waste categories match the recorded totals in 99 of 103 rows, and the script names the four exceptions.
+
+At 07:19 I merged the first pull request with the clean data, CSV and XLSX exports and the dictionary. At 08:03 the second followed with what a stranger needs to use the data: package metadata, documentation, a README that reproduces a figure of the paper, a website, and metadata in schema.org format.
+
+## Session 3: the review
+
+Every openwashdata package goes through a review against a versioned standard, here version 1.0.0. The review consists of four checklist issues, and each one closes with its own pull request.
+
+| Step                        | Issue | Pull request | Merged |
+|-----------------------------|-------|--------------|--------|
+| Metadata and citation       | #14   | #16          | 12:22  |
+| Data content and processing | #17   | #18          | 12:58  |
+| Documentation               | #19   | #20          | 13:52  |
+| Tests and automated checks  | #21   | #22          | 14:50  |
+
+The metadata step found five ORCID iDs of the co-authors in the public registry. Two matches were uncertain, so it opened an issue asking the main author to confirm them. The data step reran the processing script and got the committed data back, byte for byte. The last step added checks on five platforms, with 0 errors, 0 warnings and 0 notes.
+
+## Session 4: the authors reply
+
+At 23:55 the prompt archive records my message "ORCIDs have arrived". The main author had confirmed the uncertain matches, sent a missing ORCID iD and settled the spelling of a name. The corrections went into all metadata files. At 00:15 I released version 1.0.0, and at 00:18 Zenodo issued the DOI.
+
+## How the package meets the FAIR principles
+
+- **Findable** through a DOI, [10.5281/zenodo.21519796](https://doi.org/10.5281/zenodo.21519796), which always resolves to the latest version, through its own [website](https://openwashdata.github.io/solidwastekampala/), and through schema.org metadata.
+- **Accessible** as an R package, as CSV or XLSX files, and as a Zenodo archive that does not depend on GitHub.
+- **Interoperable** because the data are tidy, the names follow one convention, ordered categories are stored as ordered factors, and the files use UTF-8.
+- **Reusable** because the dictionary describes all 37 variables with units, the processing script reproduces the data, the inconsistencies of the source are documented, and the data carry a CC BY 4.0 licence. Version 1.0.1 of 17 September carries the ORCID iDs of all eight authors.
+
+There is one more layer that the FAIR principles do not name, the record of how the package was made. The repository archives every prompt in `prompts/` and every plan in `plans/`, and commit messages link to the prompts behind them.
+
+## What I take from it
+
+Cleaning the data was the smallest part. Most of the work went into the plan, the dictionary, the documentation, the metadata, the review, the citation and the exchange with the authors. That work turns a spreadsheet into a publication, and it is the reason why so many datasets never leave the hard drive. With the tools we have built over the years, a versioned review standard and an AI assistant that works through checklists, it now fits into a day.
+
+## How I used AI
+
+I used AI for this package and for this post, and the record of that use is public.
+
+**The package.** Claude Code (model Claude Fable 5) wrote the processing script, the dictionary, the documentation and the metadata, following my prompts. The repository archives the 11 prompts I sent up to the release, and 14 of the 39 commits made by 24 July carry an `Assisted-by` line that names the model. I reviewed and merged each of the eight pull requests, handled the exchange with the authors and settled the spelling of their names. The processing script is plain R code, and anyone can rerun it without any AI tool and get the same data.
+
+**This post.** Claude (model Claude Fable 5) wrote the first draft on 24 July from the commits, issues, pull requests and prompts. On 7 October and 8 October Claude (model Claude Opus 5.5) revised and shortened it at my request. I chose what the post says, checked every date and number against the repository, and decided to publish it.
+
+The prompts, the commits and this post are public, so anyone can check this statement against the record.
+
+*The solidwastekampala package was published by [openwashdata](https://openwashdata.org) with funding from the Open Research Data Program of the ETH Board. The data come from Katukiza et al. at Makerere University. You can explore them at [openwashdata.github.io/solidwastekampala](https://openwashdata.github.io/solidwastekampala/).*

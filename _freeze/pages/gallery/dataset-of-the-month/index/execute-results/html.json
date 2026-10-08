@@ -1,0 +1,15 @@
+{
+  "hash": "3b21a38d8a7f71025329d8fdd8fc86a8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Dataset of the month\"\ndescription: |\n  Every month, the openwashdata landing page and newsletter feature one published dataset. This page keeps all of them.\n---\n\nEvery month we feature one dataset from the openwashdata collection on the landing page and in our [newsletter](https://buttondown.com/openwashdata/archive/). This page lists every dataset of the month, newest first.\n\n## October 2026: gwinfraassess\n\n*Groundwater Monitoring Wells, Nkhotakota, Malawi 2022-2023*\n\nAn assessment of 123 groundwater monitoring wells in Malawi by BASEflow Malawi in 2022 and 2023. Every well but one has an improvement plan, and the action named most often is a trained person to read the gauge (76 wells), ahead of a manual dipper (74 wells).\n\n[Open gwinfraassess](https://openwashdata.github.io/gwinfraassess) | Featured in newsletter issue 24\n\n## September 2026: solidwastekampala\n\n*Domestic Solid Waste, Kampala, Uganda*\n\nThe quantity and composition of domestic solid waste from 103 households in Kampala, Uganda, weighed over one week in three parishes of low, middle and high income by researchers at Makerere University. Waste per person rises with income, from 0.43 kg per day on average in the low income parish to 0.98 in the high income parish, and food makes up three quarters of the mass.\n\n[Open solidwastekampala](https://openwashdata.github.io/solidwastekampala) | Featured in newsletter issue 23\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
