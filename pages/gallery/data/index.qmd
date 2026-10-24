@@ -47,7 +47,7 @@ tbl <- packages |>
     Package = link(pkg_name, url_docs),
     Description = description,
     DOI = ifelse(is.na(doi), "", link("DOI", paste0("https://doi.org/", doi))),
-    Updated = format(date, "%d %b %Y")
+    Updated = format(date, "%Y-%m-%d")
   ) |>
   select(Package, Description, Datasets = n_datasets, DOI, Updated) |>
   arrange(Package)
