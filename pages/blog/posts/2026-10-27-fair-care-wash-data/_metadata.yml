@@ -1,0 +1,8 @@
+# Also render this post to the branded PDF (openwashdata/website#24).
+# The formats are listed here rather than in index.qmd so the frozen
+# render of the post keeps its source hash; ../_pdf.yml has the settings.
+format:
+  html: default
+  owd-typst: default
+metadata-files:
+  - ../_pdf.yml
