@@ -19,6 +19,6 @@ toc: false
 Every issue features one dataset from the catalogue with a chart and the
 numbers behind it, one story from the community, and the news: new data
 packages, courses, events, and ways to get involved. Issues go out on the
-first Monday of the month. Unsubscribe with one click in any issue.
+second last Wednesday of the month. Unsubscribe with one click in any issue.
 
 Past issues are in the [newsletter archive](https://buttondown.com/openwashdata/archive/).
