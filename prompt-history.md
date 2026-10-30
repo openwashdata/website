@@ -80,3 +80,7 @@
 - 06:36 - Open an issue on website repo to write blog post about national ord prize. We never properly announced it.
 - 07:10 - This page holds the YouTube video of the prize and provides greater context of data stewardship (cven5999-ss26 case study). Use it as material to write a short draft blog post for 150.
 - 07:30 - the three statistics displayed under the sign up form need to stand out a bit more. a small box or a seperator to the above, so that it looks like it's own section
+
+## 2026-10-30
+
+- 19:57 - Show me what a website build the way that the mimeo website is built would look like for openwashdata? Create a throwaway branch to Test ist. What would I gain? What would I lose? And what could an app for pkg review look like using the app side of thus mimeo repo? Where could I involve people in the process? Send automated emails etc? Build a website for openwashdata but only tell me a brief plan for pkg review and washr.

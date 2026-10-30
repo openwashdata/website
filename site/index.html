@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>openwashdata</title>
+  <meta name="description" content="openwashdata is a global community that applies the FAIR principles to data from the water, sanitation and hygiene sector and teaches the skills to do it. Every dataset becomes a documented, reviewed and citable R data package.">
+  <meta property="og:title" content="openwashdata">
+  <meta property="og:description" content="Open data for water, sanitation and hygiene: documented, reviewed and citable data packages, a free data science course, and a community that helps you publish.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://openwashdata.org/">
+  <meta name="theme-color" content="#f4f4f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171017" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/owd-badge.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply the stored theme before first paint so the page does not flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('owd-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* storage unavailable */ }
+    })();
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="openwashdata, home">
+      <img class="wordmark wordmark-light" src="assets/owd-wordmark.svg" alt="openwashdata" height="26">
+      <img class="wordmark wordmark-dark" src="assets/owd-wordmark-dark.svg" alt="" height="26">
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Sections">
+      <a href="#data">Data</a>
+      <a href="#product">How it works</a>
+      <a href="#publish">Publish</a>
+      <a href="#partners">Partners</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/openwashdata">GitHub</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn small" href="#subscribe">Subscribe</a>
+      <button class="icon-btn hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="inner hero" id="top">
+  <div>
+    <p class="eyebrow">A community for FAIR data in WASH</p>
+    <h1>Open data for water, sanitation and hygiene</h1>
+    <p class="lead">openwashdata is an active global community that applies the FAIR principles to data from the water, sanitation and hygiene (WASH) sector, and teaches the skills to do it. Every dataset we publish becomes a documented, reviewed and citable R data package with its own website.</p>
+    <div class="actions">
+      <a class="btn" href="#data">Explore the data</a>
+      <a class="btn ghost" href="#product">See how it works</a>
+    </div>
+    <p class="hint">Publishing is free, the data stays yours, and a person reviews every package before it goes live.</p>
+  </div>
+  <div class="hero-art">
+    <div class="hero-card" aria-label="Example: loading a data package in R">
+      <div class="t">One line to load any dataset</div>
+      <div><span class="s">&gt;</span> pak::pak(<span class="k">"openwashdata/gwinfraassess"</span>)</div>
+      <div><span class="s">&gt;</span> library(gwinfraassess)</div>
+      <div><span class="s">&gt;</span> gwinfraassess</div>
+      <div class="s"># A tibble: 123 × 14</div>
+      <div class="s">#   district  well_id  status   logger_condition …</div>
+      <div class="ok">✓ 123 monitoring wells · dictionary for every variable · CC BY 4.0</div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="data">
+  <div class="inner">
+    <div class="numbers" aria-live="polite">
+      <div><div class="number" id="n-packages" data-count="64">64</div><div class="number-label">open data packages</div></div>
+      <div><div class="number" id="n-datasets" data-count="99">99</div><div class="number-label">datasets inside them</div></div>
+      <div><div class="number" id="n-years" data-count="4">4</div><div class="number-label">years of publishing, since <span id="first-year">2023</span></div></div>
+    </div>
+    <p class="numbers-note" id="numbers-note">Counted from the weekly harvest of the openwashdata GitHub organisation.</p>
+  </div>
+</section>
+
+<section class="inner" id="product">
+  <p class="eyebrow">How it works</p>
+  <h2>A dataset on the left, the files that make it open on the right</h2>
+  <p class="lead">Every package is a website people can read and a repository a machine can read. Click through what a contributor, a reviewer and a reader each see.</p>
+
+  <div class="showcase" id="showcase">
+    <div class="tabs" role="tablist" aria-label="Showcase">
+      <button class="tab" role="tab" id="tab-data" aria-controls="panel-data" aria-selected="true" tabindex="0">Data</button>
+      <button class="tab" role="tab" id="tab-dotm" aria-controls="panel-dotm" aria-selected="false" tabindex="-1">Dataset of the month</button>
+      <button class="tab" role="tab" id="tab-publish" aria-controls="panel-publish" aria-selected="false" tabindex="-1">Publish</button>
+      <button class="tab" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false" tabindex="-1">Review</button>
+      <button class="tab" role="tab" id="tab-learn" aria-controls="panel-learn" aria-selected="false" tabindex="-1">Learn</button>
+      <button class="tab" role="tab" id="tab-read" aria-controls="panel-read" aria-selected="false" tabindex="-1">Read</button>
+    </div>
+    <div class="showcase-controls">
+      <span id="autoplay-state">Auto-advancing every 7 seconds</span>
+      <button type="button" id="replay">Replay</button>
+      <button type="button" id="pause" aria-pressed="false">Pause</button>
+    </div>
+
+    <!-- Data: searchable catalogue beside an R session -->
+    <section class="panel" role="tabpanel" id="panel-data" aria-labelledby="tab-data">
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Data catalogue <span class="url">openwashdata.org/pages/gallery/data</span></div>
+          <div class="window-body">
+            <label class="visually-hidden" for="catalogue-search">Search the catalogue</label>
+            <input class="search" id="catalogue-search" type="search" placeholder="Search 64 packages, e.g. Malawi, sanitation, groundwater">
+            <div class="table-wrap">
+              <table id="catalogue">
+                <thead><tr><th>Package</th><th>Description</th><th class="num">Datasets</th><th>DOI</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p class="caption" id="catalogue-count"></p>
+          </div>
+        </div>
+        <div class="window terminal">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> R console</div>
+          <div class="window-body"><pre class="term" data-script="data" aria-live="off"></pre></div>
+        </div>
+      </div>
+      <p class="caption">Fig. 1 · The catalogue is a table of every package in the organisation; each one installs with one line of R and comes with its documentation.</p>
+    </section>
+
+    <!-- Dataset of the month: story beside a chart drawn from the data -->
+    <section class="panel" role="tabpanel" id="panel-dotm" aria-labelledby="tab-dotm" hidden>
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> gwinfraassess <span class="url">openwashdata.github.io/gwinfraassess</span></div>
+          <div class="window-body">
+            <h3>The most common fix is a person</h3>
+            <p><strong>gwinfraassess</strong> holds an assessment of 123 groundwater monitoring wells in Malawi by BASEflow Malawi in 2022 and 2023. Field teams recorded the condition of each well, its water level logger, the measuring equipment and what the well needs to keep working.</p>
+            <p>Every well but one has an improvement plan. The action named most often is a trained person to read the gauge (76 wells), ahead of a manual dipper (74 wells).</p>
+            <a class="more" href="https://openwashdata.github.io/gwinfraassess">Open gwinfraassess</a>
+          </div>
+        </div>
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Share of 122 wells that need each action</div>
+          <div class="window-body">
+            <svg class="chart" id="dotm-chart" viewBox="0 0 520 330" role="img" aria-label="Bar chart: 62 percent of wells need a trained gauge reader, 61 percent a manual dipper, 46 percent a replaced level logger, 42 percent repaired civil works."></svg>
+            <div class="legend">
+              <span><i style="background:var(--chart-1)"></i>People</span>
+              <span><i style="background:var(--chart-3)"></i>Equipment</span>
+              <span><i style="background:var(--chart-2)"></i>Structure</span>
+              <span><i style="background:var(--owd-grey-light)"></i>Replace or retire</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="caption">Fig. 2 · One dataset a month gets a story and a chart. The chart is drawn from the published package, so anyone can reproduce it.</p>
+    </section>
+
+    <!-- Publish: a package website beside the washr steps -->
+    <section class="panel" role="tabpanel" id="panel-publish" aria-labelledby="tab-publish" hidden>
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Your package website <span class="url">openwashdata.github.io/yourdata</span></div>
+          <div class="window-body">
+            <h3>yourdata</h3>
+            <p class="issue-meta"><span class="pill">R data package</span> <span class="pill">CC BY 4.0</span> <span class="pill ok">DOI</span></p>
+            <p>A README that says where the data came from and how it was collected. A data dictionary with a description for every variable. Download links as CSV and XLSX. A citation block, a Zenodo DOI and a website generated from the same files.</p>
+            <ul class="checklist">
+              <li><span class="box done">✓</span><span>data-raw/ with the raw files and the processing script</span></li>
+              <li><span class="box done">✓</span><span>dictionary.csv, one row per variable</span></li>
+              <li><span class="box done">✓</span><span>README.Rmd from the openwashdata template</span></li>
+              <li><span class="box done">✓</span><span>CITATION.cff and inst/CITATION</span></li>
+              <li><span class="box done">✓</span><span>pkgdown website in the openwashdata brand</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="window terminal">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> R console · washr</div>
+          <div class="window-body"><pre class="term" data-script="publish" aria-live="off"></pre></div>
+        </div>
+      </div>
+      <p class="caption">Fig. 3 · washr, our R package, writes every file with a fixed shape. You write the prose: what the data is, what each variable means.</p>
+    </section>
+
+    <!-- Review: the GitHub issue beside the review command -->
+    <section class="panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review" hidden>
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> GitHub issue <span class="url">github.com/openwashdata/yourdata/issues/1</span></div>
+          <div class="window-body">
+            <h3>Data Package Review: General Information &amp; Metadata</h3>
+            <p class="issue-meta"><span class="pill">pkgreview</span> <span class="pill">pkgreview-metadata</span> <span class="pill warn">standard 1.7.0</span></p>
+            <p><strong>Intake screen.</strong> Raw data present · processing script present · no direct identifiers in columns or history · dictionary present. All clear.</p>
+            <ul class="checklist">
+              <li><span class="box done">✓</span><span>DESCRIPTION has a title, description, authors with ORCID</span></li>
+              <li><span class="box done">✓</span><span>License is CC BY 4.0 and consistent across files</span></li>
+              <li><span class="box"></span><span>Keywords include openwashdata and the topic</span></li>
+              <li><span class="box"></span><span>CITATION.cff matches DESCRIPTION</span></li>
+              <li><span class="box"></span><span>Zenodo metadata in inst/.zenodo.json</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="window terminal">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Claude Code · pkgreview</div>
+          <div class="window-body"><pre class="term" data-script="review" aria-live="off"></pre></div>
+        </div>
+      </div>
+      <p class="caption">Fig. 4 · A review is four GitHub issues, one per area: metadata, data, docs, tests. Each gets one pull request. A person approves every step.</p>
+    </section>
+
+    <!-- Learn: the course beside the graduates' packages -->
+    <section class="panel" role="tabpanel" id="panel-learn" aria-labelledby="tab-learn" hidden>
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Course website <span class="url">ds4owd-002.github.io/website</span></div>
+          <div class="window-body">
+            <h3>Data science for openwashdata</h3>
+            <p>A free online course that teaches WASH professionals data science in R. Nine live sessions of 2.5 hours, exercises in between, and a capstone: a data package of your own, published through the community.</p>
+            <ul class="checklist">
+              <li><span class="box done">✓</span><span>Two cohorts, over 40 graduates each</span></li>
+              <li><span class="box done">✓</span><span>Every graduate published a data package</span></li>
+              <li><span class="box"></span><span>Third cohort starts in September 2027</span></li>
+            </ul>
+            <a class="more" href="https://ds4owd-002.github.io/website/">Course website</a>
+            <a class="more" href="https://openwashdata.org/pages/academy/graduates-2026/">Graduates 2026</a>
+          </div>
+        </div>
+        <div class="window filev">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> graduates-2026/ · published packages</div>
+          <div class="window-body"><pre class="file" data-file="learn"></pre></div>
+        </div>
+      </div>
+      <p class="caption">Fig. 5 · The course and the data catalogue feed each other: the capstone of the course is a package in the catalogue.</p>
+    </section>
+
+    <!-- Read: latest posts beside the post's front matter -->
+    <section class="panel" role="tabpanel" id="panel-read" aria-labelledby="tab-read" hidden>
+      <div class="split">
+        <div class="window">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> Blog <span class="url">openwashdata.org/pages/blog</span></div>
+          <div class="window-body" id="posts">
+            <article class="fade">
+              <p class="eyebrow">27 October 2026 · Emmanuel Mhango</p>
+              <h3><a href="https://openwashdata.org/pages/blog/posts/2026-10-27-fair-care-wash-data/">Operationalizing FAIR and CARE data stewardship principles in WASH systems</a></h3>
+              <p>Findable without exposing vulnerable infrastructure, accessible without making everything public, governed with the communities the data describe.</p>
+            </article>
+            <article class="fade">
+              <p class="eyebrow">20 October 2026 · Lars Schöbitz</p>
+              <h3><a href="https://openwashdata.org/pages/blog/posts/2026-10-20-solidwastekampala-story/">From a raw spreadsheet to a published data package in a day</a></h3>
+              <p>How a field workbook from a household waste study in Kampala became a documented, reviewed and citable R data package in a day.</p>
+            </article>
+            <article class="fade">
+              <p class="eyebrow">18 August 2026 · Emmanuel Mhango</p>
+              <h3><a href="https://openwashdata.org/pages/blog/posts/2026-08-18-beyond-publishing-data/">Beyond publishing data: what we learned building open science in Malawi</a></h3>
+              <p>Second part of a series from a data steward at BASEflow Malawi.</p>
+            </article>
+            <a class="more" href="https://openwashdata.org/pages/blog/">All posts</a>
+          </div>
+        </div>
+        <div class="window filev">
+          <div class="window-bar"><span class="dots"><i></i><i></i><i></i></span> pages/blog/posts/2026-10-20-solidwastekampala-story/index.qmd</div>
+          <div class="window-body"><pre class="file" data-file="read"></pre></div>
+        </div>
+      </div>
+      <p class="caption">Fig. 6 · Posts are plain text files in the website repository. Anyone can propose one with a pull request.</p>
+    </section>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="inner">
+    <h2>What you get when you publish with us</h2>
+    <p class="lead">The same nine things, for every dataset, whether it has fifty rows or fifty thousand.</p>
+    <div class="grid3">
+      <p><strong>A data package.</strong> Your dataset as an R package: versioned, installable, documented, with the raw data and the processing script kept beside it.</p>
+      <p><strong>A dictionary.</strong> One row per variable with a description, so the next person does not have to guess what a column means.</p>
+      <p><strong>A website.</strong> A pkgdown site in the openwashdata brand, generated from the package, with downloads as CSV and XLSX.</p>
+      <p><strong>A DOI.</strong> A Zenodo deposit that makes the package permanently archived and citable, and a citation block to copy.</p>
+      <p><strong>A review.</strong> Four areas, one checklist each, checked by a person and a script against a versioned standard.</p>
+      <p><strong>A licence you keep.</strong> CC BY 4.0 by default: anyone can reuse the data, everyone has to credit you.</p>
+      <p><strong>A privacy check first.</strong> Direct identifiers, household-level rows and sensitive contexts are screened before anything is published, including the git history.</p>
+      <p><strong>A story.</strong> One dataset a month gets a blog post, a chart and a place in the newsletter.</p>
+      <p><strong>A community.</strong> A chat room on Matrix, a monthly newsletter, workshops and a course, all free.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inner why" id="why">
+  <div>
+    <h2>Why open data for WASH, and why now</h2>
+    <p class="lead">Most WASH data is collected once, used for one report, and lost. The sector spends again to collect it again.</p>
+  </div>
+  <ul>
+    <li><strong>The data already exists.</strong> Monitoring wells, waste surveys, sanitation inventories, refugee camp indicators: the datasets we publish were sitting in spreadsheets in organisations that wanted to share them and did not know how.</li>
+    <li><strong>You own the result.</strong> Your organisation stays the author and the copyright holder. The package lives in the open on GitHub, the deposit on Zenodo, and both can be moved anywhere.</li>
+    <li><strong>The cost is time, not money.</strong> Publishing is free. The tooling is open source, the review is done by the community, and the skills stay with you after the first package.</li>
+  </ul>
+</section>
+
+<section class="tint" id="partners">
+  <div class="inner">
+    <h2>Partners</h2>
+    <p class="lead">Our partnerships are informal and based on a common interest in open data and code: contributors to the community and other open data initiatives in the WASH sector.</p>
+    <div class="partners">
+      <a class="partner" href="https://openwashdata.org/pages/partners/baseflow/"><strong>BASEflow</strong><span>Groundwater monitoring in Malawi. Home of our data steward programme.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/soil/"><strong>SOIL</strong><span>Safe, dignified and sustainable sanitation in urban Haiti.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/toiletsforall/"><strong>Toilets For All</strong><span>Closing the gap on safe and sustainable sanitation for schools.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/ukznwashrd/"><strong>UKZN WASH R&amp;D Centre</strong><span>Building knowledge, delivering insight.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/washai/"><strong>WASH AI</strong><span>Rethinking WASH knowledge.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/washweb/"><strong>WASH Web</strong><span>Making WASH information discoverable, representative and useful.</span></a>
+      <a class="partner" href="https://openwashdata.org/pages/partners/sanima/"><strong>Sanima</strong><span>Safety, privacy, dignity.</span></a>
+    </div>
+    <div class="callout">
+      <p><strong>Have a dataset and a deadline?</strong> We publish with you: a call, a repository, and a reviewed package in days.</p>
+      <a class="btn ghost" href="https://github.com/openwashdata/data/issues">Donate data</a>
+    </div>
+  </div>
+</section>
+
+<section class="inner" id="publish">
+  <p class="eyebrow">Readiness check</p>
+  <h2>How close is your dataset to publication?</h2>
+  <p class="lead">Tick what you already have. The first five items are the publication floor our review requires before it starts; the last two are what the review adds.</p>
+  <div class="readiness">
+    <div class="card" id="checks">
+      <div class="check"><input type="checkbox" id="c-raw" data-floor><div><label for="c-raw">The raw data and the script that cleans it</label><small>Kept in data-raw/ next to the tidy data. washr::setup_rawdata()</small></div></div>
+      <div class="check"><input type="checkbox" id="c-dict" data-floor><div><label for="c-dict">A dictionary with a description for every variable</label><small>data-raw/dictionary.csv. washr::setup_dictionary()</small></div></div>
+      <div class="check"><input type="checkbox" id="c-pii" data-floor><div><label for="c-pii">A privacy check, done by a person</label><small>No names, phone numbers, IDs or household GPS, in the files or in the git history.</small></div></div>
+      <div class="check"><input type="checkbox" id="c-desc" data-floor><div><label for="c-desc">A title, a description and a licence</label><small>DESCRIPTION with CC BY 4.0. washr::update_description()</small></div></div>
+      <div class="check"><input type="checkbox" id="c-readme" data-floor><div><label for="c-readme">A README that says what the data is and how it was collected</label><small>washr::setup_readme()</small></div></div>
+      <div class="check"><input type="checkbox" id="c-site"><div><label for="c-site">A website for the package</label><small>washr::setup_website()</small></div></div>
+      <div class="check"><input type="checkbox" id="c-doi"><div><label for="c-doi">Citation files and a Zenodo DOI</label><small>washr::update_citation() and a GitHub release</small></div></div>
+    </div>
+    <div class="card summary" aria-live="polite">
+      <h3>Where you stand</h3>
+      <div class="ring-wrap">
+        <svg viewBox="0 0 150 150" aria-hidden="true" class="ring"><circle class="track" cx="75" cy="75" r="62"/><circle class="fill" id="ring-fill" cx="75" cy="75" r="62" stroke-dasharray="389.6" stroke-dashoffset="389.6"/></svg>
+        <div class="ring-label" id="ring-label">0/7</div>
+      </div>
+      <p class="verdict" id="verdict">Start with the raw data.</p>
+      <ul class="next-steps" id="next-steps"></ul>
+      <p class="footnote">Same items as washr::check_publication_readiness() and the pkgreview intake screen. Nothing you tick leaves this page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="faq">
+  <div class="inner">
+    <h2>Questions people ask before their first package</h2>
+    <div class="faq">
+      <details id="faq-who"><summary>Who can publish through openwashdata?</summary><p>Anyone connected to the greater WASH sector: utilities, NGOs, researchers, students, consultants. Public health, solid waste, faecal sludge management and air quality count too. The data has to be yours to share, or shared with the permission of whoever owns it.</p></details>
+      <details id="faq-r"><summary>Do I need to know R?</summary><p>No. If you can send us a spreadsheet and answer questions about the columns, we can publish with you. If you want to do it yourself, the <a href="https://openwashdata.github.io/washr/">washr package</a> writes every file with a fixed shape, and the free <a href="https://ds4owd-002.github.io/website/">course</a> teaches the rest.</p></details>
+      <details id="faq-pii"><summary>What about personal data?</summary><p>Nothing is published before a person has checked every dataset for direct identifiers (names, phone numbers, IDs, household GPS), for household- or person-level rows, and for sensitive contexts. The check covers the git history as well, because a removed column stays recoverable. If data is sensitive, we help you aggregate it or publish only the dictionary.</p></details>
+      <details id="faq-license"><summary>Who owns the data, and under which licence?</summary><p>You do. You stay the author and the copyright holder. Packages are published under CC BY 4.0 by default, which lets anyone reuse the data as long as they credit you. The DOI and the citation make that credit easy to give.</p></details>
+      <details id="faq-review"><summary>How is a package reviewed?</summary><p>Against a <a href="https://github.com/openwashdata/pkgreview">versioned review standard</a> in four areas: metadata, data, documentation and tests. A script checks the mechanical items, a reviewer checks the rest, and each area gets one GitHub issue and one pull request. A person approves every step, and the package records the standard it was reviewed against.</p></details>
+      <details id="faq-cite"><summary>How do I cite a package?</summary><p>Every package website has a citation block, and the Zenodo deposit gives it a DOI. In R, <code>citation("packagename")</code> prints the reference. The catalogue above links every DOI.</p></details>
+      <details id="faq-time"><summary>How long does it take?</summary><p>With the raw data, a dictionary and a privacy check in hand, a package has gone from spreadsheet to reviewed publication in a day. <a href="https://openwashdata.org/pages/blog/posts/2026-10-20-solidwastekampala-story/">We wrote up one such day.</a> Most take a few weeks, because the prose about the data takes thought.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="inner story">
+  <p class="eyebrow">Why a community</p>
+  <h2>Vision and mission</h2>
+  <p>An active global community that applies the FAIR principles to data generated in the greater water, sanitation and hygiene sector. Our mission is to empower WASH professionals to engage with tools and workflows for open data and code.</p>
+  <blockquote>In November 2024 openwashdata received the National Prize for Open Research Data from the Swiss Academies of Arts and Sciences. It came early, when we were still arguing that WASH data was worth publishing at all.</blockquote>
+  <p>The community started around 2021 at Global Health Engineering, ETH Zurich, received its first funding in 2023 and has been publishing data packages, running a free course and training data stewards with partners since. <a href="https://openwashdata.org/about.html">Meet the team.</a></p>
+</section>
+
+<section class="band" id="subscribe">
+  <div class="inner">
+    <h2>Stay in touch</h2>
+    <p class="lead">One email a month: a dataset, a story, and the community's news.</p>
+    <form action="https://buttondown.com/api/emails/embed-subscribe/openwashdata" method="post" class="subscribe">
+      <label for="owd-email">Email address</label>
+      <input type="email" name="email" id="owd-email" placeholder="your email address" required autocomplete="email">
+      <button class="btn on-band" type="submit">Subscribe</button>
+    </form>
+    <p class="hint" style="margin-top:1rem">Or <a href="https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch">join the chat on Matrix</a>, open to everyone.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer band">
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="openwashdata, home"><img src="assets/owd-wordmark-dark.svg" alt="openwashdata" height="22"></a>
+        <p>Supported by the <a href="https://ethrat.ch/en/eth-domain/open-research-data/">Open Research Data Program of the ETH Board</a><br>and <a href="https://ghe.ethz.ch/">Global Health Engineering, ETH Zurich</a>.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://openwashdata.org/about.html">About</a>
+        <a href="https://openwashdata.org/code_of_conduct.html">Code of Conduct</a>
+        <a href="https://openwashdata.org/pages/newsletter/">Newsletter</a>
+        <a href="https://github.com/openwashdata">GitHub</a>
+        <a href="https://matrix.to/#/#openwashdata-lobby:staffchat.ethz.ch">Matrix</a>
+        <span>ghe@mavt.ethz.ch</span>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="data/packages.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
