@@ -347,3 +347,246 @@
   margin-left: 0.5rem;
   font-weight: 600;
 }
+
+// Homepage port of 2026-10-31 (#174): five numbers, learn cards, why,
+// steps and partners. Same card language as .owd-card above.
+@media (min-width: 900px) {
+  .owd-numbers {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.owd-learn,
+.owd-steps,
+.owd-partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.owd-learn-card,
+.owd-step {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.75rem;
+  background-color: $brand-paper;
+}
+
+.owd-learn-card strong,
+.owd-step strong {
+  display: block;
+  font-size: 1.15rem;
+  color: $brand-owd-purple;
+  margin-bottom: 0.35rem;
+}
+
+.owd-learn-card p,
+.owd-step p {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.owd-learn-card .owd-more {
+  margin-top: 0.25rem;
+}
+
+.owd-step-number {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $brand-owd-purple;
+  color: $brand-paper;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.owd-why {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.owd-why-intro p.owd-lead {
+  font-size: 1.1rem;
+  color: $brand-owd-grey;
+}
+
+.owd-why-points ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.owd-why-points li {
+  margin-bottom: 0.75rem;
+}
+
+.owd-partner {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.75rem;
+  background-color: $brand-paper;
+  color: $brand-ink;
+  text-decoration: none;
+}
+
+.owd-partner:hover {
+  border-color: $brand-owd-purple;
+  text-decoration: none;
+}
+
+.owd-partner strong {
+  display: block;
+  color: $brand-owd-purple;
+  margin-bottom: 0.25rem;
+}
+
+.owd-partner span {
+  font-size: 0.9rem;
+  color: $brand-owd-grey;
+}
+
+// Get started page: readiness checklist and FAQ (#174).
+.owd-readiness {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+
+.owd-readiness .owd-check-card,
+.owd-readiness .owd-summary {
+  padding: 1.25rem;
+  border: 1px solid $brand-owd-grey-light;
+  border-radius: 0.75rem;
+  background-color: $brand-paper;
+}
+
+.owd-check {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid $brand-owd-purple-light;
+}
+
+.owd-check:last-of-type {
+  border-bottom: 0;
+}
+
+.owd-check input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+  accent-color: $brand-owd-purple;
+}
+
+.owd-check label {
+  cursor: pointer;
+}
+
+.owd-check small {
+  display: block;
+  color: $brand-owd-grey;
+}
+
+.owd-summary h3 {
+  margin-top: 0;
+}
+
+.owd-ring-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0.5rem auto 1rem;
+  width: 150px;
+  height: 150px;
+}
+
+.owd-ring-wrap svg {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg);
+}
+
+.owd-ring-wrap circle {
+  fill: none;
+  stroke-width: 12;
+}
+
+.owd-ring-wrap .track {
+  stroke: $brand-owd-purple-bg;
+}
+
+.owd-ring-wrap .fill {
+  stroke: $brand-owd-purple;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.owd-ring-label {
+  position: absolute;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $brand-owd-purple;
+}
+
+.owd-verdict {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.owd-next-steps {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: $brand-owd-grey;
+}
+
+.owd-faq {
+  max-width: 760px;
+}
+
+.owd-faq details {
+  border-bottom: 1px solid $brand-owd-purple-light;
+  padding: 0.25rem 0;
+}
+
+.owd-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.owd-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.owd-faq summary::after {
+  content: "+";
+  color: $brand-owd-purple;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.owd-faq details[open] summary::after {
+  content: "\2013";
+}
+
+.owd-faq details p {
+  color: $brand-owd-grey;
+  margin-bottom: 1rem;
+}
+

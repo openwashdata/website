@@ -1,6 +1,6 @@
 ---
 title: "BASEflow"
-subtitle: ""
+subtitle: "Groundwater for safe drinking water in rural Malawi"
 image: baseflow_trans.png
 about:
   template: trestles

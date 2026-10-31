@@ -25,15 +25,36 @@ listing:
 #| include: false
 library(dplyr)
 # Same source as the data catalogue: the weekly owdata harvest of the
-# organisation (openwashdata/owdata#11).
+# organisation (openwashdata/owdata#11). The strip counts published
+# packages only, those whose CITATION.cff carries a Zenodo DOI (#174).
 data <- readr::read_csv(
   "https://raw.githubusercontent.com/openwashdata/owdata/main/inst/extdata/owd_packages.csv",
   show_col_types = FALSE
 )
-n_pub <- nrow(data)
-n_ds <- sum(data$n_datasets, na.rm = TRUE)
-first_year <- min(as.integer(format(data$date, "%Y")), na.rm = TRUE)
+published <- filter(data, as.logical(published) %in% TRUE)
+n_pub <- nrow(published)
+n_ds <- sum(published$n_datasets, na.rm = TRUE)
+first_year <- min(as.integer(format(published$date, "%Y")), na.rm = TRUE)
 n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
+
+# Teaching numbers from the graduate pages, one entry per capstone project.
+graduate_files <- c(
+  "pages/academy/graduates-2024/data/graduates.yml",
+  "pages/academy/graduates-2026/data/graduates-2026.yml"
+)
+n_cohorts <- length(graduate_files)
+n_projects <- sum(vapply(graduate_files, function(f) length(yaml::read_yaml(f)), integer(1)))
+
+# Partner cards from the front matter of the partner pages.
+partner_files <- sort(Sys.glob("pages/partners/*/index.qmd"))
+partners <- lapply(partner_files, function(f) {
+  fm <- rmarkdown::yaml_front_matter(f)
+  list(
+    title = fm$title,
+    subtitle = if (is.null(fm$subtitle)) "" else fm$subtitle,
+    href = sub("\\.qmd$", ".html", f)
+  )
+})
 ```
 
 ::: {.owd-hero-a}
@@ -45,7 +66,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 
 ::: {.owd-actions}
 [Explore the data](pages/gallery/data/index.qmd){.btn .btn-primary}
-[Read our stories](pages/blog/index.qmd){.btn .btn-outline}
+[Learn the skills](pages/academy/index.qmd){.btn .btn-outline}
 :::
 
 ::: {#subscribe}
@@ -64,7 +85,7 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ::: {.owd-numbers}
 ::: {.owd-number-item}
 <div class="owd-number">`r n_pub`</div>
-<div class="owd-number-label">open data packages</div>
+<div class="owd-number-label">published data packages</div>
 :::
 ::: {.owd-number-item}
 <div class="owd-number">`r n_ds`</div>
@@ -73,6 +94,14 @@ n_years <- as.integer(format(Sys.Date(), "%Y")) - first_year + 1
 ::: {.owd-number-item}
 <div class="owd-number">`r n_years`</div>
 <div class="owd-number-label">years of publishing, since `r first_year`</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_cohorts`</div>
+<div class="owd-number-label">course cohorts since 2023</div>
+:::
+::: {.owd-number-item}
+<div class="owd-number">`r n_projects`</div>
+<div class="owd-number-label">capstone projects by graduates</div>
 :::
 :::
 :::
@@ -216,11 +245,81 @@ Plot.plot({
 
 ## Learn
 
-<p class="owd-lead">Data Science for openwashdata (ds4owd), our free online course, teaches WASH professionals data science in R. Two cohorts have graduated so far. A third cohort will start in September 2027. We are currently preparing the sign-up forms for the third iteration. In the meantime, you can browse the course website of the second cohort from 2025.</p>
+<p class="owd-lead">We teach the skills to work with data in the open, free of charge, for people in the water, sanitation and hygiene sector.</p>
 
-[Course website of the 2025 cohort](https://ds4owd-002.github.io/website/){.owd-more}
-[Projects of the 2026 graduates](pages/academy/graduates-2026/index.qmd){.owd-more}
+::: {.owd-learn}
+::: {.owd-learn-card}
+<span class="owd-card-kicker">Online course</span>
+<strong>Data science for openwashdata</strong>
+<p>Free and in R. Nine live sessions of 2.5 hours, exercises in between, and a capstone project on a dataset of your choice. Two cohorts have graduated since 2023. The course runs every second year, and the next one starts in September 2027.</p>
+
 [About the course](pages/academy/index.qmd){.owd-more}
+[Graduates 2026](pages/academy/graduates-2026/index.qmd){.owd-more}
+:::
+::: {.owd-learn-card}
+<span class="owd-card-kicker">In person</span>
+<strong>Workshops and a conference</strong>
+<p>Next come in-person formats, week-long workshops and a conference. Subscribe to hear first.</p>
+
+[Past events](pages/events/index.qmd){.owd-more}
+[Subscribe](#subscribe){.owd-more}
+:::
+::: {.owd-learn-card}
+<span class="owd-card-kicker">AI skills</span>
+<strong>Working with AI on data</strong>
+<p>The curriculum extends to AI skills, literacy and competency. We teach how to work with coding agents on data, with the same openness and review as everything else we publish.</p>
+
+[How a package was built with an agent in a day](pages/blog/posts/2026-10-20-solidwastekampala-story/index.qmd){.owd-more}
+:::
+:::
+
+:::
+:::
+
+::: {.owd-section}
+
+::: {.owd-why}
+::: {.owd-why-intro}
+## Why open data for WASH, and why now
+
+<p class="owd-lead">Most WASH data is collected once, used for one report, and lost. The sector spends again to collect it again.</p>
+:::
+::: {.owd-why-points}
+- **The data already exists.** Monitoring wells, waste surveys, sanitation inventories, refugee camp indicators. The datasets we publish were sitting in spreadsheets in organisations that wanted to share them and did not know how.
+- **You own the result.** Your organisation stays the author and the copyright holder. The package lives in the open on GitHub, the deposit on Zenodo, and both can be moved anywhere.
+- **The cost is your time.** Publishing is free. The tooling is open source, the review is done by the community, and the skills stay with you after the first package.
+:::
+:::
+
+:::
+
+::: {.owd-tint}
+::: {.owd-section}
+
+## How publishing works
+
+<p class="owd-lead">Three steps, the same for every dataset, whether it has fifty rows or fifty thousand.</p>
+
+::: {.owd-steps}
+::: {.owd-step}
+<span class="owd-step-number">1</span>
+<strong>Prepare</strong>
+<p>Our R package washr writes every file with a fixed shape. The raw data sits beside the processing script, a dictionary has one line per variable, and a README says what the data is and how it was collected. You write the prose.</p>
+:::
+::: {.owd-step}
+<span class="owd-step-number">2</span>
+<strong>Review</strong>
+<p>A review against a versioned standard in four areas, metadata, data, documentation and tests. A script checks the mechanical items, a person checks the rest, and nothing is published before a check for personal data.</p>
+:::
+::: {.owd-step}
+<span class="owd-step-number">3</span>
+<strong>Publish</strong>
+<p>A website for the package, a Zenodo DOI and a citation block. The licence is CC BY 4.0 by default, and you stay the author and the copyright holder.</p>
+:::
+:::
+
+[Get started](pages/get-started/index.qmd){.owd-more}
+[Donate data](https://github.com/openwashdata/data/issues){.owd-more}
 
 :::
 :::
@@ -241,6 +340,31 @@ Plot.plot({
 ::: {.owd-tint}
 ::: {.owd-section}
 
+## Partners
+
+<p class="owd-lead">Our partnerships are informal and based on a common interest in open data and code. They comprise contributors to the community and other open data initiatives in the WASH sector.</p>
+
+```{r}
+#| output: asis
+# A raw HTML fence, so Pandoc does not wrap the cards in a paragraph.
+cards <- vapply(partners, function(p) {
+  sprintf(
+    '<a class="owd-partner" href="%s"><strong>%s</strong>%s</a>',
+    p$href,
+    htmltools::htmlEscape(p$title),
+    if (nzchar(p$subtitle)) sprintf("<span>%s</span>", htmltools::htmlEscape(p$subtitle)) else ""
+  )
+}, character(1))
+cat("```{=html}\n<div class=\"owd-partners\">\n", paste(cards, collapse = "\n"), "\n</div>\n```\n", sep = "")
+```
+
+[All partners](pages/partners/index.qmd){.owd-more}
+
+:::
+:::
+
+::: {.owd-section}
+
 ## Join
 
 ```{=html}
@@ -251,7 +375,6 @@ Plot.plot({
 </div>
 ```
 
-:::
 :::
 
 ::: {.owd-band}

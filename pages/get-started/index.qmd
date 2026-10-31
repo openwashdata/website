@@ -3,14 +3,84 @@ title: "Get Started"
 editor: source
 ---
 
-Join the community:
+openwashdata publishes data packages with you and teaches the skills to do it yourself. Start here.
 
-- [Chat](/pages/get-started/chat/index.qmd)
+## Is your dataset ready to publish?
 
-Learn more in our first blog post:
+Tick what you already have. The first five items are what a review needs before it starts; the last two are what publishing adds. Nothing you tick leaves this page.
 
-- [openwashdata 101](/pages/blog/posts/2023-07-04-owd101/index.qmd)
+```{=html}
+<div class="owd-readiness">
+  <div class="owd-check-card" id="owd-checks">
+    <div class="owd-check"><input type="checkbox" id="c-raw" data-floor><div><label for="c-raw">The raw data and the script that cleans it</label><small>Kept in data-raw/ next to the tidy data. washr::setup_rawdata()</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-dict" data-floor><div><label for="c-dict">A dictionary with a description for every variable</label><small>data-raw/dictionary.csv. washr::setup_dictionary()</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-pii" data-floor><div><label for="c-pii">A check for personal data, done by a person</label><small>No names, phone numbers, IDs or household GPS, in the files or in the git history.</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-desc" data-floor><div><label for="c-desc">A title, a description and a licence</label><small>DESCRIPTION with CC BY 4.0. washr::update_description()</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-readme" data-floor><div><label for="c-readme">A README that says what the data is and how it was collected</label><small>washr::setup_readme()</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-site"><div><label for="c-site">A website for the package</label><small>washr::setup_website()</small></div></div>
+    <div class="owd-check"><input type="checkbox" id="c-doi"><div><label for="c-doi">Citation files and a Zenodo DOI</label><small>washr::update_citation() and a GitHub release</small></div></div>
+  </div>
+  <div class="owd-summary" aria-live="polite">
+    <h3>Where you stand</h3>
+    <div class="owd-ring-wrap">
+      <svg viewBox="0 0 150 150" aria-hidden="true"><circle class="track" cx="75" cy="75" r="62"/><circle class="fill" id="owd-ring-fill" cx="75" cy="75" r="62" stroke-dasharray="389.6" stroke-dashoffset="389.6"/></svg>
+      <div class="owd-ring-label" id="owd-ring-label">0/7</div>
+    </div>
+    <p class="owd-verdict" id="owd-verdict">Start with the raw data.</p>
+    <ul class="owd-next-steps" id="owd-next-steps"></ul>
+  </div>
+</div>
+<script>
+(function () {
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#owd-checks input'));
+  var fill = document.getElementById('owd-ring-fill'), label = document.getElementById('owd-ring-label');
+  var verdict = document.getElementById('owd-verdict'), next = document.getElementById('owd-next-steps');
+  var C = 2 * Math.PI * 62;
+  var steps = {
+    'c-raw': 'Put the raw files in data-raw/ and run washr::setup_rawdata() for the processing script.',
+    'c-dict': 'Run washr::setup_dictionary() and write one description per variable.',
+    'c-pii': 'Check every dataset for identifiers and sensitive rows before the first commit with data.',
+    'c-desc': 'Fill DESCRIPTION with washr::update_description(); the licence is CC BY 4.0.',
+    'c-readme': 'Run washr::setup_readme() and write what the data is and how it was collected.',
+    'c-site': 'Run washr::setup_website() and turn on GitHub Pages.',
+    'c-doi': 'Run washr::update_citation(), then make a GitHub release; Zenodo mints the DOI.'
+  };
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+  function update() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    var floorDone = boxes.filter(function (b) { return b.hasAttribute('data-floor') && b.checked; }).length;
+    fill.setAttribute('stroke-dashoffset', String(C - C * done / boxes.length));
+    label.textContent = done + '/' + boxes.length;
+    if (done === boxes.length) verdict.textContent = 'Ready to publish. Tell us, and we add it to the catalogue.';
+    else if (floorDone === 5) verdict.textContent = 'At the publication floor. Ready for review.';
+    else if (done === 0) verdict.textContent = 'Start with the raw data.';
+    else verdict.textContent = (5 - floorDone) + ' floor item' + (5 - floorDone === 1 ? '' : 's') + ' left before a review can start.';
+    next.innerHTML = boxes.filter(function (b) { return !b.checked; }).slice(0, 3).map(function (b) { return '<li>' + esc(steps[b.id]) + '</li>'; }).join('');
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', update); });
+  update();
+})();
+</script>
+```
 
-Share your WASH data with us:
+A short version of the items that `washr::check_publication_readiness()` tests. Run it inside your package for the full list.
 
-- [openwashdata data donation](/pages/blog/posts/2024-05-17-data-publication-1/index.qmd)
+## Questions people ask before their first package
+
+```{=html}
+<div class="owd-faq">
+  <details id="faq-who"><summary>Who can publish through openwashdata?</summary><p>Anyone connected to the greater WASH sector: utilities, NGOs, researchers, students, consultants. Public health, solid waste, faecal sludge management and air quality count too. The data has to be yours to share, or shared with the permission of whoever owns it.</p></details>
+  <details id="faq-r"><summary>Do I need to know R?</summary><p>No. If you can send us a spreadsheet and answer questions about the columns, we can publish with you. If you want to do it yourself, the <a href="https://openwashdata.github.io/washr/">washr package</a> writes every file with a fixed shape, and the free <a href="/pages/academy/index.html">course</a> teaches the rest.</p></details>
+  <details id="faq-pii"><summary>What about personal data?</summary><p>Nothing is published before a person has checked every dataset for direct identifiers (names, phone numbers, IDs, household GPS), for household or person level rows, and for sensitive contexts. The check covers the git history as well, because a removed column stays recoverable. If data is sensitive, we help you aggregate it or publish only the dictionary.</p></details>
+  <details id="faq-license"><summary>Who owns the data, and under which licence?</summary><p>You do. You stay the author and the copyright holder. Packages are published under CC BY 4.0 by default, which lets anyone reuse the data as long as they credit you. The DOI and the citation make that credit straightforward to give.</p></details>
+  <details id="faq-review"><summary>How is a package reviewed?</summary><p>Against a <a href="https://github.com/openwashdata/pkgreview">versioned review standard</a> in four areas: metadata, data, documentation and tests. A script checks the mechanical items, a reviewer checks the rest, and each area gets one GitHub issue and one pull request. A person approves every step, and the package records the standard it was reviewed against.</p></details>
+  <details id="faq-cite"><summary>How do I cite a package?</summary><p>Every package website has a citation block, and the Zenodo deposit gives it a DOI. In R, <code>citation("packagename")</code> prints the reference. The <a href="/pages/gallery/data/index.html">data catalogue</a> links every DOI.</p></details>
+  <details id="faq-time"><summary>How long does it take?</summary><p>With the raw data, a dictionary and a check for personal data in hand, a package has gone from spreadsheet to reviewed publication in a day. <a href="/pages/blog/posts/2026-10-20-solidwastekampala-story/index.html">We wrote up one such day.</a> Most take a few weeks, because the prose about the data takes thought.</p></details>
+</div>
+```
+
+## Next steps
+
+- [Chat with us on Matrix](/pages/get-started/chat/index.qmd)
+- [Read openwashdata 101, our first blog post](/pages/blog/posts/2023-07-04-owd101/index.qmd)
+- [Donate data](/pages/blog/posts/2024-05-17-data-publication-1/index.qmd)
