@@ -11,7 +11,7 @@ website:
   title: "openwashdata"
   site-url: https://openwashdata.org/
   description: "Website of the openwashdata community"
-  favicon: _brand/logos/OWD-logo-40.png
+  favicon: _brand/logos/OWD-logo-18.png
   page-navigation: true
   search: false
   page-footer: 
