@@ -80,3 +80,11 @@
 - 06:36 - Open an issue on website repo to write blog post about national ord prize. We never properly announced it.
 - 07:10 - This page holds the YouTube video of the prize and provides greater context of data stewardship (cven5999-ss26 case study). Use it as material to write a short draft blog post for 150.
 - 07:30 - the three statistics displayed under the sign up form need to stand out a bit more. a small box or a seperator to the above, so that it looks like it's own section
+
+## 2026-10-31
+
+- 19:33 - openwashdata/website has a cloud scratch branch for redesign of website, pick it up
+- 19:45 - Yes issue on owdata and start a background agent for that.
+- 19:58 - Yes, Keep quarto and port few elements. Also make sure it’s not just a product or service that is promoted. We also teach the skills. Two cohorts alreaday, once planned every second year. Proposals are being written for conferences and week long workshops in person, investing also into AI skills, literacy and competency.
+- 20:05 - gh pr merge 22 --squash --repo openwashdata/owdata
+- 20:12 - 2. Yes 3. Yes 4. Let go 5. Published. Homepage element, two worded, and go for website text.

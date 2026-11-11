@@ -41,6 +41,7 @@ jobs:
           packages: |
             any::readr
             any::dplyr
+            any::tidyr
             any::DT
             any::here
             any::rmarkdown
