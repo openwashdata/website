@@ -43,8 +43,6 @@ website:
     logo-alt: "openwashdata"
     collapse-below: lg
     left:
-      - text: " "
-        href: index.qmd
       - text: "About"
         href: about.qmd
       - text: "Data"
@@ -72,7 +70,7 @@ website:
             href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
           - text: "Report a Bug"
             icon: "bug"
-            href: "https://github.com/openwashdata/book/issues"
+            href: "https://github.com/openwashdata/website/issues"
           - text: "Donate data"
             icon: "clipboard-data"
             href: "https://github.com/openwashdata/data/issues"
