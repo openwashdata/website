@@ -14,8 +14,8 @@ author:
     affiliation-url: https://lwn.earth/
 date: "2024-02-06"
 draft: false
-image: "302299827-e5066e97-84cf-4fda-a3f7-94e112b72a61.png"
-image-alt: "Screenshot of a video call in the openwashdata academy. The shared screen shows RStudio with an exercise that imports the JMP sanitation data and a table of that data."
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
 ---
 
 WASHWeb and openwashdata have formed a strategic partnership to facilitate improvements in access to water, sanitation and hygiene (WASH) data. The openwashdata community empowers WASH professionals to engage with tools and workflows for open data and code by increasing the reuse potential of existing data and providing courses to build the required competencies.
