@@ -4,6 +4,7 @@ project:
     - "*.qmd"
     - "*.md"
     - "!prompts/"
+    - "!prompt-history.md"
 
 brand: _brand/_brand.yml
 
