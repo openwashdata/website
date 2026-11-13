@@ -11,6 +11,8 @@ author:
     url: https://www.linkedin.com/in/yashdubey132/
 date: "2025-06-17"
 draft: false
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
 ---
 
 I was first introduced to Global Health Engineering (GHE) when I took a fantastic class; ["International Engineering: Hubris to Hope"](https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024W&lerneinheitId=183181&lang=en) by Prof. Elizabeth Tilley. As I neared the completion of my master's program in Science, Technology, and Policy, I was keen to hone my existing data science knowledge and skills while contributing positively to the field. Fortunately, an internship in precisely this area was advertised by the openwashdata team at GHE. My initial interview with the team confirmed my belief that this was a unique opportunity to apply my skills for the fantastic goal of making data more accessible to everyone. 

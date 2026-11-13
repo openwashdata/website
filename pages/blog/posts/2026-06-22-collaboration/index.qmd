@@ -10,6 +10,8 @@ categories:
 author: Lars Schöbitz
 date: "2026-06-22"
 draft: false
+image: "OWD-logo-12.svg"
+image-alt: "openwashdata logo in orange"
 bibliography: references.bib
 csl: elsevier-harvard.csl
 reference-section-title: References

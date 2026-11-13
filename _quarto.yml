@@ -4,8 +4,11 @@ project:
     - "*.qmd"
     - "*.md"
     - "!prompts/"
+    - "!prompt-history.md"
 
 brand: _brand/_brand.yml
+
+lang: en
 
 website:
   title: "openwashdata"
@@ -13,7 +16,9 @@ website:
   description: "Website of the openwashdata community"
   favicon: _brand/logos/OWD-logo-18.png
   page-navigation: true
-  search: false
+  search: true
+  open-graph: true
+  twitter-card: true
   page-footer: 
     left: |
         Supported by the
@@ -43,8 +48,6 @@ website:
     logo-alt: "openwashdata"
     collapse-below: lg
     left:
-      - text: " "
-        href: index.qmd
       - text: "About"
         href: about.qmd
       - text: "Data"
@@ -72,7 +75,7 @@ website:
             href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
           - text: "Report a Bug"
             icon: "bug"
-            href: "https://github.com/openwashdata/book/issues"
+            href: "https://github.com/openwashdata/website/issues"
           - text: "Donate data"
             icon: "clipboard-data"
             href: "https://github.com/openwashdata/data/issues"
@@ -80,9 +83,6 @@ website:
     right:
       - text: Newsletter
         href: pages/newsletter/index.qmd
-      - icon: envelope-at-fill
-        href: "mailto:ghe@mavt.ethz.ch?subject=openwashdata support"
-        aria-label: Email
       - icon: github
         href: https://github.com/openwashdata
         aria-label: GitHub
